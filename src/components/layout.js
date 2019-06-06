@@ -27,8 +27,8 @@ export default ({ children }) => (
         <div>
             { children }
         </div>
-        <footer className="h-48 w-full footer">
-            <div className="container mx-auto py-20">
+        <footer className="w-full footer mt-auto lg:mt-5">
+            <div className="container mx-auto px-10 lg:px-auto py-20">
                 <div className="flex flex-col lg:flex-row">
                     <div className="w-full lg:w-1/4">
                         <Link to="/"><img src={"../fc-logo-horizontal-white.svg"} alt="Logo" width={"175px"} /></Link>
