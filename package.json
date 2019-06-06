@@ -14,10 +14,18 @@
   },
   "dependencies": {
     "gatsby": "^2.7.1",
+    "gatsby-plugin-page-creator": "^2.0.13",
+    "gatsby-plugin-postcss": "^2.0.7",
+    "gatsby-source-prismic": "^2.3.0-alpha.3",
+    "nuka-carousel": "^4.5.8",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-slick": "^0.24.0",
+    "slick-carousel": "^1.8.1",
+    "tailwindcss": "^1.0.1"
   },
   "devDependencies": {
+    "dotenv": "^8.0.0",
     "prettier": "^1.17.1"
   },
   "repository": {
