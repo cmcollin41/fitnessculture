@@ -48,7 +48,7 @@ const Index = ({ data: { homepage, programs } }) => (
             <h3 className="text-center uppercase text-3xl">See the <span className="rustico">Results</span></h3>
             <div className="flex justify-center items-stretch mt-10 h-full">
               <div className="w-full h-full">       
-                <Slider arrows={ true } dots={ true } infinite={ true } speed={ 500 } slidesToShow={ 3 } slidesToScroll = { 1 } adaptiveHeight={ true }>
+                <Slider arrows={ true } dots={ true } infinite={ true } speed={ 500 } slidesToShow={ 3 } slidesToScroll = { 1 }>
                   {programs.edges.map(program => (
                     <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white mx-5 h-full">
                       <img className="w-full" src={program.node.data.hero_image.url} alt="name" />
