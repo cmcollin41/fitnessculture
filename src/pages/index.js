@@ -58,10 +58,8 @@ const Index = ({ data: { homepage, programs } }) => (
                           {program.node.data.lead.text}
                         </p>
                       </div>
-                      <div className="px-6 py-4">
-                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#photography</span>
-                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">#travel</span>
-                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">#winter</span>
+                      <div className="px-6 py-10">
+                        <Link to="/" className="btn-lg btn-red shadow-md">Learn More</Link>
                       </div>
                     </div>
                   ))}
