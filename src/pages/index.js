@@ -72,7 +72,7 @@ const Index = ({ data: { homepage, programs } }) => (
                 <img src={ homepage.data.graph.url } width="100%" alt="name" />
               </div>
               <div className="w-full lg:w-1/3 p-10">       
-                  <h2 className="text-3xl">You're all-in-one <span class="rustico">Training App</span></h2>
+                  <h2 className="text-3xl">Your all-in-one <span class="rustico">Training App</span></h2>
                   <p>All you need for your training, nutrition, and mobility.</p>
                   <div className="mt-10">
                     <Link to="/" className="btn-lg btn-red shadow-md">Get Started</Link>
