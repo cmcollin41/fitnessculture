@@ -8,7 +8,7 @@ const Program = ({ data: { prismicProgram } }) => {
   return (
     <React.Fragment>
       <Layout>
-        <div className="flex flex-col justify-center mx-auto bg-cover bg-top p-5" style={{ backgroundImage: 'url(' + prismicProgram.data.hero_image.url + ')', minHeight: "60" + "vh" }}>
+        <div className="flex flex-col justify-center mx-auto bg-cover bg-center p-5" style={{ backgroundImage: 'url(' + prismicProgram.data.hero_image.url + ')', minHeight: "60" + "vh" }}>
           <div class="container mx-auto">
             <div className="flex flex-col lg:flex-row justify-center items-center">
               <div className="w-full lg:w-1/2">
