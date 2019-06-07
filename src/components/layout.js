@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import logo from '../../static/fc-logo-horizontal-white.svg'
 
 import '../css/fonts.css'
 import '../css/global.css'
@@ -8,7 +9,7 @@ export default ({ children }) => (
     <div>
         <nav className="flex items-center justify-between flex-wrap bg-black p-6" >
             <div className="flex items-center flex-shrink-0 text-white mr-6">
-                <Link to="/"><img src={"../fc-logo-horizontal-white.svg"} alt="Logo" width={"125px"} /></Link>
+                <Link to="/"><img src={ logo } alt="Logo" width={"125px"} /></Link>
             </div>
             <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block">
                 <div className="text-sm lg:flex-grow">
