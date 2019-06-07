@@ -1,9 +1,29 @@
 import React from "react"
 import { Link } from "gatsby"
 import logo from '../../static/fc-logo-horizontal-white.svg'
+import {Helmet} from "react-helmet";
 
 import '../css/fonts.css'
 import '../css/global.css'
+
+class Application extends React.Component {
+    render () {
+      return (
+          <div className="application">
+              <Helmet>
+                <meta charSet="utf-8" />
+                <title>Fitness Culture</title>
+                <link rel="canonical" href="http://fitnessculture.com" />
+                <script type="text/javascript" src="https://static.cdn.prismic.io/prismic.min.js"></script>
+                <script>
+                window.prismic = {{ endpoint: 'https://fitness-culture.cdn.prismic.io/api/v2'}};
+                </script>
+            </Helmet>
+        </div>
+      );
+    }
+  };
+  
 
 export default ({ children }) => (
     <div>
