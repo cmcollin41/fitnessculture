@@ -20,5 +20,11 @@ module.exports = {
         linkResolver: ({ node, key, value }) => program => `/${program.uid}`,
       },
     },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      }
+    }
   ],
 }
