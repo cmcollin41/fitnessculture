@@ -11,11 +11,12 @@ export default ({ children }) => (
             <div className="flex items-center flex-shrink-0 text-white mr-6">
                 <Link to="/"><img src={ logo } alt="Logo" width={"125px"} /></Link>
             </div>
-            <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block">
+            <div className="block lg:flex lg:items-center lg:w-auto hidden lg:block">
                 <div className="text-sm lg:flex-grow">
-                <Link to="/programs/swole" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">Programs</Link>
-                <Link to="/pricing" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">Pricing</Link>
-                <Link to="/about" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">About</Link>
+                <Link to="/programs/swole" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">Programs</Link>
+                <a href="" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">Shop</a>
+                <Link to="/pricing" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">Pricing</Link>
+                <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">About</Link>
                 
                 </div>
             </div>

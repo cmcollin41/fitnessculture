@@ -13,7 +13,7 @@ const Index = ({ data: { homepage, programs } }) => (
               <Link to="/" className="btn-lg btn-red uppercase">Get Started</Link>
             </div>
         </div>
-        <div className="bg-light dots py-20">
+        <div className="bg-light dots pt-5 pb-20">
           <div className="container mx-auto">
             <div className="flex flex-col lg:flex-row justify-center items-center">
               <div className="w-full lg:w-1/2">
@@ -63,7 +63,22 @@ const Index = ({ data: { homepage, programs } }) => (
             </div>
           </div>
         </div>
-
+        {/* <div className="pt-10 pb-20">
+          <div className="container mx-auto">
+            <div className="flex flex-col lg:flex-row justify-center items-center mt-10 h-full">
+              <div className="w-full lg:w-1/2 p-10">       
+                <img src={ homepage.data.graph.url } width="100%" alt="name" />
+              </div>
+              <div className="w-full lg:w-1/3 p-10">       
+                  <h2 className="text-3xl">Your <span class="rustico">Training App</span></h2>
+                  <p>All you need for your training, nutrition, and mobility.</p>
+                  <div className="mt-10">
+                    <Link to="/" className="btn-lg btn-red shadow-md">Get Started</Link>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div> */}
         <div className="py-20" style={{ backgroundColor: "#F9F9F9" }}>
           <div className="container mx-auto">
             <div className="flex flex-col lg:flex-row justify-center items-center mt-10 h-full">
