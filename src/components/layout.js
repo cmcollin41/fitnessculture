@@ -1,6 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import '../css/fonts.css'
+import '../css/global.css'
+
 export default ({ children }) => (
     <div>
         <nav className="flex items-center justify-between flex-wrap bg-black p-6" >

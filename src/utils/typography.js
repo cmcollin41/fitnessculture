@@ -2,16 +2,16 @@ import Typography from "typography"
 
 const typography = new Typography({
   baseFontSize: "18px",
-  baseLineHeight: 1.666,
+  baseLineHeight: 0,
   headerFontFamily: [
-    "Rustico Regular",
+    "Brandon Grotesque",
     "Helvetica Neue",
     "Segoe UI",
     "Helvetica",
     "Arial",
     "sans-serif",
   ],
-  bodyFontFamily: ["Chenla", "cursive"],
+  bodyFontFamily: ["Roboto", "san-serif"],
 })
 
 export default typography

@@ -3,9 +3,6 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import Slider from "react-slick";
 
-import '../css/font-face.css'
-import '../css/global.css'
-
 const Index = ({ data: { homepage, programs } }) => (
 
   <React.Fragment>
