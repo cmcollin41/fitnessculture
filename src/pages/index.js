@@ -47,7 +47,7 @@ const Index = ({ data: { homepage, programs } }) => (
                 {programs.edges.map(program => (
                   <div className="w-full lg:w-1/3"> 
                     <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-5 h-full flex flex-col justify-between">
-                      <img className="w-full" src={program.node.data.hero_image.url} alt="name" />
+                      <div className="w-full h-48 bg-cover bg-center" style={{ backgroundImage: 'url(' + program.node.data.hero_image.url + ')'}}></div>
                       <div>
                         <div className="px-6 py-4">
                           <h3 className="font-bold text-xl mb-2">{program.node.data.title.text}</h3>
