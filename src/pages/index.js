@@ -10,7 +10,9 @@ const Index = ({ data: { homepage, programs } }) => (
         <div className="flex flex-col justify-center items-center mx-auto bg-cover bg-top p-5" style={{ backgroundImage: 'url(' + homepage.data.hero_image.url + ')', minHeight: "60" + "vh" }}>
             <h1 className="uppercase rustico text-center text-white text-6xl">{homepage.data.h1.text}</h1>
             <h1 className="text-center text-white">{homepage.data.h2.text}</h1>
-            <Link to="/" className="btn-lg btn-red uppercase">Get Started</Link>
+            <div className="py-10">
+              <Link to="/" className="btn-lg btn-red uppercase">Get Started</Link>
+            </div>
         </div>
 
         <div className="bg-light dots p-5">
