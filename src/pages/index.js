@@ -1,42 +1,40 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-import Slider from "react-slick";
 
 const Index = ({ data: { homepage, programs } }) => (
 
   <React.Fragment>
     <Layout>
-        <div className="flex flex-col justify-center items-center mx-auto bg-cover bg-top p-5" style={{ backgroundImage: 'url(' + homepage.data.hero_image.url + ')', minHeight: "60" + "vh" }}>
+        <div className="flex flex-col justify-center items-center mx-auto bg-cover bg-top p-5" style={{ backgroundImage: 'url(' + homepage.data.hero_image.url + ')' , minHeight: "60" + "vh" }}>
             <h1 className="uppercase rustico text-center text-white text-6xl">{homepage.data.h1.text}</h1>
             <h1 className="text-center text-white">{homepage.data.h2.text}</h1>
             <div className="py-10">
               <Link to="/" className="btn-lg btn-red uppercase">Get Started</Link>
             </div>
         </div>
-
-        <div className="bg-light dots p-5">
-          <div className="container mx-auto my-5">
-            <div className="flex flex-col lg:flex-row justify-center items-center py-5">
-              <div className="w-full lg:w-1/2 flex flex-col">
-                <div className="my-5">
-                  <h2 className="rustico text-4xl">Training</h2>
-                  <p>Our training programs are customized not only to your individual training style but also based on your strength levels. 
-                    Every exercise comes complete with video tutorials, correct progressions, and weight calculations so you know there’s no guesswork</p>
-                </div>
-                <div className="my-5">
-                  <h2 className="rustico text-4xl">Nutrition</h2>
-                  <p>Our training programs are customized not only to your individual training style but also based on your strength levels. 
-                    Every exercise comes complete with video tutorials, correct progressions, and weight calculations so you know there’s no guesswork</p>
-                </div>
-                <div className="my-5">
-                  <h2 className="rustico text-4xl">Mobility</h2>
-                  <p>Our training programs are customized not only to your individual training style but also based on your strength levels. 
-                    Every exercise comes complete with video tutorials, correct progressions, and weight calculations so you know there’s no guesswork</p>
-                </div>
-              </div>
+        <div className="bg-light dots py-20">
+          <div className="container mx-auto">
+            <div className="flex flex-col lg:flex-row justify-center items-center">
               <div className="w-full lg:w-1/2">
-                <img src={ homepage.data.phone_img.url } width="100%" alt="name" />
+                <img src={ homepage.data.phone_img.url } alt="checked-icon" width={"100%"} className="mx-auto" />
+              </div>
+              <div className="w-full lg:w-1/2 p-10">
+                <h3 className ="uppercase text-3xl">Your <span className="rustico">Fitness App</span></h3>
+                <p>All you need for your training, nutrition, and mobility.</p>
+                <div className="mt-10">
+                  <Link to="/" className="btn-lg btn-red shadow-md">Get Started</Link>
+                </div>
+                <div className="max-w-sm w-full lg:max-w-1/2 flex flex-col lg:flex-row mt-20 shadow-sm">
+                  <div className="hidden lg:block h-48 md:h-auto lg:h-auto w-full lg:w-32 flex-none bg-cover bg-center rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{ backgroundImage: 'url(' + homepage.data.hero_image.url + ')'}}>
+                  </div>
+                  <div className="border-r border-b border-l border-t border-gray-400 lg:border-l-0 lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                    <div className="p-2">
+                      <p className="text-gray-700 text-xs">"I started Fitness Culture with Jake Hutton because we both have seen the power of a healthy lifestyle and training"</p>
+                      <div className="text-gray-900 font-bold text-sm mt-2 rustico">Steve Cook</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -45,11 +43,10 @@ const Index = ({ data: { homepage, programs } }) => (
         <div className="py-20">
           <div className="container mx-auto">
             <h3 className="text-center uppercase text-3xl">Our <span className="rustico">Programs</span></h3>
-            <div className="flex justify-center items-stretch mt-10 h-full">
-              <div className="w-full h-full">       
-                <Slider arrows={ true } dots={ true } infinite={ true } speed={ 500 } slidesToShow={ 1 } slidesToScroll = { 1 } centerMode = { true }>
-                  {programs.edges.map(program => (
-                    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white mx-5 h-full">
+            <div className="flex flex-col lg:flex-row justify-center items-stretch mt-10 h-full">
+                {programs.edges.map(program => (
+                  <div className="w-full lg:w-1/3 h-full  "> 
+                    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-5 h-full">
                       <img className="w-full" src={program.node.data.hero_image.url} alt="name" />
                       <div className="px-6 py-4">
                         <h3 className="font-bold text-xl mb-2">{program.node.data.title.text}</h3>
@@ -61,20 +58,19 @@ const Index = ({ data: { homepage, programs } }) => (
                         <Link to="/" className="btn-lg btn-red shadow-md">Learn More</Link>
                       </div>
                     </div>
-                  ))}
-                </Slider>
-              </div>
+                  </div>
+                ))}
             </div>
           </div>
         </div>
-        <div className="py-20">
+        <div className="pt-10 pb-20">
           <div className="container mx-auto">
             <div className="flex flex-col lg:flex-row justify-center items-center mt-10 h-full">
               <div className="w-full lg:w-1/2 p-10">       
                 <img src={ homepage.data.graph.url } width="100%" alt="name" />
               </div>
               <div className="w-full lg:w-1/3 p-10">       
-                  <h2 className="text-3xl">Your all-in-one <span class="rustico">Training App</span></h2>
+                  <h2 className="text-3xl">Your <span class="rustico">Training App</span></h2>
                   <p>All you need for your training, nutrition, and mobility.</p>
                   <div className="mt-10">
                     <Link to="/" className="btn-lg btn-red shadow-md">Get Started</Link>
@@ -87,7 +83,7 @@ const Index = ({ data: { homepage, programs } }) => (
           <div className="container mx-auto">
             <div className="flex flex-col lg:flex-row justify-center items-center mt-10 h-full">
               <div className="w-full lg:w-1/2 p-10">       
-                <img src={ homepage.data.owners_image.url } width="100%" alt="name" />
+                <img src={ homepage.data.owners_image.url } width="100%" alt="name" className="shadow-md" />
               </div>
               <div className="w-full lg:w-1/3 p-10">       
                   <h2 className="text-3xl">Meet <span className="rustico">Jake and Steve</span></h2>
