@@ -1,14 +1,15 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
+import Program from "../components/Program"
 
-const Index = ({ data: { homepage, programs } }) => (
+const Index = ({ data: { homepage, programs }}) => (
 
   <React.Fragment>
     <Layout>
         <div className="flex flex-col justify-center items-center mx-auto bg-cover bg-top p-5" style={{ backgroundImage: 'url(' + homepage.data.hero_image.url + ')' , minHeight: "60" + "vh" }}>
-            <h1 className="uppercase rustico text-center text-white text-6xl">{homepage.data.h1.text}</h1>
-            <h1 className="text-center text-white">{homepage.data.h2.text}</h1>
+            <h1 className="uppercase rustico text-center text-white text-4xl">{homepage.data.h1.text}</h1>
+            <h1 className="text-center text-white mt-5 text-xl w:1-2">{homepage.data.h2.text}</h1>
             <div className="py-10">
               <Link to="/" className="btn-lg btn-red uppercase">Get Started</Link>
             </div>
@@ -45,22 +46,7 @@ const Index = ({ data: { homepage, programs } }) => (
             <h3 className="text-center uppercase text-3xl">Our <span className="rustico">Programs</span></h3>
             <div className="flex flex-col lg:flex-row justify-center items-stretch mt-10">
                 {programs.edges.map(program => (
-                  <div className="w-full lg:w-1/3"> 
-                    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-5 h-full flex flex-col justify-between">
-                      <div className="w-full h-48 bg-cover bg-center" style={{ backgroundImage: 'url(' + program.node.data.hero_image.url + ')'}}></div>
-                      <div>
-                        <div className="px-6 py-4">
-                          <h3 className="font-bold text-xl mb-2">{program.node.data.title.text}</h3>
-                          <p className="text-gray-700 text-base">
-                            {program.node.data.lead.text}
-                          </p>
-                        </div>
-                        <div className="px-6 py-10">
-                          <Link to="/" className="btn-lg btn-red shadow-md">Learn More</Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <Program program={ program } />
                 ))}
             </div>
           </div>
