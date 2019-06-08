@@ -3,13 +3,14 @@ import Program from './Program'
 
 
 // class component
-const Slider = ({ program }) => {
+class Slider extends React.Component {
 
     constructor(props) {
       super(props);
       this.state = {
-        properties: data.properties,
-        property: data.properties[0]
+        // I'm not sure how to get the programs data from the Index page into the Component and up into state
+        properties: programs,
+        property: programs.index[0]
       }
     }
   
@@ -28,7 +29,9 @@ const Slider = ({ program }) => {
     }
   
     render() {
-      const {property} = this.state;
+      const {property}  = this.state;
+      const {programs} = programs;
+      const {program} = program;
       return (
         <div className="App">
   
@@ -41,15 +44,10 @@ const Slider = ({ program }) => {
             disabled={property.index === 0}
           >Prev</button>
   
-          <div className="page">
-              <section>
-                  <img src={logo} className="App-logo" alt="logo" />
-                  <h1>Image slideshow React tutorial.</h1>
-              </section>
-  
-              <Program property={property} />
-  
-          </div>
+        {/* Slider  */}
+            <div className="flex flex-col lg:flex-row justify-center items-stretch mt-10">
+                <Program program={ program } />
+            </div>
         </div>
       );
     }

@@ -44,11 +44,10 @@ const Index = ({ data: { homepage, programs }}) => (
         <div className="py-20">
           <div className="container mx-auto">
             <h3 className="text-center uppercase text-3xl">Our <span className="rustico">Programs</span></h3>
-            <div className="flex flex-col lg:flex-row justify-center items-stretch mt-10">
-                {programs.edges.map(program => (
-                  <Program program={ program } />
-                ))}
-            </div>
+              <Slider programs={programs} />
+              {/* {programs.edges.map(program => (
+                <Program program={ program } />
+              ))} */}
           </div>
         </div>
         {/* <div className="pt-10 pb-20">
