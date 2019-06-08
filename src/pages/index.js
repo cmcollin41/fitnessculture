@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-import Program from "../components/Program"
+import Slider from "../components/Slider"
 
-const Index = ({ data: { homepage, programs }}) => (
+const Index = ({ data: { homepage }}) => (
 
   <React.Fragment>
     <Layout>
@@ -44,7 +44,7 @@ const Index = ({ data: { homepage, programs }}) => (
         <div className="py-20">
           <div className="container mx-auto">
             <h3 className="text-center uppercase text-3xl">Our <span className="rustico">Programs</span></h3>
-              <Slider programs={programs} />
+              <Slider />
               {/* {programs.edges.map(program => (
                 <Program program={ program } />
               ))} */}
