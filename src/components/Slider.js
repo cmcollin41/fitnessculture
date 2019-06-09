@@ -1,43 +1,56 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Program from './Program'
+import PropTypes from "prop-types"
+import Program from "./Program"
 
-const Slider = () => {
-  const data = useStaticQuery(graphql`
-    query SliderQuery {
-      programs: allPrismicProgram {
-        edges {
-          node {
-            uid
-            data {
-              title {
-                text
-              }
-              hero_image{
-                url
-              }
-              lead {
-                text
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
+// class component
+class Slider extends React.Component {
+  state = {
+    index: 0,
+  }
 
-  return (
-    <Slider>
-      <div className="flex flex-col lg:flex-row justify-center items-stretch mt-10">
-        {data.programs.edges.map(program => (
-          <Program program={ program } />
-        ))}
-      </div>
-    </ Slider>
-  )
+  static propTypes = {
+    programs: PropTypes.object,
+  }
+
+
+  changeProperty = i => {
+    const index = this.state.index + i
+    this.setState({
+      index,
+    })
+  }
+
+  render() {
+    const index = this.state.index
+    return (
+        <button
+          onClick={() => this.changeProperty(-1)}
+          disabled={index === 0}
+          style={{ fontSize: "32px" }}
+        >
+          &larr;
+        </button>
+
+        <div className="cards-slider">
+          <div className="cards-slider-wrapper">
+            {this.props.programs.map(i => (
+              <Program program={i} />
+            ))}
+          </div>
+        </div>
+         
+
+        <button
+          onClick={() => this.changeProperty(1)}
+          disabled={index === this.props.programs.length - 1}
+          style={{ fontSize: "32px" }}
+        >
+          &rarr;
+        </button>
+     
+    )
+  }
 }
 
+
 export default Slider
-
-
-
