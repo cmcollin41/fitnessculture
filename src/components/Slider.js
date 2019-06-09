@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-// import { graphql } from "gatsby"
 import Program from "./Program"
 
 // class component
@@ -13,17 +12,6 @@ class Slider extends React.Component {
     programs: PropTypes.object,
   }
 
-  componentDidMount() {
-    // componentDidMount({ data }) {
-    console.log("mounted")
-    // const { programs } = programs
-    // this.setState({
-    //   // I'm not sure how to get the programs data from the Index page into the Component and up into state
-    //   properties: programs,
-    //   property: programs.index[0],
-    // })
-  }
-
   changeProperty = i => {
     const index = this.state.index + i
     this.setState({
@@ -31,31 +19,10 @@ class Slider extends React.Component {
     })
   }
 
-  // nextProperty = () => {
-  //   const newIndex = this.state.property.index + 1
-  //   this.setState({
-  //     property: properties[newIndex],
-  //   })
-  // }
-
-  // prevProperty = () => {
-  //   const newIndex = this.state.property.index - 1
-  //   this.setState({
-  //     property: properties[newIndex],
-  //   })
-  // }
-
   render() {
     const index = this.state.index
     return (
-      <div
-        className="App"
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          alignItems: "center",
-        }}
-      >
+      <React.Fragment>
         <button
           onClick={() => this.changeProperty(-1)}
           disabled={index === 0}
@@ -64,15 +31,12 @@ class Slider extends React.Component {
           &larr;
         </button>
 
-        {/* Slider  */}
-        <div
-          className="flex flex-col lg:flex-row justify-center items-stretch mt-10"
-          style={{ width: "80%" }}
-        >
-          <Program program={this.props.programs[this.state.index]} />
-          {this.props.programs.map(i => (
-            <Program program={i} />
-          ))}
+        <div className="cards-slider">
+          <div className="cards-slider-wrapper">
+            {this.props.programs.map(i => (
+              <Program program={i} />
+            ))}
+          </div>
         </div>
 
         <button
@@ -82,32 +46,9 @@ class Slider extends React.Component {
         >
           &rarr;
         </button>
-      </div>
+      </React.Fragment>
     )
   }
 }
-
-// export const query = graphql`
-//   query SliderQuery {
-//     programs: allPrismicProgram {
-//       edges {
-//         node {
-//           uid
-//           data {
-//             title {
-//               text
-//             }
-//             hero_image {
-//               url
-//             }
-//             lead {
-//               text
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
 
 export default Slider
