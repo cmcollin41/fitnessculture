@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import Slider from "../components/Slider"
 
-const Index = ({ data: { homepage }}) => (
+const Index = ({ data: { homepage, programs }}) => (
 
   <React.Fragment>
     <Layout>
@@ -44,10 +44,9 @@ const Index = ({ data: { homepage }}) => (
         <div className="py-20">
           <div className="container mx-auto">
             <h3 className="text-center uppercase text-3xl">Our <span className="rustico">Programs</span></h3>
-              <Slider />
-              {/* {programs.edges.map(program => (
-                <Program program={ program } />
-              ))} */}
+            <div className="flex flex-col lg:flex-row justify-center items-stretch mt-10">
+                <Slider />
+            </div>
           </div>
         </div>
         {/* <div className="pt-10 pb-20">
