@@ -23,6 +23,7 @@ class Slider extends React.Component {
     const index = this.state.index
     return (
       <React.Fragment>
+       
         <button
           onClick={() => this.changeProperty(-1)}
           disabled={index === 0}
@@ -31,13 +32,17 @@ class Slider extends React.Component {
           &larr;
         </button>
 
-        <div className="cards-slider">
-          <div className="cards-slider-wrapper">
-            {this.props.programs.map(i => (
-              <Program program={i} />
-            ))}
+        <div className="col">
+          <div className={`cards-slider active-slide-1`}>
+            <div className="cards-slider-wrapper" style={{
+                  'transform': `translateX(-${1*(100/3)}%)`
+                }}>
+              {this.props.programs.map((i, indexcount) => (
+                <Program program={i} index={ indexcount } key={i.node.data.uid} />
+              ))}
           </div>
         </div>
+      </div>
 
         <button
           onClick={() => this.changeProperty(1)}
@@ -46,6 +51,7 @@ class Slider extends React.Component {
         >
           &rarr;
         </button>
+       
       </React.Fragment>
     )
   }
