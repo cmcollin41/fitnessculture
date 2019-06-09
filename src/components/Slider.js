@@ -70,6 +70,9 @@ class Slider extends React.Component {
           style={{ width: "80%" }}
         >
           <Program program={this.props.programs[this.state.index]} />
+          {this.props.programs.map(i => (
+            <Program program={i} />
+          ))}
         </div>
 
         <button

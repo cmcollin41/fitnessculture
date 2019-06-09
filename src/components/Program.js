@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import { dump } from "../../helpers"
 
 // const Program = ({ program }) => {
 export default props => (
