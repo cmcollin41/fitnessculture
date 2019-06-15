@@ -77,9 +77,6 @@ const Index = ({ data }) => (
           Our <span className="rustico">Programs</span>
         </h3>
         <Slider programs={data.programs.edges} />
-        {/* {programs.edges.map(program => (
-                <Program program={ program } />
-              ))} */}
       </div>
     </div>
     {/* <div className="pt-10 pb-20">

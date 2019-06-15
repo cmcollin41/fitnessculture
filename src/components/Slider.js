@@ -4,53 +4,61 @@ import Program from "./Program"
 
 // class component
 class Slider extends React.Component {
-  state = {
-    index: 0,
-  }
 
   static propTypes = {
     programs: PropTypes.object,
   }
 
-  changeProperty = i => {
-    const index = this.state.index + i
-    this.setState({
-      index,
-    })
+  setState(indexcount) {
+    let state = indexcount
+    return state
+  }
+
+  setOrder(indexcount) {
+    // const count = this.props.programs.length
+
+    let order = indexcount
+
+    // let left = --order
+
+
+    // if (left < 0) {
+    //   left = count - 1
+    // } else if (left >= count){
+    //   left = 0
+    // }
+    return order
   }
 
   render() {
-    const index = this.state.index
     return (
       <React.Fragment>
        
-        <button
-          onClick={() => this.changeProperty(-1)}
-          disabled={index === 0}
+        {/* <button
+          onClick={() => this.setOrder(indexcount)}
           style={{ fontSize: "32px" }}
         >
           &larr;
-        </button>
+        </button> */}
 
-        <div className="col">
-          <div className={`cards-slider active-slide-1`}>
-            <div className="cards-slider-wrapper" style={{
-                  'transform': `translateX(-${1*(100/3)}%)`
-                }}>
-              {this.props.programs.map((i, indexcount) => (
-                <Program program={i} index={ indexcount } key={i.node.data.uid} />
-              ))}
+       
+        <div>
+          <div id="scroller" className="flex flex-row overflow-hidden py-10">
+            {this.props.programs.map((i, indexcount) => (
+              <Program program={i} index={ indexcount } key={i.node.data.uid} order={ this.setState(indexcount) } />
+            ))}
           </div>
         </div>
-      </div>
+        
+    
 
-        <button
+        {/* <button
           onClick={() => this.changeProperty(1)}
           disabled={index === this.props.programs.length - 1}
           style={{ fontSize: "32px" }}
         >
           &rarr;
-        </button>
+        </button> */}
        
       </React.Fragment>
     )

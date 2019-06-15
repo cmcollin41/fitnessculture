@@ -2,8 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 
 export default props => (
-  <div id={`card-${props.index}`} className="card">
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-5 h-full flex flex-col justify-between">
+  <div id={`card-${props.index}`} className={`order-${props.order}`} style={{ minWidth: "400" + "px" }}>
+    <div className="rounded shadow-lg bg-white m-5 h-full flex flex-col justify-between">
       <div
         className="w-full h-48 bg-cover bg-center"
         style={{
