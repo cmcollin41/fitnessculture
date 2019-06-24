@@ -13,16 +13,18 @@ class Slider extends React.Component {
     programs: [],
     programOrders: [],
     order: 0,
-    index: 0,
+    index: 1,
   }
 
   componentDidMount() {
     const programs = this.props.programs
     const programOrders = Array.from(Array(programs.length).keys())
+    const index = 0
 
     this.setState({
       programs,
       programOrders,
+      index
     })
   }
 
@@ -38,18 +40,19 @@ class Slider extends React.Component {
     })
     this.setState({
       programOrders: newProgramOrders,
+      index: this.state.index + i
     })
   }
 
   render() {
-    const { programs, programOrders } = this.state
+    const { programs, programOrders, index } = this.state
 
     return (
       <React.Fragment>
         <div className="flex flex-row justify-center items-center">
           <button
             onClick={() => this.changeSet(1)}
-            style={{ fontSize: "56px" }}
+            style={{ fontSize: "56px", zIndex: "5" }}
             className="hidden sm:block"
           >
             &lsaquo;
@@ -58,7 +61,7 @@ class Slider extends React.Component {
           <div className="container mx-auto">
             <div
               id="scroller"
-              className="flex flex-row overflow-hidden py-10 transition"
+              className="slider flex flex-row overflow-hidden py-10"
             >
               {programs.map((i, indexcount) => (
                 <Program
@@ -73,7 +76,7 @@ class Slider extends React.Component {
 
           <button
             onClick={() => this.changeSet(-1)}
-            style={{ fontSize: "56px" }}
+            style={{ fontSize: "56px", zIndex: "5" }}
             className="hidden sm:block"
           >
             &rsaquo;

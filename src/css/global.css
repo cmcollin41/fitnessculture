@@ -69,15 +69,20 @@
 }
 
 .transition {
-  transition: all 1s;
+  opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 5s;
 }
 
-.right{
-  transform: translateX(33.3%)
-}
-
-.left{
-  transform: translateX(-33.3%)
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 .footer{
@@ -116,7 +121,4 @@
 
 
   /* Custom Slider */
-
-  
-
   

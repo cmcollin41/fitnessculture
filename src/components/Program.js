@@ -5,25 +5,31 @@ export default props => (
   <div
     id={`card-${props.cardIndex}`}
     className={`order-${props.order} min-w-full md:min-w-1/2 lg:min-w-1/3 transition`}
+    style={{maxWidth: "226px"}}
   >
-    <div className="rounded shadow-lg bg-white m-5 h-full flex flex-col justify-between">
-      <div
-        className="w-full h-48 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${props.program.node.data.hero_image.url})`,
-        }}
-      ></div>
+    <div className="rounded bg-white m-5 h-full flex flex-col justify-between">
       <div>
-        <div className="px-6 py-4">
-          <h3 className="font-bold text-xl mb-2">
+        <div
+          className="w-full h-48 bg-cover bg-center shadow-lg"
+          style={{
+            backgroundImage: `url(${props.program.node.data.hero_image.url})`,
+          }}
+        >
+        </div>
+  
+        <div className="mt-5 py-4">
+          <h3 className="font-bold text-xl mb-2 uppercase">
             {props.program.node.data.title.text}
           </h3>
           <p className="text-gray-700 text-base">
             {props.program.node.data.lead.text}
           </p>
         </div>
-        <div className="px-6 py-10">
-          <Link to="/" className="btn-lg btn-red shadow-md">
+      
+      </div>
+      <div>
+        <div>
+          <Link to="/" className="text-red-500 uppercase font-bold">
             Learn More
           </Link>
         </div>
