@@ -27,28 +27,18 @@ class Slider extends React.Component {
 
   nextSet() {
     const count = this.props.programs.length
-    const currentState = this.state
+    const currentState = this.state.order
 
-    if (currentState >= count) {
-      this.setState({order: (this.state.order = -count)})
-    } else if (currentState <= 0) {
-      this.setState({order: (this.state.order = 0)})
-    } else {
-      this.setState({order: (this.state.order + 1 )})
-    }
+    this.setState({order: (this.state.order + 1 )})
+  
   }
 
   previousSet() {
     const count = this.props.programs.length
-    const currentState = this.state
+    const currentState = this.state.order
 
-    if (currentState >= count) {
-      this.setState({order: (this.state.order = -count)})
-    } else if (currentState <= 0) {
-      this.setState({order: (this.state.order = 0)})
-    } else {
-      this.setState({order: (this.state.order - 1 )})
-    }
+    this.setState({order: (this.state.order - 1 )})
+  
 
   }
 
