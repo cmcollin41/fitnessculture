@@ -19,8 +19,8 @@ export default () => (
             <Link to="/" className="inline-block text-sm px-4 py-2 leading-none border uppercase text-black border-white hover:border-transparent hover:text-teal-500 hover:bg-white font-bold">Get the App</Link>
         </div>
         <div className="block lg:hidden">
-            <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-            <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+            <button className="flex items-center px-3 py-2 border text-black border-black hover:text-white hover:border-white">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25px" height="25px" viewBox="0 0 50 50"><g id="surface1"><path d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z "></path></g></svg>
             </button>
         </div>
     </nav>

@@ -29,13 +29,13 @@ const Index = ({ data }) => (
     </div>
 
 
-    <div className="flex flex-row justify-center items-center pt-10 mx-5 lg:mx-10">
+    <div className="flex flex-row justify-center items-center pt-10 mx-auto lg:mx-10">
       <div className="text-center">
         <h2 className="my-10 uppercase">Your Fitness App</h2>
       </div>
     </div>
-    <div className="flex flex-col lg:flex-row justify-end items-center lg:pt-10 pb-20 mx-5 lg:mx-10 overflow-hidden lg:overflow-auto">
-      <div className="w-full lg:w-1/3 py-5 lg:px-20">
+    <div className="flex flex-col lg:flex-row justify-end items-center lg:pt-10 pb-20 mx-auto lg:mx-10 overflow-hidden lg:overflow-auto">
+      <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/3 p-5 lg:px-20">
         <h2 className="text-4xl uppercase text-center lg:text-left">Look Good</h2>
         <p className="mt-5">Experience how you can increase your 
         explosiveness, improve your speed, and build your 
@@ -47,7 +47,7 @@ const Index = ({ data }) => (
         </div>
       </div>
       <div 
-        className="w-full lg:w-1/2 bg-cover bg-center relative" 
+        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 md:ml-auto" 
         style={{
           backgroundImage: `url(${data.homepage.data.hero_image.url})`,
           minHeight: `500px`
@@ -56,8 +56,7 @@ const Index = ({ data }) => (
             src={phone}
             alt="App for Workouts"
             width="225px"
-            style={{transform: "translateY(-50%)", top: "50%"}}
-            className="absolute right--100 md:right-0"
+            className="absolute right--100 md:right-0 img-center"
           />
 
           <Link to="/" 
@@ -67,9 +66,9 @@ const Index = ({ data }) => (
       </div>
     </div>
 
-    <div className="flex flex-col lg:flex-row justify-start items-center lg:pt-10 pb-20 mx-5 lg:mx-10 overflow-hidden lg:overflow-auto">
+    <div className="flex flex-col lg:flex-row justify-start items-center lg:pt-10 pb-20 mx-auto lg:mx-10 overflow-hidden lg:overflow-auto">
       <div 
-        className="w-full lg:w-1/2 bg-cover bg-center relative  order-2 lg:order-1" 
+        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 md:ml-auto order-2 lg:order-1" 
         style={{
           backgroundImage: `url(${data.homepage.data.hero_image.url})`,
           minHeight: `500px`
@@ -78,8 +77,7 @@ const Index = ({ data }) => (
             src={phone}
             alt="App for Workouts"
             width="225px"
-            style={{transform: "translateY(-50%)", top: "50%"}}
-            className="absolute flip right--100 md:left-0"
+            className="absolute flip right--100 md:left-0 img-center"
           />
 
           <Link to="/" 
@@ -87,7 +85,7 @@ const Index = ({ data }) => (
                 style={{transform: "translate(-50%)", top: "45%", left: "50%"}}><img src="https://img.icons8.com/ios/75/000000/circled-play.png"/></Link>
 
       </div>
-      <div className="w-full lg:w-1/3 py-5 lg:px-20 order-1 lg:order-2">
+      <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/3 p-5 lg:px-20 order-1 lg:order-2">
         <h2 className="text-4xl uppercase text-center lg:text-left">Feel Better</h2>
         <p className="mt-5">Experience how you can increase your 
         explosiveness, improve your speed, and build your 
@@ -102,8 +100,8 @@ const Index = ({ data }) => (
 
 
 
-    <div className="flex flex-col lg:flex-row justify-end items-center lg:pt-10 pb-20 mx-5 lg:mx-10 overflow-hidden lg:overflow-auto">
-      <div className="w-full lg:w-1/3 py-5 lg:px-20">
+    <div className="flex flex-col lg:flex-row justify-end items-center lg:pt-10 pb-20 mx-auto lg:mx-10 overflow-hidden lg:overflow-auto">
+      <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/3 p-5 lg:px-20">
         <h2 className="text-4xl uppercase text-center lg:text-left">Perform Better</h2>
         <p className="mt-5">Experience how you can increase your 
         explosiveness, improve your speed, and build your 
@@ -115,7 +113,7 @@ const Index = ({ data }) => (
         </div>
       </div>
       <div 
-        className="w-full lg:w-1/2 bg-cover bg-center relative" 
+        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 lg:ml-auto" 
         style={{
           backgroundImage: `url(${data.homepage.data.hero_image.url})`,
           minHeight: `500px`
@@ -124,8 +122,7 @@ const Index = ({ data }) => (
             src={phone}
             alt="App for Workouts"
             width="225px"
-            style={{transform: "translateY(-50%)", top: "50%"}}
-            className="absolute right--100 md:right-0"
+            className="absolute right--100 md:right-0 img-center"
           />
 
           <Link to="/" 
