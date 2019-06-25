@@ -42,6 +42,21 @@
     @apply bg-red-800;
 }
 
+@media only screen and (max-width: 767px) {
+  .right--100 {
+    right: -100px;
+  }
+
+  .left--100 {
+    left: -100px;
+  }
+
+
+}
+
+.flip {
+  transform: scaleX(-1);
+}
 
 .dots {
     background-color: #fafafa;
@@ -68,22 +83,23 @@
   z-index: -1;
 }
 
-.transition {
-  opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 5s;
+.carousel__dot-group > button {
+    width: 20px;
+    height: 5px;
+    margin: 2px;
+    background: #e0e0e0;
+}
+.carousel__dot--selected {
+  background-color: #757575 !important;
 }
 
-@keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
+/* .carousel__slide {
+  padding-bottom: 15% !important;
+  @media only screen and (max-width: 767px) {
+    padding-bottom: 19% !important;
+  }
+  
+} */
 
 .footer{
     position: relative;

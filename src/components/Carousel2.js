@@ -1,18 +1,18 @@
 import React from 'react';
 import { CarouselProvider, Slider, Slide, DotGroup } from 'pure-react-carousel';
-import Program from "./Program"
+import Testimonial from "./Testimonial"
 import 'pure-react-carousel/dist/react-carousel.es.css';
  
-class Carousel extends React.Component {
+class Carousel2 extends React.Component {
 
   state = {
-    programs: [],
+    testimonials: [],
     vSlides: 1
   }
 
 
   componentDidMount() {
-    const programs = this.props.programs
+    const testimonials = this.props.testimonials
     let vSlides = this.state.vSlides
 
     if (window.screen.width < 768) {
@@ -24,29 +24,29 @@ class Carousel extends React.Component {
     }
 
     this.setState({
-      programs: programs,
+      testimonials: testimonials,
       vSlides: vSlides
     })
   }
 
   render() {
 
-    const {programs, vSlides} = this.state
+    const {testimonials, vSlides} = this.state
     return (
       <CarouselProvider
         className="flex-row justify-center"
         naturalSlideWidth={100}
-        naturalSlideHeight={125}
-        totalSlides={programs.length}
+        naturalSlideHeight={100}
+        totalSlides={testimonials.length}
         visibleSlides={vSlides}
         step={1}
       >
 
           <Slider className="max-width: 100%">
-            {programs.map((i, indexcount) => (
+            {testimonials.map((i, indexcount) => (
               <Slide index={indexcount}>
-                <Program
-                  program={i}
+                <Testimonial
+                  testimonial={i}
                   cardIndex={indexcount}
                   key={i.node.uid}
                   className="flex flex-col justify-center align-center"
@@ -62,5 +62,4 @@ class Carousel extends React.Component {
   }
 }
 
-export default Carousel
-
+export default Carousel2

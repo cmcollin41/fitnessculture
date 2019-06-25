@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import logo from '../../static/fc-logo-horizontal-black.png'
 
 export default () => (
-    <nav className="flex items-center justify-between flex-wrap bg-white px-10 py-4" >
+    <nav className="flex items-center justify-between flex-wrap bg-white mx-5 lg:mx-10 py-4" >
         <div className="flex items-center flex-shrink-0 text-white mr-6">
             <Link to="/"><img src={ logo } alt="Logo" width={"150px"} /></Link>
         </div>

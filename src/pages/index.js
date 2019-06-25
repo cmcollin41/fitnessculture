@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import Carousel from "../components/Carousel"
+import Carousel2 from "../components/Carousel2"
 import phone from '../../static/workout-phone.png'
 
 // const Index = ({ data: { homepage } }, { data: { programs } }) => (
@@ -41,7 +42,7 @@ const Index = ({ data }) => (
         best physique with the Athlete program from
         Fitness Culture.
         </p>
-        <div className="mt-5">
+        <div className="mt-5 hidden md:block">
           <Link to="/" className="text-red-500 uppercase font-bold">Watch Video</Link>
         </div>
       </div>
@@ -56,7 +57,7 @@ const Index = ({ data }) => (
             alt="App for Workouts"
             width="225px"
             style={{transform: "translateY(-50%)", top: "50%"}}
-            className="absolute right-0"
+            className="absolute right--100 md:right-0"
           />
 
           <Link to="/" 
@@ -66,10 +67,9 @@ const Index = ({ data }) => (
       </div>
     </div>
 
-
     <div className="flex flex-col lg:flex-row justify-start items-center lg:pt-10 pb-20 mx-5 lg:mx-10 overflow-hidden lg:overflow-auto">
-    <div 
-        className="w-full lg:w-1/2 bg-cover bg-center relative" 
+      <div 
+        className="w-full lg:w-1/2 bg-cover bg-center relative  order-2 lg:order-1" 
         style={{
           backgroundImage: `url(${data.homepage.data.hero_image.url})`,
           minHeight: `500px`
@@ -79,7 +79,7 @@ const Index = ({ data }) => (
             alt="App for Workouts"
             width="225px"
             style={{transform: "translateY(-50%)", top: "50%"}}
-            className="absolute left-0"
+            className="absolute flip right--100 md:left-0"
           />
 
           <Link to="/" 
@@ -87,18 +87,20 @@ const Index = ({ data }) => (
                 style={{transform: "translate(-50%)", top: "45%", left: "50%"}}><img src="https://img.icons8.com/ios/75/000000/circled-play.png"/></Link>
 
       </div>
-      <div className="w-full lg:w-1/3 py-5 lg:px-20">
+      <div className="w-full lg:w-1/3 py-5 lg:px-20 order-1 lg:order-2">
         <h2 className="text-4xl uppercase text-center lg:text-left">Feel Better</h2>
         <p className="mt-5">Experience how you can increase your 
         explosiveness, improve your speed, and build your 
         best physique with the Athlete program from
         Fitness Culture.
         </p>
-        <div className="mt-5">
+        <div className="mt-5 hidden md:block">
           <Link to="/" className="text-red-500 uppercase font-bold">Watch Video</Link>
         </div>
       </div>
     </div>
+
+
 
     <div className="flex flex-col lg:flex-row justify-end items-center lg:pt-10 pb-20 mx-5 lg:mx-10 overflow-hidden lg:overflow-auto">
       <div className="w-full lg:w-1/3 py-5 lg:px-20">
@@ -108,7 +110,7 @@ const Index = ({ data }) => (
         best physique with the Athlete program from
         Fitness Culture.
         </p>
-        <div className="mt-5">
+        <div className="mt-5 hidden md:block">
           <Link to="/" className="text-red-500 uppercase font-bold">Watch Video</Link>
         </div>
       </div>
@@ -123,7 +125,7 @@ const Index = ({ data }) => (
             alt="App for Workouts"
             width="225px"
             style={{transform: "translateY(-50%)", top: "50%"}}
-            className="absolute right-0"
+            className="absolute right--100 md:right-0"
           />
 
           <Link to="/" 
@@ -184,11 +186,10 @@ const Index = ({ data }) => (
 
     <div className="py-20">
       <div className="container mx-auto">
-        <h3 className="text-center uppercase text-3xl">
+        <h3 className="text-center uppercase text-3xl pb-5 lg:pb-10">
           Our <span className="rustico">Programs</span>
         </h3>
-        {/* <Slider programs={data.programs.edges} /> */}
-        <Carousel />
+        <Carousel programs={data.programs.edges} />
       </div>
     </div>
     {/* <div className="pt-10 pb-20">
@@ -210,34 +211,37 @@ const Index = ({ data }) => (
 
 
   <div className="py-20" style={{ backgroundColor: "#F9F9F9" }}>
-
+    <div className="container mx-auto">
+        <h3 className="text-center uppercase text-3xl pb-5 lg:pb-10">
+          See the <span className="rustico">Results</span>
+        </h3>
+        <Carousel2 testimonials={data.testimonials.edges} />
+      </div>
   </div>
 
 
       
     <div className="mx-5 lg:mx-10 py-20">
-      
       <div className="flex flex-col lg:flex-row justify-start items-center mt-10 h-full">
         <div 
-        className="w-full lg:w-1/2 bg-cover bg-center relative" 
-        style={{
+          className="w-full lg:w-1/2 bg-cover bg-center relative" 
+          style={{
           backgroundImage: `url(${data.homepage.data.owners_image.url})`,
           minHeight: `500px`
-      }}>
+          }}>
         </div>
-          <div className="w-full lg:w-1/3 p-10">
-            <h2 className="text-3xl uppercase">
-              Jake and Steve
-            </h2>
-            <p className="mt-5">{data.homepage.data.owner_lead.text}</p>
-            <div className="mt-10">
-              <Link to="/" className="btn-lg btn-red shadow-md">
-                Watch Video
-              </Link>
-            </div>
+        <div className="w-full lg:w-1/3 pt-5 lg:p-10">
+          <h2 className="text-3xl uppercase">
+            Jake and Steve
+          </h2>
+          <p className="mt-5">{data.homepage.data.owner_lead.text}</p>
+          <div className="mt-10">
+            <Link to="/" className="btn-lg btn-red shadow-md">
+              Watch Video
+            </Link>
           </div>
         </div>
-      
+      </div>
     </div>
   </Layout>
 )
@@ -283,6 +287,24 @@ export const pageQuery = graphql`
               text
             }
             hero_image {
+              url
+            }
+            lead {
+              text
+            }
+          }
+        }
+      }
+    }
+    testimonials: allPrismicTestimonial{
+      edges {
+        node {
+          uid
+          data {
+            title {
+              text
+            }
+            image {
               url
             }
             lead {
