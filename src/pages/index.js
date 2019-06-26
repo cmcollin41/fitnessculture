@@ -220,7 +220,7 @@ const Index = ({ data }) => (
 
 
       
-    <div className="mx-5 lg:mx-10 py-20">
+    <div className="mx-5 lg:mx-10 pt-10 pb-20 lg:py-20">
       <div className="flex flex-col lg:flex-row justify-start items-center mt-10 h-full">
         <div 
           className="w-full lg:w-1/2 bg-cover bg-center relative" 
