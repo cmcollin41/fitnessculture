@@ -10,11 +10,6 @@
 
 
 
-.rustico {
-    font-weight: 700;
-    font-style: normal;
-}
-
 .btn {
     @apply font-bold py-2 px-4 uppercase;
     text-decoration: none;

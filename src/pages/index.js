@@ -16,7 +16,7 @@ const Index = ({ data }) => (
         minHeight: `60vh`,
       }}
     >
-      <h1 className="uppercase rustico text-center text-white text-4xl lg:text-6xl" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5"}}>
+      <h1 className="uppercase text-center text-white text-4xl lg:text-6xl" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5"}}>
         {data.homepage.data.h1.text}
       </h1>
       <p className="text-center text-white mt-5 lg:w-1/2 text-xl w:1-2 hidden lg:block" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5"}}>
@@ -186,7 +186,7 @@ const Index = ({ data }) => (
     <div className="py-20">
       <div className="container mx-auto">
         <h3 className="text-center uppercase text-3xl pb-5 lg:pb-10">
-          Our <span className="rustico">Programs</span>
+          Our Programs
         </h3>
         <Carousel programs={data.programs.edges} />
       </div>
@@ -212,7 +212,7 @@ const Index = ({ data }) => (
   <div className="py-20" style={{ backgroundColor: "#F9F9F9" }}>
     <div className="container mx-auto">
         <h3 className="text-center uppercase text-3xl pb-5 lg:pb-10">
-          See the <span className="rustico">Results</span>
+          See the Results
         </h3>
         <Carousel2 testimonials={data.testimonials.edges} />
       </div>
