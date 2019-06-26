@@ -37,7 +37,7 @@ const Index = ({ data }) => (
       </div>
     </div> */}
 
-    <div className="flex flex-col lg:flex-row justify-end items-center lg:pt-10 pb-20 mx-auto lg:mx-10 overflow-hidden lg:overflow-auto">
+    <div className="flex flex-col lg:flex-row justify-end items-center pt-10 pb-20 lg:py-20 mx-auto lg:mx-10 overflow-hidden lg:overflow-auto">
       <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/3 p-5 lg:px-20">
         <h2 className="text-4xl uppercase text-center lg:text-left">Look Good</h2>
         <p className="mt-5">Experience how you can increase your 
@@ -116,7 +116,7 @@ const Index = ({ data }) => (
         </div>
       </div>
       <div 
-        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 md:ml-0" 
+        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 lg:ml-auto" 
         style={{
           backgroundImage: `url(${data.homepage.data.hero_image.url})`,
           minHeight: `500px`
