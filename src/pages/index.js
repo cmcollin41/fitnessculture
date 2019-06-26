@@ -16,7 +16,8 @@ const Index = ({ data }) => (
         minHeight: `60vh`,
       }}
     >
-      <h1 className="uppercase text-center text-white text-4xl lg:text-6xl" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5"}}>
+      <span class="flex rounded-full bg-black uppercase px-2 py-1 text-xs mr-3 text-white">Your #1 Fitness App</span>
+      <h1 className="uppercase text-center text-white text-4xl lg:text-6xl mt-4" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5"}}>
         {data.homepage.data.h1.text}
       </h1>
       <p className="text-center text-white mt-5 lg:w-1/2 text-xl w:1-2 hidden lg:block" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5"}}>
@@ -30,11 +31,11 @@ const Index = ({ data }) => (
     </div>
 
 
-    <div className="flex flex-row justify-center items-center pt-10 mx-auto lg:mx-10">
+    {/* <div className="flex flex-row justify-center items-center pt-10 mx-auto lg:mx-10">
       <div className="text-center">
         <h2 className="my-10 uppercase">Your Fitness App</h2>
       </div>
-    </div>
+    </div> */}
 
     <div className="flex flex-col lg:flex-row justify-end items-center lg:pt-10 pb-20 mx-auto lg:mx-10 overflow-hidden lg:overflow-auto">
       <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/3 p-5 lg:px-20">
@@ -49,7 +50,7 @@ const Index = ({ data }) => (
         </div>
       </div>
       <div 
-        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 md:ml-auto" 
+        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 md:ml-0" 
         style={{
           backgroundImage: `url(${data.homepage.data.hero_image.url})`,
           minHeight: `500px`
@@ -70,7 +71,7 @@ const Index = ({ data }) => (
 
     <div className="flex flex-col lg:flex-row justify-start items-center lg:pt-10 pb-20 mx-auto lg:mx-10 overflow-hidden lg:overflow-auto">
       <div 
-        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 md:ml-auto order-2 lg:order-1" 
+        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 md:ml-0 order-2 lg:order-1" 
         style={{
           backgroundImage: `url(${data.homepage.data.hero_image.url})`,
           minHeight: `500px`
@@ -87,7 +88,7 @@ const Index = ({ data }) => (
                 style={{transform: "translate(-50%)", top: "45%", left: "50%"}}><img src="https://img.icons8.com/ios/75/000000/circled-play.png"/></Link>
 
       </div>
-      <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/3 p-5 lg:px-20 order-1 lg:order-2">
+      <div className="w-full xl:w-1/3 p-5 lg:px-20 order-1 lg:order-2">
         <h2 className="text-4xl uppercase text-center lg:text-left">Feel Better</h2>
         <p className="mt-5">Experience how you can increase your 
         explosiveness, improve your speed, and build your 
@@ -115,7 +116,7 @@ const Index = ({ data }) => (
         </div>
       </div>
       <div 
-        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 lg:ml-auto" 
+        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 md:ml-0" 
         style={{
           backgroundImage: `url(${data.homepage.data.hero_image.url})`,
           minHeight: `500px`
