@@ -1,6 +1,5 @@
 @font-face {
     font-family: "Futura Condensed Extra";
     src: url('../fonts/Futura Condensed Extra Bold.otf');
-    font-weight: bold;
-    letter-spacing: 2rem;
+    font-weight: 700;
 }
