@@ -2,7 +2,10 @@ import React from "react"
 import { Link } from "gatsby"
 
 export default props => (
-  <div id={`card-${props.index}`} className={`order-${props.order} min-w-full md:min-w-1/2 lg:min-w-1/3 transition`}>
+  <div
+    id={`card-${props.cardIndex}`}
+    className={`order-${props.order} min-w-full md:min-w-1/2 lg:min-w-1/3 transition`}
+  >
     <div className="rounded shadow-lg bg-white m-5 h-full flex flex-col justify-between">
       <div
         className="w-full h-48 bg-cover bg-center"
