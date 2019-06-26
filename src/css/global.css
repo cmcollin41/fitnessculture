@@ -42,6 +42,26 @@
     @apply bg-red-800;
 }
 
+@media only screen and (max-width: 767px) {
+  .right--100 {
+    right: -100px;
+  }
+
+  .left--100 {
+    left: -100px;
+  }
+
+
+}
+
+.flip {
+  transform: scaleX(-1);
+}
+
+.img-center {
+  transform: translateY(-50%);
+  top: 50%
+}
 
 .dots {
     background-color: #fafafa;
@@ -68,17 +88,23 @@
   z-index: -1;
 }
 
-.transition {
-  transition: all 1s;
+.carousel__dot-group > button {
+    width: 20px;
+    height: 5px;
+    margin: 2px;
+    background: #e0e0e0;
+}
+.carousel__dot--selected {
+  background-color: #757575 !important;
 }
 
-.right{
-  transform: translateX(33.3%)
-}
-
-.left{
-  transform: translateX(-33.3%)
-}
+/* .carousel__slide {
+  padding-bottom: 15% !important;
+  @media only screen and (max-width: 767px) {
+    padding-bottom: 19% !important;
+  }
+  
+} */
 
 .footer{
     position: relative;
@@ -116,7 +142,4 @@
 
 
   /* Custom Slider */
-
-  
-
   
