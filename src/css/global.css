@@ -10,12 +10,6 @@
 
 
 
-.rustico {
-    font-weight: 700;
-    font-style: normal;
-    letter-spacing: 0.20rem;
-}
-
 .btn {
     @apply font-bold py-2 px-4 uppercase;
     text-decoration: none;
@@ -62,6 +56,8 @@
   transform: translateY(-50%);
   top: 50%
 }
+
+
 
 .dots {
     background-color: #fafafa;
@@ -140,6 +136,26 @@
     font-size: 30px;
   }
 
-
-  /* Custom Slider */
+.pulse {
+  animation: pulse 3s ease 0s infinite;
+}
   
+
+.border-nav-b {
+  box-shadow: inset 0 -1px 0 0 #e5e5e5;
+}
+
+
+  /* Keyframs */
+
+  @keyframes pulse {
+    0% {
+        transform: scale(0.85);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.85);
+    }
+  }

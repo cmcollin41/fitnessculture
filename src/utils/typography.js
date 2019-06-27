@@ -4,14 +4,17 @@ const typography = new Typography({
   baseFontSize: "18px",
   baseLineHeight: 0,
   headerFontFamily: [
-    "Futura Condensed",
+    "futuracondensed_extra_bold",
+    "Brandon Grotesque",
     "Helvetica Neue",
     "Segoe UI",
     "Helvetica",
     "Arial",
     "sans-serif",
   ],
-  bodyFontFamily: ["Roboto", "san-serif"],
+  bodyFontFamily: [
+    "Roboto", 
+    "sans-serif"],
 })
 
 export default typography

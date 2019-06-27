@@ -16,7 +16,8 @@ const Index = ({ data }) => (
         minHeight: `60vh`,
       }}
     >
-      <h1 className="uppercase rustico text-center text-white text-4xl lg:text-6xl" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5"}}>
+      <span class="flex rounded-full bg-black uppercase px-2 py-1 text-xs text-white">Your #1 Fitness App</span>
+      <h1 className="uppercase text-center text-white text-4xl lg:text-6xl mt-4" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
         {data.homepage.data.h1.text}
       </h1>
       <p className="text-center text-white mt-5 lg:w-1/2 text-xl w:1-2 hidden lg:block" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5"}}>
@@ -30,13 +31,13 @@ const Index = ({ data }) => (
     </div>
 
 
-    <div className="flex flex-row justify-center items-center pt-10 mx-auto lg:mx-10">
+    {/* <div className="flex flex-row justify-center items-center pt-10 mx-auto lg:mx-10">
       <div className="text-center">
         <h2 className="my-10 uppercase">Your Fitness App</h2>
       </div>
-    </div>
+    </div> */}
 
-    <div className="flex flex-col lg:flex-row justify-end items-center lg:pt-10 pb-20 mx-auto lg:mx-10 overflow-hidden lg:overflow-auto">
+    <div className="flex flex-col lg:flex-row justify-end items-center pt-10 pb-20 lg:py-20 mx-auto lg:mx-10 overflow-hidden lg:overflow-auto">
       <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/3 p-5 lg:px-20">
         <h2 className="text-4xl uppercase text-center lg:text-left">Look Good</h2>
         <p className="mt-5">Experience how you can increase your 
@@ -49,7 +50,7 @@ const Index = ({ data }) => (
         </div>
       </div>
       <div 
-        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 md:ml-auto" 
+        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 md:ml-0 shadow-lg" 
         style={{
           backgroundImage: `url(${data.homepage.data.hero_image.url})`,
           minHeight: `500px`
@@ -63,14 +64,14 @@ const Index = ({ data }) => (
 
           <Link to="/" 
                 className="absolute"
-                style={{transform: "translate(-50%)", top: "45%", left: "50%"}}><img src="https://img.icons8.com/ios/75/000000/circled-play.png"/></Link>
+                style={{transform: "translate(-50%)", top: "45%", left: "50%"}}><img className="pulse" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAHugAAB7oBj/ZIjgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAASBSURBVHic7ZlLiBxVFIb/W9XdMmSG6VMzDaIo+A6KglmqEBdufGzdGZfu0hkhEoKPcVy5NMIY3AhOZqXuYgJCNJgEEYOJJpgZJYoKomhX960eF+pU3+NiuiaNMZPp7qq69Tjfvu75uR/3dv1dgCAIgiAIgiAIgiAII0JEr8/MzOy0nSNPOHEuppR6zBjzDREtTU5ONuJcu6jEKmBgzT3VanW1Xq/vA+AmMKMwJCEgwlNKvUFEZ4nokQTn5JokBUQ8COAUEb1HRLemMC9XpCEAABSApwFc8jzvVQA3pDQ386QlIGIHM897nneRiJ5MeXYmSVsAAICZ7wLwIREdnZ6evsNGhqxgRcAATzmOs+J53qHZ2dkpy1msYFsAAFSZudnr9Vbr9fqz2Pi9KA1ZEBBxk1LqXSI6SUQP2A6TFlkSELEbwHkiWpqampq1HSZpsigA6LfpSqXybdHbdFYFRBS+TWddQMRmm/Y87xbbYeIkLwKAfptm5pUitek8CYgYbNNP2A4zLnkUAGCzTR/rt+nbbecZldwKGCDXbboIAgCg1m/TK3lr00UREHFz3tp00QRE7AbwJRG9nfU2XVQBAFAB8FzW23SRBUREbfoLInrYdpj/UgYBEbsAnCaipUajcaPtMBFlEgBsvB3tCcPwclbadNkERGSmTZdVAIBstOlSCxhgs003Go3JNAeLgCvUmLkZhmGq36ZFwNVEbfoTIro/6WEi4No8CuBc0m1aBGxN4m1aBGyPzTbted5DcS4sAoZjFzOfibNNi4DhibVNi4DR2cHM8/V6/QIRPT7qIiJgTJRSdwM43m/Ttw37vAiID6darVaHfaiSRJKScZGZ92mtT47ysAgYnYCZ57XWiwDCURcRAcPTU0otrq+vv7a2tuaPu5gIGI7PjDF7gyA4F9eCImB7/MbMB7TWRwBwnAvLW9DW/K2UWqjVandqrZcQ8+YDcgK24rjrus+3Wq3vkhwiAq7mBwBznU7naBrDRMAV/mTml7TWhwH8k9ZQEbBxry87jnPQ9/1f0h5edgEXmLmptf7UVoCyCmgppV5st9vvYIwWGwdlE9BTSi2GYbjQ7XbbtsMA5RJwhpmbnU7nvO0gg5RBwM9Kqf3tdvsDJFCkxqXIAkIAh40x80EQdGyHuRZFFXCs1+vNdbvdy7aDXI+iCVhxHKfp+/4J20G2S1EErDHzy1rrtwCs2w4zDHn/N5QBHHFdd6fW+hBytvlAvk/A1/0We8p2kHHIo4A/mHm/1noZgLEdZlzydAX1lFJvGmPu6X8cyf3mA/k5Aaf7LfYr20HiJusCfgKwN62PIzbI6hX0l1JqYWJi4t4ibz6QzRPwvjHmYBAE39sOkgZZEnDJGNMMguBj20HSJAsCusz8Sh5bbBzYFMAAll3XPdBqtX61mMMqtgR83v/T7Kyl+ZkhVQFKqd+NMS8UpcXGQVqvoWERW2wcpHECPnIcZ873/dUUZuWOJAX8CKBZ9CI1LklcQVGLvU82//rEegKY+YTjOM/IdSMIgiAIgiAIgiAIwv/zLwVCiz+8kiesAAAAAElFTkSuQmCC"/></Link>
 
       </div>
     </div>
 
     <div className="flex flex-col lg:flex-row justify-start items-center lg:pt-10 pb-20 mx-auto lg:mx-10 overflow-hidden lg:overflow-auto">
       <div 
-        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 md:ml-auto order-2 lg:order-1" 
+        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 md:ml-0 order-2 lg:order-1 shadow-lg" 
         style={{
           backgroundImage: `url(${data.homepage.data.hero_image.url})`,
           minHeight: `500px`
@@ -84,10 +85,10 @@ const Index = ({ data }) => (
 
           <Link to="/" 
                 className="absolute"
-                style={{transform: "translate(-50%)", top: "45%", left: "50%"}}><img src="https://img.icons8.com/ios/75/000000/circled-play.png"/></Link>
+                style={{transform: "translate(-50%)", top: "45%", left: "50%"}}><img className="pulse" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAHugAAB7oBj/ZIjgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAASBSURBVHic7ZlLiBxVFIb/W9XdMmSG6VMzDaIo+A6KglmqEBdufGzdGZfu0hkhEoKPcVy5NMIY3AhOZqXuYgJCNJgEEYOJJpgZJYoKomhX960eF+pU3+NiuiaNMZPp7qq69Tjfvu75uR/3dv1dgCAIgiAIgiAIgiAII0JEr8/MzOy0nSNPOHEuppR6zBjzDREtTU5ONuJcu6jEKmBgzT3VanW1Xq/vA+AmMKMwJCEgwlNKvUFEZ4nokQTn5JokBUQ8COAUEb1HRLemMC9XpCEAABSApwFc8jzvVQA3pDQ386QlIGIHM897nneRiJ5MeXYmSVsAAICZ7wLwIREdnZ6evsNGhqxgRcAATzmOs+J53qHZ2dkpy1msYFsAAFSZudnr9Vbr9fqz2Pi9KA1ZEBBxk1LqXSI6SUQP2A6TFlkSELEbwHkiWpqampq1HSZpsigA6LfpSqXybdHbdFYFRBS+TWddQMRmm/Y87xbbYeIkLwKAfptm5pUitek8CYgYbNNP2A4zLnkUAGCzTR/rt+nbbecZldwKGCDXbboIAgCg1m/TK3lr00UREHFz3tp00QRE7AbwJRG9nfU2XVQBAFAB8FzW23SRBUREbfoLInrYdpj/UgYBEbsAnCaipUajcaPtMBFlEgBsvB3tCcPwclbadNkERGSmTZdVAIBstOlSCxhgs003Go3JNAeLgCvUmLkZhmGq36ZFwNVEbfoTIro/6WEi4No8CuBc0m1aBGxN4m1aBGyPzTbted5DcS4sAoZjFzOfibNNi4DhibVNi4DR2cHM8/V6/QIRPT7qIiJgTJRSdwM43m/Ttw37vAiID6darVaHfaiSRJKScZGZ92mtT47ysAgYnYCZ57XWiwDCURcRAcPTU0otrq+vv7a2tuaPu5gIGI7PjDF7gyA4F9eCImB7/MbMB7TWRwBwnAvLW9DW/K2UWqjVandqrZcQ8+YDcgK24rjrus+3Wq3vkhwiAq7mBwBznU7naBrDRMAV/mTml7TWhwH8k9ZQEbBxry87jnPQ9/1f0h5edgEXmLmptf7UVoCyCmgppV5st9vvYIwWGwdlE9BTSi2GYbjQ7XbbtsMA5RJwhpmbnU7nvO0gg5RBwM9Kqf3tdvsDJFCkxqXIAkIAh40x80EQdGyHuRZFFXCs1+vNdbvdy7aDXI+iCVhxHKfp+/4J20G2S1EErDHzy1rrtwCs2w4zDHn/N5QBHHFdd6fW+hBytvlAvk/A1/0We8p2kHHIo4A/mHm/1noZgLEdZlzydAX1lFJvGmPu6X8cyf3mA/k5Aaf7LfYr20HiJusCfgKwN62PIzbI6hX0l1JqYWJi4t4ibz6QzRPwvjHmYBAE39sOkgZZEnDJGNMMguBj20HSJAsCusz8Sh5bbBzYFMAAll3XPdBqtX61mMMqtgR83v/T7Kyl+ZkhVQFKqd+NMS8UpcXGQVqvoWERW2wcpHECPnIcZ873/dUUZuWOJAX8CKBZ9CI1LklcQVGLvU82//rEegKY+YTjOM/IdSMIgiAIgiAIgiAIwv/zLwVCiz+8kiesAAAAAElFTkSuQmCC"/></Link>
 
       </div>
-      <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/3 p-5 lg:px-20 order-1 lg:order-2">
+      <div className="w-full xl:w-1/3 p-5 lg:px-20 order-1 lg:order-2">
         <h2 className="text-4xl uppercase text-center lg:text-left">Feel Better</h2>
         <p className="mt-5">Experience how you can increase your 
         explosiveness, improve your speed, and build your 
@@ -115,7 +116,7 @@ const Index = ({ data }) => (
         </div>
       </div>
       <div 
-        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 lg:ml-auto" 
+        className="w-full lg:w-1/2 bg-cover bg-center relative ml-10 md:ml-0 shadow-lg" 
         style={{
           backgroundImage: `url(${data.homepage.data.hero_image.url})`,
           minHeight: `500px`
@@ -129,7 +130,7 @@ const Index = ({ data }) => (
 
           <Link to="/" 
                 className="absolute"
-                style={{transform: "translate(-50%)", top: "45%", left: "50%"}}><img src="https://img.icons8.com/ios/75/000000/circled-play.png"/></Link>
+                style={{transform: "translate(-50%)", top: "45%", left: "50%"}}><img className="pulse" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAHugAAB7oBj/ZIjgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAASBSURBVHic7ZlLiBxVFIb/W9XdMmSG6VMzDaIo+A6KglmqEBdufGzdGZfu0hkhEoKPcVy5NMIY3AhOZqXuYgJCNJgEEYOJJpgZJYoKomhX960eF+pU3+NiuiaNMZPp7qq69Tjfvu75uR/3dv1dgCAIgiAIgiAIgiAII0JEr8/MzOy0nSNPOHEuppR6zBjzDREtTU5ONuJcu6jEKmBgzT3VanW1Xq/vA+AmMKMwJCEgwlNKvUFEZ4nokQTn5JokBUQ8COAUEb1HRLemMC9XpCEAABSApwFc8jzvVQA3pDQ386QlIGIHM897nneRiJ5MeXYmSVsAAICZ7wLwIREdnZ6evsNGhqxgRcAATzmOs+J53qHZ2dkpy1msYFsAAFSZudnr9Vbr9fqz2Pi9KA1ZEBBxk1LqXSI6SUQP2A6TFlkSELEbwHkiWpqampq1HSZpsigA6LfpSqXybdHbdFYFRBS+TWddQMRmm/Y87xbbYeIkLwKAfptm5pUitek8CYgYbNNP2A4zLnkUAGCzTR/rt+nbbecZldwKGCDXbboIAgCg1m/TK3lr00UREHFz3tp00QRE7AbwJRG9nfU2XVQBAFAB8FzW23SRBUREbfoLInrYdpj/UgYBEbsAnCaipUajcaPtMBFlEgBsvB3tCcPwclbadNkERGSmTZdVAIBstOlSCxhgs003Go3JNAeLgCvUmLkZhmGq36ZFwNVEbfoTIro/6WEi4No8CuBc0m1aBGxN4m1aBGyPzTbted5DcS4sAoZjFzOfibNNi4DhibVNi4DR2cHM8/V6/QIRPT7qIiJgTJRSdwM43m/Ttw37vAiID6darVaHfaiSRJKScZGZ92mtT47ysAgYnYCZ57XWiwDCURcRAcPTU0otrq+vv7a2tuaPu5gIGI7PjDF7gyA4F9eCImB7/MbMB7TWRwBwnAvLW9DW/K2UWqjVandqrZcQ8+YDcgK24rjrus+3Wq3vkhwiAq7mBwBznU7naBrDRMAV/mTml7TWhwH8k9ZQEbBxry87jnPQ9/1f0h5edgEXmLmptf7UVoCyCmgppV5st9vvYIwWGwdlE9BTSi2GYbjQ7XbbtsMA5RJwhpmbnU7nvO0gg5RBwM9Kqf3tdvsDJFCkxqXIAkIAh40x80EQdGyHuRZFFXCs1+vNdbvdy7aDXI+iCVhxHKfp+/4J20G2S1EErDHzy1rrtwCs2w4zDHn/N5QBHHFdd6fW+hBytvlAvk/A1/0We8p2kHHIo4A/mHm/1noZgLEdZlzydAX1lFJvGmPu6X8cyf3mA/k5Aaf7LfYr20HiJusCfgKwN62PIzbI6hX0l1JqYWJi4t4ibz6QzRPwvjHmYBAE39sOkgZZEnDJGNMMguBj20HSJAsCusz8Sh5bbBzYFMAAll3XPdBqtX61mMMqtgR83v/T7Kyl+ZkhVQFKqd+NMS8UpcXGQVqvoWERW2wcpHECPnIcZ873/dUUZuWOJAX8CKBZ9CI1LklcQVGLvU82//rEegKY+YTjOM/IdSMIgiAIgiAIgiAIwv/zLwVCiz+8kiesAAAAAElFTkSuQmCC"/></Link>
 
       </div>
     </div>
@@ -186,7 +187,7 @@ const Index = ({ data }) => (
     <div className="py-20">
       <div className="container mx-auto">
         <h3 className="text-center uppercase text-3xl pb-5 lg:pb-10">
-          Our <span className="rustico">Programs</span>
+          Our Programs
         </h3>
         <Carousel programs={data.programs.edges} />
       </div>
@@ -212,7 +213,7 @@ const Index = ({ data }) => (
   <div className="py-20" style={{ backgroundColor: "#F9F9F9" }}>
     <div className="container mx-auto">
         <h3 className="text-center uppercase text-3xl pb-5 lg:pb-10">
-          See the <span className="rustico">Results</span>
+          See the Results
         </h3>
         <Carousel2 testimonials={data.testimonials.edges} />
       </div>
@@ -220,7 +221,7 @@ const Index = ({ data }) => (
 
 
       
-    <div className="mx-5 lg:mx-10 py-20">
+    <div className="mx-5 lg:mx-10 pt-10 pb-20 lg:py-20">
       <div className="flex flex-col lg:flex-row justify-start items-center mt-10 h-full">
         <div 
           className="w-full lg:w-1/2 bg-cover bg-center relative" 
