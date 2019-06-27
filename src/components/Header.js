@@ -24,7 +24,7 @@ export default () => (
     render = {data => (
       <header>
         <nav className="flex items-center justify-between flex-wrap bg-white px-4 border-nav-b relative">
-          <div className="flex items-center flex-grow text-black py-4">
+          <div className="hidden lg:flex items-center flex-grow text-black py-4">
             <Link to="/"><img src={ logo } alt="Logo" width={"150px"} /></Link>
           </div>
           <div className="w-full block hidden flex-grow lg:flex lg:justify-center lg:items-center lg:ml-auto lg:w-auto">
@@ -53,45 +53,47 @@ export default () => (
               <a href="#" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-teal-500 hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 uppercase">Get Started</a>
             </div>
           </div>
-
-          {/* Start of mobile nav */}
-          <Toggle render={({on, toggle}) => (
-            <React.Fragment>
-              <div className="block lg:hidden py-4">
-                <button onClick={toggle} className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-                  <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-                </button>
-              </div>
-              { on && 
-                <div className="w-full block lg:hidden">
-                    <Toggle 
-                      render={({on, toggle}) => (
-                        <div>
-                          <div onClick={toggle} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold mr-4">Programs &#x2304;</div>
-                          {on && 
-                            <div className="text-sm lg:flex-grow">
-                              {data.programs.edges.map((i, count) => (
-                                <Link to={"/programs/" + i.node.uid} key={count} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 mr-4">{i.node.data.title.text}</Link>
-                              ))}
-                            </div>
-                          }
-                        </div>
-                      )}
-                    />
-
-                    <a href="https://shopify.com" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold mr-4">Shop</a>
-                    <Link to="/pricing" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold mr-4">Pricing</Link>
-                    <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold mr-4">About</Link>
-                  <div>
-                    <a href="#" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-teal-500 hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 uppercase">Get Started</a>
-                  </div>
-                </div>
-              }
-            </React.Fragment>
-          )}
-          />
-          {/* End of Toggle */}
         </nav>
+          
+        <Toggle render={({on, toggle}) => (
+          <nav className="flex items-center justify-between flex-wrap bg-white px-4 border-nav-b relative">
+            <div className="flex lg:hidden items-center flex-grow text-black py-4">
+              <Link to="/"><img src={ logo } alt="Logo" width={"150px"} /></Link>
+            </div>
+            <div className="block lg:hidden py-4">
+              <button onClick={toggle} className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400">
+                <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+              </button>
+            </div>
+            { on && 
+              <div className="w-full block lg:hidden">
+                  <Toggle 
+                    render={({on, toggle}) => (
+                      <div>
+                        <div onClick={toggle} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold mr-4">Programs &#x2304;</div>
+                        {on && 
+                          <div className="text-sm lg:flex-grow">
+                            {data.programs.edges.map((i, count) => (
+                              <Link to={"/programs/" + i.node.uid} key={count} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 mr-4">{i.node.data.title.text}</Link>
+                            ))}
+                          </div>
+                        }
+                      </div>
+                    )}
+                  />
+
+                  <a href="https://shopify.com" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold mr-4">Shop</a>
+                  <Link to="/pricing" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold mr-4">Pricing</Link>
+                  <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold mr-4">About</Link>
+                <div>
+                  <a href="#" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-teal-500 hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 uppercase">Get Started</a>
+                </div>
+              </div>
+            }
+          </nav>
+        )}
+        />
+          
       </header>
     )}
   />

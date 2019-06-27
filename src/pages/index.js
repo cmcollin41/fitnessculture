@@ -38,7 +38,7 @@ const Index = ({ data }) => (
     </div> */}
 
     <div className="flex flex-col lg:flex-row justify-end items-center pt-10 pb-20 lg:py-20 mx-auto lg:mx-10 overflow-hidden lg:overflow-auto">
-      <div className="w-full md:w-1/2 lg:w-1/3 p-5 lg:px-20 mx-auto">
+      <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/3 p-5 lg:px-20 mx-auto">
         <h6 className="uppercase text-center lg:text-left mb-2 text-gray-400">Training</h6>
         <h2 className="text-3xl lg:text-5xl uppercase text-center lg:text-left">Look Good</h2>
         <p className="mt-5">Experience how you can increase your 
@@ -89,7 +89,7 @@ const Index = ({ data }) => (
                 style={{transform: "translate(-50%)", top: "45%", left: "50%"}}><img className="pulse" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAHugAAB7oBj/ZIjgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAASBSURBVHic7ZlLiBxVFIb/W9XdMmSG6VMzDaIo+A6KglmqEBdufGzdGZfu0hkhEoKPcVy5NMIY3AhOZqXuYgJCNJgEEYOJJpgZJYoKomhX960eF+pU3+NiuiaNMZPp7qq69Tjfvu75uR/3dv1dgCAIgiAIgiAIgiAII0JEr8/MzOy0nSNPOHEuppR6zBjzDREtTU5ONuJcu6jEKmBgzT3VanW1Xq/vA+AmMKMwJCEgwlNKvUFEZ4nokQTn5JokBUQ8COAUEb1HRLemMC9XpCEAABSApwFc8jzvVQA3pDQ386QlIGIHM897nneRiJ5MeXYmSVsAAICZ7wLwIREdnZ6evsNGhqxgRcAATzmOs+J53qHZ2dkpy1msYFsAAFSZudnr9Vbr9fqz2Pi9KA1ZEBBxk1LqXSI6SUQP2A6TFlkSELEbwHkiWpqampq1HSZpsigA6LfpSqXybdHbdFYFRBS+TWddQMRmm/Y87xbbYeIkLwKAfptm5pUitek8CYgYbNNP2A4zLnkUAGCzTR/rt+nbbecZldwKGCDXbboIAgCg1m/TK3lr00UREHFz3tp00QRE7AbwJRG9nfU2XVQBAFAB8FzW23SRBUREbfoLInrYdpj/UgYBEbsAnCaipUajcaPtMBFlEgBsvB3tCcPwclbadNkERGSmTZdVAIBstOlSCxhgs003Go3JNAeLgCvUmLkZhmGq36ZFwNVEbfoTIro/6WEi4No8CuBc0m1aBGxN4m1aBGyPzTbted5DcS4sAoZjFzOfibNNi4DhibVNi4DR2cHM8/V6/QIRPT7qIiJgTJRSdwM43m/Ttw37vAiID6darVaHfaiSRJKScZGZ92mtT47ysAgYnYCZ57XWiwDCURcRAcPTU0otrq+vv7a2tuaPu5gIGI7PjDF7gyA4F9eCImB7/MbMB7TWRwBwnAvLW9DW/K2UWqjVandqrZcQ8+YDcgK24rjrus+3Wq3vkhwiAq7mBwBznU7naBrDRMAV/mTml7TWhwH8k9ZQEbBxry87jnPQ9/1f0h5edgEXmLmptf7UVoCyCmgppV5st9vvYIwWGwdlE9BTSi2GYbjQ7XbbtsMA5RJwhpmbnU7nvO0gg5RBwM9Kqf3tdvsDJFCkxqXIAkIAh40x80EQdGyHuRZFFXCs1+vNdbvdy7aDXI+iCVhxHKfp+/4J20G2S1EErDHzy1rrtwCs2w4zDHn/N5QBHHFdd6fW+hBytvlAvk/A1/0We8p2kHHIo4A/mHm/1noZgLEdZlzydAX1lFJvGmPu6X8cyf3mA/k5Aaf7LfYr20HiJusCfgKwN62PIzbI6hX0l1JqYWJi4t4ibz6QzRPwvjHmYBAE39sOkgZZEnDJGNMMguBj20HSJAsCusz8Sh5bbBzYFMAAll3XPdBqtX61mMMqtgR83v/T7Kyl+ZkhVQFKqd+NMS8UpcXGQVqvoWERW2wcpHECPnIcZ873/dUUZuWOJAX8CKBZ9CI1LklcQVGLvU82//rEegKY+YTjOM/IdSMIgiAIgiAIgiAIwv/zLwVCiz+8kiesAAAAAElFTkSuQmCC"/></Link>
 
       </div>
-      <div className="w-full md:w-1/2 lg:w-1/3 p-5 lg:px-20 order-1 lg:order-2 mx-auto">
+      <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/3 p-5 lg:px-20 order-1 lg:order-2 mx-auto">
         <h6 className="uppercase text-center lg:text-left mb-2 text-gray-400">Mobility</h6>
         <h2 className="text-3xl lg:text-5xl uppercase text-center lg:text-left">Feel Better</h2>
         <p className="mt-5">Experience how you can increase your 
@@ -106,7 +106,7 @@ const Index = ({ data }) => (
 
 
     <div className="flex flex-col lg:flex-row justify-end items-center lg:pt-10 pb-20 mx-auto lg:mx-10 overflow-hidden lg:overflow-auto">
-      <div className="w-full md:w-1/2 lg:w-1/3 p-5 lg:px-20 mx-auto">
+      <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/3 p-5 lg:px-20 mx-auto">
         <h6 className="uppercase text-center lg:text-left mb-2 text-gray-400">Nutrition</h6>
         <h2 className="text-3xl lg:text-5xl uppercase text-center lg:text-left">Perform Better</h2>
         <p className="mt-5">Experience how you can increase your 
