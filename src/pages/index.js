@@ -224,16 +224,18 @@ const Index = ({ data }) => (
 
 
       
-    <div className="mx-5 lg:mx-10 pt-10 pb-20 lg:py-20">
+  <div className="pt-10 pb-20 lg:py-20">
+    <div className="container mx-auto">
       <div className="flex flex-col lg:flex-row justify-start items-center mt-10 h-full">
         <div 
-          className="w-full lg:w-1/2 bg-cover bg-center relative" 
+          className="w-full lg:w-1/2 bg-cover bg-center relative shadow-lg" 
           style={{
           backgroundImage: `url(${data.homepage.data.owners_image.url})`,
           minHeight: `500px`
           }}>
         </div>
-        <div className="w-full lg:w-1/3 pt-5 lg:p-10">
+        <div className="w-full lg:w-1/2 pt-5 lg:p-10 mx-auto">
+          <h6 className="uppercase text-center lg:text-left mb-2 text-gray-400">About Us</h6>
           <h2 className="text-3xl uppercase">
             Jake and Steve
           </h2>
@@ -244,6 +246,7 @@ const Index = ({ data }) => (
             </Link>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </Layout>

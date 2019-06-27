@@ -36,6 +36,18 @@
     @apply bg-red-800;
 }
 
+.nav-link {
+  @apply uppercase block mt-4 text-black font-bold mr-4
+}
+
+.programnav {
+  display: none;
+}
+
+.showprograms:hover .programnav {
+  display: block;
+}
+
 @media only screen and (max-width: 767px) {
   .right--100 {
     right: -100px;
@@ -123,6 +135,7 @@
     transform-origin: 0%;
     z-index: -5;
 }
+
 
 .slick-prev:after {
     content: "<";
