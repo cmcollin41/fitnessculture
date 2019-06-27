@@ -8,10 +8,10 @@ export default () => (
             <div className="flex flex-col lg:flex-row">
                 <div className="w-full lg:w-1/4">
                     <Link to="/"><img src={ logo } alt="Logo" width={"175px"} /></Link>
-                    <p className="text-white mt-5">314 N 3050 E Suite B1 <br />St George, Utah 84790</p>
+                    <p className="text-white mt-5 font-light">314 N 3050 E Suite B1 <br />St George, Utah 84790</p>
                 </div>
                 <div className="w-full lg:w-1/4">
-                    <h6 className="text-white">Programs</h6>
+                    <h6 className="text-white uppercase">Programs</h6>
                     <ul className="mt-5">
                         <li>
                             <Link to="/program/swole" className="text-white">Swole</Link>
@@ -22,10 +22,10 @@ export default () => (
                     </ul>
                 </div>
                 <div className="w-full lg:w-1/4">
-                    <h6 className="text-white">Products</h6>
+                    <h6 className="text-white uppercase">Products</h6>
                 </div>
                 <div className="w-full lg:w-1/4">
-                    <h6 className="text-white">Company</h6>
+                    <h6 className="text-white uppercase">Company</h6>
                 </div>
             </div>
         </div>

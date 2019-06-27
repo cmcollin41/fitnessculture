@@ -16,7 +16,7 @@ const Index = ({ data }) => (
         minHeight: `60vh`,
       }}
     >
-      <span class="flex rounded-full bg-black uppercase px-2 py-1 text-xs text-white">Your #1 Fitness App</span>
+      <span className="flex rounded-full bg-black uppercase px-2 py-1 text-xs text-white">Your #1 Fitness App</span>
       <h1 className="uppercase text-center text-white text-4xl lg:text-6xl mt-4" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
         {data.homepage.data.h1.text}
       </h1>
@@ -24,7 +24,7 @@ const Index = ({ data }) => (
         {data.homepage.data.h2.text}
       </p>
       <div className="py-10">
-        <Link to="/" className="btn-lg btn-red uppercase">
+        <Link to="/" className="btn-lg btn-red uppercase shadow-lg">
           Get Started
         </Link>
       </div>
