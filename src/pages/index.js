@@ -10,7 +10,7 @@ import phone from '../../static/workout-phone.png'
 const Index = ({ data }) => (
   <Layout>
     <div
-      className="flex flex-col justify-center items-center bg-cover bg-center p-5 mx-5 lg:mx-10"
+      className="flex flex-col justify-center items-center bg-cover bg-center p-5"
       style={{
         backgroundImage: `url(${data.homepage.data.hero_image.url})`,
         minHeight: `60vh`,
@@ -39,8 +39,8 @@ const Index = ({ data }) => (
 
     <div className="flex flex-col lg:flex-row justify-end items-center pt-10 pb-20 lg:py-20 mx-auto lg:mx-10 overflow-hidden lg:overflow-auto">
       <div className="w-full md:w-1/2 lg:w-1/3 p-5 lg:px-20 mx-auto">
-        <h6 className="uppercase mb-2 text-gray-400">Training</h6>
-        <h2 className="text-5xl uppercase text-center lg:text-left">Look Good</h2>
+        <h6 className="uppercase text-center lg:text-left mb-2 text-gray-400">Training</h6>
+        <h2 className="text-3xl lg:text-5xl uppercase text-center lg:text-left">Look Good</h2>
         <p className="mt-5">Experience how you can increase your 
         explosiveness, improve your speed, and build your 
         best physique with the Athlete program from
@@ -90,8 +90,8 @@ const Index = ({ data }) => (
 
       </div>
       <div className="w-full md:w-1/2 lg:w-1/3 p-5 lg:px-20 order-1 lg:order-2 mx-auto">
-        <h6 className="uppercase mb-2 text-gray-400">Mobility</h6>
-        <h2 className="text-5xl uppercase text-center lg:text-left">Feel Better</h2>
+        <h6 className="uppercase text-center lg:text-left mb-2 text-gray-400">Mobility</h6>
+        <h2 className="text-3xl lg:text-5xl uppercase text-center lg:text-left">Feel Better</h2>
         <p className="mt-5">Experience how you can increase your 
         explosiveness, improve your speed, and build your 
         best physique with the Athlete program from
@@ -107,8 +107,8 @@ const Index = ({ data }) => (
 
     <div className="flex flex-col lg:flex-row justify-end items-center lg:pt-10 pb-20 mx-auto lg:mx-10 overflow-hidden lg:overflow-auto">
       <div className="w-full md:w-1/2 lg:w-1/3 p-5 lg:px-20 mx-auto">
-        <h6 className="uppercase mb-2 text-gray-400">Nutrition</h6>
-        <h2 className="text-5xl uppercase text-center lg:text-left">Perform Better</h2>
+        <h6 className="uppercase text-center lg:text-left mb-2 text-gray-400">Nutrition</h6>
+        <h2 className="text-3xl lg:text-5xl uppercase text-center lg:text-left">Perform Better</h2>
         <p className="mt-5">Experience how you can increase your 
         explosiveness, improve your speed, and build your 
         best physique with the Athlete program from
