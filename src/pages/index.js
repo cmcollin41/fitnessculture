@@ -224,7 +224,7 @@ const Index = ({ data }) => (
 
 
       
-  <div className="pt-10 pb-20 lg:py-20">
+  <div className="pt-10 pb-20 lg:py-20 mx-5">
     <div className="container mx-auto">
       <div className="flex flex-col lg:flex-row justify-start items-center mt-10 h-full">
         <div 
