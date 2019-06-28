@@ -10,7 +10,7 @@ const Index = ({ data: { prismicPricing } }) => (
     <div
       className="flex flex-col justify-center items-center mx-auto bg-cover bg-top p-5 angle"
       style={{
-        backgroundImage: "linear-gradient(to bottom right, #111, #212121)",
+        backgroundImage: "linear-gradient(to bottom right, #111, #111)",
         minHeight: "60vh",
         position: relative
       }}
@@ -21,14 +21,14 @@ const Index = ({ data: { prismicPricing } }) => (
       <p className="text-center text-white mt-5">
         {prismicPricing.data.h2.text}
       </p>
-
-      <div className="relative lg:absolute" style={{ left: "0", right: "0", bottom: "-100px" }}>
-        <div className="flex flex-col lg:flex-row justify-center items-center">
-          <div className="w-full lg:w-1/4 mt:auto lg:mt-20">
+    </div>
+    <div className="relative z-50 mt-10 md:-mt-40 lg:-mt-56">
+        <div className="flex flex-col lg:flex-row justify-center items-center mx-5">
+          <div className="w-full md:w-1/2 lg:w-1/4 mt:auto lg:mt-20">
             <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white text-black flex flex-col justify-between">
               <div className="px-6 py-4">
-                <h3 className="font-bold text-xl mb-2 text-center">Basic</h3>
-                <p className="text-gray-700 text-base text-6xl text-center">$49</p>
+              <h3 className="text-gray-500 font-bold text-xl mb-2 text-center uppercase">Basic</h3>
+                <h6 className="text-black text-base text-6xl text-center mt-5">39</h6>
                 <div>
                   <ul>
                     <li>This is a feature</li>
@@ -46,11 +46,11 @@ const Index = ({ data: { prismicPricing } }) => (
               </div>
             </div>
           </div>
-          <div className="w-full lg:w-1/4 mt-20">
+          <div className="w-full md:w-1/2 lg:w-1/4 mt-20">
             <div className="text-black max-w-sm rounded overflow-hidden shadow-lg bg-white flex flex-col justify-between">
               <div className="px-6 py-4">
-                <h3 className="font-bold text-xl mb-2 text-center">Premium</h3>
-                <p className="text-gray-700 text-base text-6xl text-center">$89</p>
+                <h3 className="text-gray-500 font-bold text-xl mb-2 text-center uppercase">Premium</h3>
+                <h6 className="text-black text-base text-6xl text-center mt-5">89</h6>
                 <div>
                   <ul>
                     <li>This is a feature</li>
@@ -75,7 +75,6 @@ const Index = ({ data: { prismicPricing } }) => (
           </div>
         </div>
       </div>
-    </div>
     <div className="py-20 mt-30">
         <div className="container mx-auto p-10">
           <h3 className="text-center uppercase text-3xl mb-10">

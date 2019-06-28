@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
  
 class Toggle extends React.Component {
@@ -15,9 +14,6 @@ class Toggle extends React.Component {
       on: !this.state.on
     })
   }
-
-
-
 
   render() {
 

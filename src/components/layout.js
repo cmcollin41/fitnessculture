@@ -7,7 +7,7 @@ import '../css/fonts.css'
 import '../css/global.css'
 
 export default ({ children }) => (
-    <div>
+    <div id="layout">
         <Header />
         <Announcement />
         <div>

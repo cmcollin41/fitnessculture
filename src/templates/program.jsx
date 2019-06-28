@@ -20,7 +20,7 @@ const Program = ({ data: { prismicProgram } }) => {
               <h1 className="uppercase rustico text-white text-6xl leading-none">
                 {prismicProgram.data.title.text}
               </h1>
-              <p className="text-white text-2xl" style={{ maxWidth: "500px" }}>
+              <p className="text-white text-xl mt-5" style={{ maxWidth: "500px" }}>
                 {prismicProgram.data.lead.text}
               </p>
               <div className="mt-10">
@@ -186,7 +186,7 @@ const Program = ({ data: { prismicProgram } }) => {
         </div>
       </div>
 
-      <div className="dots">
+      <div style={{ backgroundImage: 'linear-gradient(to right, ' + prismicProgram.data.bg_col_gradient_1 + ',' + prismicProgram.data.bg_col_gradient_2 + ')'}}>
         <div className="container mx-auto py-20 h-full">
           {/* <div className="flex justify-center">
                 <h2 class="text-3xl uppercase">Your Training Awaits</h2>
@@ -199,8 +199,8 @@ const Program = ({ data: { prismicProgram } }) => {
                 width={"75px"}
                 className="mx-auto"
               />
-              <h3 className="text-2xl">
-                Pick Your <span className="rustico">Program</span>
+              <h3 className="text-xl uppercase mt-5">
+                Pick Your Program
               </h3>
               <p className="mx-auto mt-5" style={{ maxWidth: "300px" }}>
                 This is a paragraph about joining a program and hitting your
@@ -214,8 +214,8 @@ const Program = ({ data: { prismicProgram } }) => {
                 width={"75px"}
                 className="mx-auto"
               />
-              <h3 className="text-2xl">
-                Start <span className="rustico">Training</span>
+              <h3 className="text-xl uppercase mt-5">
+                Start Training
               </h3>
               <p className="mx-auto mt-5" style={{ maxWidth: "300px" }}>
                 This is a paragraph about joining a program and hitting your
@@ -229,8 +229,8 @@ const Program = ({ data: { prismicProgram } }) => {
                 width={"75px"}
                 className="mx-auto"
               />
-              <h3 className="text-2xl">
-                Join the <span className="rustico">#FitCult</span>
+              <h3 className="text-xl mt-5 uppercase">
+                Join the #FitCult
               </h3>
               <p className="mx-auto mt-5" style={{ maxWidth: "300px" }}>
                 This is a paragraph about joining a program and hitting your
@@ -254,15 +254,15 @@ const Program = ({ data: { prismicProgram } }) => {
             </div>
             <div className="w-full lg:w-1/2 p-10">
               <h3 className="uppercase text-3xl">
-                Your <span className="rustico">Fitness App</span>
+                Your Fitness App
               </h3>
-              <p>All you need for your training, nutrition, and mobility.</p>
+              <p className="mt-5">All you need for your training, nutrition, and mobility.</p>
               <div className="mt-10">
                 <Link to="/" className="btn-lg btn-red shadow-md">
                   Get Started
                 </Link>
               </div>
-              <div className="max-w-sm w-full lg:max-w-1/2 flex flex-col lg:flex-row mt-20">
+              <div className="max-w-sm w-full lg:max-w-1/2 flex flex-col lg:flex-row mt-20 shadow-md">
                 <div
                   className="hidden lg:block h-48 md:h-auto lg:h-auto w-full lg:w-32 flex-none bg-cover bg-center rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
                   style={{

@@ -31,7 +31,7 @@ export default () => (
             <div className="text-sm lg:flex-grow">
                 <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent showprograms">
                   <Link to="#" className="uppercase text-black hover:text-teal-500 font-bold">Programs</Link>
-                  <div className="flex justify-center items-center py-6 bg-white programnav border-nav-b absolute left-0 right-0 text-center border-nav-b" style={{top: "79px"}}>
+                  <div className="flex justify-center items-center py-6 bg-white programnav border-nav-b absolute left-0 right-0 text-center border-nav-b z-50" style={{top: "79px"}}>
                       {data.programs.edges.map((i, count) => (
                         <Link to={"/programs/" + i.node.uid} key={count} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 mr-4">{i.node.data.title.text}</Link>
                       ))}
@@ -66,7 +66,7 @@ export default () => (
               </button>
             </div>
             { on && 
-              <div className="w-full block lg:hidden">
+              <div className={"w-full " + (on ? "block" : "hidden")}>
                   <Toggle 
                     render={({on, toggle}) => (
                       <div>
