@@ -35,8 +35,8 @@ module.exports = {
         name: `Fitness Culture`,
         short_name: `Fitness Culture`,
         start_url: `/`,
-        background_color: `#f9f9f9`,
-        theme_color: `#111`,
+        background_color: `#fafafa`,
+        theme_color: `#fafafa`,
         display: `standalone`,
         icon: `./static/fc-logo-black.png`
       },
