@@ -1,16 +1,17 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-import ModalWrapper from "../components/ModalWrapper"
 import Carousel from "../components/Carousel"
 import Carousel2 from "../components/Carousel2"
-import Modal from 'react-modal'
+import SEO from '../components/seo'
+
 
 import phone from '../../static/workout-phone.png'
 
 // const Index = ({ data: { homepage } }, { data: { programs } }) => (
 const Index = ({ data }) => (
   <Layout>
+    <SEO title="Fitness Culture" />
     <div
       className="flex flex-col justify-center items-center bg-cover bg-center p-5"
       style={{
