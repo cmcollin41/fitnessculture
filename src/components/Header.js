@@ -1,6 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import Toggle from './Toggle'
+import Cart from './products/cart'
 import logo from '../../static/fc-logo-horizontal-black.png'
 
 export default () => (
@@ -38,7 +39,7 @@ export default () => (
                   </div>
                 </div>
                 <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
-                  <a href="https://shopify.com" className="uppercase text-black hover:text-teal-500 font-bold">Shop</a>
+                  <Link to="/shop" className="uppercase text-black hover:text-teal-500 font-bold">Shop</Link>
                 </div>
                 <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
                   <Link to="/pricing" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold">Pricing</Link>
@@ -48,10 +49,11 @@ export default () => (
                 </div>
             </div>
           </div>
-          <div className="block hidden lg:flex">
-            <div>
+          <div className="block hidden lg:flex justify-between content-center align-center">
+            <div className="mr-4">
               <a href="#" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-teal-500 hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 uppercase">Get Started</a>
             </div>
+            <Cart />
           </div>
         </nav>
           
