@@ -1,8 +1,10 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
+import ModalWrapper from "../components/ModalWrapper"
 import Carousel from "../components/Carousel"
 import Carousel2 from "../components/Carousel2"
+import Modal from 'react-modal'
 
 import phone from '../../static/workout-phone.png'
 
@@ -30,12 +32,6 @@ const Index = ({ data }) => (
       </div>
     </div>
 
-
-    {/* <div className="flex flex-row justify-center items-center pt-10 mx-auto lg:mx-10">
-      <div className="text-center">
-        <h2 className="my-10 uppercase">Your Fitness App</h2>
-      </div>
-    </div> */}
 
     <div className="flex flex-col lg:flex-row justify-end items-center pt-10 pb-20 lg:py-20 mx-auto lg:mx-10 overflow-hidden lg:overflow-auto">
       <div className="w-full md:w-1/2 lg:w-1/2 xl:w-1/3 p-5 lg:px-20 mx-auto">
