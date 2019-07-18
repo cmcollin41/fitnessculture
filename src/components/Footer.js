@@ -22,7 +22,7 @@ export default () => (
     `}
     render = {data => (
 
-      <footer className="w-full footer mt-auto lg:mt-10">
+      <footer className="w-full footer mt-auto">
         <div className="container mx-auto px-10 lg:px-auto py-20">
           <div className="flex flex-col lg:flex-row">
             <div className="w-full lg:w-1/4">
