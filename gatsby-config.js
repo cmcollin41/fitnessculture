@@ -21,15 +21,15 @@ module.exports = {
         linkResolver: ({ node, key, value }) => program => `/${program.uid}`,
       },
     },
-    'gatsby-plugin-stripe',
-    {
-      resolve: `gatsby-source-stripe`,
-      options: {
-        objects: ['Product','Sku','Subscription'],
-        secretKey: `${process.env.STRIPE_SECRET_KEY}`,
-        downloadFiles: true,
-      },
-    },
+    // 'gatsby-plugin-stripe',
+    // {
+    //   resolve: `gatsby-source-stripe`,
+    //   options: {
+    //     objects: ['Product','Sku','Subscription'],
+    //     secretKey: `${process.env.STRIPE_SECRET_KEY}`,
+    //     downloadFiles: true,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
