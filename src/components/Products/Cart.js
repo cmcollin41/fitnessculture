@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactModal from 'react-modal'
+import CartItems from './CartItems'
+import Sku from './Sku'
 
 const customStyles = {
   content : {
@@ -21,6 +23,7 @@ function Cart() {
 
   const items = JSON.parse(window.localStorage.getItem('products'))
 
+
   const handleModalOpen = event => {
     // console.log('handleModalOpen: ', event);
     setIsModalOpen(true)
@@ -34,7 +37,7 @@ function Cart() {
 
   useEffect(() => {
       window.addEventListener('click', function(){
-        setCount(JSON.parse(window.localStorage.getItem('count')))
+        setCount(JSON.parse(window.localStorage.getItem('count')) || 0)
         this.console.log('yodalay')
       })
       
@@ -43,7 +46,7 @@ function Cart() {
 
   return (
     <React.Fragment>
-      <div onClick={ handleModalOpen }className="relative flex flex-col content-center justify-center cursor-pointer">
+      <div onClick={handleModalOpen} className="relative flex flex-col content-center justify-center cursor-pointer">
         <svg className="hover:color-teal-500" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
           width="24" height="24"
           viewBox="0 0 24 24"
@@ -64,7 +67,13 @@ function Cart() {
           </div>
 
           <div className="flex flex-col">
-            
+            <CartItems items={items} count={count}/>
+          </div>
+
+          <Sku />
+
+          <div className="fixed bottom-0 mb-5">
+            <button to="/" className="btn-lg btn-red uppercase shadow-lg">Continue</button>
           </div>
 
 

@@ -23,7 +23,6 @@ class Sku extends Component {
         query={graphql`
           query SkusForProduct {
             skus: allStripeSku(
-              filter: { product: { id: { eq: "prod_FLGUIW1DkD26jd" } } }
               sort: { fields: [price] }
             ) {
               edges {
@@ -31,11 +30,9 @@ class Sku extends Component {
                   id
                   currency
                   price
+                  image
                   attributes {
                     name
-                  }
-                  localFiles {
-                    id
                   }
                   product {
                     id
@@ -46,7 +43,7 @@ class Sku extends Component {
           }
         `}
         render={({ skus }) => (
-          <div className="flex flex-row">
+          <div className="block lg:flex flex-row lg:-mx-2">
             {skus.edges.map(({ node: sku }) => (
               <SkuCard key={sku.id} sku={sku} stripe={this.state.stripe} />
             ))}
