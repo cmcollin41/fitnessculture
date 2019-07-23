@@ -9,6 +9,12 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 
+body, html {
+  overflow-x: hidden;
+}
+p {
+  @apply text-gray-700 font-light
+}
 
 .btn {
     @apply font-bold py-2 px-4 uppercase;
@@ -29,7 +35,7 @@
 }
 
 .btn-red {
-    @apply bg-red-600 text-white;
+    @apply bg-red-500 text-white;
 }
 
 .btn-red:hover {
@@ -38,6 +44,10 @@
 
 .nav-link {
   @apply uppercase block mt-4 text-black font-bold mr-4
+}
+
+.pricing > li {
+  @apply border-b border-gray-200 p-4
 }
 
 .programnav {
@@ -116,12 +126,12 @@
 
 .footer{
     position: relative;
-    background-image: linear-gradient(to right, #111 , #212121);
+    background-image: linear-gradient(to right, #424242 , #212121);
     width: 100%;
     min-height: 300px;
 }
 
-.footer:before {
+/* .footer:before {
     background: inherit;
     top: 0;
     content: '';
@@ -133,6 +143,15 @@
     transform: skewY(-2deg);
     transform-origin: 0%;
     z-index: -5;
+} */
+
+.active-tab {
+  border-bottom: 2px solid black;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.active-tab:hover {
+  cursor: pointer;
 }
 
 

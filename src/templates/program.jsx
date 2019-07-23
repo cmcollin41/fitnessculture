@@ -1,354 +1,214 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-import Slider from "react-slick"
+import ProgramTabs from "../components/ProgramTabs"
+
+// Images
+import kyle from '../../static/kylewilliford.png'
+import circles from '../../static/circles.webp'
+import logo1 from '../../static/logo-1.svg'
+import logo2 from '../../static/logo-2.svg'
+import logo3 from '../../static/logo-3.svg'
+import logo4 from '../../static/logo-4.svg'
+import logo5 from '../../static/menshealth.png'
+import square from '../../static/square-circles.webp'
 
 const Program = ({ data: { prismicProgram } }) => {
   const { data } = prismicProgram
   return (
     <Layout>
-      <div
+      <div className="h-2 w-full" style={{backgroundColor: prismicProgram.data.bg_col_gradient_1 }}>
+      </div>
+
+      {/* <div
         className="flex flex-col justify-center mx-auto bg-cover bg-center p-5"
         style={{
           backgroundImage: "url(" + prismicProgram.data.hero_image.url + ")",
           minHeight: "60vh",
         }}
-      >
-        <div class="container mx-auto">
+      > */}
+      <div className="py-20 relative">
+        <div className="absolute h-full bottom-0 left-0 overflow-x-hidden" style={{zIndex: "-10"}}>
+          <img src={circles} width="200px" style={{transform: "scale(-1)"}}/>
+        </div>
+        <div className="hidden lg:block absolute h-full" style={{transform: "translateY(50%)"}}>
+          <h2 className="uppercase text-gray-300 text-4xl" style={{transform: "rotate(90deg)"}}>Program</h2>
+        </div>
+        <div class="container mx-auto p-5">
           <div className="flex flex-col lg:flex-row justify-center items-center">
             <div className="w-full lg:w-1/2">
-              <h1 className="uppercase rustico text-white text-6xl leading-none">
+              <h1 className="uppercase text-6xl leading-none">
                 {prismicProgram.data.title.text}
               </h1>
-              <p className="text-white text-xl mt-5" style={{ maxWidth: "500px" }}>
+              <p className="text-xl mt-5" style={{ maxWidth: "500px" }}>
                 {prismicProgram.data.lead.text}
               </p>
               <div className="mt-10">
-                <Link to="/" className="btn-lg btn-red shadow-md">
-                  Get Started
+                <Link to="/" className="btn-lg btn-red rounded-full shadow-md" style={{backgroundImage: 'linear-gradient(to right, ' + prismicProgram.data.bg_col_gradient_1 + ',' + prismicProgram.data.bg_col_gradient_2 + ')'}}>
+                  Start Program
                 </Link>
+                <span className="ml-4 text-xs font-light">$2 per Workout</span>
               </div>
             </div>
-
-            <div className="w-full lg:w-1/2 hidden lg:block">
-              <div className="flex justify-center">
-                <div className="max-w-sm rounded overflow-hidden bg-white shadow-lg z-50 mt-20 md:mt-auto">
-                  <div className="px-6 py-4">
-                    <div className="font-bold text-xl mb-2">
-                      Program Overview
-                    </div>
-                    <p className="text-gray-700 text-base">
-                      How many days a week do you workout?
-                    </p>
-                    <ul class="flex my-5">
-                      <li class="flex-1 mr-2">
-                        <a
-                          class="text-center block border rounded py-2 px-4 bg-red-500 hover:bg-red-700 text-white"
-                          href="#"
-                        >
-                          4 days
-                        </a>
-                      </li>
-                      <li class="flex-1 mr-2">
-                        <a
-                          class="text-center block border border-white rounded hover:border-gray-200 text-red-500 hover:bg-gray-200 py-2 px-4"
-                          href="#"
-                        >
-                          5 days
-                        </a>
-                      </li>
-                      <li class="text-center flex-1">
-                        <a
-                          class="text-center block border border-white rounded hover:border-gray-200 text-red-500 hover:bg-gray-200 py-2 px-4"
-                          href="#"
-                        >
-                          6 days
-                        </a>
-                      </li>
-                    </ul>
-                    <p className="text-gray-700 text-base">
-                      Duration: 12 Months
-                    </p>
-                    <p className="text-gray-700 text-base">
-                      Equipment: Full gym
-                    </p>
-                    <p className="text-gray-700 text-base">
-                      Time per day: 1 hour
-                    </p>
-                    <p className="text-gray-700 text-base">
-                      Fitness level: Intermediate
-                    </p>
-                    <p className="text-gray-700 text-base">Videos: Yes</p>
-                    <p className="text-gray-700 text-base">
-                      Duration: 12 Months
-                    </p>
-                    <p className="text-gray-700 text-base">
-                      Equipment: Full gym
-                    </p>
-                    <p className="text-gray-700 text-base">
-                      Time per day: 1 hour
-                    </p>
-                    <p className="text-gray-700 text-base">
-                      Fitness level: Intermediate
-                    </p>
-                    <p className="text-gray-700 text-base">Videos: Yes</p>
-                  </div>
-                </div>
-              </div>
+            <div className="w-full lg:w-1/2 shadow-lg relative mt-10 lg:mt-auto">
+              <img src={prismicProgram.data.hero_image.url} width="100%" />
+              <img src={square} width="100px" className="absolute" style={{bottom: "-25px", right: "-25px", zIndex: "-1"}} />
             </div>
           </div>
         </div>
       </div>
-      {/* <div className="easy3" style={{ backgroundImage: 'linear-gradient(to right, ' + prismicProgram.data.bg_col_gradient_1 + ',' + prismicProgram.data.bg_col_gradient_2 + ')'}}>
-          <div className="container mx-auto py-12 h-full">
-            <div className="flex flex-col md:flex-row justify-center items-center z-50 h-full">
-              <div class="flex flex-col justify-center w-1/3 h-full text-center py-5">
-                <span>STYLE</span>
-                  <img src={"../icons8-checked.svg"} alt="checked-icon" width={"125px"} className="mx-auto" />
-                <p>BODYBUILDING</p>
-              </div>
-              <div class="flex flex-col justify-center w-1/3 h-full text-center py-5">
-                <span>STYLE</span>
-                <img src={"../icons8-checked.svg"} alt="checked-icon" width={"125px"} className="mx-auto" />
-                  <p>BODYBUILDING</p>
-              </div>
-              <div class="flex flex-col justify-center w-1/3 h-full text-center py-5">
-                <span>STYLE</span>
-                  <img src={"../icons8-checked.svg"} alt="checked-icon" width={"125px"} className="mx-auto" />
-                <p>BODYBUILDING</p>
-              </div>
-            </div>
-          </div>
-        </div> */}
+      {/* </div> */}
 
-      <div
-        className="py-20 block lg:hidden"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, " +
-            prismicProgram.data.bg_col_gradient_1 +
-            "," +
-            prismicProgram.data.bg_col_gradient_2 +
-            ")",
-        }}
-      >
-        <div className="w-full lg:w-1/2">
-          <div className="flex justify-center">
-            <div className="max-w-sm rounded overflow-hidden bg-white shadow-lg z-50 md:mt-auto">
-              <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">Program Overview</div>
-                <p className="text-gray-700 text-base">
-                  How many days a week do you workout?
-                </p>
-                <ul class="flex my-5">
-                  <li class="flex-1 mr-2">
-                    <a
-                      class="text-center block border border-blue-500 rounded py-2 px-4 bg-red-500 hover:bg-red-700 text-white"
-                      href="#"
-                    >
-                      4 days
-                    </a>
-                  </li>
-                  <li class="flex-1 mr-2">
-                    <a
-                      class="text-center block border border-white rounded hover:border-gray-200 text-red-500 hover:bg-gray-200 py-2 px-4"
-                      href="#"
-                    >
-                      5 days
-                    </a>
-                  </li>
-                  <li class="text-center flex-1">
-                    <a
-                      class="text-center block border border-white rounded hover:border-gray-200 text-red-500 hover:bg-gray-200 py-2 px-4"
-                      href="#"
-                    >
-                      6 days
-                    </a>
-                  </li>
+    <div className="w-full bg-gray-100 pt-4 pb-2">
+      <div className="container mx-auto">
+        <p className="text-black uppercase text-xs text-center pt-2">Programs Engineered by Experts Featured in:</p>
+        <div className="block overflow-scroll lg:overflow-hidden w-full">
+          <div className="flex flex-row justify-between items-center text-center h-full">
+            <img src={ logo1 } width="100px" className="px-2" />
+            <img src={ logo2 } width="100px" className="px-2" />
+            <img src={ logo4 } width="100px" className="px-2" />
+            <img src={ logo3 } width="100px" className="px-2" />
+            <img src={ logo5 } width="100px" className="px-2" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="w-full py-10 lg:py-20 relative">
+      <div className="container mx-auto">
+        <ProgramTabs />
+      </div>
+      <img src={ circles } width="250px" className="hidden lg:block absolute left-0" style={{ bottom: "-100px", transform: "scaleX(-1)"}} />
+    </div>
+
+
+  <div className="py-20 bg-gray-800">
+    <div className="container mx-5 lg:mx-auto">
+      <h3 className="uppercase text-white text-3xl pb-5 lg:pb-10">
+        Join the <span className="text-red-500">#FitCult</span> Family
+      </h3>
+    </div>
+    <div className="flex flex-row overflow-scroll lg:overflow-hidden">
+      <div className="rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
+        <p className="text-white text-xs italic">"Fitness Culture made me realize that nutrition is the most important thing. I heard Steve Cook say in one of his videos that "you can't out train a bad diet" that is 100% true."</p>
+        <div className="flex flex-row items-center mt-6">
+          <img src={ kyle } width="50px" height="50px" className="rounded-full" />
+          <div className="pl-2">
+            <h6 className="uppercase">Kyle Williford</h6>
+            <p className="text-black text-xs">Chester, South Carolina</p>
+          </div>
+        </div>
+      </div>
+      <div className="rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
+        <p className="text-white text-xs italic">"Fitness Culture made me realize that nutrition is the most important thing. I heard Steve Cook say in one of his videos that "you can't out train a bad diet" that is 100% true."</p>
+        <div className="flex flex-row items-center mt-6">
+          <img src={ kyle } width="50px" height="50px" className="rounded-full" />
+          <div className="pl-2">
+            <h6 className="uppercase">Kyle Williford</h6>
+            <p className="text-black text-xs">Chester, South Carolina</p>
+          </div>
+        </div>
+      </div>
+      <div className="rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
+        <p className="text-white text-xs italic">"Fitness Culture made me realize that nutrition is the most important thing. I heard Steve Cook say in one of his videos that "you can't out train a bad diet" that is 100% true."</p>
+        <div className="flex flex-row items-center mt-6">
+          <img src={ kyle } width="50px" height="50px" className="rounded-full" />
+          <div className="pl-2">
+            <h6 className="uppercase">Kyle Williford</h6>
+            <p className="text-black text-xs">Chester, South Carolina</p>
+          </div>
+        </div>
+      </div>
+      <div className="rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
+        <p className="text-white text-xs italic">"Fitness Culture made me realize that nutrition is the most important thing. I heard Steve Cook say in one of his videos that "you can't out train a bad diet" that is 100% true."</p>
+        <div className="flex flex-row items-center mt-6">
+          <img src={ kyle } width="50px" height="50px" className="rounded-full" />
+          <div className="pl-2">
+            <h6 className="uppercase">Kyle Williford</h6>
+            <p className="text-black text-xs">Chester, South Carolina</p>
+          </div>
+        </div>
+      </div>
+      <div className="rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
+        <p className="text-white text-xs italic">"Fitness Culture made me realize that nutrition is the most important thing. I heard Steve Cook say in one of his videos that "you can't out train a bad diet" that is 100% true."</p>
+        <div className="flex flex-row items-center mt-6">
+          <img src={ kyle } width="50px" height="50px" className="rounded-full" />
+          <div className="pl-2">
+            <h6 className="uppercase">Kyle Williford</h6>
+            <p className="text-black text-xs">Chester, South Carolina</p>
+          </div>
+        </div>
+      </div>
+      <div className="rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
+        <p className="text-white text-xs italic">"Fitness Culture made me realize that nutrition is the most important thing. I heard Steve Cook say in one of his videos that "you can't out train a bad diet" that is 100% true."</p>
+        <div className="flex flex-row items-center mt-6">
+          <img src={ kyle } width="50px" height="50px" className="rounded-full" />
+          <div className="pl-2">
+            <h6 className="uppercase">Kyle Williford</h6>
+            <p className="text-black text-xs">Chester, South Carolina</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="container mx-auto mt-10 text-center">
+      <Link to="/" className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">Join the Family</Link>
+    </div>
+  </div>
+
+      <div className="mt-20">
+        <div className="flex flex-col lg:flex-row justify-center items-center mx-5">
+          <div className="w-full md:w-1/2 lg:w-1/4 mt:auto lg:mt-20">
+            <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white text-black flex flex-col justify-between">
+              <div className="p-4 text-center mx-auto">
+                <span class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Basic</span>
+                <h6 className="text-black text-base text-6xl mt-5">$39</h6>
+              </div>
+              <div>
+                <ul className="pricing">
+                  <li>World class training programs</li>
+                  <li>Complete sets, reps, & progressions</li>
+                  <li>Video coaching tutorials</li>
+                  <li>Member only Facebook group</li>
+                  <li>Ability to switch programs anytime</li>
                 </ul>
-                <p className="text-gray-700 text-base">Duration: 12 Months</p>
-                <p className="text-gray-700 text-base">Equipment: Full gym</p>
-                <p className="text-gray-700 text-base">Time per day: 1 hour</p>
-                <p className="text-gray-700 text-base">
-                  Fitness level: Intermediate
-                </p>
-                <p className="text-gray-700 text-base">Videos: Yes</p>
-                <p className="text-gray-700 text-base">Duration: 12 Months</p>
-                <p className="text-gray-700 text-base">Equipment: Full gym</p>
-                <p className="text-gray-700 text-base">Time per day: 1 hour</p>
-                <p className="text-gray-700 text-base">
-                  Fitness level: Intermediate
-                </p>
-                <p className="text-gray-700 text-base">Videos: Yes</p>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div style={{ backgroundImage: 'linear-gradient(to right, ' + prismicProgram.data.bg_col_gradient_1 + ',' + prismicProgram.data.bg_col_gradient_2 + ')'}}>
-        <div className="container mx-auto py-20 h-full">
-          {/* <div className="flex justify-center">
-                <h2 class="text-3xl uppercase">Your Training Awaits</h2>
-              </div> */}
-          <div className="flex flex-col md:flex-row justify-center items-center z-50 h-full">
-            <div class="flex flex-col justify-center w-full lg:w-1/3 h-full text-center py-5">
-              <img
-                src={"../1circle.png"}
-                alt="checked-icon"
-                width={"75px"}
-                className="mx-auto"
-              />
-              <h3 className="text-xl uppercase mt-5">
-                Pick Your Program
-              </h3>
-              <p className="mx-auto mt-5" style={{ maxWidth: "300px" }}>
-                This is a paragraph about joining a program and hitting your
-                goals
-              </p>
-            </div>
-            <div className="flex flex-col justify-center w-full lg:w-1/3 h-full text-center py-5">
-              <img
-                src={"../1circle.png"}
-                alt="checked-icon"
-                width={"75px"}
-                className="mx-auto"
-              />
-              <h3 className="text-xl uppercase mt-5">
-                Start Training
-              </h3>
-              <p className="mx-auto mt-5" style={{ maxWidth: "300px" }}>
-                This is a paragraph about joining a program and hitting your
-                goals
-              </p>
-            </div>
-            <div class="flex flex-col justify-center w-full lg:w-1/3 h-full text-center py-5">
-              <img
-                src={"../1circle.png"}
-                alt="checked-icon"
-                width={"75px"}
-                className="mx-auto"
-              />
-              <h3 className="text-xl mt-5 uppercase">
-                Join the #FitCult
-              </h3>
-              <p className="mx-auto mt-5" style={{ maxWidth: "300px" }}>
-                This is a paragraph about joining a program and hitting your
-                goals
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="py-20">
-        <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row justify-center items-center">
-            <div className="w-full lg:w-1/2">
-              <img
-                src={prismicProgram.data.phone_img.url}
-                alt="checked-icon"
-                width={"100%"}
-                className="mx-auto"
-              />
-            </div>
-            <div className="w-full lg:w-1/2 p-10">
-              <h3 className="uppercase text-3xl">
-                Your Fitness App
-              </h3>
-              <p className="mt-5">All you need for your training, nutrition, and mobility.</p>
-              <div className="mt-10">
-                <Link to="/" className="btn-lg btn-red shadow-md">
-                  Get Started
+              <div className="px-6 py-10">
+                <Link to="/" className="py-2 px-4 rounded-full border border-red-500 text-red-500">
+                  Learn More
                 </Link>
               </div>
-              <div className="max-w-sm w-full lg:max-w-1/2 flex flex-col lg:flex-row mt-20 shadow-md">
-                <div
-                  className="hidden lg:block h-48 md:h-auto lg:h-auto w-full lg:w-32 flex-none bg-cover bg-center rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-                  style={{
-                    backgroundImage:
-                      "url(" +
-                      prismicProgram.data.card_testimonial_image.url +
-                      ")",
-                  }}
-                ></div>
-                <div className="border-r border-b border-l border-t border-gray-400 lg:border-l-0 lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-                  <div className="p-2">
-                    <p className="text-gray-700 text-xs">
-                      "I started Fitness Culture with Jake Hutton because we
-                      both have seen the power of a healthy lifestyle and
-                      training"
-                    </p>
-                    <div className="text-gray-900 font-bold text-sm mt-2 rustico">
-                      Steve Cook
-                    </div>
-                  </div>
-                </div>
+            </div>
+          </div>
+          <div className="w-full md:w-1/2 lg:w-1/4 mt-20">
+            <div className="text-black max-w-sm rounded overflow-hidden shadow-lg bg-white flex flex-col justify-between">
+              <div className="p-4 text-center mx-auto">
+                <span class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Premium</span>
+                <h6 className="text-black text-base text-6xl mt-5">$89</h6>
+              </div>
+              <div>
+                <ul className="pricing">
+                  <li>World class training programs</li>
+                  <li>Complete sets, reps, & progressions</li>
+                  <li>Video coaching tutorials</li>
+                  <li>Member only Facebook group</li>
+                  <li>Ability to switch programs anytime</li>
+                  <li>Mobility Routines</li>
+                  <li>Customized Macros</li>
+                  <li>Online Meal Builder</li>
+                </ul>
+              </div>
+              <div className="px-6 py-10">
+                <Link to="/" className="py-2 px-4 rounded-full border border-red-500 text-red-500">
+                  Learn More
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="py-20 dots">
-        <div className="container mx-auto">
-          <h3 className="text-center uppercase text-3xl">
-            See the <span className="rustico">Results</span>
-          </h3>
-          <div className="flex justify-center mt-10">
-            <div className="w-full lg:w-1/2">
-              <Slider
-                arrows={true}
-                dots={true}
-                infinite={true}
-                speed={500}
-                slidesToShow={1}
-                slidesToScroll={1}
-              >
-                <div>
-                  <img
-                    src={prismicProgram.data.testimonial_image_1.url}
-                    width="100%"
-                  />
-                </div>
-                <div>
-                  <img
-                    src={prismicProgram.data.testimonial_image_1.url}
-                    width="100%"
-                  />
-                </div>
-                <div>
-                  <img
-                    src={prismicProgram.data.testimonial_image_1.url}
-                    width="100%"
-                  />
-                </div>
-                <div>
-                  <img
-                    src={prismicProgram.data.testimonial_image_1.url}
-                    width="100%"
-                  />
-                </div>
-                <div>
-                  <img
-                    src={prismicProgram.data.testimonial_image_1.url}
-                    width="100%"
-                  />
-                </div>
-                <div>
-                  <img
-                    src={prismicProgram.data.testimonial_image_1.url}
-                    width="100%"
-                  />
-                </div>
-              </Slider>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div className="py-20">
-        <div className="container mx-auto p-10">
+        <div className="container mx-auto">
           <h3 className="text-center uppercase text-3xl mb-10">
             Questions and <span className="rustico">Answers</span>
           </h3>

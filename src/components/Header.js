@@ -1,7 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import Toggle from './Toggle'
-import Cart from './products/cart'
 import logo from '../../static/fc-logo-horizontal-black.png'
 
 class Header extends React.Component {
@@ -15,7 +14,7 @@ class Header extends React.Component {
       <React.Fragment>
         <header>
           <nav className="flex items-center justify-between flex-wrap bg-white px-4 border-nav-b relative">
-            <div className="hidden lg:flex items-center flex-grow text-black py-4">
+            <div className="hidden lg:flex items-center flex-grow text-black py-4" style={{minWidth: "300px"}}>
               <Link to="/"><img src={ logo } alt="Logo" width={"150px"} /></Link>
             </div>
             <div className="w-full block hidden flex-grow lg:flex lg:justify-center lg:items-center lg:ml-auto lg:w-auto">
@@ -32,20 +31,19 @@ class Header extends React.Component {
                     <Link to="/shop" className="uppercase text-black hover:text-teal-500 font-bold">Shop</Link>
                   </div>
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
-                    <Link to="/pricing" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold">Pricing</Link>
+                    <Link to="/shop" className="uppercase text-black hover:text-teal-500 font-bold">Blog</Link>
                   </div>
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
                     <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold">About</Link>
                   </div>
               </div>
             </div>
-            <div className="block hidden lg:flex justify-between content-center align-center">
-              <div className="mr-4">
-                <Link to="/" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-teal-500 hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 uppercase">Get Started</Link>
+            <div className="block hidden lg:flex justify-end content-center align-center" style={{minWidth: "300px"}}>
+              <div>
+                <a href="https://app.fitnessculture.com/login" className="inline-block text-sm px-4 py-2 leading-none text-black  hover:text-teal-500 mt-4 lg:mt-0 uppercase">Login</a>
+                <Link to="/" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-teal-500 hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded-full">Get Started</Link>
+                {/* <Cart/> */}
               </div>
-
-              <Cart/>
-
             </div>
           </nav>
             
@@ -55,7 +53,7 @@ class Header extends React.Component {
                 <Link to="/"><img src={ logo } alt="Logo" width={"150px"} /></Link>
               </div>
               <div className="block lg:hidden py-4">
-                <button onClick={toggle} className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400">
+                <button onClick={toggle} className="flex items-center px-3 py-2 border text-black border-black">
                   <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
                 </button>
               </div>

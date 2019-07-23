@@ -54,4 +54,4 @@ class Sku extends Component {
   }
 }
 
-export default Sku
+// export default Sku

@@ -6,8 +6,8 @@ export default props => (
     id={`card-${props.cardIndex}`}
     className={`order-${props.order} min-w-full md:min-w-1/2 lg:min-w-1/3`}
   >
-    <div className="rounded bg-white m-5 h-full flex flex-col justify-between">
-      <div>
+    <div className="rounded m-5 h-full flex flex-col justify-between items-stretch">
+      <div className="flex-1">
         <div
           className="w-full h-48 bg-cover bg-center shadow-lg"
           style={{
@@ -26,9 +26,9 @@ export default props => (
         </div>
       
       </div>
-      <div>
+      <div className="flex-1"> 
         <div>
-          <Link to="/" className="text-red-500 uppercase font-bold">
+          <Link to="/" className="uppercase font-bold text-xs text-black border border-black rounded-full py-2 px-4">
             Learn More
           </Link>
         </div>

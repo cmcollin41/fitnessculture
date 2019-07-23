@@ -77,9 +77,9 @@ function Cart() {
           </div>
 
 
-        </ReactModal>
+     </ReactModal>
 
-    </React.Fragment>
+     </React.Fragment>
   );
 }
 
