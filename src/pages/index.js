@@ -21,7 +21,7 @@ const Index = ({ data }) => (
   <Layout>
     <SEO title="Fitness Culture" />
     <div
-      className="flex flex-col justify-center items-center bg-cover bg-center p-5"
+      className="flex flex-col justify-center items-center bg-cover bg-top p-5"
       style={{
         backgroundImage: `url(${data.homepage.data.hero_image.url})`,
         minHeight: `60vh`,

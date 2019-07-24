@@ -11,10 +11,10 @@ import "react-tabs/style/react-tabs.css";
 
 export default () => (
   <Tabs selectedTabClassName="active-tab">
-    <TabList className="flex flex-row justify-center w-full overflow-hidden">
-      <Tab className="uppercase text-lg lg:text-3xl mx-4 lg:mx-4 cursor-pointer text-center"><h6>Training</h6></Tab>
-      <Tab className="uppercase text-lg lg:text-3xl mx-4 lg:mx-4 cursor-pointer text-center"><h6>Nutrition</h6></Tab>
-      <Tab className="uppercase text-lg lg:text-3xl mx-4 lg:mx-4 cursor-pointer text-center"><h6>Mobility</h6></Tab>
+    <TabList className="flex flex-row justify-center w-full overflow-hidden border-b border-gray-200">
+      <Tab className="uppercase text-lg lg:text-2xl mx-4 lg:mx-4 cursor-pointer text-center"><h6>Training</h6></Tab>
+      <Tab className="uppercase text-lg lg:text-2xl mx-4 lg:mx-4 cursor-pointer text-center"><h6>Nutrition</h6></Tab>
+      <Tab className="uppercase text-lg lg:text-2xl mx-4 lg:mx-4 cursor-pointer text-center"><h6>Mobility</h6></Tab>
     </TabList>
 
     <TabPanel>
