@@ -206,7 +206,7 @@ const Program = ({ data }) => {
         </div>
       </div>
 
-      <div className="py-20" style={{ backgroundColor: "#F9F9F9" }}>
+      <div className="py-20 bg-gray-100">
         <div className="container mx-auto px-10">
           <h3 className="text-center mb-6 uppercase text-3xl">
             Join the <span className="rustico">#FitCult</span>
