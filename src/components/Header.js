@@ -44,18 +44,28 @@ class Header extends React.Component {
             </div>
           </nav>
             
-          <Toggle render={({on, toggle}) => (
+          <Toggle render={({on, toggle, active}) => (
             <nav className="flex items-center justify-between flex-wrap bg-white px-4 border-nav-b relative">
               <div className="flex lg:hidden items-center flex-grow text-black py-4">
                 <Link to="/"><img src={ logo } alt="Logo" width={"150px"} /></Link>
               </div>
-              <div className="block lg:hidden py-4">
-                <button onClick={toggle} className="flex items-center px-3 py-2 border text-black border-black">
-                  <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+              <div className="block lg:hidden">
+                <button onClick={toggle} className="flex items-center p-1 text-black">
+                  <svg className={"ham hamRotate ham1 " + (active ? "active" : "")} viewBox="0 0 100 100" width="50">
+                    <path
+                          className="line top"
+                          d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
+                    <path
+                          className="line middle"
+                          d="m 30,50 h 40" />
+                    <path
+                          className="line bottom"
+                          d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
+                  </svg>
                 </button>
               </div>
               { on && 
-                <div className={"w-full " + (on ? "block" : "hidden")}>
+                <div className={"w-full pb-10 " + (on ? "block" : "hidden")}>
                     <Toggle 
                       render={({on, toggle}) => (
                         <div>
@@ -72,7 +82,6 @@ class Header extends React.Component {
                     />
 
                     <a href="https://shopify.com" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold mr-4">Shop</a>
-                    <Link to="/pricing" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold mr-4">Pricing</Link>
                     <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold mr-4">About</Link>
                   <div>
                     <a href="#" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-teal-500 hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 uppercase">Get Started</a>
