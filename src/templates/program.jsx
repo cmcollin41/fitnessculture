@@ -2,9 +2,9 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import ProgramTabs from "../components/ProgramTabs"
+import Img from 'gatsby-image'
 
 // Images
-import kyle from '../../static/kylewilliford.png'
 import circles from '../../static/circles.webp'
 import logo1 from '../../static/logo-1.svg'
 import logo2 from '../../static/logo-2.svg'
@@ -51,7 +51,7 @@ const Program = ({ data }) => {
               </div>
             </div>
             <div className="w-full lg:w-1/2 shadow-lg relative mt-10 lg:mt-auto">
-              <img src={program.heroImage.asset.url} alt="hero image" width="100%" />
+              <Img fluid={program.heroImage.asset.fluid} />
               <img src={square} alt="square circles" width="100px" height="100%" className="absolute" style={{bottom: "-25px", right: "-25px", zIndex: "-1"}} />
             </div>
           </div>
@@ -83,7 +83,7 @@ const Program = ({ data }) => {
 
 
     <div className="py-20 bg-gray-800">
-      <div className="container mx-5 lg:mx-auto">
+      <div className="container px-5 lg:mx-auto">
         <h3 className="uppercase text-white text-3xl pb-5 lg:pb-10">
           Join the <span className="px-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>#FitCult</span> Family
         </h3>
@@ -166,12 +166,12 @@ const Program = ({ data }) => {
     </div>
 
     <div className="py-20 bg-gray-800">
-      <div className="container mx-5 lg:mx-auto">
+      <div className="container px-5">
         <h3 className="uppercase text-white text-left lg:text-center text-3xl pb-5 lg:pb-10">
           Joining is <span className="px-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>Stress</span> Free
         </h3>
       </div>
-      <div className="container mx-5 lg:mx-auto">
+      <div className="container">
         <div className="flex flex-col lg:flex-row justify-center items-center">
           <div className="flex flex-col justify-between rounded p-5 w-64 lg:mx-3 mt-10 lg:mt-auto" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
             <h5 className="uppercase mb-5">No Contracts</h5>
@@ -259,7 +259,9 @@ export const pageQuery = graphql`
         }
         heroImage {
           asset {
-            url
+            fluid(maxWidth: 1000) {
+              ...GatsbySanityImageFluid
+            }
           }
         }
         testimonials {
