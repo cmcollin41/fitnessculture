@@ -227,3 +227,34 @@ p {
   .ham1.active .bottom {
     stroke-dashoffset: -138px;
   }
+
+
+
+
+  .animateNav {
+    animation: slide-down 1s ease;
+    transition: transform 0.3 ease-out;
+    overflow: hidden;
+    height: auto;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+
+  /* .navActive {
+    transform: scaleY(2);
+  } */
+
+  @keyframes slide-down {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+      /* max-height: 0; */
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+      /* height: auto;
+      max-height: 600px; */
+    }
+}
+

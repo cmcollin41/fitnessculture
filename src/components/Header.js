@@ -65,7 +65,7 @@ class Header extends React.Component {
                 </button>
               </div>
               { on && 
-                <div className={"w-full pb-10 " + (on ? "block" : "hidden")}>
+                <div className={"w-full pb-10 block animateNav " + (on ? "navActive" : "")}>
                     <Toggle 
                       render={({on, toggle}) => (
                         <div>

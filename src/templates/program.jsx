@@ -76,7 +76,7 @@ const Program = ({ data }) => {
 
     <div className="w-full py-10 lg:py-20 relative">
       <div className="container mx-auto">
-        <ProgramTabs />
+        <ProgramTabs props={program}/>
       </div>
       <img src={ circles } width="250px" className="hidden lg:block absolute left-0" style={{ bottom: "0px", transform: "scaleX(-1)", zIndex: "-10"}} />
     </div>
@@ -172,16 +172,16 @@ const Program = ({ data }) => {
         </h3>
       </div>
       <div className="container mx-5 lg:mx-auto">
-        <div className="flex flex-col lg:flex-row justify-center">
-          <div className="flex flex-col justify-between rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
+        <div className="flex flex-col lg:flex-row justify-center items-center">
+          <div className="flex flex-col justify-between rounded p-5 w-64 lg:mx-3 mt-10 lg:mt-auto" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
             <h5 className="uppercase mb-5">No Contracts</h5>
             <p className="text-white">All of our training programs inside the app are month to month. No contracts, only results.</p>
           </div>
-          <div className="flex flex-col justify-between rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
+          <div className="flex flex-col justify-between rounded p-5 w-64 mx-auto lg:mx-3 mt-10 lg:mt-auto" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
             <h5 className="uppercase mb-5">Cancel Anytime</h5>
             <p className="text-white">All of our training programs inside the app are month to month. No contracts, only results.</p>
           </div>
-          <div className="flex flex-col justify-between rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
+          <div className="flex flex-col justify-between rounded p-5 w-64 mx-auto lg:mx-3 mt-10 lg:mt-auto" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
             <h5 className="uppercase mb-5">Change Programs</h5>
             <p className="text-white">All of our training programs inside the app are month to month. No contracts, only results.</p>
           </div>
