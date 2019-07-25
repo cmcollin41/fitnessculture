@@ -5,13 +5,13 @@ import Slider from "../components/Slider"
 
 import '../css/global.css'
 
-const Index = ({ data: { prismicAbout, programs } }) => (
+const Index = () => (
 
   <React.Fragment>
     <Layout>
-        <div className="flex flex-col justify-center items-center mx-auto bg-cover bg-top p-5" style={{ backgroundImage: 'url(' + prismicAbout.data.hero_image.url + ')', minHeight: "60" + "vh" }}>
-            <h1 className="uppercase rustico text-center text-white text-4xl">{prismicAbout.data.h1.text}</h1>
-            <h2 className="text-center text-white">{prismicAbout.data.h2.text}</h2>
+        <div className="flex flex-col justify-center items-center mx-auto bg-cover bg-top p-5" style={{ backgroundImage: 'url(' + "" + ')', minHeight: "60" + "vh" }}>
+            <h1 className="uppercase rustico text-center text-white text-4xl">About Us</h1>
+            <h2 className="text-center text-white">Just Two Homies</h2>
             <div className="py-10">
               <Link to="/" className="btn btn-red uppercase">Get Started</Link>
             </div>
@@ -19,12 +19,12 @@ const Index = ({ data: { prismicAbout, programs } }) => (
         <div className="container mx-auto py-20 px-5">
           <div className="flex flex-col justify-center items-center">
             <div className="w-full lg:w-2/3 lg:flex shadow-md">
-              <div className="h-64 lg:h-auto lg:w-1/2 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{ backgroundImage: 'url(' + prismicAbout.data.training_image.url + ')' }}>
+              <div className="h-64 lg:h-auto lg:w-1/2 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{ backgroundImage: 'url(' + "" + ')' }}>
               </div>
               <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-5 flex flex-col justify-between leading-normal">
                 <div className="mb-8">
-                  <h3 className="text-gray-900 font-bold text-xl mb-2">{ prismicAbout.data.training_h3.text }</h3>
-                  <p className="text-gray-700 text-base">{ prismicAbout.data.training_p.text }</p>
+                  <h3 className="text-gray-900 font-bold text-xl mb-2">Training</h3>
+                  <p className="text-gray-700 text-base">Get Trained</p>
                 </div>
                 <Link to="/" className="btn-lg btn-red shadow-md text-center">
                   Get Started
@@ -32,12 +32,12 @@ const Index = ({ data: { prismicAbout, programs } }) => (
               </div> 
             </div> 
             <div className="w-full lg:w-2/3 mt-10 lg:flex shadow-md">
-              <div className="h-64 lg:h-auto lg:w-1/2 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{ backgroundImage: 'url(' + prismicAbout.data.mobility_image.url + ')' }}>
+              <div className="h-64 lg:h-auto lg:w-1/2 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{ backgroundImage: 'url(' + "" + ')' }}>
               </div>
               <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-5 flex flex-col justify-between leading-normal">
                 <div className="mb-8">
-                  <h3 className="text-gray-900 font-bold text-xl mb-2">{ prismicAbout.data.mobility_h3.text }</h3>
-                  <p className="text-gray-700 text-base">{ prismicAbout.data.mobility_p.text }</p>
+                  <h3 className="text-gray-900 font-bold text-xl mb-2">Mobility</h3>
+                  <p className="text-gray-700 text-base">Get Mobile</p>
                 </div>
                 <Link to="/" className="btn-lg btn-red shadow-md text-center">
                   Get Started
@@ -45,12 +45,12 @@ const Index = ({ data: { prismicAbout, programs } }) => (
               </div> 
             </div> 
             <div className="w-full lg:w-2/3 mt-10 lg:flex shadow-md">
-              <div className="h-64 lg:h-auto lg:w-1/2 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{ backgroundImage: 'url(' + prismicAbout.data.nutrition_image.url + ')' }}>
+              <div className="h-64 lg:h-auto lg:w-1/2 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{ backgroundImage: 'url(' + "" + ')' }}>
               </div>
               <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-5 flex flex-col justify-between leading-normal">
                 <div className="mb-8">
-                  <h3 className="text-gray-900 font-bold text-xl mb-2">{ prismicAbout.data.nutrition_h3.text }</h3>
-                  <p className="text-gray-700 text-base">{ prismicAbout.data.nutrition_p.text }</p>
+                  <h3 className="text-gray-900 font-bold text-xl mb-2">Nutrition</h3>
+                  <p className="text-gray-700 text-base">Get Healthy</p>
                 </div>
                 <Link to="/" className="btn-lg btn-red shadow-md text-center">
                   Get Started
@@ -60,14 +60,6 @@ const Index = ({ data: { prismicAbout, programs } }) => (
           </div>
         </div>
 
-        <div className="py-20">
-          <div className="container mx-auto">
-            <h3 className="text-center uppercase text-3xl">
-              Our <span className="rustico">Programs</span>
-            </h3>
-            <Slider programs={programs.edges} />
-          </div>
-        </div>
 
         <div className="pt-20 pb-32" style={{ backgroundColor: "#F9F9F9" }}>
         <div className="container mx-auto p-10">
@@ -98,66 +90,3 @@ const Index = ({ data: { prismicAbout, programs } }) => (
 )
 
 export default Index
-
-export const pageQuery = graphql`
-  query aboutQuery {
-    prismicAbout { 
-      data {
-        hero_image {
-         url
-        }
-        h1 {
-          text
-        }
-        h2 {
-          text
-        }
-        training_image {
-          url
-        }
-        training_h3 {
-          text
-        }
-        training_p {
-          text
-        }
-        nutrition_image {
-          url
-        }
-        nutrition_h3 {
-          text
-        }
-        nutrition_p {
-          text
-        }
-        mobility_image {
-          url
-        }
-        mobility_h3 {
-          text
-        }
-        mobility_p {
-          text
-        }
-      }
-    }
-    programs: allPrismicProgram {
-      edges {
-        node {
-          uid
-          data {
-            title {
-              text
-            }
-            hero_image {
-              url
-            }
-            lead {
-              text
-            }
-          }
-        }
-      }
-    }
-  }
-`

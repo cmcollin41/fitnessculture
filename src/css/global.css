@@ -8,6 +8,10 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
+
+body, html {
+  overflow-x: hidden;
+}
 p {
   @apply text-gray-700 font-light
 }
@@ -40,6 +44,10 @@ p {
 
 .nav-link {
   @apply uppercase block mt-4 text-black font-bold mr-4
+}
+
+.pricing > li {
+  @apply border-b border-gray-200 p-4
 }
 
 .programnav {

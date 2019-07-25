@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import "../css/global.css"
 import { relative } from "upath";
 
-const Index = ({ data: { prismicPricing } }) => (
+const Index = () => (
   <Layout>
     <div
       className="flex flex-col justify-center items-center mx-auto bg-cover bg-top p-5 angle"
@@ -16,10 +16,10 @@ const Index = ({ data: { prismicPricing } }) => (
       }}
     >
       <h1 className="uppercase text-center text-white text-6xl">
-        {prismicPricing.data.h1.text}
+        
       </h1>
       <p className="text-center text-white mt-5">
-        {prismicPricing.data.h2.text}
+        
       </p>
     </div>
     <div className="relative z-50 mt-10 md:-mt-40 lg:-mt-56">
@@ -168,20 +168,3 @@ const Index = ({ data: { prismicPricing } }) => (
 
 export default Index
 
-export const pageQuery = graphql`
-  query pricingQuery {
-    prismicPricing {
-      data {
-        hero_image {
-          url
-        }
-        h1 {
-          text
-        }
-        h2 {
-          text
-        }
-      }
-    }
-  }
-`

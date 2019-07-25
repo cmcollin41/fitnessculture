@@ -12,24 +12,34 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
-    {
-      resolve: `gatsby-source-prismic`,
-      options: {
-        repositoryName: `fitness-culture`,
-        accessToken: `${process.env.API_KEY}`,
-        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
-        linkResolver: ({ node, key, value }) => program => `/${program.uid}`,
-      },
-    },
-    // 'gatsby-plugin-stripe',
     // {
-    //   resolve: `gatsby-source-stripe`,
+    //   resolve: `gatsby-source-prismic`,
     //   options: {
-    //     objects: ['Product','Sku','Subscription'],
-    //     secretKey: `${process.env.STRIPE_SECRET_KEY}`,
-    //     downloadFiles: true,
+    //     repositoryName: `fitness-culture`,
+    //     accessToken: `${process.env.API_KEY}`,
+    //     linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+    //     linkResolver: ({ node, key, value }) => program => `/${program.uid}`,
     //   },
     // },
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: 'mokttt7p',
+        dataset: 'production',
+        // a token with read permissions is required
+        // if you have a private dataset
+        // token: process.env.MY_SANITY_TOKEN,
+      },
+    },
+    'gatsby-plugin-stripe',
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: ['Product','Sku','Subscription'],
+        secretKey: `${process.env.STRIPE_SECRET_KEY}`,
+        downloadFiles: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
