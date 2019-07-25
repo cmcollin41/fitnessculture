@@ -31,7 +31,7 @@ const Program = ({ data }) => {
         <div className="absolute h-full bottom-0 left-0 overflow-x-hidden" style={{zIndex: "-10"}}>
           <img src={circles} alt="circles" width="200px" style={{transform: "scale(-1)"}}/>
         </div>
-        <div className="hidden lg:block absolute h-full" style={{transform: "translateY(45%)"}}>
+        <div className="hidden lg:block absolute h-full" style={{transform: "translate(-35%, 50%)"}}>
           <h2 className="uppercase text-gray-300 text-3xl" style={{transform: "rotate(90deg)"}}>Fitness Program</h2>
         </div>
         <div class="container mx-auto p-5">
@@ -78,7 +78,7 @@ const Program = ({ data }) => {
       <div className="container mx-auto">
         <ProgramTabs />
       </div>
-      <img src={ circles } width="250px" className="hidden lg:block absolute left-0" style={{ bottom: "0px", transform: "scaleX(-1)"}} />
+      <img src={ circles } width="250px" className="hidden lg:block absolute left-0" style={{ bottom: "0px", transform: "scaleX(-1)", zIndex: "-10"}} />
     </div>
 
 

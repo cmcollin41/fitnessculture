@@ -33,7 +33,7 @@ export default () => (
           <p className="mt-5">Our training programs are customized not only to your individual training style but also based on your strength levels.
           </p>
           <div className="mt-10 hidden md:block">
-            <Link to="/" className="text-red-500 uppercase font-bold border border-red-500 rounded-full px-4 py-2">Start Program</Link>
+            <Link to="/" className="text-red-500 uppercase font-bold border border-red-500 bg-white rounded-full px-4 py-2">Start Program</Link>
           </div>
           <div className="my-10 w-full border-bottom border">
           </div>
@@ -84,7 +84,7 @@ export default () => (
           <p className="mt-5">Our training programs are customized not only to your individual training style but also based on your strength levels. Every exercise comes complete with video tutorials, correct progressions, and weight calculations so you know there’s no guesswork.
           </p>
           <div className="mt-5 hidden md:block">
-            <Link to="/" className="text-red-500 uppercase font-bold">Watch Video</Link>
+            <Link to="/" className="text-red-500 uppercase font-bold bg-white">Watch Video</Link>
           </div>
           <div className="my-10 w-full border-bottom border">
           </div>
