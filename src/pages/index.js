@@ -15,23 +15,23 @@ import logo5 from '../../static/menshealth.png'
 
 
 const Index = ({ data }) => {
-  const program = data.allSanityHome.nodes[0]
+  const home = data.allSanityHome.nodes[0]
   return (
     <Layout>
       <SEO title="Fitness Culture" />
       <div
         className="flex flex-col justify-center items-center bg-cover bg-top p-5"
         style={{
-          backgroundImage: `url(${program.heroImage.asset.url})`,
+          backgroundImage: `url(${home.heroImage.asset.url})`,
           minHeight: `60vh`,
         }}
       >
         <span className="flex rounded-full bg-black uppercase px-2 py-1 text-xs text-white">Your #1 Fitness App</span>
         <h1 className="uppercase text-center text-white text-4xl lg:text-6xl mt-4" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
-          {program.title}
+          {home.title}
         </h1>
         <p className="text-center text-white mt-5 lg:w-1/2 text-xl w:1-2 hidden lg:block" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5"}}>
-          {program.subtitle}
+          {home.subtitle}
         </p>
         <div className="py-10">
           <Link to="/" className="uppercase font-bold text-xs text-white bg-red-500 border border-red-500 rounded-full py-4 px-6 shadow-lg">
@@ -71,7 +71,7 @@ const Index = ({ data }) => {
         <div className="flex flex-row flex-nowrap overflow-x-scroll">
 
           {
-            program.programs.map((program,i) => {
+            home.programs.map((program,i) => {
               return (
                 <div className="rounded w-64 mx-3 bg-gray-800 mt-10" style={{minWidth: "300px"}}>
                   <div
@@ -79,13 +79,13 @@ const Index = ({ data }) => {
                     style={{
                       backgroundImage:
                         "url(" +
-                        program.heroImage.url +
+                        program.heroImage.asset.url +
                         ")",
                     }}
                   ></div>
                   <div className="p-5 flex flex-col justify-between h-100">
                     <div>
-                      <h4 className="uppercase text-3xl" style={{ color: program.colorOne.hex }}>{program.text}</h4>
+                      <h4 className="uppercase text-3xl" style={{ color: program.colorTwo.hex }}>{program.title}</h4>
                       <p className="text-white text-sm mt-2">{program.subtitle}</p>
                     </div>
                     <div className="mt-6">
@@ -121,11 +121,11 @@ const Index = ({ data }) => {
     <div className="py-20 bg-gray-800">
       <div className="container mx-5 lg:mx-auto">
         <h3 className="uppercase text-white text-3xl pb-5 lg:pb-10">
-          Join the <span className="px-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>#FitCult</span> Family
+          Join the <span className="px-2 bg-red-500">#FitCult</span> Family
         </h3>
       </div>
       <div className="flex flex-row overflow-scroll lg:overflow-hidden">
-        {program.testimonials.map((i, count) => (
+        {home.testimonials.map((i, count) => (
           <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
             <p className="text-white text-xs italic">"{i.quote}"</p>
             <div className="flex flex-row items-center mt-6">
@@ -150,7 +150,7 @@ const Index = ({ data }) => {
           <div 
             className="w-full lg:w-1/2 bg-cover bg-center relative shadow-lg" 
             style={{
-            backgroundImage: `url(${program.aboutImage.asset.url})`,
+            backgroundImage: `url(${home.heroImage.asset.url})`,
             minHeight: `500px`
             }}>
           </div>
@@ -186,12 +186,6 @@ export const pageQuery = graphql`
         slug {
           current
         }
-        colorOne {
-          hex
-        }
-        colorTwo {
-          hex
-        }
         heroImage {
           asset {
             url
@@ -214,6 +208,12 @@ export const pageQuery = graphql`
             asset {
               url
             }
+          }
+          colorOne {
+            hex
+          }
+          colorTwo {
+            hex
           }
         }
       }

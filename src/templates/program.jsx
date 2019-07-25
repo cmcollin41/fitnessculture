@@ -82,88 +82,107 @@ const Program = ({ data }) => {
     </div>
 
 
-  <div className="py-20 bg-gray-800">
-    <div className="container mx-5 lg:mx-auto">
-      <h3 className="uppercase text-white text-3xl pb-5 lg:pb-10">
-        Join the <span className="px-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>#FitCult</span> Family
-      </h3>
-    </div>
-    <div className="flex flex-row overflow-scroll lg:overflow-hidden">
-      {program.testimonials.map((i, count) => (
-        <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
-          <p className="text-white text-xs italic">"{i.quote}"</p>
-          <div className="flex flex-row items-center mt-6">
-            <img src={ i.memberImage.asset.url} alt="member photo" width="50px" height="50px" className="rounded-full" />
-            <div className="pl-2">
-              <h6 className="uppercase">{i.member}</h6>
-              <p className="text-black text-xs">{i.location}</p>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-    <div className="container mx-auto mt-10 text-center">
-      <Link to="/" className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">Join the Family</Link>
-    </div>
-  </div>
-
-      <div className="mt-20 relative">
-        <img src={square} width="100px" className="absolute" style={{top: "-25px", zIndex: "-1"}} />
-        <div className="flex flex-col lg:flex-row justify-center items-center mx-5">
-          <div className="w-full md:w-1/2 lg:w-1/4 mt:auto lg:mt-20">
-            <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white text-black flex flex-col justify-between">
-              <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
-              </div>
-              <div className="p-4 text-center mx-auto">
-                <span class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Basic</span>
-                <h6 className="text-black text-base text-6xl mt-5">$39</h6>
-              </div>
-              <div>
-                <ul className="pricing">
-                  <li>World class training programs</li>
-                  <li>Complete sets, reps, & progressions</li>
-                  <li>Video coaching tutorials</li>
-                  <li>Member only Facebook group</li>
-                  <li>Ability to switch programs anytime</li>
-                </ul>
-              </div>
-              <div className="px-6 py-10">
-                <Link to="/" className="py-2 px-4 rounded-full border border-red-500 text-red-500">
-                  Start Program
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="w-full md:w-1/2 lg:w-1/4 mt-20">
-            <div className="text-black max-w-sm rounded overflow-hidden shadow-lg bg-white flex flex-col justify-between">
-              <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
-              </div>
-              <div className="p-4 text-center mx-auto">
-                <span class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Premium</span>
-                <h6 className="text-black text-base text-6xl mt-5">$89</h6>
-              </div>
-              <div>
-                <ul className="pricing">
-                  <li>World class training programs</li>
-                  <li>Complete sets, reps, & progressions</li>
-                  <li>Video coaching tutorials</li>
-                  <li>Member only Facebook group</li>
-                  <li>Ability to switch programs anytime</li>
-                  <li>Mobility Routines</li>
-                  <li>Customized Macros</li>
-                  <li>Online Meal Builder</li>
-                </ul>
-              </div>
-              <div className="px-6 py-10">
-                <Link to="/" className="py-2 px-4 rounded-full border border-red-500 text-red-500">
-                  Start Program
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-        <img src={ circles } width="250px" className="block absolute right-0" style={{ bottom: "-150px", zIndex: "-10"}} />
+    <div className="py-20 bg-gray-800">
+      <div className="container mx-5 lg:mx-auto">
+        <h3 className="uppercase text-white text-3xl pb-5 lg:pb-10">
+          Join the <span className="px-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>#FitCult</span> Family
+        </h3>
       </div>
+      <div className="flex flex-row overflow-scroll lg:overflow-hidden">
+        {program.testimonials.map((i, count) => (
+          <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
+            <p className="text-white text-xs italic">"{i.quote}"</p>
+            <div className="flex flex-row items-center mt-6">
+              <img src={ i.memberImage.asset.url} alt="member photo" width="50px" height="50px" className="rounded-full" />
+              <div className="pl-2">
+                <h6 className="uppercase">{i.member}</h6>
+                <p className="text-black text-xs">{i.location}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="container mx-auto mt-10 text-center">
+        <Link to="/" className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">Join the Family</Link>
+      </div>
+    </div>
+
+    <div className="my-20 relative">
+      <img src={square} width="100px" className="absolute" style={{top: "-25px", zIndex: "-1"}} />
+      <div className="flex flex-col lg:flex-row justify-center items-center mx-5">
+        <div className="w-full md:w-1/2 lg:w-1/4 mt:auto lg:mt-20">
+          <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white text-black flex flex-col justify-between">
+            <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
+            </div>
+            <div className="p-4 text-center mx-auto">
+              <span class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Basic</span>
+              <h6 className="text-black text-base text-6xl mt-5">$39</h6>
+            </div>
+            <div>
+              <ul className="pricing">
+                <li>World class training programs</li>
+                <li>Complete sets, reps, & progressions</li>
+                <li>Video coaching tutorials</li>
+                <li>Member only Facebook group</li>
+                <li>Ability to switch programs anytime</li>
+              </ul>
+            </div>
+            <div className="px-6 py-10">
+              <Link to="/" className="py-2 px-4 rounded-full border border-red-500 text-red-500">
+                Start Program
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="w-full md:w-1/2 lg:w-1/4 mt-20">
+          <div className="text-black max-w-sm rounded overflow-hidden shadow-lg bg-white flex flex-col justify-between">
+            <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
+            </div>
+            <div className="p-4 text-center mx-auto">
+              <span class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Premium</span>
+              <h6 className="text-black text-base text-6xl mt-5">$89</h6>
+            </div>
+            <div>
+              <ul className="pricing">
+                <li>World class training programs</li>
+                <li>Complete sets, reps, & progressions</li>
+                <li>Video coaching tutorials</li>
+                <li>Member only Facebook group</li>
+                <li>Ability to switch programs anytime</li>
+                <li>Mobility Routines</li>
+                <li>Customized Macros</li>
+                <li>Online Meal Builder</li>
+              </ul>
+            </div>
+            <div className="px-6 py-10">
+              <Link to="/" className="py-2 px-4 rounded-full border border-red-500 text-red-500">
+                Start Program
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src={ circles } width="250px" className="block absolute right-0" style={{ bottom: "-150px", zIndex: "-10"}} />
+    </div>
+
+    <div className="py-20 bg-gray-800">
+      <div className="container mx-5 lg:mx-auto">
+        <div className="flex flex-row justify-center">
+          <div className="flex flex-col justify-between rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
+            <h5 className="uppercase mb-5">No Contracts</h5>
+            <p className="text-white">All of our training programs inside the app are month to month. No contracts, only results.</p>
+          </div>
+          <div className="flex flex-col justify-between rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
+            <h5 className="uppercase mb-5">Cancel Anytime</h5>
+            <p className="text-white">All of our training programs inside the app are month to month. No contracts, only results.</p>
+          </div>
+          <div className="flex flex-col justify-between rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
+            <h5 className="uppercase mb-5">Change Programs</h5>
+            <p className="text-white">All of our training programs inside the app are month to month. No contracts, only results.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
       <div className="py-20">
         <div className="container mx-auto">
@@ -187,8 +206,8 @@ const Program = ({ data }) => {
         </div>
       </div>
 
-      <div className="pt-20 pb-32" style={{ backgroundColor: "#F9F9F9" }}>
-        <div className="container mx-auto p-10">
+      <div className="py-20" style={{ backgroundColor: "#F9F9F9" }}>
+        <div className="container mx-auto px-10">
           <h3 className="text-center mb-6 uppercase text-3xl">
             Join the <span className="rustico">#FitCult</span>
           </h3>
