@@ -29,7 +29,7 @@ const Program = ({ data }) => {
       > */}
       <div className="py-20 relative">
         <div className="absolute h-full bottom-0 left-0 overflow-x-hidden" style={{zIndex: "-10"}}>
-          <img src={circles} alt="circles" width="200px" style={{transform: "scale(-1)"}}/>
+          <img src={circles} alt="circles" width="200px" height="100%" style={{transform: "scale(-1)"}}/>
         </div>
         <div className="hidden lg:block absolute h-full" style={{transform: "translate(-35%, 50%)"}}>
           <h2 className="uppercase text-gray-300 text-3xl" style={{transform: "rotate(90deg)"}}>Fitness Program</h2>
@@ -52,7 +52,7 @@ const Program = ({ data }) => {
             </div>
             <div className="w-full lg:w-1/2 shadow-lg relative mt-10 lg:mt-auto">
               <img src={program.heroImage.asset.url} alt="hero image" width="100%" />
-              <img src={square} alt="square circles" width="100px" className="absolute" style={{bottom: "-25px", right: "-25px", zIndex: "-1"}} />
+              <img src={square} alt="square circles" width="100px" height="100%" className="absolute" style={{bottom: "-25px", right: "-25px", zIndex: "-1"}} />
             </div>
           </div>
         </div>
@@ -108,7 +108,7 @@ const Program = ({ data }) => {
     </div>
 
     <div className="my-20 relative">
-      <img src={square} width="100px" className="absolute" style={{top: "-25px", zIndex: "-1"}} />
+      <img src={square} width="100px" height="100%" className="absolute" style={{top: "-25px", zIndex: "-1"}} />
       <div className="flex flex-col lg:flex-row justify-center items-center mx-5">
         <div className="w-full md:w-1/2 lg:w-1/4 mt:auto lg:mt-20">
           <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white text-black flex flex-col justify-between">
@@ -162,7 +162,7 @@ const Program = ({ data }) => {
           </div>
         </div>
       </div>
-      <img src={ circles } width="250px" className="block absolute right-0" style={{ bottom: "-150px", zIndex: "-10"}} />
+      <img src={ circles } width="250px" height="100%" className="block absolute right-0" style={{ bottom: "-150px", zIndex: "-10"}} />
     </div>
 
     <div className="py-20 bg-gray-800">
