@@ -12,15 +12,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
-    // {
-    //   resolve: `gatsby-source-prismic`,
-    //   options: {
-    //     repositoryName: `fitness-culture`,
-    //     accessToken: `${process.env.API_KEY}`,
-    //     linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
-    //     linkResolver: ({ node, key, value }) => program => `/${program.uid}`,
-    //   },
-    // },
     {
       resolve: 'gatsby-source-sanity',
       options: {
