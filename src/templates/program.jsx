@@ -172,7 +172,7 @@ const Program = ({ data }) => {
         </h3>
       </div>
       <div className="container mx-5 lg:mx-auto">
-        <div className="flex flex-row justify-center">
+        <div className="flex flex-col lg:flex-row justify-center">
           <div className="flex flex-col justify-between rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
             <h5 className="uppercase mb-5">No Contracts</h5>
             <p className="text-white">All of our training programs inside the app are month to month. No contracts, only results.</p>
