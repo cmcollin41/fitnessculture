@@ -63,7 +63,7 @@ class Header extends React.Component {
                           {on && 
                             <div className="text-sm lg:flex-grow">
                               {data.allSanityProgram.nodes.map((i, count) => (
-                                <Link to={"/programs/" + i.id} key={count} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 mr-4">{i.title}</Link>
+                                <Link to={"/programs/" + i.slug.current} key={count} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 mr-4">{i.title}</Link>
                               ))}
                             </div>
                           }
