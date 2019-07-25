@@ -134,7 +134,7 @@ const Program = ({ data }) => {
             </div>
           </div>
         </div>
-        <div className="w-full md:w-1/2 lg:w-1/4 mt-20">
+        <div className="w-full md:w-1/2 lg:w-1/4 mt-20 lg:mt-auto">
           <div className="text-black max-w-sm rounded overflow-hidden shadow-lg bg-white flex flex-col justify-between">
             <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
             </div>
@@ -166,6 +166,11 @@ const Program = ({ data }) => {
     </div>
 
     <div className="py-20 bg-gray-800">
+      <div className="container mx-5 lg:mx-auto">
+        <h3 className="uppercase text-white text-left lg:text-center text-3xl pb-5 lg:pb-10">
+          Joining is <span className="px-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>Stress</span> Free
+        </h3>
+      </div>
       <div className="container mx-5 lg:mx-auto">
         <div className="flex flex-row justify-center">
           <div className="flex flex-col justify-between rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
