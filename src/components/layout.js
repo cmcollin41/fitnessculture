@@ -11,7 +11,7 @@ export default ({ children }) => (
     <div id="layout">
         <SiteMetadata />
         <Header />
-        <Announcement />
+        {/* <Announcement /> */}
         <div>
             { children }
         </div>
