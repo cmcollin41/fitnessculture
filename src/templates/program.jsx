@@ -6,12 +6,12 @@ import Img from 'gatsby-image'
 
 // Images
 import circles from '../../static/circles.webp'
+import square from '../../static/square-circles.webp'
 import logo1 from '../../static/logo-1.svg'
 import logo2 from '../../static/logo-2.svg'
 import logo3 from '../../static/logo-3.svg'
 import logo4 from '../../static/logo-4.svg'
 import logo5 from '../../static/menshealth.png'
-import square from '../../static/square-circles.webp'
 
 const Program = ({ data }) => {
   const program = data.allSanityProgram.nodes[0]
@@ -44,7 +44,7 @@ const Program = ({ data }) => {
                 {program.subtitle}
               </p>
               <div className="mt-10">
-                <Link to="/" className="btn-lg btn-red rounded-full shadow-md" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
+                <Link to="/" className="btn-lg text-white rounded-full shadow-md" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
                   Start Program
                 </Link>
                 <span className="ml-4 text-xs font-light">$2 per Workout</span>
@@ -166,12 +166,12 @@ const Program = ({ data }) => {
     </div>
 
     <div className="py-20 bg-gray-800">
-      <div className="container px-5">
+      <div className="container px-5 lg:mx-auto">
         <h3 className="uppercase text-white text-left lg:text-center text-3xl pb-5 lg:pb-10">
           Joining is <span className="px-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>Stress</span> Free
         </h3>
       </div>
-      <div className="container">
+      <div className="container lg:mx-auto">
         <div className="flex flex-col lg:flex-row justify-center items-center">
           <div className="flex flex-col justify-between rounded p-5 w-64 lg:mx-3 mt-10 lg:mt-auto" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
             <h5 className="uppercase mb-5">No Contracts</h5>

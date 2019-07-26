@@ -13,7 +13,7 @@ class Header extends React.Component {
      
       <React.Fragment>
         <header>
-          <nav className="flex items-center justify-between flex-wrap bg-white px-4 border-nav-b relative">
+          <nav className="flex items-center justify-between flex-wrap px-4 border-nav-b relative" style={{zIndex: 10}}>
             <div className="hidden lg:flex items-center flex-grow text-black py-4" style={{minWidth: "300px"}}>
               <Link to="/"><img src={ logo } alt="Logo" width={"200px"} /></Link>
             </div>
@@ -21,7 +21,7 @@ class Header extends React.Component {
               <div className="text-sm lg:flex-grow">
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent showprograms">
                     <Link to="#" className="uppercase text-black hover:text-teal-500 font-bold">Programs</Link>
-                    <div className="flex justify-center items-center py-6 bg-white programnav border-nav-b absolute left-0 right-0 text-center border-nav-b z-50" style={{top: "79px"}}>
+                    <div className="flex justify-center items-center py-6 bg-white programnav absolute left-0 right-0 text-center" style={{top: "79px", zIndex: "-4"}}>
                         {data.allSanityProgram.nodes.map((i, count) => (
                           <Link to={"/programs/" + i.slug.current} key={count} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 mr-4">{i.title}</Link>
                         ))}
