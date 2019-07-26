@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-import Img from 'gatsby-image'
+import BackgroundImage from 'gatsby-background-image'
 import Tabz from "../components/Tabz"
 import SEO from '../components/seo'
 
@@ -19,12 +19,10 @@ const Index = ({ data }) => {
   return (
     <Layout>
       <SEO title="Fitness Culture" />
-      <div
-        className="flex flex-col justify-center items-center bg-cover bg-top p-5"
-        style={{
-          backgroundImage: `url(${home.heroImage.asset.url})`,
-          minHeight: `60vh`,
-        }}
+      <BackgroundImage
+      className={'flex flex-col justify-center items-center bg-cover bg-top p-5'}
+      style={{minHeight: "60vh"}}
+      fluid={home.heroImage.asset.fluid}
       >
         <span className="flex rounded-full bg-black uppercase px-2 py-1 text-xs text-white">Your #1 Fitness App</span>
         <h1 className="uppercase text-center text-white text-4xl lg:text-6xl mt-4" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
@@ -38,7 +36,7 @@ const Index = ({ data }) => {
             Get Started
           </Link>
         </div>
-      </div>
+      </BackgroundImage>
       <div className="w-full bg-gray-100 pt-4 pb-2">
         <div className="container mx-auto">
           <p className="text-black uppercase text-xs text-center pt-2">Programs Engineered by Experts Featured in:</p>
@@ -188,7 +186,9 @@ export const pageQuery = graphql`
         }
         heroImage {
           asset {
-            url
+            fluid(maxWidth: 1425) {
+              ...GatsbySanityImageFluid
+            }
           }
         }
         testimonials {
