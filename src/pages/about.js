@@ -1,7 +1,6 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { Link } from "gatsby"
 import Layout from "../components/layout"
-import Slider from "../components/Slider"
 
 import '../css/global.css'
 

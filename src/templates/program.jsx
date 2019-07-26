@@ -34,7 +34,7 @@ const Program = ({ data }) => {
         <div className="hidden lg:block absolute h-full" style={{transform: "translate(-35%, 50%)"}}>
           <h2 className="uppercase text-gray-300 text-3xl" style={{transform: "rotate(90deg)"}}>Fitness Program</h2>
         </div>
-        <div class="container mx-auto p-5">
+        <div className="container mx-auto p-5">
           <div className="flex flex-col lg:flex-row justify-center items-center">
             <div className="w-full lg:w-1/2">
               <h1 className="uppercase text-6xl leading-none">
@@ -76,7 +76,7 @@ const Program = ({ data }) => {
 
     <div className="w-full py-10 lg:py-20 relative">
       <div className="container mx-auto">
-        <ProgramTabs props={program}/>
+        <ProgramTabs program={program}/>
       </div>
       <img src={ circles } width="250px" className="hidden lg:block absolute left-0" style={{ bottom: "0px", transform: "scaleX(-1)", zIndex: "-10"}} />
     </div>
@@ -115,7 +115,7 @@ const Program = ({ data }) => {
             <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
             </div>
             <div className="p-4 text-center mx-auto">
-              <span class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Basic</span>
+              <span className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Basic</span>
               <h6 className="text-black text-base text-6xl mt-5">$39</h6>
             </div>
             <div>
@@ -277,6 +277,18 @@ export const pageQuery = graphql`
         questions {
           question
           answer
+        }
+        personas {
+          title
+          description
+        }
+        features {
+          title
+          description
+        }
+        benefits {
+          title
+          description
         }
       }
     }
