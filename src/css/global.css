@@ -47,6 +47,21 @@ p {
   @apply border-b border-gray-200 p-4
 }
 
+.angle-border {
+  position: relative;
+}
+.angle-border:after {
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: 0;
+  bottom: 0;
+  transform:rotate(12.5deg);
+  height: 100%;
+  @apply border-r border-black;
+
+}
+
 .programnav {
   transform: translateY(-200%);
   transition: 0.3s ease;
