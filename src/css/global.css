@@ -202,11 +202,11 @@ p {
 
 .active-tab {
   background-color:  #424242 !important;
-  color: #fff!important;
+  color: #fff !important;
 }
 
-.active-tab::after {
-  border-left: 20px solid #424242	!important;
+.active-tab:after {
+  border-left: 20px solid #424242 !important;
 }
 
   .arrow-steps .step {
@@ -258,17 +258,18 @@ p {
 
   @media (max-width: 1023px) {
 
-    .active-tab::after {
+    .active-tab:after {
       border-top: 22px solid #424242	!important;
+      border-left: 20px solid transparent !important;
     }
 
     .arrow-steps .step:after,
     .arrow-steps .step:before {
       content: " ";
       position: absolute;
-      /* top: 0; */
-      bottom: -22px;
-      right: 0;
+      top: auto;
+      bottom: -42px;
+      right: 10px;
       width: 0;
       height: 0;
   
