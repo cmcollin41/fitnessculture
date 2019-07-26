@@ -124,7 +124,7 @@ const Program = ({ data }) => {
     <div className="my-20 relative">
       <img src={square} width="100px" height="100%" className="absolute" style={{top: "-25px", zIndex: "-1"}} />
       <div className="flex flex-col lg:flex-row justify-center items-center mx-5">
-        <div className="w-full md:w-1/2 lg:w-1/4 mt:auto lg:mt-20">
+        <div className="w-full md:w-1/2 lg:w-1/4 mt:auto">
           <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white text-black flex flex-col justify-between">
             <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
             </div>
