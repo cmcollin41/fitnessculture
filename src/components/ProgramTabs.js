@@ -18,10 +18,10 @@ class ProgramTabs extends React.Component {
     return (
 
       <Tabs selectedTabClassName="active-tab">
-        <TabList className="mt-10 flex flex-row justify-center w-full overflow-hidden border-b border-gray-300">
-          <Tab className="uppercase text-lg lg:text-2xl mx-4 lg:mx-4 cursor-pointer text-center px-6 py-2"><h6>Who</h6></Tab>
-          <Tab className="uppercase text-lg lg:text-2xl mx-4 lg:mx-4 cursor-pointer text-center px-6 py-2"><h6>How</h6></Tab>
-          <Tab className="uppercase text-lg lg:text-2xl mx-4 lg:mx-4 cursor-pointer text-center px-6 py-2"><h6>What</h6></Tab>
+        <TabList className="arrow-steps flex flex-col lg:flex-row justify-center">
+          <Tab className="step uppercase font-light w-full lg:w-1/4 text-left lg:text-center">1. Choose Your Program</Tab>
+          <Tab className="step uppercase font-light w-full lg:w-1/4 text-left lg:text-center">2. Get to work</Tab>
+          <Tab className="step uppercase font-light w-full lg:w-1/4 text-left lg:text-center">3. See your results</Tab>
         </TabList>
 
         <TabPanel>
