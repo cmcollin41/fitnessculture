@@ -117,7 +117,7 @@ const Index = ({ data }) => {
 
 
     <div className="py-20 bg-gray-900">
-      <div className="container mx-5 lg:mx-auto">
+      <div className="container px-5 lg:mx-auto">
         <h3 className="uppercase text-white text-3xl pb-5 lg:pb-10">
           Join the <span className="px-2 bg-blue-500">#FitCult</span> Family
         </h3>
