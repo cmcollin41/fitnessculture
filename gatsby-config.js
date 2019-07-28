@@ -54,13 +54,13 @@ module.exports = {
     `gatsby-plugin-offline`
   ],
   siteMetadata: {
-    title: "Fitness Culture | Last Set, Best Set | Join Today",
+    title: "Fitness Culture",
     titleTemplate: "%s",
-    author: "@fitnessculture",
+    author: "@_fitnessculture",
     description:
       "Gain muscle, lose weight or improve your explosiveness, it's your world inside of Fitness Culture. Just know you will have thousands of members and coaches there to support you.",
     url: "https://www.fitnessculture.com", // No trailing slash allowed!
     image: "./static/fc-logo-horizontal-black.png", // Path to your image you placed in the 'static' folder
-    twitterUsername: "@fitnessculture",
+    twitterUsername: "@_fitnessculture",
   }
 }
