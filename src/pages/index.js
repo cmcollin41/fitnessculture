@@ -5,7 +5,7 @@ import BackgroundImage from 'gatsby-background-image'
 import HomeTabs from "../components/HomeTabs"
 import SEO from '../components/seo'
 
-import steveCollage from '../../static/nike-collage.svg'
+import steveCollage from '../../static/nike-collage.jpg'
 import circles from '../../static/circles.svg'
 import logo1 from '../../static/logo-1.svg'
 import logo2 from '../../static/logo-2.svg'
