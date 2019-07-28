@@ -175,7 +175,7 @@ const Index = ({ data }) => {
 export default Index
 
 export const pageQuery = graphql`
-  {
+  query IndexPage{
     allSanityHome {
       nodes {
         id
@@ -218,5 +218,6 @@ export const pageQuery = graphql`
         }
       }
     }
+
   }
 `

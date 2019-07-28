@@ -54,7 +54,7 @@ export default () => (
               <h6 className="text-gray-300 uppercase">Pages</h6>
               <div className="flex flex-col pb-2 left-0 right-0">
                 <Link to="/" className="uppercase block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">Home</Link>
-                <Link to="/" className="uppercase block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">Shop</Link>
+                <a href="https://shop.fitnessculture.com" className="uppercase block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">Shop</a>
                 <Link to="/about" className="uppercase block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">About</Link>
               </div>
             </div>
@@ -70,7 +70,7 @@ export default () => (
               <h6 className="text-gray-300 mb-6 uppercase">Join the #FitCult</h6>
               <div className="flex flex-col lg:flex-row justify-center items-center">
                 <div className="w-full">
-                  <div class="flex flex-col lg:flex-row justify-between items-center border rounded p-2 shadow bg-white text-center">
+                  <div className="flex flex-col lg:flex-row justify-between items-center border rounded p-2 shadow bg-white text-center">
                     <input
                       className="appearance-none border-none rounded w-auto py-1 px-2 text-gray-700 leading-tight text-base focus:outline-none"
                       type="email"

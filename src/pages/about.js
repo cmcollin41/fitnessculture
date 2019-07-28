@@ -1,57 +1,77 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
+import BackgroundImage from 'gatsby-background-image'
+import Img from 'gatsby-image'
+import SEO from '../components/seo'
 
 import '../css/global.css'
 
-const Index = () => (
-
-  <React.Fragment>
+const About = ({ data }) => {
+  const about = data.allSanityAbout.nodes[0]
+  return (
     <Layout>
-        <div className="flex flex-col justify-center items-center mx-auto bg-cover bg-top p-5" style={{ backgroundImage: 'url(' + "" + ')', minHeight: "60" + "vh" }}>
-            <h1 className="uppercase rustico text-center text-white text-4xl">About Us</h1>
-            <h2 className="text-center text-white">Just Two Homies</h2>
-            <div className="py-10">
-              <Link to="/" className="btn btn-red uppercase">Get Started</Link>
-            </div>
+      <SEO title={about.title} description={about.subtitle} image={about.heroImage.asset.url} />
+      <BackgroundImage
+      className={'flex flex-col justify-center items-center bg-cover bg-top p-5'}
+      style={{minHeight: "60vh"}}
+      fluid={about.heroImage.asset.fluid}
+      >
+        <h1 className="uppercase text-center text-white text-4xl lg:text-6xl mt-4" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
+          {about.title}
+        </h1>
+        <p className="text-center text-white mt-5 lg:w-1/2 text-xl w:1-2 hidden lg:block" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5"}}>
+          {about.subtitle}
+        </p>
+        <div className="py-10">
+          <Link to="/" className="btn-lg text-white rounded-full shadow-lg bg-blue-500">
+            Get Started
+          </Link>
         </div>
+      </BackgroundImage>
         <div className="container mx-auto py-20 px-5">
           <div className="flex flex-col justify-center items-center">
             <div className="w-full lg:w-2/3 lg:flex shadow-md">
-              <div className="h-64 lg:h-auto lg:w-1/2 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{ backgroundImage: 'url(' + "" + ')' }}>
-              </div>
+              <Img
+                className={'h-64 lg:h-auto w-full lg:w-1/2 flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center'} 
+                fluid={about.trainingImage.asset.fluid}
+              />
               <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-5 flex flex-col justify-between leading-normal">
                 <div className="mb-8">
-                  <h3 className="text-gray-900 font-bold text-xl mb-2">Training</h3>
-                  <p className="text-gray-700 text-base">Get Trained</p>
+                  <h3 className="uppercase font-bold text-xl mb-2">{about.trainingTitle}</h3>
+                  <p className="text-gray-700 text-base">{about.trainingDescription}</p>
                 </div>
-                <Link to="/" className="btn-lg btn-red shadow-md text-center">
+                <Link to="/" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded-sm">
                   Get Started
                 </Link>
               </div> 
             </div> 
             <div className="w-full lg:w-2/3 mt-10 lg:flex shadow-md">
-              <div className="h-64 lg:h-auto lg:w-1/2 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{ backgroundImage: 'url(' + "" + ')' }}>
-              </div>
+              <Img 
+                className={'h-64 lg:h-auto lg:w-1/2 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden'} 
+                fluid={about.mobilityImage.asset.fluid}
+              />
               <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-5 flex flex-col justify-between leading-normal">
                 <div className="mb-8">
-                  <h3 className="text-gray-900 font-bold text-xl mb-2">Mobility</h3>
-                  <p className="text-gray-700 text-base">Get Mobile</p>
+                  <h3 className="uppercase font-bold text-xl mb-2">{about.mobilityTitle}</h3>
+                  <p className="text-gray-700 text-base">{about.mobilityDescription}</p>
                 </div>
-                <Link to="/" className="btn-lg btn-red shadow-md text-center">
+                <Link to="/" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded-sm">
                   Get Started
                 </Link>
               </div> 
             </div> 
             <div className="w-full lg:w-2/3 mt-10 lg:flex shadow-md">
-              <div className="h-64 lg:h-auto lg:w-1/2 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{ backgroundImage: 'url(' + "" + ')' }}>
-              </div>
+              <Img 
+                className={"h-64 lg:h-auto lg:w-1/2 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"} f
+                fluid={about.nutritionImage.asset.fluid}
+              />
               <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-5 flex flex-col justify-between leading-normal">
                 <div className="mb-8">
-                  <h3 className="text-gray-900 font-bold text-xl mb-2">Nutrition</h3>
-                  <p className="text-gray-700 text-base">Get Healthy</p>
+                  <h3 className="uppercase font-bold text-xl mb-2">{about.nutritionTitle}</h3>
+                  <p className="text-gray-700 text-base">{about.nutritionDescription}</p>
                 </div>
-                <Link to="/" className="btn-lg btn-red shadow-md text-center">
+                <Link to="/" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded-sm">
                   Get Started
                 </Link>
               </div> 
@@ -59,33 +79,59 @@ const Index = () => (
           </div>
         </div>
 
-
-        <div className="pt-20 pb-32" style={{ backgroundColor: "#F9F9F9" }}>
-        <div className="container mx-auto p-10">
-          <h3 className="text-center mb-6 uppercase text-3xl">
-            Join the <span className="rustico">#FitCult</span>
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center">
-            <div className="w-full lg:w-1/2">
-              <div class="flex flex-col lg:flex-row justify-between items-center border rounded py-6 px-3 shadow bg-white">
-                <input
-                  className="appearance-none border-none rounded w-auto py-1 px-2 text-gray-700 leading-tight text-xl focus:outline-none"
-                  type="email"
-                  placeholder="youremail@email.com"
-                ></input>
-                <Link
-                  to="/"
-                  className="btn-lg btn-red shadow-md w-auto mt-10 lg:mt-auto"
-                >
-                  Join the Cult
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </Layout>
-  </React.Fragment>
-)
+)}
 
-export default Index
+export default About
+
+
+
+export const aboutQuery = graphql`
+  {
+    allSanityAbout {
+      nodes {
+        id
+        title
+        subtitle
+        slug {
+          current
+        }
+        heroImage {
+          asset {
+            fluid(maxWidth: 1425) {
+              ...GatsbySanityImageFluid
+            }
+            url
+          }
+        }
+        trainingTitle
+        trainingDescription
+        trainingImage {
+          asset {
+            fluid(maxWidth: 1425) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+        mobilityTitle
+        mobilityDescription
+        mobilityImage {
+          asset {
+            fluid(maxWidth: 1425) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+        nutritionTitle
+        nutritionDescription
+        nutritionImage {
+          asset {
+            fluid(maxWidth: 1425) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
+    }
+  }
+`
