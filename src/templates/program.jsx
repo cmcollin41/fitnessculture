@@ -18,7 +18,7 @@ const Program = ({ data }) => {
   const program = data.allSanityProgram.nodes[0]
   return (
     <Layout>
-       <SEO title={program.title} description={program.subtitle} image={program.heroImage.asset.url} keywords="" />
+       <SEO title={program.title} description={program.subtitle} image={program.heroImage.asset.url} />
       <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
       </div>
 
