@@ -2,11 +2,11 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import BackgroundImage from 'gatsby-background-image'
-import Tabz from "../components/Tabz"
+import HomeTabs from "../components/HomeTabs"
 import SEO from '../components/seo'
 
-import steveCollage from '../../static/nike-collage.jpg'
-import circles from '../../static/circles.webp'
+import steveCollage from '../../static/nike-collage.svg'
+import circles from '../../static/circles.svg'
 import logo1 from '../../static/logo-1.svg'
 import logo2 from '../../static/logo-2.svg'
 import logo3 from '../../static/logo-3.svg'
@@ -32,7 +32,7 @@ const Index = ({ data }) => {
           {home.subtitle}
         </p>
         <div className="py-10">
-          <Link to="/" className="uppercase font-bold text-xs text-white bg-red-500 border border-red-500 rounded-full py-4 px-6 shadow-lg">
+          <Link to="/" className="btn-lg text-white rounded-full shadow-lg bg-blue-500">
             Get Started
           </Link>
         </div>
@@ -54,7 +54,7 @@ const Index = ({ data }) => {
 
       <div className="w-full py-10 lg:py-20 relative">
         <div className="container mx-auto">
-          <Tabz />
+          <HomeTabs program={home} />
         </div>
         <img src={ circles } width="250px" className="hidden lg:block absolute left-0" style={{ bottom: "-100px", transform: "scaleX(-1)"}} />
       </div>
@@ -66,12 +66,12 @@ const Index = ({ data }) => {
             Our Programs
           </h3>
         </div>
-        <div className="flex flex-row flex-nowrap overflow-x-scroll">
+        <div className="flex flex-row flex-nowrap items-stretch h-full overflow-x-scroll">
 
           {
             home.programs.map((program,i) => {
               return (
-                <div className="rounded w-64 mx-3 bg-gray-800 mt-10" style={{minWidth: "300px"}}>
+                <div className="rounded w-64 mx-3 bg-gray-900 mt-10 flex flex-col justify-between" style={{minWidth: "300px"}}>
                   <div
                     className="block h-64 w-full bg-cover bg-center rounded-t text-center overflow-hidden"
                     style={{
@@ -81,15 +81,15 @@ const Index = ({ data }) => {
                         ")",
                     }}
                   ></div>
-                  <div className="p-5 flex flex-col justify-between h-100">
-                    <div>
-                      <h4 className="uppercase text-3xl" style={{ color: program.colorTwo.hex }}>{program.title}</h4>
+     
+                    <div className="p-5">
+                      <h4 className="uppercase text-2xl" style={{ color: program.colorTwo.hex }}>{program.title}</h4>
                       <p className="text-white text-sm mt-2">{program.subtitle}</p>
                     </div>
-                    <div className="mt-6">
+                    <div className="p-5">
                       <Link to="/" className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">Learn More</Link>
                     </div>
-                  </div>
+                
                 </div>
               )
             })
@@ -110,21 +110,21 @@ const Index = ({ data }) => {
           <h3 className="uppercase text-3xl">Fitness Changes Everything</h3>
         </div>
         <div className="text-center mt-10">
-          <Link to="/" className="py-2 px-4 rounded-full border border-red-500 text-red-500">Watch Video</Link>
+          <Link to="/" className="btn rounded-full border border-blue-500 text-blue-500">Watch Video</Link>
         </div>
       </div>
     </div>
 
 
-    <div className="py-20 bg-gray-800">
+    <div className="py-20 bg-gray-900">
       <div className="container mx-5 lg:mx-auto">
         <h3 className="uppercase text-white text-3xl pb-5 lg:pb-10">
-          Join the <span className="px-2 bg-red-500">#FitCult</span> Family
+          Join the <span className="px-2 bg-blue-500">#FitCult</span> Family
         </h3>
       </div>
       <div className="flex flex-row overflow-scroll lg:overflow-hidden">
         {home.testimonials.map((i, count) => (
-          <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3" style={{backgroundColor: "#9e9e9e", minWidth: "275px"}}>
+          <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3 bg-gray-600" style={{ minWidth: "275px"}}>
             <p className="text-white text-xs italic">"{i.quote}"</p>
             <div className="flex flex-row items-center mt-6">
               <img src={ i.memberImage.asset.url} alt="member photo" width="50px" height="50px" className="rounded-full" />
@@ -159,7 +159,7 @@ const Index = ({ data }) => {
             </h2>
             <p className="mt-5">This is a cool story about us</p>
             <div className="mt-10">
-              <Link to="/" className="uppercase font-bold text-xs text-red-500 border border-red-500 rounded-full py-4 px-6">
+              <Link to="/" className="btn text-blue-500 border border-blue-500 rounded-full">
                 Watch Video
               </Link>
             </div>

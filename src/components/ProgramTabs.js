@@ -2,11 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-import training from '../../static/training-phone.png'
-import mobility from '../../static/mobility-phone.png'
-import nutrition from '../../static/nutrition-phone.png'
-import kyle from '../../static/kylewilliford.png'
-
 import "react-tabs/style/react-tabs.css";
 
 

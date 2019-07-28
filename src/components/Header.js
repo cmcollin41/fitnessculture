@@ -20,25 +20,25 @@ class Header extends React.Component {
             <div className="w-full block hidden flex-grow lg:flex lg:justify-center lg:items-center lg:ml-auto lg:w-auto">
               <div className="text-sm lg:flex-grow">
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent showprograms">
-                    <Link to="#" className="uppercase text-black hover:text-teal-500 font-bold">Programs</Link>
+                    <Link to="#" className="uppercase text-black hover:text-blue-500 font-bold">Programs</Link>
                     <div className="flex justify-center items-center py-6 bg-white programnav absolute left-0 right-0 text-center" style={{top: "79px", zIndex: "-4"}}>
                         {data.allSanityProgram.nodes.map((i, count) => (
-                          <Link to={"/programs/" + i.slug.current} key={count} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 mr-4">{i.title}</Link>
+                          <Link to={"/programs/" + i.slug.current} key={count} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 mr-4">{i.title}</Link>
                         ))}
                     </div>
                   </div>
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
-                    <Link to="/shop" className="uppercase text-black hover:text-teal-500 font-bold">Shop</Link>
+                    <a href="https://shop.fitnessculture.com" target="_blank" className="uppercase text-black hover:text-blue-500 font-bold">Shop</a>
                   </div>
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
-                    <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold">About</Link>
+                    <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold">About</Link>
                   </div>
               </div>
             </div>
             <div className="block hidden lg:flex justify-end content-center align-center" style={{minWidth: "300px"}}>
               <div>
-                <a href="https://app.fitnessculture.com/login" className="inline-block text-sm px-4 py-2 leading-none text-black  hover:text-teal-500 mt-4 lg:mt-0 uppercase">Login</a>
-                <Link to="/" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-teal-500 hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded-full">Get Started</Link>
+                <a href="https://app.fitnessculture.com/login" className="inline-block text-sm px-4 py-2 leading-none text-black  hover:text-blue-500 mt-4 lg:mt-0 uppercase">Login</a>
+                <Link to="/" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded-full">Get Started</Link>
                 {/* <Cart/> */}
               </div>
             </div>
@@ -69,11 +69,11 @@ class Header extends React.Component {
                     <Toggle 
                       render={({on, toggle}) => (
                         <div>
-                          <div onClick={toggle} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold mr-4">Programs &#x2304;</div>
+                          <div onClick={toggle} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Programs &#x2304;</div>
                           {on && 
                             <div className="text-sm lg:flex-grow">
                               {data.allSanityProgram.nodes.map((i, count) => (
-                                <Link to={"/programs/" + i.slug.current} key={count} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 mr-4">{i.title}</Link>
+                                <Link to={"/programs/" + i.slug.current} key={count} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 mr-4">{i.title}</Link>
                               ))}
                             </div>
                           }
@@ -81,10 +81,10 @@ class Header extends React.Component {
                       )}
                     />
 
-                    <a href="https://shopify.com" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold mr-4">Shop</a>
-                    <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-teal-500 font-bold mr-4">About</Link>
+                    <a href="https://shopify.com" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Shop</a>
+                    <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">About</Link>
                   <div>
-                    <a href="#" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-teal-500 hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 uppercase">Get Started</a>
+                    <a href="#" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase">Get Started</a>
                   </div>
                 </div>
               }
