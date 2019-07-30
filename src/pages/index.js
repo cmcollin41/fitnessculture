@@ -2,10 +2,10 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import BackgroundImage from 'gatsby-background-image'
+import Img from 'gatsby-image'
 import HomeTabs from "../components/HomeTabs"
 import SEO from '../components/seo'
 
-import steveCollage from '../../static/nike-collage.jpg'
 import circles from '../../static/circles.svg'
 import logo1 from '../../static/logo-1.svg'
 import logo2 from '../../static/logo-2.svg'
@@ -62,7 +62,7 @@ const Index = ({ data }) => {
 
       <div className="py-20 bg-gray-100">
         <div className="container lg:mx-auto mx-5">
-          <h3 className="uppercase text-3xl pb-5 lg:pb-10">
+          <h3 className="uppercase text-lg lg:text-2xl pb-5 lg:pb-10">
             Our Programs
           </h3>
         </div>
@@ -101,24 +101,21 @@ const Index = ({ data }) => {
     <div className="pt-10 pb-20 lg:py-20 mx-5">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row justify-start items-center mt-10 h-full">
-          <div className="w-full lg:w-1/2 pt-5 lg:p-10 mx-auto">
-            <h2 className="text-3xl uppercase">
-              Do the Math
+          <div className="w-full lg:w-1/2 order-2 lg:order-1 pt-5 lg:p-10 mx-auto">
+            <h2 className="text-lg lg:text-2xl uppercase">
+              {home.personalTrainerTitle}
             </h2>
-            <p className="mt-5">Get the personal training experience cheaper than your pre-workout.</p>
+            <p className="mt-5">{home.personalTrainerDescription}</p>
             <div className="mt-10">
               <Link to="/" className="btn text-blue-500 border border-blue-500 rounded-full">
                 See Programs
               </Link>
             </div>
           </div>
-          <div 
-            className="w-full lg:w-1/2 bg-cover bg-center relative shadow-lg" 
-            style={{
-            backgroundImage: `url(${home.heroImage.asset.url})`,
-            minHeight: `500px`
-            }}>
-          </div>
+          <Img
+            className="order-1 lg:order-2 w-full lg:w-1/2 shadow-lg p-5 bg-white" 
+            style={{minHeight: "500px"}}
+            fluid={home.personalTrainerImage.asset.fluid}/>
         </div>
       </div>
     </div>
@@ -126,7 +123,7 @@ const Index = ({ data }) => {
 
     <div className="py-20 bg-gray-900">
       <div className="container px-5 lg:mx-auto">
-        <h3 className="uppercase text-white text-3xl pb-5 lg:pb-10">
+        <h3 className="uppercase text-white text-lg lg:text-2xl pb-5 lg:pb-10">
           Join the <span className="px-2 bg-blue-500">#FitCult</span> Family
         </h3>
       </div>
@@ -153,19 +150,16 @@ const Index = ({ data }) => {
     <div className="pt-10 pb-20 lg:py-20 mx-5">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row justify-start items-center mt-10 h-full">
-          <div 
-            className="w-full lg:w-1/2 bg-cover bg-center relative shadow-lg" 
-            style={{
-            backgroundImage: `url(${home.heroImage.asset.url})`,
-            minHeight: `500px`
-            }}>
-          </div>
+          <Img
+            className="w-full lg:w-1/2 shadow-lg" 
+            style={{minHeight: "500px"}}
+            fluid={home.aboutImage.asset.fluid}/>
           <div className="w-full lg:w-1/2 pt-5 lg:p-10 mx-auto">
             <h6 className="uppercase mt-6 text-left mb-2 text-gray-400">About Us</h6>
-            <h2 className="text-3xl uppercase">
-              Jake and Steve
+            <h2 className="text-lg lg:text-2xl uppercase">
+              {home.aboutTitle}
             </h2>
-            <p className="mt-5">This is a cool story about us</p>
+            <p className="mt-5">{home.aboutDescription}</p>
             <div className="mt-10">
               <Link to="/" className="btn text-blue-500 border border-blue-500 rounded-full">
                 Watch Video
@@ -193,6 +187,51 @@ export const pageQuery = graphql`
           current
         }
         heroImage {
+          asset {
+            fluid(maxWidth: 1425) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+        trainingTitle
+        trainingDescription
+        trainingImage {
+          asset {
+            fluid(maxWidth: 1425) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+        nutritionTitle
+        nutritionDescription
+        nutritionImage {
+          asset {
+            fluid(maxWidth: 1425) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+        mobilityTitle
+        mobilityDescription
+        mobilityImage {
+          asset {
+            fluid(maxWidth: 1425) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+        aboutTitle
+        aboutDescription
+        aboutImage {
+          asset {
+            fluid(maxWidth: 1425) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+        personalTrainerTitle
+        personalTrainerDescription
+        personalTrainerImage {
           asset {
             fluid(maxWidth: 1425) {
               ...GatsbySanityImageFluid

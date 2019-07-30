@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import training from '../../static/training-phone.png'
@@ -24,11 +25,10 @@ class HomeTabs extends React.Component {
     <TabPanel>
       <div className="flex flex-col lg:flex-row items-center mt-20">
         <div className="w-full md:w-1/2 lg:w-1/2 px-5 lg:px-20 mx-auto">
-          <h2 className="text-3xl lg:text-5xl uppercase text-center lg:text-left">Feel Better</h2>
-          <p className="mt-5">Our training programs are customized not only to your individual training style but also based on your strength levels. Every exercise comes complete with video tutorials, correct progressions, and weight calculations so you know there’s no guesswork.
-          </p>
+          <h2 className="text-xl uppercase text-center lg:text-left">{program.trainingTitle}</h2>
+          <p className="mt-5">{program.trainingDescription}</p>
           <div className="mt-5 hidden md:block">
-            <Link to="/" >Watch Video</Link>
+            <Link to="/" >Select Program</Link>
           </div>
           <div className="my-10 w-full border-bottom border">
           </div>
@@ -55,8 +55,8 @@ class HomeTabs extends React.Component {
           </div>
         </div>
         <div className="w-full md:w-1/2 lg:w-1/2 p-5">
-          <img
-              src={ training }
+          <Img
+              fluid={ program.trainingImage.asset.fluid}
               alt="Fitness programming in an app"
               width="100%"
               className="mx-auto"
@@ -79,9 +79,8 @@ class HomeTabs extends React.Component {
     <TabPanel>
     <div className="flex flex-col lg:flex-row items-center mt-20">
         <div className="w-full md:w-1/2 lg:w-1/2 px-5 lg:px-20 mx-auto">
-          <h2 className="text-3xl lg:text-5xl uppercase text-center lg:text-left">Look Better</h2>
-          <p className="mt-5">Our training programs are customized not only to your individual training style but also based on your strength levels. Every exercise comes complete with video tutorials, correct progressions, and weight calculations so you know there’s no guesswork.
-          </p>
+          <h2 className="text-xl uppercase text-center lg:text-left">{program.nutritionTitle}</h2>
+          <p className="mt-5">{program.nutritionDescription}</p>
           <div className="mt-5 hidden md:block">
             <Link to="/">Watch Video</Link>
           </div>
@@ -110,8 +109,8 @@ class HomeTabs extends React.Component {
           </div>
         </div>
         <div className="w-full md:w-1/2 lg:w-1/2 p-5">
-          <img
-              src={ nutrition }
+          <Img
+              fluid={ program.nutritionImage.asset.fluid}
               alt="Meal plans and macros"
               width="100%"
               className="mx-auto"
@@ -134,9 +133,8 @@ class HomeTabs extends React.Component {
     <TabPanel>
     <div className="flex flex-col lg:flex-row items-center mt-20">
         <div className="w-full md:w-1/2 lg:w-1/2 px-5 lg:px-20 mx-auto">
-          <h2 className="text-3xl lg:text-5xl uppercase text-center lg:text-left">Perform Better</h2>
-          <p className="mt-5">Our training programs are customized not only to your individual training style but also based on your strength levels. Every exercise comes complete with video tutorials, correct progressions, and weight calculations so you know there’s no guesswork.
-          </p>
+        <h2 className="text-xl uppercase text-center lg:text-left">{program.mobilityTitle}</h2>
+          <p className="mt-5">{program.mobilityDescription}</p>
           <div className="mt-5 hidden md:block">
             <Link to="/">Watch Video</Link>
           </div>
@@ -165,8 +163,8 @@ class HomeTabs extends React.Component {
           </div>
         </div>
         <div className="w-full md:w-1/2 lg:w-1/2 p-5">
-          <img
-              src={ mobility }
+          <Img
+              fluid={ program.mobilityImage.asset.fluid}
               alt="Mobility exercises"
               width="100%"
               className="mx-auto"
