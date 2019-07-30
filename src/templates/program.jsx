@@ -180,7 +180,7 @@ const Program = ({ data }) => {
         </h3>
       </div>
       <div className="container lg:mx-auto">
-        <div className="flex flex-col lg:flex-row justify-center items-center lg:items-stretch">
+        <div className="flex flex-col lg:flex-row justify-center items-center">
           <div className="flex flex-col justify-between rounded p-5 w-64 lg:mx-3 mt-10 lg:mt-auto bg-gray-600" style={{minWidth: "275px"}}>
             <h5 className="uppercase mb-5">No Contracts</h5>
             <p className="text-white">No miniumum length or contract. All training programs are month to month inside of Fitness Culture.</p>
