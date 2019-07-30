@@ -188,18 +188,18 @@ const Program = ({ data }) => {
         </h3>
       </div>
       <div className="container lg:mx-auto">
-        <div className="flex flex-col lg:flex-row justify-center items-center">
+        <div className="flex flex-col lg:flex-row justify-center items-stretch">
           <div className="flex flex-col justify-between rounded p-5 w-64 lg:mx-3 mt-10 lg:mt-auto bg-gray-600" style={{minWidth: "275px"}}>
             <h5 className="uppercase mb-5">No Contracts</h5>
-            <p className="text-white">All of our training programs inside the app are month to month. No contracts, only results.</p>
+            <p className="text-white">No miniumum length or contract. All training programs are month to month inside of Fitness Culture.</p>
           </div>
           <div className="flex flex-col justify-between rounded p-5 w-64 mx-auto lg:mx-3 mt-10 lg:mt-auto bg-gray-600" style={{minWidth: "275px"}}>
             <h5 className="uppercase mb-5">Cancel Anytime</h5>
-            <p className="text-white">All of our training programs inside the app are month to month. No contracts, only results.</p>
+            <p className="text-white">If you ever have to leave us for any reason, stopping or pausing your membership is as easy as emailing support@fitnessculture.com</p>
           </div>
           <div className="flex flex-col justify-between rounded p-5 w-64 mx-auto lg:mx-3 mt-10 lg:mt-auto bg-gray-600" style={{minWidth: "275px"}}>
-            <h5 className="uppercase mb-5">Change Programs</h5>
-            <p className="text-white">All of our training programs inside the app are month to month. No contracts, only results.</p>
+            <h5 className="uppercase mb-5">Change Programs Anytime</h5>
+            <p className="text-white">You goals change and so should your program. You can switch to any of our programs at any time.</p>
           </div>
         </div>
       </div>
