@@ -72,7 +72,7 @@ const Programs = ({ data }) => {
                       <p className="text-white text-sm mt-2">{program.subtitle}</p>
                       </div>
                       <div className="p-5">
-                      <Link to="/" className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">Learn More</Link>
+                      <Link to={'programs/' + program.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">Learn More</Link>
                       </div>
                     </div>
                   </div>
@@ -147,6 +147,9 @@ export const pageQuery = graphql`
         programs {
           title
           subtitle
+          slug {
+            current
+          }
           heroImage {
             asset {
               url

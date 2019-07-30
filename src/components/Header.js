@@ -20,7 +20,7 @@ class Header extends React.Component {
             <div className="w-full block hidden flex-grow lg:flex lg:justify-center lg:items-center lg:ml-auto lg:w-auto">
               <div className="text-sm lg:flex-grow">
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent showprograms">
-                    <Link to="#" className="uppercase text-black hover:text-blue-500 font-bold">Programs</Link>
+                    <Link to="/programs" className="uppercase text-black hover:text-blue-500 font-bold">Programs</Link>
                     <div className="flex justify-center items-center py-6 bg-white programnav absolute left-0 right-0 text-center" style={{top: "79px", zIndex: "-4"}}>
                         {data.allSanityProgram.nodes.map((i, count) => (
                           <Link to={"/programs/" + i.slug.current} key={count} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 mr-4">{i.title}</Link>

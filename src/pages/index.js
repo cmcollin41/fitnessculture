@@ -32,7 +32,7 @@ const Index = ({ data }) => {
           {home.subtitle}
         </p>
         <div className="py-10">
-          <Link to="/" className="btn-lg text-white rounded-full shadow-lg bg-blue-500">
+          <Link to="/programs" className="btn-lg text-white rounded-full shadow-lg bg-blue-500">
             Get Started
           </Link>
         </div>
@@ -87,7 +87,7 @@ const Index = ({ data }) => {
                       <p className="text-white text-sm mt-2">{program.subtitle}</p>
                     </div>
                     <div className="p-5">
-                      <Link to="/" className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">Learn More</Link>
+                      <Link to={'programs/' + program.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">Learn More</Link>
                     </div>
                 
                 </div>
@@ -107,7 +107,7 @@ const Index = ({ data }) => {
             </h2>
             <p className="mt-5">{home.personalTrainerDescription}</p>
             <div className="mt-10">
-              <Link to="/" className="btn text-blue-500 border border-blue-500 rounded-full">
+              <Link to="/programs" className="btn text-blue-500 border border-blue-500 rounded-full">
                 See Programs
               </Link>
             </div>
@@ -161,7 +161,7 @@ const Index = ({ data }) => {
             </h2>
             <p className="mt-5">{home.aboutDescription}</p>
             <div className="mt-10">
-              <Link to="/" className="btn text-blue-500 border border-blue-500 rounded-full">
+              <Link to="/about" className="btn text-blue-500 border border-blue-500 rounded-full">
                 Watch Video
               </Link>
             </div>
@@ -251,6 +251,9 @@ export const pageQuery = graphql`
         programs {
           title
           subtitle
+          slug {
+            current
+          }
           heroImage {
             asset {
               url
