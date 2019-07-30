@@ -30,8 +30,13 @@ const About = ({ data }) => {
         </div>
       </BackgroundImage>
         <div className="container mx-auto py-20 px-5">
+          <div className="w-full lg:w-2/3 mx-auto">
+            <p>One of the main reasons we wanted to start Fitness Culture was because we knew how much training smart changed our lives. We were struggling in my own lives and couldn't seem to find our way out. That's when we started training and training smart with discipline and intensity.</p>
+            <p className="mt-10">It really got us out of a bad place and back on track not just physically, but also mentally. It was in that moment we knew we wanted to develop a way for people to experience the impact of training and how it can change their mental outlook. </p>
+            <p className="mt-10">That's why we started Fitness Culture. You can get real coaching, real training programs designed around your goal, along with nutrition and mobility to help you change your life and get results.</p>
+          </div>
           <div className="flex flex-col justify-center items-center">
-            <div className="w-full lg:w-2/3 lg:flex shadow-md">
+            <div className="w-full lg:w-2/3 mt-20 lg:flex shadow-md">
               <Img
                 className={'h-64 lg:h-auto w-full lg:w-1/2 flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center'} 
                 fluid={about.trainingImage.asset.fluid}
