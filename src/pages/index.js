@@ -102,6 +102,7 @@ const Index = ({ data }) => {
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row justify-start items-center mt-10 h-full">
           <div className="w-full lg:w-1/2 order-2 lg:order-1 pt-5 lg:p-10 mx-auto">
+            <h6 className="uppercase mt-6 text-left mb-2 text-gray-400">See the Savings</h6>
             <h2 className="text-lg lg:text-2xl uppercase">
               {home.personalTrainerTitle}
             </h2>
