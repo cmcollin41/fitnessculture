@@ -163,7 +163,7 @@ const Index = ({ data }) => {
             <p className="mt-5">{home.aboutDescription}</p>
             <div className="mt-10">
               <Link to="/about" className="btn text-blue-500 border border-blue-500 rounded-full">
-                Watch Video
+                Learn More
               </Link>
             </div>
           </div>

@@ -23,7 +23,7 @@ class Header extends React.Component {
                     <Link to="/programs" className="uppercase text-black hover:text-blue-500 font-bold">Programs</Link>
                     <div className="flex justify-center items-center py-6 bg-white programnav absolute left-0 right-0 text-center" style={{top: "79px", zIndex: "-4"}}>
                         {data.allSanityProgram.nodes.map((i, count) => (
-                          <Link to={"/programs/" + i.slug.current} key={count} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 mr-4">{i.title}</Link>
+                          <Link to={"/programs/" + i.slug.current} key={count} className="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 mr-4">{i.title}</Link>
                         ))}
                     </div>
                   </div>
@@ -73,7 +73,7 @@ class Header extends React.Component {
                           {on && 
                             <div className="text-sm lg:flex-grow">
                               {data.allSanityProgram.nodes.map((i, count) => (
-                                <Link to={"/programs/" + i.slug.current} key={count} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 mr-4">{i.title}</Link>
+                                <Link to={"/programs/" + i.slug.current} key={count} className="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 mr-4">{i.title}</Link>
                               ))}
                             </div>
                           }
@@ -81,7 +81,7 @@ class Header extends React.Component {
                       )}
                     />
 
-                    <a href="https://shopify.com" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Shop</a>
+                    <a href="https://shop.fitnessculture.com" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Shop</a>
                     <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">About</Link>
                   <div>
                     <a href="#" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase">Get Started</a>
