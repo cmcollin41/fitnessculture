@@ -62,18 +62,17 @@ const Index = ({ data }) => {
 
       <div className="py-20 bg-gray-100">
         <div className="container lg:mx-auto mx-5">
-          <h3 className="uppercase text-lg lg:text-2xl pb-5 lg:pb-10">
+          <h3 className="uppercase text-3xl pb-5 lg:pb-10">
             Our Programs
           </h3>
         </div>
-        <div className="flex flex-row flex-nowrap items-stretch h-full overflow-x-scroll">
+        <div className="flex flex-row flex-nowrap items-stretch h-full overflow-x-scroll scroll-x-mandatory">
 
           {
             home.programs.map((program,i) => {
               return (
-                <div className="rounded w-64 mx-3 bg-gray-900 mt-10 flex flex-col justify-between" style={{minWidth: "300px"}}>
-                  <Img
-                    fluid={program.heroImage.asset.fluid}
+                <div className="rounded w-64 mx-3 bg-gray-900 mt-10 flex flex-col snap-align-center mw-300">
+                  <div
                     className="block h-64 w-full bg-cover bg-center rounded-t text-center overflow-hidden"
                   />
      
@@ -98,7 +97,7 @@ const Index = ({ data }) => {
         <div className="flex flex-col lg:flex-row justify-start items-center mt-10 h-full">
           <div className="w-full lg:w-1/2 order-2 lg:order-1 pt-5 lg:p-10 mx-auto">
             <h6 className="uppercase mt-6 text-left mb-2 text-gray-400">See the Savings</h6>
-            <h2 className="text-lg lg:text-2xl uppercase">
+            <h2 className="text-lg lg:text-3xl uppercase">
               {home.personalTrainerTitle}
             </h2>
             <p className="mt-5">{home.personalTrainerDescription}</p>
@@ -109,8 +108,7 @@ const Index = ({ data }) => {
             </div>
           </div>
           <Img
-            className="order-1 lg:order-2 w-full lg:w-1/2 shadow-lg p-5 bg-white" 
-            style={{minHeight: "500px"}}
+            className="order-1 lg:order-2 w-full lg:w-1/2 shadow-lg p-5 bg-white min-width-full" 
             fluid={home.personalTrainerImage.asset.fluid}/>
         </div>
       </div>
@@ -119,13 +117,13 @@ const Index = ({ data }) => {
 
     <div className="py-20 bg-gray-900">
       <div className="container px-5 lg:mx-auto">
-        <h3 className="uppercase text-white text-lg lg:text-2xl pb-5 lg:pb-10">
+        <h3 className="uppercase text-white text-3xl pb-5 lg:pb-10">
           Join the <span className="px-2 bg-blue-500">#FitCult</span> Family
         </h3>
       </div>
-      <div className="flex flex-row overflow-scroll lg:overflow-hidden">
+      <div className="flex flex-row overflow-scroll lg:overflow-hidden scroll-x-mandatory">
         {home.testimonials.map((i, count) => (
-          <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3 bg-gray-600" style={{ minWidth: "275px"}}>
+          <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3 bg-gray-600 snap-align-center" style={{ minWidth: "275px"}}>
             <p className="text-white text-xs italic">"{i.quote}"</p>
             <div className="flex flex-row items-center mt-6">
               <img src={ i.memberImage.asset.url} alt="member photo" width="50px" height="50px" className="rounded-full" />
@@ -147,18 +145,17 @@ const Index = ({ data }) => {
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row justify-start items-center mt-10 h-full">
           <Img
-            className="w-full lg:w-1/2 shadow-lg" 
-            style={{minHeight: "500px"}}
+            className="w-full lg:w-1/2 shadow-lg min-width-full" 
             fluid={home.aboutImage.asset.fluid}/>
           <div className="w-full lg:w-1/2 pt-5 lg:p-10 mx-auto">
             <h6 className="uppercase mt-6 text-left mb-2 text-gray-400">About Us</h6>
-            <h2 className="text-lg lg:text-2xl uppercase">
+            <h2 className="text-lg lg:text-3xl uppercase">
               {home.aboutTitle}
             </h2>
             <p className="mt-5">{home.aboutDescription}</p>
             <div className="mt-10">
               <Link to="/about" className="btn text-blue-500 border border-blue-500 rounded-full">
-                Watch Video
+                Learn More
               </Link>
             </div>
           </div>

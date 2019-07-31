@@ -28,10 +28,10 @@ const Program = ({ data }) => {
         <div className="hidden lg:block absolute h-full" style={{transform: "translate(-35%, 50%)"}}>
           <h2 className="uppercase text-gray-300 text-3xl" style={{transform: "rotate(90deg)"}}>Fitness Program</h2>
         </div>
-        <div className="container mx-auto p-5">
+        <div className="container mx-auto px-5 pb-5 pt-3">
           <div className="flex flex-col lg:flex-row justify-center items-center">
             <div className="w-full lg:w-1/2">
-              <h1 className="uppercase text-5xl leading-none">
+              <h1 className="uppercase text-4xl lg:text-5xl leading-none">
                 {program.title}
               </h1>
               <p className="text-xl mt-5" style={{ maxWidth: "500px" }}>
@@ -51,7 +51,7 @@ const Program = ({ data }) => {
                   <p className="uppercase text-xs">Full Gym</p>
                 </div>
                 <div className="w-32 text-center flex flex-col p-2">
-                  <Img className="mx-auto" alt={program.benefits[0].title} fixed={program.benefits[0].icon.asset.fixed} />
+                  <Img className="mx-auto w-16" alt={program.benefits[0].title} fixed={program.benefits[0].icon.asset.fixed} />
                   <p className="uppercase text-xs">{program.benefits[0].title}</p>
                 </div>
               </div>
@@ -100,9 +100,9 @@ const Program = ({ data }) => {
           Join the <span className="px-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>#FitCult</span> Family
         </h3>
       </div>
-      <div className="flex flex-row overflow-scroll lg:overflow-hidden">
+      <div className="flex flex-row overflow-scroll lg:overflow-hidden scroll-x-mandatory">
         {program.testimonials.map((i, count) => (
-          <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3 bg-gray-600" style={{minWidth: "275px"}}>
+          <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3 bg-gray-600 snap-align-center" style={{minWidth: "275px"}}>
             <p className="text-white text-xs italic">"{i.quote}"</p>
             <div className="flex flex-row items-center mt-6">
               <Img fixed={i.memberImage.asset.fixed} alt={i.member} width="50px" height="50px" className="rounded-full" />
@@ -140,7 +140,7 @@ const Program = ({ data }) => {
               </ul>
             </div>
             <div className="px-6 py-10">
-              <a href={program.basicCta} className="uppercase font-bold border bg-white rounded-full px-4 py-2" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Start Program</a>
+              <a href={program.basicCta} className="uppercase font-bold text-white rounded-full px-4 py-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>Start Program</a>
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@ const Program = ({ data }) => {
               </ul>
             </div>
             <div className="px-6 py-10">
-              <a href={program.premiumCta} className="uppercase font-bold border bg-white rounded-full px-4 py-2" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Start Program</a>
+              <a href={program.premiumCta} className="uppercase font-bold text-white rounded-full px-4 py-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>Start Program</a>
             </div>
           </div>
         </div>
@@ -180,7 +180,7 @@ const Program = ({ data }) => {
         </h3>
       </div>
       <div className="container lg:mx-auto">
-        <div className="flex flex-col lg:flex-row justify-center items-center lg:items-stretch h-full">
+        <div className="flex flex-col lg:flex-row justify-center items-center">
           <div className="flex flex-col justify-between rounded p-5 w-64 lg:mx-3 mt-10 lg:mt-auto bg-gray-600" style={{minWidth: "275px"}}>
             <h5 className="uppercase mb-5">No Contracts</h5>
             <p className="text-white">No miniumum length or contract. All training programs are month to month inside of Fitness Culture.</p>

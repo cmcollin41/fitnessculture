@@ -45,10 +45,10 @@ module.exports = {
         name: `Fitness Culture`,
         short_name: `Fitness Culture`,
         start_url: `/`,
-        background_color: `#fafafa`,
-        theme_color: `#fafafa`,
+        background_color: `#111`,
+        theme_color: `#111`,
         display: `standalone`,
-        icon: `./static/fc-logo-black.png`
+        icon: `./static/fc-logo-horizontal-white.svg`
       },
     },
     `gatsby-plugin-offline`

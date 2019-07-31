@@ -176,10 +176,24 @@ a {
     min-height: 300px;
 }
 
+.mw-300 {
+  min-width: 300px;
+}
 
+.scroll-x-mandatory {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
 
+.snap-align-center {
+  scroll-snap-align: center;
+}
 
-
+@media (min-width: 1024px) {
+  .icon:last-child {
+    display: none;
+  }
+ }
 .pulse {
   animation: pulse 3s ease 0s infinite;
 }
@@ -266,7 +280,6 @@ a {
 .active-tab:after {
   border-left: 20px solid #212121 !important;
 }
-
 .arrow-steps {
   position: sticky;
   position: -webkit-sticky;
