@@ -4,8 +4,8 @@ import React from "react"
 
 class ContactForm extends React.Component {
   state = {
-    fullName: "",
-		emailAddress: "",
+    name: "",
+		email: "",
 		message: "",
 	}
 	
@@ -34,9 +34,9 @@ class ContactForm extends React.Component {
 					</label>
 						<input
 							type="text"
-							name="fullName"
+							name="name"
 							className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-							value={this.state.fullName}
+							value={this.state.name}
 							onChange={this.handleInputChange}
 						/>
 				</div>
@@ -46,9 +46,9 @@ class ContactForm extends React.Component {
 					</label>
           <input
             type="email"
-						name="emailAddress"
+						name="email"
 						className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            value={this.state.emailAddress}
+            value={this.state.email}
             onChange={this.handleInputChange}
           />
         </div>
