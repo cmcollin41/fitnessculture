@@ -26,7 +26,7 @@ class ContactForm extends React.Component {
 	
   render() {
     return (
-      <form method="post" netlify-honeypot="bot-field" data-netlify="true" className="w-full" onSubmit={this.handleSubmit}>
+      <form name="contact" method="post" netlify-honeypot="bot-field" data-netlify="true" className="w-full" onSubmit={this.handleSubmit}>
 				<input type="hidden" name="bot-field"/>
 				<div class="mb-4">
 					<label>
