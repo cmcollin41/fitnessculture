@@ -56,6 +56,7 @@ export default () => (
                 <Link to="/" className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">Home</Link>
                 <a href="https://shop.fitnessculture.com" className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">Shop</a>
                 <Link to="/about" className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">About</Link>
+                <Link to="/contact" className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">Contact</Link>
               </div>
             </div>
             <div className="order-4 lg:order-3 w-full lg:w-1/4 mt-10 lg:mt-0">
