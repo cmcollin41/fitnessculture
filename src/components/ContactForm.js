@@ -26,7 +26,7 @@ class ContactForm extends React.Component {
 	
   render() {
     return (
-      <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" className="w-full">
+      <form name="contact" action="/" method="POST" netlify-honeypot="bot-field" data-netlify="true" className="w-full">
 				<input type="hidden" name="bot-field"/>
 				<div class="mb-4">
 					<label>
@@ -35,6 +35,7 @@ class ContactForm extends React.Component {
 						<input
 							type="text"
 							name="name"
+							placeholder="Full Name"
 							className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 							value={this.state.name}
 							onChange={this.handleInputChange}
@@ -47,6 +48,7 @@ class ContactForm extends React.Component {
           <input
             type="email"
 						name="email"
+						placeholder="youremail@gmail.com"
 						className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={this.state.email}
             onChange={this.handleInputChange}
@@ -59,6 +61,7 @@ class ContactForm extends React.Component {
           <textarea
             rows="5"
 						name="message"
+						placeholder="Your message"
 						className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={this.state.message}
             onChange={this.handleInputChange}
