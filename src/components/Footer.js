@@ -1,6 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import logo from '../../static/fc-logo-horizontal-white.svg'
+import SubscribeForm from "./SubscribeForm";
 
 export default () => (
   <StaticQuery
@@ -71,16 +72,7 @@ export default () => (
               <h6 className="text-gray-100 mb-6 uppercase">Join the #FitCult</h6>
               <div className="flex flex-col lg:flex-row justify-center items-center">
                 <div className="w-full">
-                  <div className="flex flex-col lg:flex-row justify-between items-center border rounded p-2 shadow bg-white text-center">
-                    <input
-                      className="appearance-none border-none rounded w-auto py-1 px-2 text-gray-700 leading-tight text-base focus:outline-none"
-                      type="email"
-                      placeholder="youremail@email.com"
-                    ></input>
-                    <Link to="/" className="btn shadow-md mt-10 lg:mt-auto w-full lg:w-auto text-white rounded-sm" style={{backgroundColor: "#03a9f4"}}>
-                      Subscribe
-                    </Link>
-                  </div>
+                  <SubscribeForm />
                 </div>
               </div>
               <div className="flex flex-row justify-between lg:justify-left">
