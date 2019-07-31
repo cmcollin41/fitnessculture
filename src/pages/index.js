@@ -71,7 +71,7 @@ const Index = ({ data }) => {
           {
             home.programs.map((program,i) => {
               return (
-                <div className="rounded w-64 mx-3 bg-gray-900 mt-10 flex flex-col justify-between" style={{minWidth: "300px"}}>
+                <div className="rounded w-64 mx-3 bg-gray-900 mt-10 flex flex-col" style={{minWidth: "300px"}}>
                   <div
                     className="block h-64 w-full bg-cover bg-center rounded-t text-center overflow-hidden"
                     style={{
