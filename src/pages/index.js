@@ -66,12 +66,12 @@ const Index = ({ data }) => {
             Our Programs
           </h3>
         </div>
-        <div className="flex flex-row flex-nowrap items-stretch h-full overflow-x-scroll">
+        <div className="flex flex-row flex-nowrap items-stretch h-full overflow-x-scroll scroll-x-mandatory">
 
           {
             home.programs.map((program,i) => {
               return (
-                <div className="rounded w-64 mx-3 bg-gray-900 mt-10 flex flex-col" style={{minWidth: "300px"}}>
+                <div className="rounded w-64 mx-3 bg-gray-900 mt-10 flex flex-col snap-align-center" style={{minWidth: "300px"}}>
                   <div
                     className="block h-64 w-full bg-cover bg-center rounded-t text-center overflow-hidden"
                     style={{
@@ -128,9 +128,9 @@ const Index = ({ data }) => {
           Join the <span className="px-2 bg-blue-500">#FitCult</span> Family
         </h3>
       </div>
-      <div className="flex flex-row overflow-scroll lg:overflow-hidden">
+      <div className="flex flex-row overflow-scroll lg:overflow-hidden scroll-x-mandatory">
         {home.testimonials.map((i, count) => (
-          <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3 bg-gray-600" style={{ minWidth: "275px"}}>
+          <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3 bg-gray-600 snap-align-center" style={{ minWidth: "275px"}}>
             <p className="text-white text-xs italic">"{i.quote}"</p>
             <div className="flex flex-row items-center mt-6">
               <img src={ i.memberImage.asset.url} alt="member photo" width="50px" height="50px" className="rounded-full" />

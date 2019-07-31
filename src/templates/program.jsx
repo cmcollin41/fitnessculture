@@ -51,7 +51,7 @@ const Program = ({ data }) => {
                   <p className="uppercase text-xs">Full Gym</p>
                 </div>
                 <div className="w-32 text-center flex flex-col p-2">
-                  <Img className="mx-auto" alt={program.benefits[0].title} fixed={program.benefits[0].icon.asset.fixed} />
+                  <Img className="mx-auto w-16" alt={program.benefits[0].title} fixed={program.benefits[0].icon.asset.fixed} />
                   <p className="uppercase text-xs">{program.benefits[0].title}</p>
                 </div>
               </div>
@@ -100,9 +100,9 @@ const Program = ({ data }) => {
           Join the <span className="px-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>#FitCult</span> Family
         </h3>
       </div>
-      <div className="flex flex-row overflow-scroll lg:overflow-hidden">
+      <div className="flex flex-row overflow-scroll lg:overflow-hidden scroll-x-mandatory">
         {program.testimonials.map((i, count) => (
-          <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3 bg-gray-600" style={{minWidth: "275px"}}>
+          <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3 bg-gray-600 snap-align-center" style={{minWidth: "275px"}}>
             <p className="text-white text-xs italic">"{i.quote}"</p>
             <div className="flex flex-row items-center mt-6">
               <img src={ i.memberImage.asset.url} alt="member photo" width="50px" height="50px" className="rounded-full" />

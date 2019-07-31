@@ -177,8 +177,13 @@ a {
 }
 
 
+.scroll-x-mandatory {
+  scroll-snap-type: x mandatory;
+}
 
-
+.snap-align-center {
+  scroll-snap-align: center;
+}
 
 .pulse {
   animation: pulse 3s ease 0s infinite;
@@ -266,7 +271,6 @@ a {
 .active-tab:after {
   border-left: 20px solid #212121 !important;
 }
-
 .arrow-steps {
   position: sticky;
   position: -webkit-sticky;
