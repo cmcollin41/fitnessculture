@@ -140,7 +140,7 @@ const Program = ({ data }) => {
               </ul>
             </div>
             <div className="px-6 py-10">
-              <a href={program.basicCta} className="uppercase font-bold border bg-white rounded-full px-4 py-2" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Start Program</a>
+              <a href={program.basicCta} className="uppercase font-bold text-white rounded-full px-4 py-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>Start Program</a>
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@ const Program = ({ data }) => {
               </ul>
             </div>
             <div className="px-6 py-10">
-              <a href={program.premiumCta} className="uppercase font-bold border bg-white rounded-full px-4 py-2" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Start Program</a>
+              <a href={program.premiumCta} className="uppercase font-bold text-white rounded-full px-4 py-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>Start Program</a>
             </div>
           </div>
         </div>
