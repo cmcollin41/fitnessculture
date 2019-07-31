@@ -72,15 +72,10 @@ const Index = ({ data }) => {
             home.programs.map((program,i) => {
               return (
                 <div className="rounded w-64 mx-3 bg-gray-900 mt-10 flex flex-col justify-between" style={{minWidth: "300px"}}>
-                  <div
+                  <Img
+                    fluid={program.heroImage.asset.fluid}
                     className="block h-64 w-full bg-cover bg-center rounded-t text-center overflow-hidden"
-                    style={{
-                      backgroundImage:
-                        "url(" +
-                        program.heroImage.asset.url +
-                        ")",
-                    }}
-                  ></div>
+                  />
      
                     <div className="p-5">
                       <h4 className="uppercase text-2xl" style={{ color: program.colorTwo.hex }}>{program.title}</h4>
@@ -143,7 +138,7 @@ const Index = ({ data }) => {
         ))}
       </div>
       <div className="container mx-auto mt-10 text-center">
-        <Link to="/" className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">Join the Family</Link>
+        <Link to="/programs" className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">Join the Family</Link>
       </div>
     </div>
 
@@ -257,7 +252,9 @@ export const pageQuery = graphql`
           }
           heroImage {
             asset {
-              url
+              fluid(maxWidth: 1000) {
+                ...GatsbySanityImageFluid_withWebp
+              }
             }
           }
           colorOne {

@@ -3,9 +3,6 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-import training from '../../static/training-phone.png'
-import mobility from '../../static/mobility-phone.png'
-import nutrition from '../../static/nutrition-phone.png'
 
 import "react-tabs/style/react-tabs.css";
 
@@ -28,7 +25,7 @@ class HomeTabs extends React.Component {
           <h2 className="text-xl uppercase text-center lg:text-left">{program.trainingTitle}</h2>
           <p className="mt-5">{program.trainingDescription}</p>
           <div className="mt-5 hidden md:block">
-            <Link to="/" >Select Program</Link>
+            <Link to="/programs" >See Programs</Link>
           </div>
           <div className="my-10 w-full border-bottom border">
           </div>
@@ -82,7 +79,7 @@ class HomeTabs extends React.Component {
           <h2 className="text-xl uppercase text-center lg:text-left">{program.nutritionTitle}</h2>
           <p className="mt-5">{program.nutritionDescription}</p>
           <div className="mt-5 hidden md:block">
-            <Link to="/">Watch Video</Link>
+            <Link to="/programs">See Programs</Link>
           </div>
           <div className="my-10 w-full border-bottom border">
           </div>
@@ -136,7 +133,7 @@ class HomeTabs extends React.Component {
         <h2 className="text-xl uppercase text-center lg:text-left">{program.mobilityTitle}</h2>
           <p className="mt-5">{program.mobilityDescription}</p>
           <div className="mt-5 hidden md:block">
-            <Link to="/">Watch Video</Link>
+            <Link to="/programs">See Programs</Link>
           </div>
           <div className="my-10 w-full border-bottom border">
           </div>
