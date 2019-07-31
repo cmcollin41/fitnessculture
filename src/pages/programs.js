@@ -55,7 +55,7 @@ const Programs = ({ data }) => {
             {
                 home.programs.map((program,i) => {
                 return (
-                  <div className="w-full md:w-1/2 lg:w-1/4 px-3 h-full">
+                  <div key={i} className="w-full md:w-1/2 lg:w-1/4 px-3 h-full">
                     <div className="rounded bg-gray-900 mt-10 flex flex-col justify-between">
                       <div
                           className="block h-64 w-full bg-cover bg-center rounded-t text-center overflow-hidden"

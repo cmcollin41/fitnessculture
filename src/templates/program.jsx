@@ -129,6 +129,7 @@ const Program = ({ data }) => {
             <div className="p-4 text-center mx-auto">
               <span className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Basic</span>
               <h6 className="text-black text-base text-6xl mt-5">$39</h6>
+              <span className="text-black text-sm mt-5 uppercase">per month</span>
             </div>
             <div>
               <ul className="pricing">
