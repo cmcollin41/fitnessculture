@@ -18,7 +18,7 @@ class SubscribeForm extends React.Component {
 	
   // handleSubmit = event => {
   //   event.preventDefault()
-	// 	// alert(`Welcome ${this.state.fullName}!`)
+	// 	alert(`Welcome ${this.state.fullName}!`)
 	// 	event.target.reset();
 	// }
 	
@@ -29,11 +29,11 @@ class SubscribeForm extends React.Component {
 				<input
 					className="appearance-none border-none rounded w-auto py-1 px-2 text-gray-700 leading-tight text-base focus:outline-none"
 					type="email"
-					name="emailAddress"
+					name="email"
 					placeholder="youremail@email.com"
 					value={this.state.email}
 					onChange={this.handleInputChange}
-				></input>
+				/>
 				<button type="submit" className="btn shadow-md mt-10 lg:mt-auto w-full lg:w-auto text-white rounded-sm bg-blue-500">
 					Subscribe
 				</button>
