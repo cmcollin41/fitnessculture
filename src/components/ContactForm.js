@@ -18,15 +18,15 @@ class ContactForm extends React.Component {
     })
 	}
 	
-  handleSubmit = event => {
-    event.preventDefault()
-		// alert(`Welcome ${this.state.fullName}!`)
-		event.target.reset();
-	}
+  // handleSubmit = event => {
+  //   event.preventDefault()
+	// 	// alert(`Welcome ${this.state.fullName}!`)
+	// 	event.target.reset();
+	// }
 	
   render() {
     return (
-      <form name="contact" method="post" netlify-honeypot="bot-field" data-netlify="true" className="w-full" onSubmit={this.handleSubmit}>
+      <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" className="w-full">
 				<input type="hidden" name="bot-field"/>
 				<div class="mb-4">
 					<label>
