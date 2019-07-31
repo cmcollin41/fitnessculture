@@ -25,9 +25,9 @@ class SubscribeForm extends React.Component {
   render() {
     return (
 			<form name="subscribe" action="/" method="POST" netlify-honeypot="bot-field" data-netlify="true" className="flex flex-col lg:flex-row justify-between items-center border rounded p-2 shadow bg-white text-center">
-				<input type="hidden" name="bot-field"/>
+				<input type="hidden" name="bot-field" />
 				<input
-					className="appearance-none border-none rounded w-auto py-1 px-2 text-gray-700 leading-tight text-base focus:outline-none"
+					className="w-full appearance-none border-none rounded w-auto py-1 px-2 text-gray-700 leading-tight text-base focus:outline-none"
 					type="email"
 					name="email"
 					placeholder="youremail@email.com"
