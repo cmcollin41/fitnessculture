@@ -71,7 +71,7 @@ const Index = ({ data }) => {
           {
             home.programs.map((program,i) => {
               return (
-                <div className="rounded w-64 mx-3 bg-gray-900 mt-10 flex flex-col snap-align-center" style={{minWidth: "300px"}}>
+                <div className="rounded w-64 mx-3 bg-gray-900 mt-10 flex flex-col snap-align-center mw-300">
                   <div
                     className="block h-64 w-full bg-cover bg-center rounded-t text-center overflow-hidden"
                     style={{
@@ -115,7 +115,7 @@ const Index = ({ data }) => {
           </div>
           <Img
             className="order-1 lg:order-2 w-full lg:w-1/2 shadow-lg p-5 bg-white" 
-            style={{minHeight: "500px"}}
+            style={{minWidth: "100%"}}
             fluid={home.personalTrainerImage.asset.fluid}/>
         </div>
       </div>
@@ -153,7 +153,7 @@ const Index = ({ data }) => {
         <div className="flex flex-col lg:flex-row justify-start items-center mt-10 h-full">
           <Img
             className="w-full lg:w-1/2 shadow-lg" 
-            style={{minHeight: "500px"}}
+            style={{minWidth: "100%"}}
             fluid={home.aboutImage.asset.fluid}/>
           <div className="w-full lg:w-1/2 pt-5 lg:p-10 mx-auto">
             <h6 className="uppercase mt-6 text-left mb-2 text-gray-400">About Us</h6>

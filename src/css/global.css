@@ -176,6 +176,9 @@ a {
     min-height: 300px;
 }
 
+.mw-300 {
+  min-width: 300px;
+}
 
 .scroll-x-mandatory {
   scroll-snap-type: x mandatory;
