@@ -80,7 +80,7 @@ const Index = ({ data }) => {
                       <p className="text-white text-sm mt-2">{program.subtitle}</p>
                     </div>
                     <div className="p-5">
-                      <Link to={'programs/' + program.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">Learn More</Link>
+                      <Link to={'programs/' + program.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">See {program.title}</Link>
                     </div>
                 
                 </div>
@@ -107,7 +107,7 @@ const Index = ({ data }) => {
             </div>
           </div>
           <Img
-            className="order-1 lg:order-2 w-full lg:w-1/2 shadow-lg p-5 bg-white" 
+            className="order-1 lg:order-2 w-full lg:w-1/2 p-5 bg-white" 
             fluid={home.personalTrainerImage.asset.fluid}/>
         </div>
       </div>
