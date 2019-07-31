@@ -62,7 +62,7 @@ const Index = ({ data }) => {
 
       <div className="py-20 bg-gray-100">
         <div className="container lg:mx-auto mx-5">
-          <h3 className="uppercase text-lg lg:text-2xl pb-5 lg:pb-10">
+          <h3 className="uppercase text-3xl pb-5 lg:pb-10">
             Our Programs
           </h3>
         </div>
@@ -103,7 +103,7 @@ const Index = ({ data }) => {
         <div className="flex flex-col lg:flex-row justify-start items-center mt-10 h-full">
           <div className="w-full lg:w-1/2 order-2 lg:order-1 pt-5 lg:p-10 mx-auto">
             <h6 className="uppercase mt-6 text-left mb-2 text-gray-400">See the Savings</h6>
-            <h2 className="text-lg lg:text-2xl uppercase">
+            <h2 className="text-lg lg:text-3xl uppercase">
               {home.personalTrainerTitle}
             </h2>
             <p className="mt-5">{home.personalTrainerDescription}</p>
@@ -124,7 +124,7 @@ const Index = ({ data }) => {
 
     <div className="py-20 bg-gray-900">
       <div className="container px-5 lg:mx-auto">
-        <h3 className="uppercase text-white text-lg lg:text-2xl pb-5 lg:pb-10">
+        <h3 className="uppercase text-white text-3xl pb-5 lg:pb-10">
           Join the <span className="px-2 bg-blue-500">#FitCult</span> Family
         </h3>
       </div>
@@ -157,7 +157,7 @@ const Index = ({ data }) => {
             fluid={home.aboutImage.asset.fluid}/>
           <div className="w-full lg:w-1/2 pt-5 lg:p-10 mx-auto">
             <h6 className="uppercase mt-6 text-left mb-2 text-gray-400">About Us</h6>
-            <h2 className="text-lg lg:text-2xl uppercase">
+            <h2 className="text-lg lg:text-3xl uppercase">
               {home.aboutTitle}
             </h2>
             <p className="mt-5">{home.aboutDescription}</p>
