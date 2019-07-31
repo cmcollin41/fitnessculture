@@ -39,9 +39,9 @@ class ProgramTabs extends React.Component {
               ))}
 
               <h2 className="text-l uppercase text-left personas">People looking for:</h2>
-              <div className="flex flex-row flex-nowrap justify-center w-full xl:w-2/3 mx-auto">
-                {program.benefits.slice(0, 3).map((i, count) => (
-                  <div key={count} className="mt-5 mx-2">
+              <div className="flex flex-row flex-wrap lg:flex-no-wrap justify-center w-full xl:w-2/3 mx-auto">
+                {program.benefits.slice(0, 4).map((i, count) => (
+                  <div key={count} className="mt-5 mx-2 icon">
                     <div className="w-32  px-2 py-6 text-center cursor-pointer">
                       <Img className="mx-auto" alt={i.title} fixed={i.icon.asset.fixed} />
                       <h6 className="text-xs uppercase mt-3">{i.title}</h6>
