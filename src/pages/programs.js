@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import BackgroundImage from 'gatsby-background-image'
+import Img from 'gatsby-image'
 
 import SEO from '../components/seo'
 
@@ -50,22 +51,18 @@ const Programs = ({ data }) => {
 
       <div className="pt-10 pb-20">
         <div className="container mx-auto">
-            <div className="flex flex-row flex-wrap -mx-3 h-full items-stretch">
+            <div className="flex flex-row flex-wrap px-5 lg:px-auto -mx-3 h-full items-stretch">
 
             {
                 home.programs.map((program,i) => {
                 return (
                   <div key={i} className="w-full md:w-1/2 lg:w-1/4 px-3 h-full">
                     <div className="rounded bg-gray-900 mt-10 flex flex-col justify-between">
-                      <div
+                      <Img
                           className="block h-64 w-full bg-cover bg-center rounded-t text-center overflow-hidden"
-                          style={{
-                          backgroundImage:
-                              "url(" +
-                              program.heroImage.asset.url +
-                              ")",
-                          }}
-                      ></div>
+                          fluid={program.heroImage.asset.fluid}
+                        
+                      />
       
                       <div className="p-5">
                       <h4 className="uppercase text-2xl" style={{ color: program.colorTwo.hex }}>{program.title}</h4>
@@ -152,7 +149,9 @@ export const pageQuery = graphql`
           }
           heroImage {
             asset {
-              url
+              fluid(maxWidth: 500) {
+                ...GatsbySanityImageFluid_withWebp
+              }
             }
           }
           colorOne {
