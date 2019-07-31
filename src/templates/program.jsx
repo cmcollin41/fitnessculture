@@ -28,10 +28,10 @@ const Program = ({ data }) => {
         <div className="hidden lg:block absolute h-full" style={{transform: "translate(-35%, 50%)"}}>
           <h2 className="uppercase text-gray-300 text-3xl" style={{transform: "rotate(90deg)"}}>Fitness Program</h2>
         </div>
-        <div className="container mx-auto px-5 pb-5 pt-2">
+        <div className="container mx-auto px-5 pb-5 pt-3">
           <div className="flex flex-col lg:flex-row justify-center items-center">
             <div className="w-full lg:w-1/2">
-              <h1 className="uppercase text-5xl leading-none">
+              <h1 className="uppercase text-4xl lg:text-5xl leading-none">
                 {program.title}
               </h1>
               <p className="text-xl mt-5" style={{ maxWidth: "500px" }}>
