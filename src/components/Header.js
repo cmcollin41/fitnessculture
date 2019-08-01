@@ -28,7 +28,7 @@ class Header extends React.Component {
                     </div>
                   </div>
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
-                    <Link to="/shop" className="uppercase text-black hover:text-blue-500 font-bold">Shop</Link>
+                    <a href="https://fitnessculture.merchlabs.com" target="_blank" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold">Shop</a>
                   </div>
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
                     <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold">About</Link>
@@ -81,7 +81,7 @@ class Header extends React.Component {
                       )}
                     />
 
-                    <Link to="/shop" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Shop</Link>
+                    <a href="https://fitnessculture.merchlabs.com" target="_blank" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Shop</a>
                     <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">About</Link>
                     <Link to="/contact" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Contact</Link>
                   <div>

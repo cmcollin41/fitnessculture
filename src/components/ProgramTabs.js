@@ -2,7 +2,7 @@ import React from "react"
 import Img from 'gatsby-image'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import ReactTooltip from 'react-tooltip'
-// import iphone from '../../static/iphone.png'
+
 
 import "react-tabs/style/react-tabs.css";
 
@@ -54,7 +54,7 @@ class ProgramTabs extends React.Component {
               </div>
       
               <div className="mt-10 block">
-                <a href={program.premiumCta}  className="uppercase font-bold border bg-white rounded-full px-4 py-2" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Start Program</a>
+                <a href={program.premiumCta}  className="uppercase font-bold border bg-white rounded-full px-4 py-2" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Start {program.title}</a>
               </div>
             </div>
           </div>
@@ -93,7 +93,7 @@ class ProgramTabs extends React.Component {
               </div>
       
               <div className="mt-10 block">
-                <a href={program.premiumCta} className="uppercase font-bold border bg-white rounded-full px-4 py-2" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Start Program</a>
+                <a href={program.premiumCta} className="uppercase font-bold border bg-white rounded-full px-4 py-2" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>{program.title}</a>
               </div>
             </div>
           </div>
@@ -133,7 +133,7 @@ class ProgramTabs extends React.Component {
               </div>
       
               <div className="mt-10 block">
-                <a href={program.premiumCta} className="uppercase font-bold border bg-white rounded-full px-4 py-2" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Start Program</a>
+                <a href={program.premiumCta} className="uppercase font-bold border bg-white rounded-full px-4 py-2" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>{program.title}</a>
               </div>
             </div>
           </div>

@@ -6,6 +6,7 @@ import ProgramTabs from "../components/ProgramTabs"
 import Img from 'gatsby-image'
 
 // Images
+import iphone from '../../static/iphone.png'
 import circles from '../../static/circles.svg'
 import square from '../../static/square-circles.svg'
 import logo1 from '../../static/logo-1.svg'
@@ -94,6 +95,26 @@ const Program = ({ data }) => {
     </div>
 
 
+    <div className="py-20 bg-grey-100 relative">
+
+      <div className="container px-5 lg:mx-auto">
+        <div className="flex flex-col lg:flex-row justify-center items-center">
+          <div className="w-full lg:w-1/2 text-right">
+            <img src={ iphone }className="mx-auto lg:ml-auto" width="300px" />
+          </div>
+          <div className="w-full lg:w-1/2 px-5 lg:px-20 personas">
+            <h3 className="uppercase text-3xl pb-5">
+             Personal Training at your fingertips
+            </h3>
+            <p>This is a section about how you get full access to the app! Seriously download this mfer and get ripped! Do it! Just do it!</p>
+            <div className="mt-10">
+              <a href={program.premiumCta} className="uppercase font-bold border rounded-full py-2 px-4" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Get {program.title}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src={ circles } width="250px" height="100%" className="block absolute right-0 bottom-0" style={{ zIndex: "-10"}} />
+    </div>
     <div className="py-20 bg-gray-900">
       <div className="container px-5 lg:mx-auto">
         <h3 className="uppercase text-white text-3xl pb-5 lg:pb-10">
@@ -115,7 +136,7 @@ const Program = ({ data }) => {
         ))}
       </div>
       <div className="container mx-auto mt-10 text-center">
-        <a href={program.premiumCta} className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">Join the Family</a>
+        <a href={program.premiumCta} className="uppercase font-bold text-white border border-white rounded-full py-2 px-4">Join the Family</a>
       </div>
     </div>
 

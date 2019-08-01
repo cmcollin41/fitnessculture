@@ -46,7 +46,7 @@ const About = ({ data }) => {
                   <h3 className="uppercase font-bold text-xl mb-2">{about.trainingTitle}</h3>
                   <p className="text-gray-700 text-base">{about.trainingDescription}</p>
                 </div>
-                <Link to="/" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded-sm">
+                <Link to="/programs" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded-sm">
                   Get Started
                 </Link>
               </div> 
@@ -61,7 +61,7 @@ const About = ({ data }) => {
                   <h3 className="uppercase font-bold text-xl mb-2">{about.mobilityTitle}</h3>
                   <p className="text-gray-700 text-base">{about.mobilityDescription}</p>
                 </div>
-                <Link to="/" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded-sm">
+                <Link to="/programs" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded-sm">
                   Get Started
                 </Link>
               </div> 
@@ -76,7 +76,7 @@ const About = ({ data }) => {
                   <h3 className="uppercase font-bold text-xl mb-2">{about.nutritionTitle}</h3>
                   <p className="text-gray-700 text-base">{about.nutritionDescription}</p>
                 </div>
-                <Link to="/" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded-sm">
+                <Link to="/programs" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded-sm">
                   Get Started
                 </Link>
               </div> 
