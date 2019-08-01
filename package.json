@@ -35,6 +35,7 @@
     "react-helmet": "^5.2.1",
     "react-modal": "^3.8.1",
     "react-tabs": "^3.0.0",
+    "react-tooltip": "^3.10.0",
     "react-typography": "^0.16.19",
     "tailwindcss": "^1.0.1",
     "typography": "^0.16.19"

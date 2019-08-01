@@ -1,7 +1,8 @@
 import React from "react"
 import Img from 'gatsby-image'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import iphone from '../../static/iphone.png'
+import ReactTooltip from 'react-tooltip'
+// import iphone from '../../static/iphone.png'
 
 import "react-tabs/style/react-tabs.css";
 
@@ -25,7 +26,19 @@ class ProgramTabs extends React.Component {
 
           <div className="flex flex-col lg:flex-row items-center mt-10">
             <div className="w-full md:w-1/2 lg:w-1/2">
-              <img src={iphone} className="mx-auto" width="300px" height="auto" />
+              <div className="flex flex-row flex-wrap justify-center w-full xl:w-2/3 mx-auto">
+                {program.benefits.map((i, count) => (
+                  <div key={count}>
+                    <div data-tip data-for={i.title + count} className="w-32 shadow-lg bg-gray-100 border border-gray-100 px-4 py-6 text-center cursor-pointer m-3">
+                      <Img width="25px" className="mx-auto" alt={i.title} fixed={i.icon.asset.fixed} />
+                      <h6 className="text-xs uppercase mt-3">{i.title}</h6>
+                    </div>
+                    <ReactTooltip id={i.title + count} className='w-32' aria-haspopup='true' role='example' effect='solid'>
+                      <span>{i.description}</span>
+                    </ReactTooltip>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="w-full md:w-1/2 lg:w-1/2 px-5 lg:px-20 mx-auto">
               {program.personas.map((i, count) => (
@@ -36,18 +49,6 @@ class ProgramTabs extends React.Component {
                   <p className="mt-5">{i.description}</p>
                 </div>
               ))}
-
-              <h2 className="text-l uppercase text-left personas">People looking for:</h2>
-              <div className="flex flex-row flex-wrap lg:flex-no-wrap justify-center w-full xl:w-2/3 mx-auto">
-                {program.benefits.slice(0, 4).map((i, count) => (
-                  <div key={count} className="mt-5 mx-2 icon">
-                    <div className="w-32  px-2 py-6 text-center cursor-pointer">
-                      <Img className="mx-auto" alt={i.title} fixed={i.icon.asset.fixed} />
-                      <h6 className="text-xs uppercase mt-3">{i.title}</h6>
-                    </div>
-                  </div>
-                ))} 
-              </div>
 
               <div className="my-10 w-full border-b border-black mx-auto">
               </div>
@@ -66,10 +67,13 @@ class ProgramTabs extends React.Component {
               <div className="flex flex-row flex-wrap justify-center w-full xl:w-2/3 mx-auto">
                 {program.exercises.map((i, count) => (
                   <div key={count}>
-                    <div className="w-32 shadow-lg bg-gray-100 border border-gray-100 px-4 py-6 text-center cursor-pointer m-3">
+                    <div data-tip data-for={i.title + count} className="w-32 shadow-lg bg-gray-100 border border-gray-100 px-4 py-6 text-center cursor-pointer m-3">
                       <Img width="25px" className="mx-auto" alt={i.title} fixed={i.icon.asset.fixed} />
                       <h6 className="text-xs uppercase mt-3">{i.title}</h6>
                     </div>
+                    <ReactTooltip id={i.title + count} className='w-32' aria-haspopup='true' role='example' effect='solid'>
+                      <span>{i.description}</span>
+                    </ReactTooltip>
                   </div>
                 ))}
               </div>
@@ -101,10 +105,13 @@ class ProgramTabs extends React.Component {
             <div className="flex flex-row flex-wrap justify-center w-full xl:w-2/3 mx-auto">
               {program.attributes.map((i, count) => (
                 <div key={count}>
-                  <div className="w-32 shadow-lg bg-gray-100 border border-gray-100 px-4 py-6 text-center cursor-pointer m-3">
+                  <div data-tip data-for={i.title + count} className="w-32 shadow-lg bg-gray-100 border border-gray-100 px-4 py-6 text-center cursor-pointer m-3">
                     <Img width="25px" className="mx-auto" alt={i.title} fixed={i.icon.asset.fixed} />
                     <h6 className="text-xs uppercase mt-3">{i.title}</h6>
                   </div>
+                  <ReactTooltip id={i.title + count} className='w-32' aria-haspopup='true' role='example' effect='solid'>
+                    <span>{i.description}</span>
+                  </ReactTooltip>
                 </div>
               ))}
               </div>
