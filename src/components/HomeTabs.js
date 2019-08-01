@@ -3,9 +3,6 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-import training from '../../static/training-phone.png'
-import mobility from '../../static/mobility-phone.png'
-import nutrition from '../../static/nutrition-phone.png'
 
 import "react-tabs/style/react-tabs.css";
 
@@ -28,27 +25,22 @@ class HomeTabs extends React.Component {
           <h2 className="text-xl uppercase text-center lg:text-left">{program.trainingTitle}</h2>
           <p className="mt-5">{program.trainingDescription}</p>
           <div className="mt-5 hidden md:block">
-            <Link to="/" >Select Program</Link>
+            <Link to="/programs" >See Programs</Link>
           </div>
           <div className="my-10 w-full border-bottom border">
           </div>
           <div className="hidden w-full lg:flex flex-col lg:flex-row items-center">
-            <div
-              className="h-24 w-24 flex-none bg-cover bg-center rounded-full text-center overflow-hidden"
-              style={{
-                backgroundImage:
-                  "url(" +
-                  program.testimonials[0].memberImage.asset.url +
-                  ")",
-              }}
-            ></div>
-            <div className="pl-4 flex flex-col justify-between leading-normal">
-              <div className="p-2">
+            <div className="flex flex-col justify-between leading-normal">
+              <div className="py-2">
                 <p className="text-gray-700 text-xs">
                   "{program.testimonials[0].quote}"
                 </p>
-                <div className="text-black font-bold text-xs mt-2 rustico">
-                  {program.testimonials[0].member}, Fitness Culture Member
+                <div className="flex flex-row items-center mt-6">
+                  <Img fixed={ program.testimonials[0].memberImage.asset.fixed} alt="member photo" width="50px" height="50px" className="rounded-full" />
+                  <div className="pl-2">
+                    <h6 className="uppercase">{ program.testimonials[0].member}</h6>
+                    <p className="text-black text-xs">{ program.testimonials[0].location}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -67,8 +59,12 @@ class HomeTabs extends React.Component {
                 <p className="text-gray-700 text-xs">
                 "{program.testimonials[0].quote}"
                 </p>
-                <div className="text-black font-bold text-xs mt-2 rustico">
-                {program.testimonials[0].member}, Fitness Culture Member
+                <div className="flex flex-row items-center mt-6">
+                  <Img fixed={ program.testimonials[0].memberImage.asset.fixed} alt="member photo" width="50px" height="50px" className="rounded-full" />
+                  <div className="pl-2">
+                    <h6 className="uppercase">{ program.testimonials[0].member}</h6>
+                    <p className="text-black text-xs">{ program.testimonials[0].location}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -82,27 +78,22 @@ class HomeTabs extends React.Component {
           <h2 className="text-xl uppercase text-center lg:text-left">{program.nutritionTitle}</h2>
           <p className="mt-5">{program.nutritionDescription}</p>
           <div className="mt-5 hidden md:block">
-            <Link to="/">Watch Video</Link>
+            <Link to="/programs">See Programs</Link>
           </div>
           <div className="my-10 w-full border-bottom border">
           </div>
           <div className="hidden w-full lg:flex flex-col lg:flex-row items-center">
-            <div
-              className="h-24 w-24 flex-none bg-cover bg-center rounded-full text-center overflow-hidden"
-              style={{
-                backgroundImage:
-                  "url(" +
-                  program.testimonials[1].memberImage.asset.url +
-                  ")",
-              }}
-            ></div>
-            <div className="pl-4 flex flex-col justify-between leading-normal">
-              <div className="p-2">
+            <div className="flex flex-col justify-between leading-normal">
+              <div className="py-2">
                 <p className="text-gray-700 text-xs">
                   "{program.testimonials[1].quote}"
                 </p>
-                <div className="text-black font-bold text-xs mt-2 rustico">
-                  {program.testimonials[1].member}, Fitness Culture Member
+                <div className="flex flex-row items-center mt-6">
+                  <Img fixed={ program.testimonials[1].memberImage.asset.fixed} alt="member photo" width="50px" height="50px" className="rounded-full" />
+                  <div className="pl-2">
+                    <h6 className="uppercase">{ program.testimonials[1].member}</h6>
+                    <p className="text-black text-xs">{ program.testimonials[1].location}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -121,8 +112,12 @@ class HomeTabs extends React.Component {
                 <p className="text-gray-700 text-xs">
                 "{program.testimonials[1].quote}"
                 </p>
-                <div className="text-black font-bold text-xs mt-2 rustico">
-                {program.testimonials[1].member}, Fitness Culture Member
+                <div className="flex flex-row items-center mt-6">
+                  <Img fixed={ program.testimonials[1].memberImage.asset.fixed} alt="member photo" width="50px" height="50px" className="rounded-full" />
+                  <div className="pl-2">
+                    <h6 className="uppercase">{ program.testimonials[1].member}</h6>
+                    <p className="text-black text-xs">{ program.testimonials[1].location}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -136,27 +131,22 @@ class HomeTabs extends React.Component {
         <h2 className="text-xl uppercase text-center lg:text-left">{program.mobilityTitle}</h2>
           <p className="mt-5">{program.mobilityDescription}</p>
           <div className="mt-5 hidden md:block">
-            <Link to="/">Watch Video</Link>
+            <Link to="/programs">See Programs</Link>
           </div>
           <div className="my-10 w-full border-bottom border">
           </div>
           <div className="hidden w-full lg:flex flex-col lg:flex-row items-center">
-            <div
-              className="h-24 w-24 flex-none bg-cover bg-center rounded-full text-center overflow-hidden"
-              style={{
-                backgroundImage:
-                  "url(" +
-                  program.testimonials[2].memberImage.asset.url +
-                  ")",
-              }}
-            ></div>
-            <div className="pl-4 flex flex-col justify-between leading-normal">
-              <div className="p-2">
+            <div className="flex flex-col justify-between leading-normal">
+              <div className="py-2">
                 <p className="text-gray-700 text-xs">
                   "{program.testimonials[2].quote}"
                 </p>
-                <div className="text-black font-bold text-xs mt-2 rustico">
-                  {program.testimonials[2].member}, Fitness Culture Member
+                <div className="flex flex-row items-center mt-6">
+                  <Img fixed={ program.testimonials[2].memberImage.asset.fixed} alt="member photo" width="50px" height="50px" className="rounded-full" />
+                  <div className="pl-2">
+                    <h6 className="uppercase">{ program.testimonials[2].member}</h6>
+                    <p className="text-black text-xs">{ program.testimonials[2].location}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -175,8 +165,12 @@ class HomeTabs extends React.Component {
                 <p className="text-gray-700 text-xs">
                 "{program.testimonials[2].quote}"
                 </p>
-                <div className="text-black font-bold text-xs mt-2 rustico">
-                {program.testimonials[2].member}, Fitness Culture Member
+                <div className="flex flex-row items-center mt-6">
+                  <Img fixed={ program.testimonials[2].memberImage.asset.fixed} alt="member photo" width="50px" height="50px" className="rounded-full" />
+                  <div className="pl-2">
+                    <h6 className="uppercase">{ program.testimonials[2].member}</h6>
+                    <p className="text-black text-xs">{ program.testimonials[2].location}</p>
+                  </div>
                 </div>
               </div>
             </div>

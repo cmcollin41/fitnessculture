@@ -72,22 +72,15 @@ const Index = ({ data }) => {
             home.programs.map((program,i) => {
               return (
                 <div className="rounded w-64 mx-3 bg-gray-900 mt-10 flex flex-col snap-align-center mw-300">
-                  <div
-                    className="block h-64 w-full bg-cover bg-center rounded-t text-center overflow-hidden"
-                    style={{
-                      backgroundImage:
-                        "url(" +
-                        program.heroImage.asset.url +
-                        ")",
-                    }}
-                  ></div>
-     
+                   <Img className="block h-64 w-full bg-cover bg-center rounded-t text-center overflow-hidden"
+                        fluid={program.heroImage.asset.fluid}
+                    />
                     <div className="p-5">
                       <h4 className="uppercase text-2xl" style={{ color: program.colorTwo.hex }}>{program.title}</h4>
                       <p className="text-white text-sm mt-2">{program.subtitle}</p>
                     </div>
                     <div className="p-5">
-                      <Link to={'programs/' + program.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">Learn More</Link>
+                      <Link to={'programs/' + program.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">See {program.title}</Link>
                     </div>
                 
                 </div>
@@ -114,8 +107,7 @@ const Index = ({ data }) => {
             </div>
           </div>
           <Img
-            className="order-1 lg:order-2 w-full lg:w-1/2 shadow-lg p-5 bg-white" 
-            style={{minWidth: "100%"}}
+            className="order-1 lg:order-2 w-full lg:w-1/2 p-5 bg-white" 
             fluid={home.personalTrainerImage.asset.fluid}/>
         </div>
       </div>
@@ -133,7 +125,7 @@ const Index = ({ data }) => {
           <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3 bg-gray-600 snap-align-center" style={{ minWidth: "275px"}}>
             <p className="text-white text-xs italic">"{i.quote}"</p>
             <div className="flex flex-row items-center mt-6">
-              <img src={ i.memberImage.asset.url} alt="member photo" width="50px" height="50px" className="rounded-full" />
+              <Img fixed={ i.memberImage.asset.fixed} alt="member photo" width="50px" height="50px" className="rounded-full" />
               <div className="pl-2">
                 <h6 className="uppercase">{i.member}</h6>
                 <p className="text-black text-xs">{i.location}</p>
@@ -143,7 +135,7 @@ const Index = ({ data }) => {
         ))}
       </div>
       <div className="container mx-auto mt-10 text-center">
-        <Link to="/" className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">Join the Family</Link>
+        <Link to="/programs" className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">Join the Family</Link>
       </div>
     </div>
 
@@ -153,7 +145,6 @@ const Index = ({ data }) => {
         <div className="flex flex-col lg:flex-row justify-start items-center mt-10 h-full">
           <Img
             className="w-full lg:w-1/2 shadow-lg" 
-            style={{minWidth: "100%"}}
             fluid={home.aboutImage.asset.fluid}/>
           <div className="w-full lg:w-1/2 pt-5 lg:p-10 mx-auto">
             <h6 className="uppercase mt-6 text-left mb-2 text-gray-400">About Us</h6>
@@ -190,7 +181,7 @@ export const pageQuery = graphql`
         heroImage {
           asset {
             fluid(maxWidth: 1425) {
-              ...GatsbySanityImageFluid
+              ...GatsbySanityImageFluid_withWebp
             }
           }
         }
@@ -199,7 +190,7 @@ export const pageQuery = graphql`
         trainingImage {
           asset {
             fluid(maxWidth: 1425) {
-              ...GatsbySanityImageFluid
+              ...GatsbySanityImageFluid_withWebp
             }
           }
         }
@@ -208,7 +199,7 @@ export const pageQuery = graphql`
         nutritionImage {
           asset {
             fluid(maxWidth: 1425) {
-              ...GatsbySanityImageFluid
+              ...GatsbySanityImageFluid_withWebp
             }
           }
         }
@@ -217,7 +208,7 @@ export const pageQuery = graphql`
         mobilityImage {
           asset {
             fluid(maxWidth: 1425) {
-              ...GatsbySanityImageFluid
+              ...GatsbySanityImageFluid_withWebp
             }
           }
         }
@@ -226,7 +217,7 @@ export const pageQuery = graphql`
         aboutImage {
           asset {
             fluid(maxWidth: 1425) {
-              ...GatsbySanityImageFluid
+              ...GatsbySanityImageFluid_withWebp
             }
           }
         }
@@ -235,7 +226,7 @@ export const pageQuery = graphql`
         personalTrainerImage {
           asset {
             fluid(maxWidth: 1425) {
-              ...GatsbySanityImageFluid
+              ...GatsbySanityImageFluid_withWebp
             }
           }
         }
@@ -244,7 +235,9 @@ export const pageQuery = graphql`
           member
           memberImage {
             asset {
-              url
+              fixed(width: 50) {
+                ...GatsbySanityImageFixed_withWebp
+              }
             }
           }
           location
@@ -257,7 +250,9 @@ export const pageQuery = graphql`
           }
           heroImage {
             asset {
-              url
+              fluid(maxWidth: 1000) {
+                ...GatsbySanityImageFluid_withWebp
+              }
             }
           }
           colorOne {

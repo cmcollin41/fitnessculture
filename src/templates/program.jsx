@@ -105,7 +105,7 @@ const Program = ({ data }) => {
           <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3 bg-gray-600 snap-align-center" style={{minWidth: "275px"}}>
             <p className="text-white text-xs italic">"{i.quote}"</p>
             <div className="flex flex-row items-center mt-6">
-              <img src={ i.memberImage.asset.url} alt="member photo" width="50px" height="50px" className="rounded-full" />
+              <Img fixed={i.memberImage.asset.fixed} alt={i.member} width="50px" height="50px" className="rounded-full" />
               <div className="pl-2">
                 <h6 className="uppercase">{i.member}</h6>
                 <p className="text-black text-xs">{i.location}</p>
@@ -129,6 +129,7 @@ const Program = ({ data }) => {
             <div className="p-4 text-center mx-auto">
               <span className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Basic</span>
               <h6 className="text-black text-base text-6xl mt-5">$39</h6>
+              <span className="text-black text-sm mt-5 uppercase">per month</span>
             </div>
             <div>
               <ul className="pricing">
@@ -255,7 +256,9 @@ export const pageQuery = graphql`
           member
           memberImage {
             asset {
-              url
+              fixed(width: 50) {
+                ...GatsbySanityImageFixed_withWebp
+              }
             }
           }
           location

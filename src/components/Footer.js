@@ -1,6 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import logo from '../../static/fc-logo-horizontal-white.svg'
+import SubscribeForm from "./SubscribeForm";
 
 export default () => (
   <StaticQuery
@@ -56,6 +57,7 @@ export default () => (
                 <Link to="/" className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">Home</Link>
                 <a href="https://shop.fitnessculture.com" className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">Shop</a>
                 <Link to="/about" className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">About</Link>
+                <Link to="/contact" className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">Contact</Link>
               </div>
             </div>
             <div className="order-4 lg:order-3 w-full lg:w-1/4 mt-10 lg:mt-0">
@@ -70,16 +72,7 @@ export default () => (
               <h6 className="text-gray-100 mb-6 uppercase">Join the #FitCult</h6>
               <div className="flex flex-col lg:flex-row justify-center items-center">
                 <div className="w-full">
-                  <div className="flex flex-col lg:flex-row justify-between items-center border rounded p-2 shadow bg-white text-center">
-                    <input
-                      className="appearance-none border-none rounded w-auto py-1 px-2 text-gray-700 leading-tight text-base focus:outline-none"
-                      type="email"
-                      placeholder="youremail@email.com"
-                    ></input>
-                    <Link to="/" className="btn shadow-md mt-10 lg:mt-auto w-full lg:w-auto text-white rounded-sm" style={{backgroundColor: "#03a9f4"}}>
-                      Subscribe
-                    </Link>
-                  </div>
+                  <SubscribeForm />
                 </div>
               </div>
               <div className="flex flex-row justify-between lg:justify-left">
