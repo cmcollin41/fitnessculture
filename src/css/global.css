@@ -180,6 +180,8 @@ a {
   min-width: 300px;
 }
 
+
+
 .scroll-x-mandatory {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;

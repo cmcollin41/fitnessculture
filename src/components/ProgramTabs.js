@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Img from 'gatsby-image'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import iphone from '../../static/iphone.png'
@@ -15,7 +14,7 @@ class ProgramTabs extends React.Component {
     return (
 
       <Tabs selectedTabClassName="active-tab" >
-        <TabList className="arrow-steps flex flex-col lg:flex-row justify-center mx-5 lg:mx-auto">
+        <TabList className="arrow-steps flex flex-col lg:flex-row justify-center mx-5 lg:mx-auto sticky top-0">
           <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center">1. Who is it for?</Tab>
           <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center">2. How does it work?</Tab>
           <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center">3. What should I expect?</Tab>
