@@ -28,7 +28,7 @@ class Header extends React.Component {
                     </div>
                   </div>
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
-                    <a href="https://shop.fitnessculture.com" target="_blank" className="uppercase text-black hover:text-blue-500 font-bold">Shop</a>
+                    <a href="/shop" target="_blank" className="uppercase text-black hover:text-blue-500 font-bold">Shop</a>
                   </div>
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
                     <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold">About</Link>
@@ -81,8 +81,9 @@ class Header extends React.Component {
                       )}
                     />
 
-                    <a href="https://shop.fitnessculture.com" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Shop</a>
+                    <a href="/shop" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Shop</a>
                     <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">About</Link>
+                    <Link to="/contact" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Contact</Link>
                   <div>
                     <a href="#" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase">Get Started</a>
                   </div>
