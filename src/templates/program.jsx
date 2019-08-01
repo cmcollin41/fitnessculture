@@ -95,14 +95,13 @@ const Program = ({ data }) => {
     </div>
 
 
-    <div className="py-20 bg-grey-100 relative">
-
+    <div className="py-20 relative">
       <div className="container px-5 lg:mx-auto">
         <div className="flex flex-col lg:flex-row justify-center items-center">
           <div className="w-full lg:w-1/2 text-right">
             <img src={ iphone }className="mx-auto lg:ml-auto" width="300px" />
           </div>
-          <div className="w-full lg:w-1/2 px-5 lg:px-20 personas">
+          <div className="w-full lg:w-1/2 px-5 lg:px-20 personas z-10">
             <h3 className="uppercase text-3xl pb-5">
              Personal Training at your fingertips
             </h3>
@@ -115,6 +114,8 @@ const Program = ({ data }) => {
       </div>
       <img src={ circles } width="250px" height="100%" className="block absolute right-0 bottom-0" style={{ zIndex: "-10"}} />
     </div>
+
+
     <div className="py-20 bg-gray-900">
       <div className="container px-5 lg:mx-auto">
         <h3 className="uppercase text-white text-3xl pb-5 lg:pb-10">
