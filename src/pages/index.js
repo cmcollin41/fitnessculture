@@ -71,10 +71,13 @@ const Index = ({ data }) => {
           {
             home.programs.map((program,i) => {
               return (
-                <div className="rounded w-64 mx-3 bg-gray-900 mt-10 flex flex-col snap-align-center mw-300">
-                   <Img className="block h-64 w-full bg-cover bg-center rounded-t text-center overflow-hidden"
-                        fluid={program.heroImage.asset.fluid}
-                    />
+                <div key={i} className="w-full md:w-1/2 lg:w-1/4 mx-3 rounded bg-gray-900 mt-10 flex flex-col items-stretch snap-align-center" style={{minWidth: "300px"}}>
+                  <Img
+                      className="block h-64 w-full bg-cover bg-center rounded-t text-center overflow-hidden"
+                      fluid={program.heroImage.asset.fluid}
+                    
+                  />
+                  <div className="flex flex-col justify-between items-stretch flex-grow">
                     <div className="p-5">
                       <h4 className="uppercase text-2xl" style={{ color: program.colorTwo.hex }}>{program.title}</h4>
                       <p className="text-white text-sm mt-2">{program.subtitle}</p>
@@ -82,7 +85,7 @@ const Index = ({ data }) => {
                     <div className="p-5">
                       <Link to={'programs/' + program.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">See {program.title}</Link>
                     </div>
-                
+                  </div>
                 </div>
               )
             })
