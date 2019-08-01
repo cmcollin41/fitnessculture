@@ -63,7 +63,7 @@ const Programs = ({ data }) => {
                         fluid={program.heroImage.asset.fluid}
                       
                     />
-                    <div className="flex flex-col justify-between items-stretch flex-grow">
+                    <div className="flex flex-col justify-between flex-grow">
                       <div className="p-5">
                         <h4 className="uppercase text-2xl" style={{ color: program.colorTwo.hex }}>{program.title}</h4>
                         <p className="text-white text-sm mt-2">{program.subtitle}</p>
