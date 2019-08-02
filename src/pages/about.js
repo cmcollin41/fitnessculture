@@ -24,7 +24,7 @@ const About = ({ data }) => {
           {about.subtitle}
         </p>
         <div className="py-10">
-          <Link to="/" className="btn-lg text-white rounded-full shadow-lg bg-blue-500">
+          <Link to="/programs" className="btn-lg text-white rounded-full shadow-lg bg-blue-500">
             Get Started
           </Link>
         </div>

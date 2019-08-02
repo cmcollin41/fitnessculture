@@ -8,12 +8,13 @@ class Header extends React.Component {
   render() {
 
     const { data } = this.props; 
+    const men = data.men
+    const women = data.women
 
     return (
-     
       <React.Fragment>
-        <header>
-          <nav className="flex items-center justify-between flex-wrap px-4 border-nav-b relative" style={{zIndex: 10}}>
+        <header className="z-10 w-full bg-white top-sticky">
+          <nav className="flex items-center justify-between flex-wrap px-4 border-nav-b">
             <div className="hidden lg:flex items-center flex-grow text-black py-4" style={{minWidth: "300px"}}>
               <Link to="/"><img src={ logo } alt="Logo" width={"200px"} /></Link>
             </div>
@@ -21,10 +22,25 @@ class Header extends React.Component {
               <div className="text-sm lg:flex-grow">
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent showprograms">
                     <Link to="/programs" className="uppercase text-black hover:text-blue-500 font-bold">Programs</Link>
-                    <div className="flex justify-center items-center py-6 bg-white programnav absolute left-0 right-0 text-center" style={{top: "79px", zIndex: "-4"}}>
-                        {data.allSanityProgram.nodes.map((i, count) => (
-                          <Link to={"/programs/" + i.slug.current} key={count} className="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 mr-4">{i.title}</Link>
-                        ))}
+                    <div className="flex justify-center py-10 bg-white programnav absolute left-0 right-0" style={{top: "79px", zIndex: "-4"}}>
+                      <div className="flex flex-row justify-center">
+                        <div className="w-64 flex flex-col items-center">
+                          <div className="text-left">
+                            <h6>Men</h6>
+                            {men.nodes.map((i, count) => (
+                              <Link to={"/programs/" + i.gender + "/" + i.slug.current} key={count} className="block mt-4 text-black hover:text-blue-500">{ i.title}</Link>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="w-64 flex flex-col items-center">
+                          <div className="text-left">
+                            <h6>Women</h6>
+                            {women.nodes.map((i, count) => (
+                              <Link to={"/programs/" + i.gender + "/" + i.slug.current} key={count} className="block mt-4 text-black hover:text-blue-500">{ i.title}</Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
@@ -32,6 +48,9 @@ class Header extends React.Component {
                   </div>
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
                     <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold">About</Link>
+                  </div>
+                  <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
+                    <Link to="/contact" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold">Contact</Link>
                   </div>
               </div>
             </div>
@@ -69,12 +88,25 @@ class Header extends React.Component {
                     <Toggle 
                       render={({on, toggle}) => (
                         <div>
-                          <div onClick={toggle} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Programs &#x2304;</div>
+                          <div onClick={toggle} className="uppercase block mt-4 lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Programs &#x2304;</div>
                           {on && 
-                            <div className="text-sm lg:flex-grow">
-                              {data.allSanityProgram.nodes.map((i, count) => (
-                                <Link to={"/programs/" + i.slug.current} key={count} className="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 mr-4">{i.title}</Link>
-                              ))}
+                            <div className="flex flex-row justify-center py-10">
+                              <div className="w-64 flex flex-col items-center">
+                                <div className="text-left">
+                                  <h6>Men</h6>
+                                  {men.nodes.map((i, count) => (
+                                    <Link to={"/programs/" + i.gender + "/" + i.slug.current} key={count} className="block mt-4 text-black hover:text-blue-500">{ i.title}</Link>
+                                  ))}
+                                </div>
+                              </div>
+                              <div className="w-64 flex flex-col items-center">
+                                <div className="text-left">
+                                  <h6>Women</h6>
+                                  {women.nodes.map((i, count) => (
+                                    <Link to={"/programs/" + i.gender + "/" + i.slug.current} key={count} className="block mt-4 text-black hover:text-blue-500">{ i.title}</Link>
+                                  ))}
+                                </div>
+                              </div>
                             </div>
                           }
                         </div>
@@ -106,11 +138,45 @@ export default props => (
   <StaticQuery
     query = {graphql`
       query HeadingQuery {
-        allSanityProgram {
+       men: allSanityProgram(filter: {gender: { eq: "men"}}) {
           nodes {
             id
             title
             subtitle
+            gender
+            slug {
+              current
+            }
+            colorOne {
+              hex
+            }
+            colorTwo {
+              hex
+            }
+            heroImage {
+              asset {
+                url
+              }
+            }
+            testimonials {
+              quote
+              member
+              memberImage {
+                asset {
+                  url
+                }
+              }
+              location
+            }
+      
+          }
+        }
+        women: allSanityProgram(filter: {gender: { eq: "women"}}) {
+          nodes {
+            id
+            title
+            subtitle
+            gender
             slug {
               current
             }

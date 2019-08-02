@@ -24,7 +24,7 @@ const Index = ({ data }) => {
       style={{minHeight: "60vh"}}
       fluid={home.heroImage.asset.fluid}
       >
-        <span className="flex rounded-full bg-black uppercase px-2 py-1 text-xs text-white">Your #1 Fitness App</span>
+        <span className="hidden lg:flex rounded-full bg-black uppercase px-2 py-1 text-xs text-white">Your #1 Fitness App</span>
         <h1 className="uppercase text-center text-white text-4xl lg:text-6xl mt-4" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
           {home.title}
         </h1>
@@ -83,7 +83,7 @@ const Index = ({ data }) => {
                       <p className="text-white text-sm mt-2">{program.subtitle}</p>
                     </div>
                     <div className="p-5">
-                      <Link to={'programs/' + program.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">See {program.title}</Link>
+                      <Link to={"/programs/" + program.gender + "/" + program.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">See {program.title}</Link>
                     </div>
                   </div>
                 </div>
@@ -248,6 +248,7 @@ export const pageQuery = graphql`
         programs {
           title
           subtitle
+          gender
           slug {
             current
           }

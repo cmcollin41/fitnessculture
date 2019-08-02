@@ -10,6 +10,7 @@ exports.createPages = async ({ graphql, actions }) => {
         id
         title
         subtitle
+        gender
         slug {
           current
         }
@@ -44,7 +45,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   programs.data.allSanityProgram.nodes.forEach((node) => {
     createPage({
-      path: `programs/${node.slug.current}`,
+      path: `programs/${node.gender}/${node.slug.current}`,
       component: template,
       context: {
         uid: node.id,

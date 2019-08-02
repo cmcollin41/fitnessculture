@@ -7,11 +7,12 @@ export default () => (
   <StaticQuery
     query = {graphql`
       query FooterPrograms {
-        allSanityProgram {
+        men: allSanityProgram(filter: {gender: { eq: "men"}}) {
           nodes {
             id
             title
             subtitle
+            gender
             slug {
               current
             }
@@ -36,12 +37,46 @@ export default () => (
               }
               location
             }
+      
+          }
+        }
+        women: allSanityProgram(filter: {gender: { eq: "women"}}) {
+          nodes {
+            id
+            title
+            subtitle
+            gender
+            slug {
+              current
+            }
+            colorOne {
+              hex
+            }
+            colorTwo {
+              hex
+            }
+            heroImage {
+              asset {
+                url
+              }
+            }
+            testimonials {
+              quote
+              member
+              memberImage {
+                asset {
+                  url
+                }
+              }
+              location
+            }
+      
           }
         }
       }
     `}
+   
     render = {data => (
-
       <footer className="w-full footer mt-auto bg-gray-900">
         <div className="container mx-auto px-10 lg:px-auto py-20">
           <div className="flex flex-col lg:flex-row">
@@ -60,12 +95,27 @@ export default () => (
                 <Link to="/contact" className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">Contact</Link>
               </div>
             </div>
-            <div className="order-4 lg:order-3 w-full lg:w-1/4 mt-10 lg:mt-0">
+            <div className="order-4 lg:order-3 w-full lg:w-1/4 mt-10 lg:mt-auto">
                 <h6 className="text-gray-100 uppercase">Programs</h6>
                 <div className="flex flex-col pb-2 left-0 right-0">
-                  {data.allSanityProgram.nodes.map((i, count) => (
-                    <Link to={"/programs/" + i.slug.current} key={count} className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">{i.title}</Link>
-                  ))}
+                  <div className="flex flex-row justify-center mt-5">
+                    <div className="w-64 flex flex-col">
+                      <div className="text-left">
+                        <h6 className="uppercase text-gray-300 text-xs">Men</h6>
+                        {data.men.nodes.map((i, count) => (
+                          <Link to={"/programs/" + i.gender + "/" + i.slug.current} key={count} className="block mt-4 text-gray-300 text-xs hover:text-blue-500">{ i.title}</Link>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="w-64 flex flex-col">
+                      <div className="text-left">
+                        <h6 className="uppercase text-gray-300 text-xs">Women</h6>
+                        {data.women.nodes.map((i, count) => (
+                          <Link to={"/programs/" + i.gender + "/" + i.slug.current} key={count} className="block mt-4 text-gray-300 text-xs hover:text-blue-500">{ i.title}</Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
               </div>
             </div>
             <div className="order-2 lg:order-4 w-full lg:w-1/2 mt-10 lg:mt-0">
@@ -88,7 +138,8 @@ export default () => (
         </div>
         <div className="border-t border-gray-800">
           <div className="container mx-auto p-2 flex flex-col lg:flex-row justify-center text-center">
-
+            <span className="text-xs text-gray-500">314 N 3050 E Ste B1, St. George UT, 84790</span> 
+            <span className="hidden lg:inline-block mx-5 text-gray-500">|</span>       
             <span className="text-xs text-gray-500">&copy; 2019 Fitness Culture. All Rights Reserved</span>
             <span className="hidden lg:inline-block mx-5 text-gray-500">|</span>
             <span className="text-xs text-gray-500"><Link to="/">Terms</Link> & <Link to="/">Privacy</Link></span>

@@ -10,20 +10,18 @@ import "react-tabs/style/react-tabs.css";
 
 class ProgramTabs extends React.Component {
 
+
   render() {
     const { program } = this.props
     return (
 
-      <Tabs selectedTabClassName="active-tab" >
-        <TabList className="arrow-steps flex flex-col lg:flex-row justify-center mx-5 lg:mx-auto sticky top-0">
+      <Tabs selectedTabClassName="active-tab">
+        <TabList className="arrow-steps lg:flex lg:flex-row lg:justify-center mx-5 lg:mx-auto">
           <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center">1. Who is it for?</Tab>
           <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center">2. How does it work?</Tab>
           <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center">3. What should I expect?</Tab>
         </TabList>
-
         <TabPanel>
- 
-
           <div className="flex flex-col lg:flex-row items-center mt-10">
             <div className="w-full md:w-1/2 lg:w-1/2">
               <div className="flex flex-row flex-wrap justify-center w-full xl:w-2/3 mx-auto">
@@ -58,7 +56,7 @@ class ProgramTabs extends React.Component {
               </div>
             </div>
           </div>
- 
+
         </TabPanel>
         <TabPanel>
           <div className="flex flex-col lg:flex-row items-center mt-10">

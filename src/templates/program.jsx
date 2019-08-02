@@ -22,7 +22,7 @@ const Program = ({ data }) => {
        <SEO title={program.title} description={program.subtitle} image={program.heroImage.asset.url} />
       <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
       </div>
-      <div className="py-20 relative">
+      <div className="py-10 lg:py-20 relative">
         <div className="absolute h-full bottom-0 left-0 overflow-x-hidden" style={{zIndex: "-10"}}>
           <img src={circles} alt="circles" width="200px" height="100%" style={{transform: "scale(-1)"}}/>
         </div>
@@ -57,7 +57,7 @@ const Program = ({ data }) => {
                 </div>
               </div>
               <div className="mt-10 flex flex-row flex-wrap items-center">
-                <a href={program.premiumCta} className="btn-lg text-white rounded-full shadow-md" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
+                <a href="#pricing" className="btn-lg text-white rounded-full shadow-md" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
                   Start Program
                 </a>
                 <span className="ml-4 text-xs font-light">$2 per Workout</span>
@@ -87,7 +87,8 @@ const Program = ({ data }) => {
       </div>
     </div>
 
-    <div className="w-full py-10 lg:py-20 sticky top-0 lg:top-auto lg:relative">
+
+    <div className="w-full py-10 lg:py-20 lg:relative">
       <div className="container mx-auto">
         <ProgramTabs program={program}/>
       </div>
@@ -141,10 +142,10 @@ const Program = ({ data }) => {
       </div>
     </div>
 
-    <div className="my-20 relative">
+    <div className="py-20 relative" id="pricing">
       <img src={square} width="100px" height="100%" className="absolute" style={{top: "-25px", zIndex: "-1"}} />
       <div className="flex flex-col lg:flex-row justify-center items-center mx-5">
-        <div className="w-full md:w-1/2 lg:w-1/4 mt:auto">
+        <div className="order-2 lg:order-1 w-full md:w-1/2 lg:w-1/4 mt-20 lg:mt:auto">
           <div className="rounded overflow-hidden shadow-lg bg-white text-black flex flex-col justify-between">
             <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
             </div>
@@ -167,13 +168,14 @@ const Program = ({ data }) => {
             </div>
           </div>
         </div>
-        <div className="w-full md:w-1/2 lg:w-1/4 mt-20 lg:mt-auto">
+        <div className="order-1 lg:order-2 w-full md:w-1/2 lg:w-1/4 lg:mt-auto">
           <div className="text-black rounded overflow-hidden shadow-lg bg-white flex flex-col justify-between">
             <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
             </div>
             <div className="p-4 text-center mx-auto">
               <span class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Premium</span>
               <h6 className="text-black text-base text-6xl mt-5">$89</h6>
+              <span className="text-black text-sm mt-5 uppercase">per month</span>
             </div>
             <div>
               <ul className="pricing">
@@ -202,20 +204,17 @@ const Program = ({ data }) => {
           Joining is <span className="px-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>Stress</span> Free
         </h3>
       </div>
-      <div className="container lg:mx-auto">
-        <div className="flex flex-col lg:flex-row justify-center items-center h-full">
-          <div className="flex flex-col justify-between items-stretch flex-grow rounded p-5 w-64 lg:mx-3 mt-10 lg:mt-auto bg-gray-600" style={{minWidth: "275px"}}>
-            <h5 className="uppercase mb-5">No Contracts</h5>
-            <p className="text-white">No miniumum length or contract. All training programs are month to month inside of Fitness Culture.</p>
-          </div>
-          <div className="flex flex-col justify-between items-stretch flex-grow rounded p-5 w-64 mx-auto lg:mx-3 mt-10 lg:mt-auto bg-gray-600" style={{minWidth: "275px"}}>
-            <h5 className="uppercase mb-5">Cancel Anytime</h5>
-            <p className="text-white">If you ever have to leave us for any reason, stopping or pausing your membership is as easy as emailing support@fitnessculture.com</p>
-          </div>
-          <div className="flex flex-col justify-between items-stretch flex-grow rounded p-5 w-64 mx-auto lg:mx-3 mt-10 lg:mt-auto bg-gray-600" style={{minWidth: "275px"}}>
-            <h5 className="uppercase mb-5">Change Programs Anytime</h5>
-            <p className="text-white">You goals change and so should your program. You can switch to any of our programs at any time.</p>
-          </div>
+      <div className="container px-5 lg:px-auto lg:mx-auto">
+        <div className="flex flex-row flex-wrap items-stretch">
+          {program.guarantees.map((i, count) => (
+            <div key={count} className="w-full lg:w-1/3 p-5">
+              <div className="bg-gray-600 p-5 mt-10 rounded h-full">
+                <Img width="50px" className="mx-auto w-full" alt={i.title} fixed={i.icon.asset.fixed} />
+                <h5 className="uppercase mb-5">{i.title}</h5>
+                <p className="text-white">{i.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -254,6 +253,7 @@ export const pageQuery = graphql`
         id
         title
         subtitle
+        gender
         slug {
           current
         }
@@ -320,6 +320,17 @@ export const pageQuery = graphql`
           description
         }
         attributes {
+          title
+          description
+          icon {
+            asset {
+              fixed(width: 50) {
+                ...GatsbySanityImageFixed_withWebp
+              }
+            }
+          }
+        }
+        guarantees {
           title
           description
           icon {

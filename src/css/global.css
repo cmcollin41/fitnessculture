@@ -10,6 +10,7 @@ body, html {
   overflow-x: hidden;
   position: relative;
   color: #212121;
+  scroll-behavior: smooth;
 }
 p {
   @apply text-gray-900 font-light;
@@ -43,6 +44,13 @@ a {
 
 .btn-red:hover {
     @apply bg-red-800;
+}
+
+
+.top-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .nav-link {
@@ -281,11 +289,6 @@ a {
 
 .active-tab:after {
   border-left: 20px solid #212121 !important;
-}
-.arrow-steps {
-  position: sticky;
-  position: -webkit-sticky;
-  top: 10px;
 }
 
   .arrow-steps .step {

@@ -31,11 +31,6 @@ const Programs = ({ data }) => {
         <p className="text-center text-white mt-5 lg:w-1/2 text-xl w:1-2 hidden lg:block" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5"}}>
           {page.subtitle}
         </p>
-        <div className="py-10">
-          <Link to="/" className="btn-lg text-white rounded-full shadow-lg bg-blue-500">
-            Get Started
-          </Link>
-        </div>
       </BackgroundImage>
       <div className="w-full bg-gray-100 pt-4 pb-2">
         <div className="container mx-auto">
@@ -69,7 +64,7 @@ const Programs = ({ data }) => {
                         <p className="text-white text-sm mt-2">{program.subtitle}</p>
                       </div>
                       <div className="p-5">
-                        <Link to={'programs/' + program.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">See {program.title}</Link>
+                        <Link to={"/programs/" + i.gender + "/" + i.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">See {program.title}</Link>
                       </div>
                     </div>
                   </div>
@@ -105,6 +100,7 @@ export const pageQuery = graphql`
       nodes {
         title
         subtitle
+        gender
         slug {
           current
         }
