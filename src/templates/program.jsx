@@ -5,6 +5,8 @@ import SEO from "../components/seo"
 import ProgramTabs from "../components/ProgramTabs"
 import Img from 'gatsby-image'
 
+import ReactPlayer from 'react-player'
+
 // Images
 import iphone from '../../static/iphone.png'
 import circles from '../../static/circles.svg'
@@ -14,6 +16,7 @@ import logo2 from '../../static/logo-2.svg'
 import logo3 from '../../static/logo-3.svg'
 import logo4 from '../../static/logo-4.svg'
 import logo5 from '../../static/menshealth.png'
+import phone from '../../static/phone.mp4'
 
 const Program = ({ data }) => {
   const program = data.allSanityProgram.nodes[0]
@@ -100,7 +103,7 @@ const Program = ({ data }) => {
       <div className="container px-5 lg:mx-auto">
         <div className="flex flex-col lg:flex-row justify-center items-center">
           <div className="w-full lg:w-1/2 text-right">
-            <img src={ iphone }className="mx-auto lg:ml-auto" width="300px" />
+            <ReactPlayer url={phone} playing loop muted width="100%" />
           </div>
           <div className="w-full lg:w-1/2 px-5 lg:px-20 personas z-10">
             <h3 className="uppercase text-3xl pb-5">
