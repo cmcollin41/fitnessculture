@@ -13,7 +13,8 @@ const typography = new Typography({
     "sans-serif",
   ],
   bodyFontFamily: [
-    "Roboto", 
+    "Roboto",
+    "IBM Plex Sans", 
     "sans-serif"],
 })
 

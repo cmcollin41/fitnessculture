@@ -13,7 +13,7 @@ const About = ({ data }) => {
     <Layout>
       <SEO title={about.title} description={about.subtitle} image={about.heroImage.asset.url} />
       <BackgroundImage
-      className={'flex flex-col justify-center items-center bg-cover bg-top p-5'}
+      className={'flex flex-col justify-center items-center bg-cover bg-center p-5'}
       style={{minHeight: "60vh"}}
       fluid={about.heroImage.asset.fluid}
       >
