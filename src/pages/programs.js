@@ -64,7 +64,7 @@ const Programs = ({ data }) => {
                         <p className="text-white text-sm mt-2">{program.subtitle}</p>
                       </div>
                       <div className="p-5">
-                        <Link to={"/programs/" + i.gender + "/" + i.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">See {program.title}</Link>
+                        <Link to={"/programs/" + program.gender + "/" + program.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">See {program.title}</Link>
                       </div>
                     </div>
                   </div>
