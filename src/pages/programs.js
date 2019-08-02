@@ -21,7 +21,7 @@ const Programs = ({ data }) => {
     <Layout>
       <SEO title="Fitness Culture Programs" />
       <BackgroundImage
-      className={'flex flex-col justify-center items-center bg-cover bg-top p-5'}
+      className={'flex flex-col justify-center items-center bg-cover bg-center p-5'}
       style={{minHeight: "60vh"}}
       fluid={page.heroImage.asset.fluid}
       >
