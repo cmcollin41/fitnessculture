@@ -16,14 +16,14 @@ class ProgramTabs extends React.Component {
     return (
 
       <Tabs selectedTabClassName="active-tab">
-        <TabList className="arrow-steps lg:flex lg:flex-row lg:justify-center mx-5 lg:mx-auto">
-          <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center">1. Who is it for?</Tab>
-          <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center">2. How does it work?</Tab>
-          <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center">3. What should I expect?</Tab>
+        <TabList className="arrow-steps lg:flex lg:flex-row lg:justify-center mx-0 lg:mx-auto sticky z-40" style={{top: "59px"}}>
+          <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center text-white"><a href="#who">1. Who is it for?</a></Tab>
+          <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center text-white"><a href="#how">2. How does it work?</a></Tab>
+          <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center text-white"><a href="#what">3. What should I expect?</a></Tab>
         </TabList>
         <TabPanel>
-          <div className="flex flex-col lg:flex-row items-center mt-10">
-            <div className="w-full md:w-1/2 lg:w-1/2">
+          <div className="flex flex-col lg:flex-row items-center mt-10" >
+            <div className="w-full md:w-1/2 lg:w-1/2" id="who">
               <div className="flex flex-row flex-wrap justify-center w-full xl:w-2/3 mx-auto">
                 {program.benefits.map((i, count) => (
                   <div key={count}>
@@ -59,8 +59,8 @@ class ProgramTabs extends React.Component {
 
         </TabPanel>
         <TabPanel>
-          <div className="flex flex-col lg:flex-row items-center mt-10">
-            <div className="w-full md:w-1/2 lg:w-1/2">
+          <div className="flex flex-col lg:flex-row items-center mt-10" >
+            <div className="w-full md:w-1/2 lg:w-1/2" id="how">
 
               <div className="flex flex-row flex-wrap justify-center w-full xl:w-2/3 mx-auto">
                 {program.exercises.map((i, count) => (
@@ -98,7 +98,7 @@ class ProgramTabs extends React.Component {
         </TabPanel>
         <TabPanel>
           <div className="flex flex-col lg:flex-row items-center mt-10">
-            <div className="w-full md:w-1/2 lg:w-1/2">
+            <div className="w-full md:w-1/2 lg:w-1/2" id="what">
 
             <div className="flex flex-row flex-wrap justify-center w-full xl:w-2/3 mx-auto">
               {program.attributes.map((i, count) => (

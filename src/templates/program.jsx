@@ -101,8 +101,8 @@ const Program = ({ data }) => {
     <div className="py-20 relative">
       <div className="container px-5 lg:mx-auto">
         <div className="flex flex-col lg:flex-row justify-center items-center">
-          <div className="w-full lg:w-1/3 text-right">
-            <video muted playsInline autoPlay controls loop>
+          <div className="w-full lg:w-1/3 text-right bg-white">
+            <video muted playsInline data-autoplay autoPlay controls loop data-object-fit="cover">
               <source src={phone}  type="video/mp4"/>
               Your browser doesn't support video
             </video>
