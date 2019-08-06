@@ -12,7 +12,6 @@ body, html {
   color: #212121;
   scroll-behavior: smooth;
   height: 100%;
-  overflow-x: hidden;
 }
 
 
