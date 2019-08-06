@@ -71,7 +71,6 @@ module.exports = {
         icon: `./static/fc-logo-horizontal-white.svg`
       },
     },
-    `gatsby-plugin-offline`
   ],
   siteMetadata: {
     title: "Fitness Culture",
