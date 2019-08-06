@@ -4,12 +4,13 @@ import Header from './Header'
 import Footer from './Footer'
 import SiteMetadata from './seo'
 
+
 import '../css/fonts.css'
 import '../css/global.css'
 
 export default ({ children }) => (
   <React.Fragment>
-    <SiteMetadata />
+    <SiteMetadata title="Fitness Culture" />
     <Header />
     {/* <Announcement /> */}
     { children }

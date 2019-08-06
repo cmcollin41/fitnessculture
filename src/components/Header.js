@@ -13,8 +13,8 @@ class Header extends React.Component {
 
     return (
       <React.Fragment>
-        <header className="z-50 w-full bg-white sticky top-0">
-          <nav className="flex items-center justify-between flex-wrap px-4 border-nav-b">
+        <header className="z-50 w-full bg-white sticky top-0 px-4 border-nav-b">
+          <nav className="flex items-center justify-between flex-wrap">
             <div className="hidden lg:flex items-center flex-grow text-black py-4" style={{minWidth: "300px"}}>
               <Link to="/"><img src={ logo } alt="Logo" width={"200px"} /></Link>
             </div>
