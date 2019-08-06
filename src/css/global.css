@@ -288,6 +288,10 @@ a {
   }
 
 
+.top-59 {
+  top: 59px;
+}
+
 .active-tabz {
   @apply bg-gray-900 text-gray-100;
 }
