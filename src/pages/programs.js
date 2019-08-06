@@ -6,11 +6,11 @@ import Img from 'gatsby-image'
 
 import SEO from '../components/seo'
 
-import logo1 from '../../static/logo-1.svg'
-import logo2 from '../../static/logo-2.svg'
-import logo3 from '../../static/logo-3.svg'
-import logo4 from '../../static/logo-4.svg'
-import logo5 from '../../static/menshealth.png'
+import logo1 from '../assets/logo-1.svg'
+import logo2 from '../assets/logo-2.svg'
+import logo3 from '../assets/logo-3.svg'
+import logo4 from '../assets/logo-4.svg'
+import logo5 from '../assets/menshealth.png'
 
 const $gender = "Men"
 

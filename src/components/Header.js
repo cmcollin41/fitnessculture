@@ -1,7 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import Toggle from './Toggle'
-import logo from '../../static/fc-logo-horizontal-black.png'
+import logo from '../assets/fc-logo-horizontal-black.png'
 
 class Header extends React.Component {
 

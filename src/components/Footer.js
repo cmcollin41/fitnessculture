@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
-import logo from '../../static/fc-logo-horizontal-white.svg'
+import logo from '../assets/fc-logo-horizontal-white.svg'
 import SubscribeForm from "./SubscribeForm";
 
 export default () => (
