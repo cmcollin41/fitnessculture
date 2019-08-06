@@ -12,6 +12,7 @@ import logo3 from '../../static/logo-3.svg'
 import logo4 from '../../static/logo-4.svg'
 import logo5 from '../../static/menshealth.png'
 
+const $gender = "Men"
 
 const Programs = ({ data }) => {
   const page = data.sanityProgramPage
@@ -83,7 +84,7 @@ const Programs = ({ data }) => {
 export default Programs
 
 export const pageQuery = graphql`
-  query ProgramsPage{
+  query ProgramsPage {
     sanityProgramPage {
       id
       title
