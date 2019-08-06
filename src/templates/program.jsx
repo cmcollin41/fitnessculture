@@ -90,8 +90,8 @@ const Program = ({ data }) => {
     </div>
 
 
-    <div className="w-full py-10 lg:py-20 lg:relative">
-      <div className="container mx-auto">
+    <div className="w-full py-10 lg:py-20 lg:relative h-full">
+      <div className="container mx-auto h-full">
         <ProgramTabs program={program}/>
       </div>
       <img src={ circles } width="250px" className="hidden lg:block absolute left-0" style={{ bottom: "0px", transform: "scaleX(-1)", zIndex: "-10"}} />

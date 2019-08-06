@@ -15,7 +15,7 @@ class ProgramTabs extends React.Component {
     const { program } = this.props
     return (
 
-      <Tabs selectedTabClassName="active-tab">
+      <Tabs selectedTabClassName="active-tab" className="h-full">
         <TabList className="arrow-steps lg:flex lg:flex-row lg:justify-center mx-0 lg:mx-auto sticky top-59 lg:relative lg:top-auto z-40">
           <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center text-white"><a href="#who">1. Who is it for?</a></Tab>
           <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center text-white"><a href="#how">2. How does it work?</a></Tab>
