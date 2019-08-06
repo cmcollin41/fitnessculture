@@ -16,19 +16,19 @@ class Header extends React.Component {
         <header className="z-50 w-full bg-white sticky top-0 px-4 border-nav-b">
           <nav className="flex items-center justify-between flex-wrap">
             <div className="hidden lg:flex items-center flex-grow text-black py-4" style={{minWidth: "300px"}}>
-              <Link to="/"><img src={ logo } alt="Logo" width={"200px"} /></Link>
+              <Link to="/" aria-label="Fitness Culture Logo"><img src={ logo } alt="Logo" width={"200px"} /></Link>
             </div>
             <div className="w-full block hidden flex-grow lg:flex lg:justify-center lg:items-center lg:ml-auto lg:w-auto">
               <div className="text-sm lg:flex-grow">
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent showprograms">
-                    <Link to="/programs" className="uppercase text-black hover:text-blue-500 font-bold">Programs</Link>
+                    <Link to="/programs" aria-label="Programs" className="uppercase text-black hover:text-blue-500 font-bold">Programs</Link>
                     <div className="flex justify-center py-10 bg-white programnav absolute left-0 right-0" style={{top: "79px", zIndex: "-4"}}>
                       <div className="flex flex-row justify-center">
                         <div className="w-64 flex flex-col items-center">
                           <div className="text-left">
                             <h6>Men</h6>
                             {men.nodes.map((i, count) => (
-                              <Link to={"/programs/" + i.gender + "/" + i.slug.current} key={count} className="block mt-4 text-black hover:text-blue-500">{ i.title}</Link>
+                              <Link to={"/programs/" + i.gender + "/" + i.slug.current} aria-label={i.title} key={count} className="block mt-4 text-black hover:text-blue-500">{ i.title}</Link>
                             ))}
                           </div>
                         </div>
@@ -36,7 +36,7 @@ class Header extends React.Component {
                           <div className="text-left">
                             <h6>Women</h6>
                             {women.nodes.map((i, count) => (
-                              <Link to={"/programs/" + i.gender + "/" + i.slug.current} key={count} className="block mt-4 text-black hover:text-blue-500">{ i.title}</Link>
+                              <Link to={"/programs/" + i.gender + "/" + i.slug.current}  aria-label={i.title} key={count} className="block mt-4 text-black hover:text-blue-500">{ i.title}</Link>
                             ))}
                           </div>
                         </div>
@@ -47,17 +47,17 @@ class Header extends React.Component {
                     <a href="https://fitnessculture.merchlabs.com" target="_blank" rel="noopener noreferrer" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold">Shop</a>
                   </div>
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
-                    <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold">About</Link>
+                    <Link to="/about" aria-label={"About"} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold">About</Link>
                   </div>
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
-                    <Link to="/contact" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold">Contact</Link>
+                    <Link to="/contact" aria-label={"Contact"} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold">Contact</Link>
                   </div>
               </div>
             </div>
             <div className="block hidden lg:flex justify-end content-center align-center" style={{minWidth: "300px"}}>
               <div>
                 <a href="https://app.fitnessculture.com/login" className="inline-block text-sm px-4 py-2 leading-none text-black  hover:text-blue-500 mt-4 lg:mt-0 uppercase">Login</a>
-                <Link to="/programs" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded-full">Get Started</Link>
+                <Link to="/programs" aria-label={"Get Started"} className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded-full">Get Started</Link>
                 {/* <Cart/> */}
               </div>
             </div>

@@ -17,9 +17,9 @@ class ProgramTabs extends React.Component {
 
       <Tabs selectedTabClassName="active-tab">
         <TabList className="arrow-steps lg:flex lg:flex-row lg:justify-center mx-0 lg:mx-auto sticky top-59 lg:relative lg:top-auto z-40">
-          <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center text-white"><a href="#who">1. Who is it for?</a></Tab>
-          <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center text-white"><a href="#how">2. How does it work?</a></Tab>
-          <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center text-white"><a href="#what">3. What should I expect?</a></Tab>
+          <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center text-white">1. Who is it for?</Tab>
+          <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center text-white">2. How does it work?</Tab>
+          <Tab className="step uppercase font-light w-full lg:w-1/3 text-left lg:text-center text-white">3. What should I expect?</Tab>
         </TabList>
         <TabPanel>
           <div className="flex flex-col lg:flex-row items-center mt-10" >
