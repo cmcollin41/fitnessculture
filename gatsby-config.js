@@ -68,9 +68,10 @@ module.exports = {
         background_color: `#111`,
         theme_color: `#111`,
         display: `standalone`,
-        icon: `./src/assets/fc-logo-horizontal-white.svg`
+        icon: `./static/fc-logo-horizontal-white.svg`
       },
     },
+    `gatsby-plugin-offline`
   ],
   siteMetadata: {
     title: "Fitness Culture",
@@ -79,7 +80,7 @@ module.exports = {
     description:
       "Gain muscle, lose weight or improve your explosiveness, it's your world inside of Fitness Culture. Just know you will have thousands of members and coaches there to support you.",
     url: "https://www.fitnessculture.com", // No trailing slash allowed!
-    image: "./src/assets/fc-logo-horizontal-black.png", // Path to your image you placed in the 'static' folder
+    image: "./static/fc-logo-horizontal-black.png", // Path to your image you placed in the 'static' folder
     twitterUsername: "@_fitnessculture",
   }
 }
