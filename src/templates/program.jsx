@@ -102,8 +102,8 @@ const Program = ({ data }) => {
       <div className="container px-5 lg:mx-auto">
         <div className="flex flex-col lg:flex-row justify-center items-center">
           <div className="w-full lg:w-1/3 text-right">
-            <video constrols muted playsInline autoPlay loop type="video/mp4">
-              <sourc src={phone} />
+            <video controls muted playsInline autoPlay loop type="video/mp4">
+              <source src={phone} />
             </video>
           </div>
           <div className="w-full lg:w-1/2 px-5 lg:px-20 personas z-10">
@@ -177,7 +177,7 @@ const Program = ({ data }) => {
             <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
             </div>
             <div className="p-4 text-center mx-auto">
-              <span class="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Premium</span>
+              <span className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Premium</span>
               <h6 className="text-black text-base text-6xl mt-5">$89</h6>
               <span className="text-black text-sm mt-5 uppercase">per month</span>
             </div>
