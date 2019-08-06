@@ -100,7 +100,7 @@ const Program = ({ data }) => {
       <div className="container px-5 lg:mx-auto">
         <div className="flex flex-col lg:flex-row justify-center items-center">
           <div className="w-full lg:w-1/3 text-right">
-            <video playsInline autoPlay muted loop>
+            <video playsInline autoPlay muted loop style={{objectFit: "cover"}}>
               <source src={phone} />
             </video>
           </div>
