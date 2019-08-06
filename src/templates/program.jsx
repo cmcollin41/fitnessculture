@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import ProgramTabs from "../components/ProgramTabs"
 import Img from 'gatsby-image'
 
+
 // Images
 import circles from '../../static/circles.svg'
 import square from '../../static/square-circles.svg'
@@ -16,6 +17,7 @@ import logo5 from '../../static/menshealth.png'
 import phone from '../../static/phone.mp4'
 
 const Program = ({ data }) => {
+
   const program = data.allSanityProgram.nodes[0]
   return (
     <Layout>
@@ -100,9 +102,7 @@ const Program = ({ data }) => {
       <div className="container px-5 lg:mx-auto">
         <div className="flex flex-col lg:flex-row justify-center items-center">
           <div className="w-full lg:w-1/3 text-right">
-            <video muted playsInline autoPlay loop>
-              <source src={phone} />
-            </video>
+            <video src={phone} muted playsInline autoPlay loop />
           </div>
           <div className="w-full lg:w-1/2 px-5 lg:px-20 personas z-10">
             <h3 className="uppercase text-3xl pb-5">
