@@ -12,6 +12,7 @@ body, html {
   color: #212121;
   scroll-behavior: smooth;
 }
+
 p {
   @apply text-gray-900 font-light;
 }

@@ -5,10 +5,7 @@ import SEO from "../components/seo"
 import ProgramTabs from "../components/ProgramTabs"
 import Img from 'gatsby-image'
 
-import ReactPlayer from 'react-player'
-
 // Images
-import iphone from '../../static/iphone.png'
 import circles from '../../static/circles.svg'
 import square from '../../static/square-circles.svg'
 import logo1 from '../../static/logo-1.svg'
@@ -102,8 +99,10 @@ const Program = ({ data }) => {
     <div className="py-20 relative">
       <div className="container px-5 lg:mx-auto">
         <div className="flex flex-col lg:flex-row justify-center items-center">
-          <div className="w-full lg:w-1/2 text-right">
-            <ReactPlayer url={phone} playing loop muted width="100%" />
+          <div className="w-full lg:w-1/3 text-right">
+            <video autoPlay muted loop>
+              <source src={phone} />
+            </video>
           </div>
           <div className="w-full lg:w-1/2 px-5 lg:px-20 personas z-10">
             <h3 className="uppercase text-3xl pb-5">
