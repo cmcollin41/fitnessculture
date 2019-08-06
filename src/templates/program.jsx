@@ -7,14 +7,14 @@ import Img from 'gatsby-image'
 
 
 // Images
-import circles from '../../static/circles.svg'
-import square from '../../static/square-circles.svg'
-import logo1 from '../../static/logo-1.svg'
-import logo2 from '../../static/logo-2.svg'
-import logo3 from '../../static/logo-3.svg'
-import logo4 from '../../static/logo-4.svg'
-import logo5 from '../../static/menshealth.png'
-import phone from '../../static/phone.mp4'
+import circles from '../assets/circles.svg'
+import square from '../assets/square-circles.svg'
+import logo1 from '../assets/logo-1.svg'
+import logo2 from '../assets/logo-2.svg'
+import logo3 from '../assets/logo-3.svg'
+import logo4 from '../assets/logo-4.svg'
+import logo5 from '../assets/menshealth.png'
+import phone from '../assets/phone.mp4'
 
 const Program = ({ data }) => {
 
