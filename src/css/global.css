@@ -11,6 +11,11 @@ body, html {
   scroll-behavior: smooth;
 }
 
+* {
+  @apply border border-red-500;
+}
+
+
 video {
   object-fit: fill;
   width: 100%;
