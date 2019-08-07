@@ -63,7 +63,7 @@ const Index = ({ data }) => {
 
 
       <div className="py-20 bg-gray-100">
-        <div className="container lg:mx-auto mx-5">
+        <div className="container lg:mx-auto px-5">
           <h3 className="uppercase text-3xl pb-5 lg:pb-10">
             Our Programs
           </h3>
