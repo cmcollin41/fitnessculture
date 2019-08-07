@@ -16,8 +16,10 @@ import logo5 from '../assets/menshealth.png'
 
 const Index = ({ data }) => {
   const home = data.allSanityHome.nodes[0]
+  
   return (
     <Layout>
+
       <SEO title="Fitness Culture" />
       <BackgroundImage
       className={'flex flex-col justify-center items-center bg-cover bg-top p-5'}

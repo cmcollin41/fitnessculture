@@ -8,6 +8,7 @@ import SiteMetadata from './seo'
 import '../css/fonts.css'
 import '../css/global.css'
 
+
 export default ({ children }) => (
   <React.Fragment>
     <SiteMetadata title="Fitness Culture" />

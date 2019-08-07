@@ -27,6 +27,10 @@ a {
   @apply text-blue-500;
 }
 
+button:focus {
+  outline: none;
+}
+
 .btn {
     @apply font-bold py-2 px-4 uppercase;
     text-decoration: none;
@@ -51,6 +55,10 @@ a {
 
 .btn-red:hover {
     @apply bg-red-800;
+}
+
+.filter-active {
+  @apply bg-black text-white;
 }
 
 
