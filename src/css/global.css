@@ -11,9 +11,9 @@ body, html {
   scroll-behavior: smooth;
 }
 
-* {
+/* * {
   @apply border border-red-500;
-}
+} */
 
 
 video {
