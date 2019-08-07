@@ -67,7 +67,7 @@ const Program = ({ data }) => {
             </div>
             <div className="w-full lg:w-1/2 shadow-lg relative mt-10 lg:mt-auto">
               <Img fluid={program.heroImage.asset.fluid} />
-              <img src={square} alt="square circles" width="100px" height="100%" className="absolute" style={{bottom: "-25px", right: "-25px", zIndex: "-1"}} />
+              <img src={square} alt="square circles" width="100px" height="100%" className="absolute right-0" style={{bottom: "-35px", zIndex: "-1"}} />
             </div>
           </div>
         </div>
@@ -149,7 +149,7 @@ const Program = ({ data }) => {
 
     <div className="py-20 relative" id="pricing">
       <img src={square} width="100px" height="100%" className="absolute" style={{top: "-25px", zIndex: "-1"}} />
-      <div className="flex flex-col lg:flex-row justify-center items-center mx-5">
+      <div className="flex flex-col lg:flex-row justify-center items-center px-5">
         <div className="order-2 lg:order-1 w-full md:w-1/2 lg:w-1/4 mt-20 lg:mt:auto">
           <div className="rounded overflow-hidden shadow-lg bg-white text-black flex flex-col justify-between">
             <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
@@ -224,7 +224,7 @@ const Program = ({ data }) => {
       </div>
     </div>
 
-      <div className="py-20">
+      <div className="py-20 px-5">
         <div className="container mx-auto">
           <h3 className="text-center uppercase text-3xl mb-10">
             Questions and <span className="rustico">Answers</span>
