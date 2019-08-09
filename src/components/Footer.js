@@ -142,7 +142,7 @@ export default () => (
             <span className="hidden lg:inline-block mx-5 text-gray-500">|</span>       
             <span className="text-xs text-gray-500">&copy; 2019 Fitness Culture. All Rights Reserved</span>
             <span className="hidden lg:inline-block mx-5 text-gray-500">|</span>
-            <span className="text-xs text-gray-500"><Link to="/">Terms</Link> & <Link to="/">Privacy</Link></span>
+            <span className="text-xs text-gray-500"><a href="https://app.fitnessculture.com/privacy-policy" target="_blank" rel="noopener">Terms & Privacy</a></span>
           </div>
         </div>
       </footer>
