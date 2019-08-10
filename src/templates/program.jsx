@@ -100,7 +100,7 @@ const Program = ({ data }) => {
     <div className="py-20 relative">
       <div className="container px-5 lg:mx-auto">
         <div className="flex flex-col lg:flex-row justify-center items-center">
-          <div className="w-full lg:w-1/3 text-right bg-white video-ratio">
+          <div className="w-full lg:w-1/3 text-right bg-white">
             <video muted playsInline autoPlay loop>
               <source src={program.appVideo.asset.url} />
               Your browser doesn't support video
