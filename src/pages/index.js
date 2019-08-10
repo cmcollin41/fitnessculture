@@ -34,8 +34,8 @@ const Index = ({ data }) => {
           {home.subtitle}
         </p>
         <div className="py-10">
-          <Link to="/programs" className="btn-lg text-white rounded-full shadow-lg bg-blue-500">
-            Get Started
+          <Link to={home.heroLink} className="btn-lg text-white rounded-full shadow-lg" style={{backgroundColor: home.heroColor.hex}}>
+            {home.heroCta}
           </Link>
         </div>
       </BackgroundImage>
@@ -182,6 +182,11 @@ export const pageQuery = graphql`
         subtitle
         slug {
           current
+        }
+        heroCta
+        heroLink
+        heroColor {
+          hex
         }
         heroImage {
           asset {
