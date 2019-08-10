@@ -194,9 +194,6 @@ export const pageQuery = graphql`
         id
         title
         subtitle
-        slug {
-          current
-        }
         heroCta
         heroLink
         heroColor {
@@ -267,6 +264,7 @@ export const pageQuery = graphql`
           location
         }
         programs {
+          active
           title
           subtitle
           gender

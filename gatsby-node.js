@@ -5,7 +5,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const programs = await graphql(`
   {
-    allSanityProgram {
+    allSanityProgram(filter: {active: {eq: true}}) {
       nodes {
         id
         title

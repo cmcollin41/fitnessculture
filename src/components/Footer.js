@@ -7,7 +7,7 @@ export default () => (
   <StaticQuery
     query = {graphql`
       query FooterPrograms {
-        men: allSanityProgram(filter: {gender: { eq: "men"}}) {
+        men: allSanityProgram(filter: {gender: { eq: "men"}, active: {eq: true}}) {
           nodes {
             id
             title
@@ -40,7 +40,7 @@ export default () => (
       
           }
         }
-        women: allSanityProgram(filter: {gender: { eq: "women"}}) {
+        women: allSanityProgram(filter: {gender: { eq: "women"}, active: {eq: true}}) {
           nodes {
             id
             title
