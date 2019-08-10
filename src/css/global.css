@@ -16,13 +16,6 @@ body, html {
 } */
 
 
-video {
-  object-fit: fill;
-  width: 100%;
-  height: auto;
-  background-color: #fff;
-}
-
 p {
   @apply text-gray-900 font-light;
 }
@@ -217,6 +210,34 @@ button:focus {
   scroll-snap-align: center;
 }
 
+.scroll-btn {
+  opacity: 0;
+  top: 50%;
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  padding: 10px;
+  z-index: 100;
+  background: #fafafa;
+  color: black;
+  transform: translateY(-50%);
+  transition: 0.5s;
+}
+
+.scroll-left {
+  left: 25px;
+}
+
+.scroll-right {
+  right: 25px;
+}
+
+.scroll-btns:hover > .scroll-btn {
+  opacity: 1;
+}
+
+
+
 @media (min-width: 1024px) {
   .icon:last-child {
     display: none;
@@ -409,4 +430,21 @@ button:focus {
     
 
     
+  }
+
+
+  .video-ratio {
+    width: 100%;
+    padding-top:  calc(411.66 / 647.92 * 100%);
+    height: 0px;
+    position: relative;
+  }
+
+  .video-ratio video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    background-color: #fff;
+    padding-left: -25%;
   }
