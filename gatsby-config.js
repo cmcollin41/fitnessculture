@@ -9,8 +9,19 @@ require("dotenv").config({
 })
 
 module.exports = {
+  siteMetadata: {
+    title: "Fitness Culture",
+    titleTemplate: "%s",
+    author: "@_fitnessculture",
+    description:
+      "Gain muscle, lose weight or improve your explosiveness, it's your world inside of Fitness Culture. Just know you will have thousands of members and coaches there to support you.",
+    url: "https://www.fitnessculture.com", // No trailing slash allowed!
+    image: "./src/assets/static/fc-logo-horizontal-black.png", // Path to your image you placed in the 'static' folder
+    twitterUsername: "@_fitnessculture",
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-postcss`,
     {
       resolve: 'gatsby-source-sanity',
@@ -73,14 +84,4 @@ module.exports = {
     },
     `gatsby-plugin-offline`
   ],
-  siteMetadata: {
-    title: "Fitness Culture",
-    titleTemplate: "%s",
-    author: "@_fitnessculture",
-    description:
-      "Gain muscle, lose weight or improve your explosiveness, it's your world inside of Fitness Culture. Just know you will have thousands of members and coaches there to support you.",
-    url: "https://www.fitnessculture.com", // No trailing slash allowed!
-    image: "./src/assets/static/fc-logo-horizontal-black.png", // Path to your image you placed in the 'static' folder
-    twitterUsername: "@_fitnessculture",
-  }
 }
