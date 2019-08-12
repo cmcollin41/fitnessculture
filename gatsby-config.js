@@ -22,6 +22,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-postcss`,
     {
       resolve: 'gatsby-source-sanity',
