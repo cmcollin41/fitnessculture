@@ -90,10 +90,11 @@ class Header extends React.Component {
                         <div>
                           <div onClick={toggle} className="uppercase block mt-4 lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Programs &#x2304;</div>
                           {on && 
+                            <>
                             <div className="flex flex-row justify-center py-10">
                               <div className="w-64 flex flex-col items-center">
                                 <div className="text-left">
-                                  <h6>Men</h6>
+                                  <h6 className="uppercase">Men</h6>
                                   {men.nodes.map((i, count) => (
                                     <Link to={"/programs/" + i.gender + "/" + i.slug.current} key={count} className="block mt-4 text-black hover:text-blue-500">{ i.title}</Link>
                                   ))}
@@ -101,13 +102,17 @@ class Header extends React.Component {
                               </div>
                               <div className="w-64 flex flex-col items-center">
                                 <div className="text-left">
-                                  <h6>Women</h6>
+                                  <h6 className="uppercase">Women</h6>
                                   {women.nodes.map((i, count) => (
                                     <Link to={"/programs/" + i.gender + "/" + i.slug.current} key={count} className="block mt-4 text-black hover:text-blue-500">{ i.title}</Link>
                                   ))}
                                 </div>
                               </div>
                             </div>
+                            <div className="w-64 flex flex-col items-center">
+                              <Link to="/programs" className="block text-black hover:text-blue-500">See All Programs</Link>
+                            </div>
+                            </>
                           }
                         </div>
                       )}
@@ -138,7 +143,7 @@ export default props => (
   <StaticQuery
     query = {graphql`
       query HeadingQuery {
-       men: allSanityProgram(filter: {gender: { eq: "men"}}) {
+       men: allSanityProgram(filter: {gender: { eq: "men"}, active: {eq: true}}) {
           nodes {
             id
             title
@@ -171,7 +176,7 @@ export default props => (
       
           }
         }
-        women: allSanityProgram(filter: {gender: { eq: "women"}}) {
+        women: allSanityProgram(filter: {gender: { eq: "women"}, active: {eq: true}}) {
           nodes {
             id
             title

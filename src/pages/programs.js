@@ -17,7 +17,7 @@ import logo5 from '../assets/menshealth.png'
 const Programs = ({ data }) => {
 
   const page = data.sanityProgramPage
-  const programs = data.allSanityProgram.nodes
+
 
   return (
     <Layout>
@@ -50,7 +50,7 @@ const Programs = ({ data }) => {
 
       <div className="pt-10 pb-20">
         <div className="container mx-auto">
-           <Filter dataset={programs} />
+           <Filter dataset={page.programs} />
         </div>
       </div>
 
@@ -74,9 +74,7 @@ export const pageQuery = graphql`
           }
         }
       }
-    }
-    allSanityProgram {
-      nodes {
+      programs {
         title
         subtitle
         gender

@@ -100,7 +100,7 @@ const Program = ({ data }) => {
     <div className="py-20 relative">
       <div className="container px-5 lg:mx-auto">
         <div className="flex flex-col lg:flex-row justify-center items-center">
-          <div className="w-full lg:w-1/3 text-right bg-white video-ratio">
+          <div className="w-full lg:w-1/3 text-right bg-white">
             <video muted playsInline autoPlay loop>
               <source src={program.appVideo.asset.url} />
               Your browser doesn't support video
@@ -108,11 +108,11 @@ const Program = ({ data }) => {
           </div>
           <div className="w-full lg:w-1/2 px-5 lg:px-20 personas z-10">
             <h3 className="uppercase text-3xl pb-5">
-             Personal Training at your fingertips
+             {program.appTitle}
             </h3>
-            <p>This is a section about how you get full access to the app! Seriously download this mfer and get ripped! Do it! Just do it!</p>
+            <p>{program.appDescription}</p>
             <div className="mt-10">
-              <a href={program.premiumCta} className="uppercase font-bold border rounded-full py-2 px-4" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Get {program.title}</a>
+              <a href="#pricing" className="uppercase font-bold border rounded-full py-2 px-4" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Get {program.title}</a>
             </div>
           </div>
         </div>
@@ -155,16 +155,14 @@ const Program = ({ data }) => {
             </div>
             <div className="p-4 text-center mx-auto">
               <span className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Basic</span>
-              <h6 className="text-black text-base text-6xl mt-5">$39</h6>
+              <h6 className="text-black text-base text-6xl mt-5">${program.basicPrice}</h6>
               <span className="text-black text-sm mt-5 uppercase">per month</span>
             </div>
             <div>
               <ul className="pricing">
-                <li>World class training programs</li>
-                <li>Complete sets, reps, & progressions</li>
-                <li>Video coaching tutorials</li>
-                <li>Member only Facebook group</li>
-                <li>Ability to switch programs anytime</li>
+                {program.basicBenefits.map((benefit, i) => (
+                  <li>{benefit.description}</li>
+                ))}
               </ul>
             </div>
             <div className="px-6 py-10">
@@ -178,19 +176,14 @@ const Program = ({ data }) => {
             </div>
             <div className="p-4 text-center mx-auto">
               <span className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Premium</span>
-              <h6 className="text-black text-base text-6xl mt-5">$89</h6>
+              <h6 className="text-black text-base text-6xl mt-5">${program.premiumPrice}</h6>
               <span className="text-black text-sm mt-5 uppercase">per month</span>
             </div>
             <div>
               <ul className="pricing">
-                <li>World class training programs</li>
-                <li>Complete sets, reps, & progressions</li>
-                <li>Video coaching tutorials</li>
-                <li>Member only Facebook group</li>
-                <li>Ability to switch programs anytime</li>
-                <li>Mobility Routines</li>
-                <li>Customized Macros</li>
-                <li>Online Meal Builder</li>
+                {program.premiumBenefits.map((benefit, i) => (
+                  <li>{benefit.description}</li>
+                ))}
               </ul>
             </div>
             <div className="px-6 py-10">
@@ -282,6 +275,10 @@ export const pageQuery = graphql`
             url
           }
         }
+        appTitle
+        appDescription
+        basicPrice
+        premiumPrice
         testimonials {
           quote
           member
@@ -352,6 +349,14 @@ export const pageQuery = graphql`
         }
         features {
           title
+          description
+        }
+        basicPrice
+        basicBenefits {
+          description
+        }
+        premiumPrice
+        premiumBenefits {
           description
         }
       }

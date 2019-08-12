@@ -54,7 +54,12 @@ module.exports = {
         // datalayer to be set before GTM is loaded
         // should be an object or a function that is executed in the browser
         // Defaults to null
-        defaultDataLayer: { platform: "gatsby" },
+        // defaultDataLayer: { platform: "gatsby" },
+        defaultDataLayer: function() {
+          return {
+            pageType: window.pageType,
+          }
+        },
   
         // Specify optional GTM environment details.
         // gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
