@@ -25,7 +25,7 @@ class SubscribeForm extends React.Component {
   render() {
     return (
 			<form name="subscribe" action="/" method="POST" netlify-honeypot="bot-field" data-netlify="true" className="flex flex-col lg:flex-row justify-between items-center border rounded p-2 shadow bg-white text-center">
-				<input type="hidden" name="bot-field" value="subscribe" />
+				<input type="hidden" name="form-name" value="subscribe" />
 				<div className="hidden">
           <label>
             "Don't fill this out"
