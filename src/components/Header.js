@@ -69,7 +69,7 @@ class Header extends React.Component {
                 <Link to="/"><img src={ logo } alt="Logo" width={"150px"} /></Link>
               </div>
               <div className="block lg:hidden">
-                <button onClick={toggle} className="flex items-center p-1 text-black">
+                <button onClick={toggle} aria-label="Open Menu" className="flex items-center p-1 text-black">
                   <svg className={"ham hamRotate ham1 " + (active ? "active" : "")} viewBox="0 0 100 100" width="50">
                     <path
                           className="line top"
