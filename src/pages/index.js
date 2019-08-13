@@ -30,7 +30,7 @@ const Index = ({ data }) => {
   
   return (
     <Layout>
-      <SEO title="Fitness Culture" />
+      <SEO title="Fitness Culture" image={home.heroImage.asset.fluid} />
       <BackgroundImage
       className={'flex flex-col justify-center items-center bg-cover bg-top p-5'}
       style={{minHeight: "60vh"}}
@@ -53,11 +53,11 @@ const Index = ({ data }) => {
         <div className="container mx-auto">
           <p className="text-black uppercase text-xs text-center pt-2">Programs Engineered by Experts Featured in:</p>
           <div className="flex flex-row justify-between items-center h-full overflow-scroll lg:overflow-hidden">
-            <img src={ logo1 } width="100px" className="px-2" />
-            <img src={ logo2 } width="100px" className="px-2" />
-            <img src={ logo4 } width="100px" className="px-2" />
-            <img src={ logo3 } width="100px" className="px-2" />
-            <img src={ logo5 } width="100px" className="px-2" />
+            <img src={ logo1 } alt="Social Proof Logo #1" width="100px" className="px-2" />
+            <img src={ logo2 } alt="Social Proof Logo #2" width="100px" className="px-2" />
+            <img src={ logo4 } alt="Social Proof Logo #3" width="100px" className="px-2" />
+            <img src={ logo3 } alt="Social Proof Logo #4" width="100px" className="px-2" />
+            <img src={ logo5 } alt="Social Proof Logo #5" width="100px" className="px-2" />
           </div>
         </div>
       </div>
@@ -173,7 +173,7 @@ const Index = ({ data }) => {
             <p className="mt-5">{home.aboutDescription}</p>
             <div className="mt-10">
               <Link to="/about" className="btn text-blue-500 border border-blue-500 rounded-full">
-                Learn More
+                Our Story
               </Link>
             </div>
           </div>

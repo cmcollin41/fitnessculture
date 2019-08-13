@@ -21,7 +21,7 @@ function SEO({ description, lang, meta, keywords, title, image }) {
             meta={[
               {
                 name: `description`,
-                content: description,
+                content: metaDescription,
               },
               { image: "image",
                 content: image

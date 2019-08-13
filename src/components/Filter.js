@@ -41,6 +41,7 @@ class Filter extends React.Component {
 						return (
 							<div key={i} className="w-full md:w-1/2 lg:w-1/4 mx-3 rounded bg-gray-900 mt-10 flex flex-col items-stretch">
 								<Img
+										alt={program.title}
 										className="block h-64 w-full bg-cover bg-center rounded-t text-center overflow-hidden"
 										fluid={program.heroImage.asset.fluid}
 									

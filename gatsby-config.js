@@ -22,15 +22,6 @@ module.exports = {
         // token: process.env.MY_SANITY_TOKEN,
       },
     },
-    'gatsby-plugin-stripe',
-    {
-      resolve: `gatsby-source-stripe`,
-      options: {
-        objects: ['Product','Sku','Subscription'],
-        secretKey: `${process.env.STRIPE_SECRET_KEY}`,
-        downloadFiles: true,
-      },
-    },
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
