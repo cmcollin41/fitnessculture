@@ -3,15 +3,12 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import BackgroundImage from 'gatsby-background-image'
 import Img from 'gatsby-image'
+import SocialProof from "../components/SocialProof"
 import HomeTabs from "../components/HomeTabs"
 import SEO from '../components/seo'
 
 import circles from '../assets/circles.svg'
-import logo1 from '../assets/logo-1.svg'
-import logo2 from '../assets/logo-2.svg'
-import logo3 from '../assets/logo-3.svg'
-import logo4 from '../assets/logo-4.svg'
-import logo5 from '../assets/menshealth.png'
+
 
 
 const Index = ({ data }) => {
@@ -49,18 +46,7 @@ const Index = ({ data }) => {
           </Link>
         </div>
       </BackgroundImage>
-      <div className="w-full bg-gray-100 pt-4 pb-2">
-        <div className="container mx-auto">
-          <p className="text-black uppercase text-xs text-center pt-2">Programs Engineered by Experts Featured in:</p>
-          <div className="flex flex-row justify-between items-center h-full overflow-scroll lg:overflow-hidden">
-            <img src={ logo1 } alt="Social Proof Logo #1" width="100px" className="px-2" />
-            <img src={ logo2 } alt="Social Proof Logo #2" width="100px" className="px-2" />
-            <img src={ logo4 } alt="Social Proof Logo #3" width="100px" className="px-2" />
-            <img src={ logo3 } alt="Social Proof Logo #4" width="100px" className="px-2" />
-            <img src={ logo5 } alt="Social Proof Logo #5" width="100px" className="px-2" />
-          </div>
-        </div>
-      </div>
+      <SocialProof />
 
 
 

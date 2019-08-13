@@ -86,7 +86,7 @@ export default () => (
                   <p className="text-gray-300 text-xs">Fitness Culture is here to provide the members of Fitness Culture world class Training, Nutrition, and Mobility Programs.</p>
                 </div>
             </div>
-            <div className="order-3 lg:order-2 w-full lg:w-1/4 mt-10 lg:mt-0">
+            <div className="order-3 lg:order-3 w-full lg:w-1/4 mt-10 lg:mt-0">
               <h6 className="text-gray-300 uppercase">Pages</h6>
               <div className="flex flex-col pb-2 left-0 right-0">
                 <Link to="/" className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">Home</Link>
@@ -95,7 +95,7 @@ export default () => (
                 <Link to="/contact" className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">Contact</Link>
               </div>
             </div>
-            <div className="order-4 lg:order-3 w-full lg:w-1/4 mt-10 lg:mt-auto">
+            <div className="order-4 lg:order-2 w-full lg:w-1/4 mt-10 lg:mt-auto">
                 <h6 className="text-gray-100 uppercase">Programs</h6>
                 <div className="flex flex-col pb-2 left-0 right-0">
                   <div className="flex flex-row justify-center mt-5">

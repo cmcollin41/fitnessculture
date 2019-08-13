@@ -1,7 +1,8 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import SocialProof from "../components/SocialProof"
 import ProgramTabs from "../components/ProgramTabs"
 import Img from 'gatsby-image'
 
@@ -9,11 +10,7 @@ import Img from 'gatsby-image'
 // Images
 import circles from '../assets/circles.svg'
 import square from '../assets/square-circles.svg'
-import logo1 from '../assets/logo-1.svg'
-import logo2 from '../assets/logo-2.svg'
-import logo3 from '../assets/logo-3.svg'
-import logo4 from '../assets/logo-4.svg'
-import logo5 from '../assets/menshealth.png'
+
 
 const Program = ({ data }) => {
 
@@ -73,20 +70,7 @@ const Program = ({ data }) => {
       </div>
       {/* </div> */}
 
-    <div className="w-full bg-gray-100 pt-4 pb-2">
-      <div className="container mx-auto">
-        <p className="text-black uppercase text-xs text-center pt-2">Programs Engineered by Experts Featured in:</p>
-        <div className="block overflow-scroll lg:overflow-hidden w-full">
-          <div className="flex flex-row justify-between items-center text-center h-full">
-            <img src={ logo1 } alt="social proof logo 1" width="100px" className="px-2" />
-            <img src={ logo2 } alt="social proof logo 2" width="100px" className="px-2" />
-            <img src={ logo4 } alt="social proof logo 3" width="100px" className="px-2" />
-            <img src={ logo3 } alt="social proof logo 4" width="100px" className="px-2" />
-            <img src={ logo5 } alt="social proof logo 5" width="100px" className="px-2" />
-          </div>
-        </div>
-      </div>
-    </div>
+    <SocialProof />
 
 
     <div className="w-full py-10 lg:py-20 lg:relative">
