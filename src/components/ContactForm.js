@@ -27,7 +27,13 @@ class ContactForm extends React.Component {
   render() {
     return (
       <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" className="w-full">
-				<input type="hidden" name="bot-field"/>
+				<input type="hidden" name="bot-field" value="contact" />
+				<div className="hidden">
+          <label>
+            "Don't fill this out"
+            <input name="bot-field" />
+          </label>
+				</div>
 				<div class="mb-4">
 					<label>
 						Name
