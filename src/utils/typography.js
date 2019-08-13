@@ -5,7 +5,7 @@ const typography = new Typography({
   baseLineHeight: 0,
   headerFontFamily: [
     "futuracondensed_extra_bold",
-    "Brandon Grotesque",
+    "Open Sans Condensed",
     "Helvetica Neue",
     "Segoe UI",
     "Helvetica",

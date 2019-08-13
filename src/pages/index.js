@@ -34,10 +34,10 @@ const Index = ({ data }) => {
       fluid={home.heroImage.asset.fluid}
       >
         <span className="hidden lg:flex rounded-full bg-black uppercase px-2 py-1 text-xs text-white">Your #1 Fitness App</span>
-        <h1 className="uppercase text-center text-white text-4xl lg:text-6xl mt-4" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
+        <h1 className="uppercase text-center text-white text-4xl lg:text-5xl mt-4 font-bold" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
           {home.title}
         </h1>
-        <p className="text-center text-white mt-5 lg:w-1/2 text-xl w:1-2 hidden lg:block" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5"}}>
+        <p className="text-center text-white mt-5 lg:w-1/3 text-xl hidden lg:block" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5"}}>
           {home.subtitle}
         </p>
         <div className="py-10">
@@ -54,7 +54,7 @@ const Index = ({ data }) => {
         <div className="container mx-auto">
           <HomeTabs program={home} />
         </div>
-        <img src={ circles } width="250px" className="hidden lg:block absolute left-0" style={{ bottom: "-100px", transform: "scaleX(-1)"}} />
+        <img src={ circles } alt="circles texture" width="250px" className="hidden lg:block absolute left-0" style={{ bottom: "-100px", transform: "scaleX(-1)"}} />
       </div>
 
 

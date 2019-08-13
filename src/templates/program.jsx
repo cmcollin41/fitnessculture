@@ -77,7 +77,7 @@ const Program = ({ data }) => {
       <div className="container mx-auto">
         <ProgramTabs program={program}/>
       </div>
-      <img src={ circles } width="250px" className="hidden lg:block absolute left-0" style={{ bottom: "0px", transform: "scaleX(-1)", zIndex: "-10"}} />
+      <img src={ circles } alt="circles texture" width="250px" className="hidden lg:block absolute left-0" style={{ bottom: "0px", transform: "scaleX(-1)", zIndex: "-10"}} />
     </div>
 
 
@@ -101,7 +101,7 @@ const Program = ({ data }) => {
           </div>
         </div>
       </div>
-      <img src={ circles } width="250px" height="100%" className="block absolute right-0 bottom-0" style={{ zIndex: "-10"}} />
+      <img src={ circles } alt="circle textures" width="250px" height="100%" className="block absolute right-0 bottom-0" style={{ zIndex: "-10"}} />
     </div>
 
 
@@ -131,7 +131,7 @@ const Program = ({ data }) => {
     </div>
 
     <div className="py-20 relative" id="pricing">
-      <img src={square} width="100px" height="100%" className="absolute" style={{top: "-25px", zIndex: "-1"}} />
+      <img src={square} alt="square texture" width="100px" height="100%" className="absolute" style={{top: "-25px", zIndex: "-1"}} />
       <div className="flex flex-col lg:flex-row justify-center items-center px-5">
         <div className="order-2 lg:order-1 w-full md:w-1/2 lg:w-1/4 mt-20 lg:mt:auto">
           <div className="rounded overflow-hidden shadow-lg bg-white text-black flex flex-col justify-between">
@@ -176,7 +176,7 @@ const Program = ({ data }) => {
           </div>
         </div>
       </div>
-      <img src={ circles } width="250px" height="100%" className="block absolute right-0" style={{ bottom: "-150px", zIndex: "-10"}} />
+      <img src={ circles } alt="circles texture" width="250px" height="100%" className="block absolute right-0" style={{ bottom: "-150px", zIndex: "-10"}} />
     </div>
 
     <div className="py-20 bg-gray-900">
