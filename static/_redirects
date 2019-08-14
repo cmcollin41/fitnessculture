@@ -1,5 +1,3 @@
-https://fitnessculture.com  https://www.fitnessculture.com
-http://fitnessculture.com  https://www.fitnessculture.com
 /index.php             /                         301
 /men.php               /programs                 301
 /women.php             /programs                 301
@@ -15,3 +13,6 @@ http://fitnessculture.com  https://www.fitnessculture.com
 /women-tone.php        /programs/women/tone      301
 /women-power.php       /programs/women/power     301
 /women-athlete.php     /programs/women/athlete   301
+
+https://fitnessculture.com/*  https://www.fitnessculture.com/:splat
+http://fitnessculture.com/*  https://www.fitnessculture.com/:splat
