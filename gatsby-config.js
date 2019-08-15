@@ -79,6 +79,6 @@ module.exports = {
         icon: `./src/assets/fc-logo-horizontal-white.svg`
       },
     },
-    `gatsby-plugin-offline`
+    // `gatsby-plugin-offline`
   ],
 }
