@@ -310,16 +310,6 @@ button:focus {
 
 
 
-
-  /* .animateNav {
-    animation: transition 1s ease;
-    transition: transform 0.3 ease-out;
-    overflow: hidden;
-    height: 100%;
-    transform: scaleY(1);
-    transform-origin: top;
-  } */
-
   .slide-up {
     transform: translateY(-125%);
     transition: transform 0.5s ease-in-out;
