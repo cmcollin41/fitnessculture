@@ -119,13 +119,14 @@ button:focus {
 
 .programnav {
   transform: translateY(-200%);
-  transition: 0.3s ease;
+  transition: 0.75s ease;
   z-index: -50;
   @apply border-b-0
 }
 
 .showprograms:hover .programnav {
   transform: translateY(0);
+  transition: 0.75s ease;
   z-index: 1;
   @apply border-b
 
@@ -314,7 +315,7 @@ button:focus {
     animation: transition 1s ease;
     transition: transform 0.3 ease-out;
     overflow: hidden;
-    height: 100vh;
+    height: 100%;
     transform: scaleY(1);
     transform-origin: top;
   }

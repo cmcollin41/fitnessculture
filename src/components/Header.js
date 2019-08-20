@@ -14,7 +14,7 @@ class Header extends React.Component {
     return (
       <React.Fragment>
         <header className="z-50 w-full bg-white sticky top-0 px-1 lg:px-4 border-nav-b">
-          <nav className="flex items-center justify-between flex-wrap">
+          <nav className="flex items-center justify-between flex-wrap bg-white border-nav-b">
             <div className="hidden lg:flex items-center flex-grow text-black py-4" style={{minWidth: "300px"}}>
               <Link to="/" aria-label="Fitness Culture Logo"><img src={ logo } alt="Logo" width={"200px"} /></Link>
             </div>
@@ -22,7 +22,7 @@ class Header extends React.Component {
               <div className="text-sm lg:flex-grow">
                   <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent showprograms">
                     <Link to="/programs" aria-label="Programs" className="uppercase text-black hover:text-blue-500 font-bold">Programs</Link>
-                    <div className="flex justify-center py-10 bg-white programnav absolute left-0 right-0" style={{top: "79px", zIndex: "-4"}}>
+                    <div className="flex justify-center py-10 bg-white programnav absolute left-0 right-0" style={{top: "79px", zIndex: "-10"}}>
                       <div className="flex flex-row justify-center">
                         <div className="w-64 flex flex-col items-center">
                           <div className="text-left">
@@ -69,9 +69,9 @@ class Header extends React.Component {
                 <Link to="/"><img src={ logo } alt="Logo" width={"150px"} /></Link>
               </div>
               <div className="block lg:hidden">
-                <button onClick={toggle} class={"hamburger hamburger--slider-r" + (active ? " is-active" : "")} aria-label="Open Menu" type="button">
-                  <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
+                <button onClick={toggle} className={"hamburger hamburger--slider-r" + (active ? " is-active" : "")} aria-label="Open Menu" type="button">
+                  <span className="hamburger-box">
+                    <span className="hamburger-inner"></span>
                   </span>
                 </button>
               </div>
