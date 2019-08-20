@@ -13,3 +13,7 @@
 /women-tone.php        /programs/women/tone      301
 /women-power.php       /programs/women/power     301
 /women-athlete.php     /programs/women/athlete   301
+
+http://fitnessculture.com/*  https://www.fitnessculture.com/:splat           301!
+https://fitnessculture.com/*  https://www.fitnessculture.com/:splat          301!
+https://fitnessculture.netlify.com/* https://www.fitnessculture.com/:splat   301!

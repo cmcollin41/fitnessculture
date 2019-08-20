@@ -15,6 +15,9 @@ body, html {
   @apply border border-red-500;
 } */
 
+h1,h2,h3,h4,h5,h6 {
+  font-weight: bolder;
+}
 
 p {
   @apply text-gray-900 font-light;
@@ -434,7 +437,7 @@ button:focus {
 
 
   .hamburger {
-    padding: 1rem 1rem;
+    padding: 1rem 0rem;
     display: inline-block;
     cursor: pointer;
     transition-property: opacity, filter;
@@ -456,8 +459,8 @@ button:focus {
       background-color: #212121; }
   
   .hamburger-box {
-    width: 30px;
-    height: 24px;
+    width: 24px;
+    height: 18px;
     display: inline-block;
     position: relative; }
   
@@ -466,10 +469,10 @@ button:focus {
     top: 50%;
     margin-top: -2px; }
     .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-      width: 30px;
-      height: 4px;
+      width: 24px;
+      height: 2px;
       background-color: #212121;
-      border-radius: 2px;
+      border-radius: 0px;
       position: absolute;
       transition-property: transform;
       transition-duration: 0.15s;
