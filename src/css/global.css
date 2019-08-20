@@ -311,7 +311,7 @@ button:focus {
     animation: transition 1s ease;
     transition: transform 0.3 ease-out;
     overflow: hidden;
-    height: auto;
+    height: 100vh;
     transform: scaleY(1);
     transform-origin: top;
   }
