@@ -8,7 +8,7 @@ import logo5 from '../assets/menshealth.svg'
 const SocialProof = () => (
   <div className="w-full bg-gray-100 pt-4 pb-2">
     <div className="container mx-auto">
-      <p className="text-black uppercase text-xs text-center pt-2">Programs Engineered by Experts Featured in:</p>
+      <p className="text-black uppercase text-xs text-center">Programs Engineered by Experts Featured in:</p>
       <div className="flex flex-row justify-between items-center h-full overflow-scroll lg:overflow-hidden">
         <img src={ logo1 } alt="Mens Fitness" width="100px" className="px-2" />
         <img src={ logo2 } alt="Train" width="100px" className="px-2" />
