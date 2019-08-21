@@ -20,7 +20,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-  @apply text-gray-900 font-light;
+  @apply text-gray-900 font-light my-4;
 }
 
 a {
@@ -129,7 +129,6 @@ button:focus {
   transition: 0.75s ease;
   z-index: 1;
   @apply border-b
-
 }
 
 

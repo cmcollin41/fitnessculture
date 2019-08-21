@@ -88,8 +88,8 @@ const Header = () => {
   
   return (
     <>
-    <header className="z-50 w-full bg-white sticky top-0 px-1 lg:px-4 border-nav-b">
-      <nav className="flex items-center justify-between flex-wrap bg-white border-nav-b">
+    <header className="z-50 w-full bg-white sticky top-0">
+      <nav className="flex items-center justify-between flex-wrap bg-white px-1 lg:px-4 border-nav-b">
         <div className="hidden lg:flex items-center flex-grow text-black py-4" style={{minWidth: "300px"}}>
           <Link to="/" aria-label="Fitness Culture Logo"><img src={ logo } alt="Logo" width={"200px"} /></Link>
         </div>
