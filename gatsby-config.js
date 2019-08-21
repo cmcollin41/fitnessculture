@@ -68,15 +68,23 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.fitnessculture.com',
+        sitemap: 'https://www.fitnessculture.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Fitness Culture`,
         short_name: `Fitness Culture`,
         start_url: `/`,
-        background_color: `#111`,
-        theme_color: `#111`,
+        background_color: `#fff`,
+        theme_color: `#fff`,
         display: `standalone`,
-        icon: `./src/assets/fc-logo-horizontal-white.svg`
+        icon: `./src/assets/fc-logo-black.png`
       },
     },
     // `gatsby-plugin-offline`
