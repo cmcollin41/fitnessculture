@@ -11,6 +11,8 @@ function SEO({ description, lang, meta, keywords, title, image }) {
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description
+        const metaImage = 
+          image || data.site.siteMetadata.image
         return (
           <Helmet
             htmlAttributes={{
@@ -32,11 +34,11 @@ function SEO({ description, lang, meta, keywords, title, image }) {
               },
               {
                 property: `og:description`,
-                content: description,
+                content: metaDescription,
               },
               {
                 property: `og:image`,
-                content: image,
+                content: metaImage,
               },
               {
                 property: `og:type`,
@@ -52,7 +54,7 @@ function SEO({ description, lang, meta, keywords, title, image }) {
               },
               {
                 name: `twitter:image`,
-                content: image,
+                content: metaImage,
               },
               {
                 name: `twitter:creator`,
