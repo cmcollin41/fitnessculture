@@ -119,7 +119,7 @@ const Program = ({ data }) => {
               <Img fixed={i.memberImage.asset.fixed} alt={i.member} width="50px" height="50px" className="rounded-full" />
               <div className="pl-2">
                 <h6 className="uppercase">{i.member}</h6>
-                <p className="text-black text-xs">{i.location}</p>
+                <span className="text-black text-xs">{i.location}</span>
               </div>
             </div>
           </div>
