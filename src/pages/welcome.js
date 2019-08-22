@@ -64,13 +64,13 @@ const Welcome = () => {
 							<div className="card-body">
 								<h2 className="text-xl uppercase">Setting Up Your Programming</h2>
 								<p className="card-text">
-									To get your workouts to display within the app you will need to log into <a href="https://app.fitnessculture.com" target="_blank">app.fitnessculture.com</a>.
+									To get your workouts to display within the app you will need to log into <a href="https://app.fitnessculture.com" target="_blank" rel="noopener noreferrer">app.fitnessculture.com</a>.
 								</p>
 							</div>
 						</div>
 
             <div className="w-full w-1/3 my-10">
-							<iframe src="https://youtube.com/embed/1JA8MPVT4Co?controls=1&showinfo=0&rel=0" height="500" frameborder="0" allowfullscreen className="mx-auto w-full"></iframe>
+							<iframe src="https://youtube.com/embed/1JA8MPVT4Co?controls=1&showinfo=0&rel=0" title="Setting Up Programming" height="500" frameborder="0" allowfullscreen className="mx-auto w-full"></iframe>
 						</div>
 						
 						<div className="card kill-border">
@@ -118,7 +118,7 @@ const Welcome = () => {
 						</div>
 
             <div className="w-full my-10">
-              <iframe src="https://youtube.com/embed/-zI7Z4w-VTw?controls=1&showinfo=0&rel=0" height="500" frameborder="0" allowfullscreen class="w-full mx-auto"></iframe>
+              <iframe src="https://youtube.com/embed/-zI7Z4w-VTw?controls=1&showinfo=0&rel=0" title="Navigating Your Workouts" height="500" frameborder="0" allowfullscreen class="w-full mx-auto"></iframe>
             </div>
 						
 						<div className="card kill-border">
@@ -173,7 +173,7 @@ const Welcome = () => {
               </p>
 
               <div className="w-full my-10">
-                <iframe src="https://www.youtube.com/embed/zLAlXH-RHyc?controls=1&showinfo=0&rel=0" height="500" frameborder="0" allowfullscreen class="w-full mx-auto"></iframe>
+                <iframe src="https://www.youtube.com/embed/zLAlXH-RHyc?controls=1&showinfo=0&rel=0" title="Tracking Your Workouts" height="500" frameborder="0" allowfullscreen class="w-full mx-auto"></iframe>
               </div>
             </div>
           </div>	
@@ -185,7 +185,7 @@ const Welcome = () => {
             <h2 className="text-xl uppercase">Adjusting Workouts If Short On Time</h2>
 
             <div className="w-full my-10">
-              <iframe src="https://youtube.com/embed/H7MbvgbG04g?controls=1&showinfo=0&rel=0" height="500" frameborder="0" allowfullscreen class="w-full mx-auto"></iframe>
+              <iframe src="https://youtube.com/embed/H7MbvgbG04g?controls=1&showinfo=0&rel=0" title="Adjusting Workout Time" height="500" frameborder="0" allowfullscreen class="w-full mx-auto"></iframe>
             </div>
 
             <p className="card-text">
@@ -206,7 +206,7 @@ const Welcome = () => {
             </p>
 
             <div className="w-full my-10">
-              <iframe src="https://www.youtube.com/embed/9E9ZWjANWSM?controls=1&showinfo=0&rel=0" height="500" frameborder="0" allowfullscreen class="w-full mx-auto"></iframe>
+              <iframe src="https://www.youtube.com/embed/9E9ZWjANWSM?controls=1&showinfo=0&rel=0" title="Maxes Video" height="500" frameborder="0" allowfullscreen class="w-full mx-auto"></iframe>
             </div>
 
 
@@ -222,10 +222,10 @@ const Welcome = () => {
               <div className="col-xs-12">
                 <h2 className="text-xl uppercase">Flexible Dieting</h2>
                 <p className="card-text">
-                  First things first, if you aren’t familiar with flexible dieting we highly recommend logging on to <a href="https://app.fitnessculture.com" target="_blank">app.fitnessculture.com</a> and reading through the information provided under the nutrition tab. It will teach everything you need to know about flexible dieting. 
+                  First things first, if you aren’t familiar with flexible dieting we highly recommend logging on to <a href="https://app.fitnessculture.com" target="_blank" rel="noopener noreferrer">app.fitnessculture.com</a> and reading through the information provided under the nutrition tab. It will teach everything you need to know about flexible dieting. 
                 </p>
                 <div className="w-full my-10">
-                  <iframe src="https://youtube.com/embed/7rnTAD7r_yk?controls=1&showinfo=0&rel=0" height="500" frameborder="0" allowfullscreen class="w-full mx-auto"></iframe>
+                  <iframe src="https://youtube.com/embed/7rnTAD7r_yk?controls=1&showinfo=0&rel=0" title="Flexible Dieting" height="500" frameborder="0" allowfullscreen class="w-full mx-auto"></iframe>
                 </div>
                 <img src={nutrition} alt="Nutrition" width="350" class="w-full lg:w-1/4" />
               </div>
@@ -297,7 +297,7 @@ const Welcome = () => {
               The MealBuildr is a tool we developed for our clients new to macro counting. Once you’ve set your macros in the app you can use the meal builder to create meal plans that auto populate the exact serving size you need to hit your macros. The MealBuildr works great for whole food, simple meal plans. 
             </p>
             <div className="w-full my-10">
-              <iframe src="https://youtube.com/embed/CBJ9_XgTu68?controls=1&showinfo=0&rel=0" height="500" frameborder="0" allowfullscreen className="w-full mx-auto"></iframe>
+              <iframe src="https://youtube.com/embed/CBJ9_XgTu68?controls=1&showinfo=0&rel=0" title="Using the MealBuildr" height="500" frameborder="0" allowfullscreen className="w-full mx-auto"></iframe>
             </div>
             <p>
               You can use the <span className="fc-tip-inline">Auto Generate Button</span> in the app to get a basic meal plan. The Auto Generate tool is still in Beta and will sometimes put undesirable foods for certain meals of the day. EX: tuna fish for breakfast. 
@@ -332,7 +332,7 @@ const Welcome = () => {
         </p>
 
         <div className="w-full my-10">
-        <iframe src="https://youtube.com/embed/dltLnQEgPjM?controls=1&showinfo=0&rel=0" height="500" frameborder="0" allowfullscreen class="w-full mx-auto"></iframe>
+        <iframe src="https://youtube.com/embed/dltLnQEgPjM?controls=1&showinfo=0&rel=0" title="Mobility Video" height="500" frameborder="0" allowfullscreen class="w-full mx-auto"></iframe>
         </div>
         
         <div className="flex flex-col lg:flex-row justify-center">

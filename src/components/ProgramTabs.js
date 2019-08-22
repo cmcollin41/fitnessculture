@@ -31,7 +31,7 @@ class ProgramTabs extends React.Component {
                       <Img width="25px" className="mx-auto" alt={i.title} fixed={i.icon.asset.fixed} />
                       <h6 className="text-xs uppercase mt-3">{i.title}</h6>
                     </div>
-                    <ReactTooltip id={i.title + count} className='w-32' aria-haspopup='true' role='example' effect='solid'>
+                    <ReactTooltip id={i.title + count} className='w-32' aria-haspopup='true' role='tooltip' effect='solid'>
                       <span>{i.description}</span>
                     </ReactTooltip>
                   </div>
@@ -69,7 +69,7 @@ class ProgramTabs extends React.Component {
                       <Img width="25px" className="mx-auto" alt={i.title} fixed={i.icon.asset.fixed} />
                       <h6 className="text-xs uppercase mt-3">{i.title}</h6>
                     </div>
-                    <ReactTooltip id={i.title + count} className='w-32' aria-haspopup='true' role='example' effect='solid'>
+                    <ReactTooltip id={i.title + count} className='w-32' aria-haspopup='true' role='tooltip' effect='solid'>
                       <span>{i.description}</span>
                     </ReactTooltip>
                   </div>
@@ -107,7 +107,7 @@ class ProgramTabs extends React.Component {
                     <Img width="25px" className="mx-auto" alt={i.title} fixed={i.icon.asset.fixed} />
                     <h6 className="text-xs uppercase mt-3">{i.title}</h6>
                   </div>
-                  <ReactTooltip id={i.title + count} className='w-32' aria-haspopup='true' role='example' effect='solid'>
+                  <ReactTooltip id={i.title + count} className='w-32' aria-haspopup='true' role='tooltip' effect='solid'>
                     <span>{i.description}</span>
                   </ReactTooltip>
                 </div>
