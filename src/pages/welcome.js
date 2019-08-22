@@ -167,10 +167,14 @@ const Welcome = () => {
         <div className={"mt-10 " + (currentStep === 4 ? "block" : "hidden")}>					
           <div className="card kill-border">
             <div className="card-body">
-              <h2 className="text-xl uppercase">Tracking Your Workouts</h2>
+              <h2 className="text-xl uppercase">Tracking your weights and workout history</h2>
               <p className="card-text">
-                Coming soon will be the ability to track all your workout data within the app.  Check back soon for more information on this feature.
+              Tracking your weights in the app is an important step to recording your progress over time. Click the + icon next to the exercise. Enter the weight you completed and the number of reps for each set and click the Save button. Click the history icon to can see your history of this exercise.
               </p>
+
+              <div className="w-full my-10">
+                <iframe src="https://www.youtube.com/embed/zLAlXH-RHyc?controls=1&showinfo=0&rel=0" height="500" frameborder="0" allowfullscreen class="w-full mx-auto"></iframe>
+              </div>
             </div>
           </div>	
         </div>
@@ -202,7 +206,7 @@ const Welcome = () => {
             </p>
 
             <div className="w-full my-10">
-              <iframe src="https://youtube.com/embed/a6_cqMxMztI?controls=1&showinfo=0&rel=0" height="500" frameborder="0" allowfullscreen class="w-full mx-auto"></iframe>
+              <iframe src="https://www.youtube.com/embed/9E9ZWjANWSM?controls=1&showinfo=0&rel=0" height="500" frameborder="0" allowfullscreen class="w-full mx-auto"></iframe>
             </div>
 
 
@@ -345,7 +349,7 @@ const Welcome = () => {
           <button onClick={previousStep} className={(currentStep === 1 ? "opacity-0" : "opacity-100")}>
             Back
           </button>
-          <button onClick={nextStep} className={"px-4 py-2 bg-green-500 hover:bg-green-400 text-white shadow rounded " + (currentStep === 9 ? "opacity-50 cursor-not-allowed" : "opacity-100 cursor-auto")}>
+          <button onClick={nextStep} className={"px-4 py-2 bg-green-500 hover:bg-green-400 text-white shadow rounded " + (currentStep === 9 ? "hidden" : "block")}>
             Next Step
           </button>
         </div>
