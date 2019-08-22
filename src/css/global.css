@@ -20,7 +20,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-  @apply text-gray-900 font-light;
+  @apply text-gray-900 font-light my-4;
 }
 
 a {
@@ -129,7 +129,6 @@ button:focus {
   transition: 0.75s ease;
   z-index: 1;
   @apply border-b
-
 }
 
 
@@ -310,14 +309,14 @@ button:focus {
 
 
 
+  .slide-up {
+    transform: translateY(-125%);
+    transition: transform 0.5s ease-in-out;
+  }
 
-  .animateNav {
-    animation: transition 1s ease;
-    transition: transform 0.3 ease-out;
-    overflow: hidden;
-    height: 100%;
-    transform: scaleY(1);
-    transform-origin: top;
+  .slide-down{
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out;
   }
 
 
@@ -435,6 +434,10 @@ button:focus {
 
     
   }
+
+
+
+
 
 
   .hamburger {
