@@ -37,7 +37,7 @@ const Index = ({ data }) => {
         <h1 className="uppercase text-center text-white text-4xl lg:text-5xl mt-4 font-bold" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
           {home.title}
         </h1>
-        <p className="text-center text-white mt-5 lg:w-1/3 text-xl hidden lg:block" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5"}}>
+        <p className="text-center text-white mt-5 lg:w-1/2 xl:w-1/3 text-xl hidden lg:block" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5"}}>
           {home.subtitle}
         </p>
         <div className="py-10">
