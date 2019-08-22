@@ -79,7 +79,7 @@ const Index = ({ data }) => {
                     <div className="flex flex-col justify-between items-stretch flex-grow">
                       <div className="p-5">
                         <h4 className="uppercase text-2xl" style={{ color: program.colorTwo.hex }}>{program.title}</h4>
-                        <p className="text-white text-sm mt-2">{program.subtitle}</p>
+                        <p className="text-white text-sm">{program.subtitle}</p>
                       </div>
                       <div className="p-5">
                         <Link to={"/programs/" + program.gender + "/" + program.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">See {program.title}</Link>

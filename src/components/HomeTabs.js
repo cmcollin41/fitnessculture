@@ -39,7 +39,7 @@ class HomeTabs extends React.Component {
                   <Img fixed={ program.testimonials[0].memberImage.asset.fixed} alt="member photo" width="50px" height="50px" className="rounded-full" />
                   <div className="pl-2">
                     <h6 className="uppercase">{ program.testimonials[0].member}</h6>
-                    <p className="text-black text-xs">{ program.testimonials[0].location}</p>
+                    <span className="text-black text-xs">{ program.testimonials[0].location}</span>
                   </div>
                 </div>
               </div>
@@ -63,7 +63,7 @@ class HomeTabs extends React.Component {
                   <Img fixed={ program.testimonials[0].memberImage.asset.fixed} alt="member photo" width="50px" height="50px" className="rounded-full" />
                   <div className="pl-2">
                     <h6 className="uppercase">{ program.testimonials[0].member}</h6>
-                    <p className="text-black text-xs">{ program.testimonials[0].location}</p>
+                    <span className="text-black text-xs">{ program.testimonials[0].location}</span>
                   </div>
                 </div>
               </div>
@@ -92,7 +92,7 @@ class HomeTabs extends React.Component {
                   <Img fixed={ program.testimonials[1].memberImage.asset.fixed} alt="member photo" width="50px" height="50px" className="rounded-full" />
                   <div className="pl-2">
                     <h6 className="uppercase">{ program.testimonials[1].member}</h6>
-                    <p className="text-black text-xs">{ program.testimonials[1].location}</p>
+                    <span className="text-black text-xs">{ program.testimonials[1].location}</span>
                   </div>
                 </div>
               </div>
@@ -116,7 +116,7 @@ class HomeTabs extends React.Component {
                   <Img fixed={ program.testimonials[1].memberImage.asset.fixed} alt="member photo" width="50px" height="50px" className="rounded-full" />
                   <div className="pl-2">
                     <h6 className="uppercase">{ program.testimonials[1].member}</h6>
-                    <p className="text-black text-xs">{ program.testimonials[1].location}</p>
+                    <span className="text-black text-xs">{ program.testimonials[1].location}</span>
                   </div>
                 </div>
               </div>
@@ -145,7 +145,7 @@ class HomeTabs extends React.Component {
                   <Img fixed={ program.testimonials[2].memberImage.asset.fixed} alt="member photo" width="50px" height="50px" className="rounded-full" />
                   <div className="pl-2">
                     <h6 className="uppercase">{ program.testimonials[2].member}</h6>
-                    <p className="text-black text-xs">{ program.testimonials[2].location}</p>
+                    <span className="text-black text-xs">{ program.testimonials[2].location}</span>
                   </div>
                 </div>
               </div>
@@ -169,7 +169,7 @@ class HomeTabs extends React.Component {
                   <Img fixed={ program.testimonials[2].memberImage.asset.fixed} alt="member photo" width="50px" height="50px" className="rounded-full" />
                   <div className="pl-2">
                     <h6 className="uppercase">{ program.testimonials[2].member}</h6>
-                    <p className="text-black text-xs">{ program.testimonials[2].location}</p>
+                    <span className="text-black text-xs">{ program.testimonials[2].location}</span>
                   </div>
                 </div>
               </div>

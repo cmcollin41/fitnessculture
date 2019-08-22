@@ -151,49 +151,49 @@ const Header = () => {
           </button>
         </div>
       </nav>          
+      <div className={"w-full p-4 bg-white absolute block lg:hidden z-10 " + (navOpen ? "slide-down" : "slide-up")} style={{top: "63px"}}>
+          <Toggle 
+            render={({on, toggle}) => (
+              <div>
+                <div onClick={toggle} className="uppercase block mt-4 lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Programs &#x2304;</div>
+                {on && 
+                  <>
+                  <div className="flex flex-row justify-center py-10">
+                    <div className="w-64 flex flex-col items-center">
+                      <div className="text-left">
+                        <h6 className="uppercase">Men</h6>
+                        {men.nodes.map((i, count) => (
+                          <Link to={"/programs/" + i.gender + "/" + i.slug.current} key={count} className="block mt-4 text-black hover:text-blue-500">{ i.title}</Link>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="w-64 flex flex-col items-center">
+                      <div className="text-left">
+                        <h6 className="uppercase">Women</h6>
+                        {women.nodes.map((i, count) => (
+                          <Link to={"/programs/" + i.gender + "/" + i.slug.current} key={count} className="block mt-4 text-black hover:text-blue-500">{ i.title}</Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-64 flex flex-col items-center">
+                    <Link to="/programs" className="block text-black hover:text-blue-500">See All Programs</Link>
+                  </div>
+                  </>
+                }
+              </div>
+            )}
+          />
+
+          <a href="https://fitnessculture.merchlabs.com" target="_blank" rel="noopener noreferrer" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Shop</a>
+          <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">About</Link>
+          <Link to="/contact" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Contact</Link>
+        <div>
+          <Link to="/programs" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded">Get Started</Link>
+        </div>
+      </div>
     </header>
    
-    <div className={"w-full p-4 bg-white absolute z-10 " + (navOpen ? "slide-down" : "slide-up")} style={{top: "63px"}}>
-        <Toggle 
-          render={({on, toggle}) => (
-            <div>
-              <div onClick={toggle} className="uppercase block mt-4 lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Programs &#x2304;</div>
-              {on && 
-                <>
-                <div className="flex flex-row justify-center py-10">
-                  <div className="w-64 flex flex-col items-center">
-                    <div className="text-left">
-                      <h6 className="uppercase">Men</h6>
-                      {men.nodes.map((i, count) => (
-                        <Link to={"/programs/" + i.gender + "/" + i.slug.current} key={count} className="block mt-4 text-black hover:text-blue-500">{ i.title}</Link>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="w-64 flex flex-col items-center">
-                    <div className="text-left">
-                      <h6 className="uppercase">Women</h6>
-                      {women.nodes.map((i, count) => (
-                        <Link to={"/programs/" + i.gender + "/" + i.slug.current} key={count} className="block mt-4 text-black hover:text-blue-500">{ i.title}</Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div className="w-64 flex flex-col items-center">
-                  <Link to="/programs" className="block text-black hover:text-blue-500">See All Programs</Link>
-                </div>
-                </>
-              }
-            </div>
-          )}
-        />
-
-        <a href="https://fitnessculture.merchlabs.com" target="_blank" rel="noopener noreferrer" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Shop</a>
-        <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">About</Link>
-        <Link to="/contact" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Contact</Link>
-      <div>
-        <Link to="/programs" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded">Get Started</Link>
-      </div>
-    </div>
 
     </>
   )
