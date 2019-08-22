@@ -27,7 +27,7 @@ const Index = ({ data }) => {
   
   return (
     <Layout>
-      <SEO title="Fitness Culture" image={home.heroImage.asset.fluid} />
+      <SEO title="Fitness Culture" image={home.heroImage.asset.url} />
       <BackgroundImage
       className={'flex flex-col justify-center items-center bg-cover bg-top p-5'}
       style={{minHeight: "60vh"}}
@@ -190,6 +190,7 @@ export const pageQuery = graphql`
             fluid(maxWidth: 1425) {
               ...GatsbySanityImageFluid_withWebp
             }
+            url
           }
         }
         trainingTitle
