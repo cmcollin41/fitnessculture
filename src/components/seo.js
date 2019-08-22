@@ -9,6 +9,8 @@ function SEO({ description, lang, meta, keywords, title, image }) {
     <StaticQuery
       query={detailsQuery}
       render={data => {
+        const metaTitle =
+          title || data.site.siteMetadata.title
         const metaDescription =
           description || data.site.siteMetadata.description
         const metaImage = 
@@ -26,11 +28,11 @@ function SEO({ description, lang, meta, keywords, title, image }) {
                 content: metaDescription,
               },
               { image: "image",
-                content: image
+                content: metaImage
               },
               {
                 property: `og:title`,
-                content: title,
+                content: metaTitle,
               },
               {
                 property: `og:description`,
@@ -62,11 +64,11 @@ function SEO({ description, lang, meta, keywords, title, image }) {
               },
               {
                 name: `twitter:title`,
-                content: title,
+                content: metaTitle,
               },
               {
                 name: `twitter:description`,
-                content: description,
+                content: metaDescription,
               },
             ]
               .concat(
@@ -106,6 +108,7 @@ const detailsQuery = graphql`
     site {
       siteMetadata {
         title
+        image
         description
         author
       }
