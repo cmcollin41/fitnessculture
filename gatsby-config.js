@@ -16,7 +16,7 @@ module.exports = {
     description:
       "Gain muscle, lose weight or improve your explosiveness, it's your world inside of Fitness Culture. Just know you will have thousands of members and coaches there to support you.",
     siteUrl: "https://www.fitnessculture.com", // No trailing slash allowed!
-    image: "./src/assets/static/fc-logo-horizontal-black.png", // Path to your image you placed in the 'static' folder
+    image: "./static/stevecookpaintwall.png", // Path to your image you placed in the 'static' folder
     twitterUsername: "@_fitnessculture",
   },
   plugins: [
