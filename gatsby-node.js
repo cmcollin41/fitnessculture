@@ -28,10 +28,7 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-}
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
 
   const lpages = await graphql(`
   {
@@ -46,12 +43,12 @@ exports.createPages = async ({ graphql, actions }) => {
   }
   `)
 
-  const template = path.resolve("src/templates/lpages/basic.jsx")
+  const lptemplate = path.resolve("src/templates/lpages/basic.jsx")
 
   lpages.data.allSanityBasic.nodes.forEach((node) => {
     createPage({
       path: `downloads/${node.slug.current}`,
-      component: template,
+      component: lptemplate,
       context: {
         uid: node.id,
       },
