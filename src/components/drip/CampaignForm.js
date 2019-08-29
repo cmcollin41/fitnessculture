@@ -10,7 +10,6 @@ const CampaignForm = () => {
     console.log(JSON.stringify(data))
     fetch("https://api.getdrip.com/v2/9536059/subscribers", {
       method: "POST",
-      mode: "no-cors",
       Host: "api.getdrip.com",
       headers: {
         "Authorization": "Basic Mjc5ZWYwMmY2NDg1NDZkNTBlMDkxMjFmODZjOTQzYzk6",
