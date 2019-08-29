@@ -47,12 +47,12 @@ module.exports = {
         // should be an object or a function that is executed in the browser
         // Defaults to null
         // defaultDataLayer: { platform: "gatsby" },
-        defaultDataLayer: function() {
-          return {
-            pageType: window.pageType,
-          }
-        },
-  
+        // defaultDataLayer: function() {
+        //   return {
+        //     pageType: window.pageType,
+        //   }
+        // },
+        defaultDataLayer: { platform: "gatsby" },
         // Specify optional GTM environment details.
         // gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
         // gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME",
