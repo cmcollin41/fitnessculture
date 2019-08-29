@@ -14,7 +14,7 @@ const Basic = ({ data }) => {
   const home = data.allSanityBasic.edges[0].node
   return (
     <Layout>
-      <SEO title={home.campaignTag} image={home.heroImage.asset.url} />
+      <SEO title={home.campaignTag[0]} image={home.heroImage.asset.url} />
       <BackgroundImage
       className={'flex flex-col justify-center items-center bg-top p-5'}
       style={{minHeight: "60vh"}}
@@ -32,7 +32,7 @@ const Basic = ({ data }) => {
               <div className="mt-5">
                 <h2 className="text-white uppercase">In this PDF you'll discover:</h2>
                 {home.offerBenefits.map((benefit, i) => (
-                 <p className="text-white">{benefit}</p>
+                 <p key={i} className="text-white">{benefit}</p>
                 ))}
               </div>
             </div>
@@ -70,7 +70,7 @@ const Basic = ({ data }) => {
                 {home.offerTitle}
               </h3>
               <p>{home.offerSummary}</p>
-              <a href="#campaignForm" className="uppercase font-bold">Get My Free Download</a>
+              <a href="#topForm" className="uppercase font-bold">Get My Free Download</a>
             </div>
           </div>
         </div>

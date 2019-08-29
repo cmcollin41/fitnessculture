@@ -5,24 +5,29 @@ const CampaignForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    var contactForm = document.querySelector("form")
-    const data = new URLSearchParams(new FormData(contactForm))
-    // drip api token "59c0fbdf4443c96539ad340e9e8b2c07"
-    fetch("https://api.getdrip.com/v2/:account_id/subscribers", {
+    var campaignForm = document.getElementById('campaignForm')
+    var data = {"subscribers": [inputs]}
+    console.log(JSON.stringify(data))
+    fetch("https://api.getdrip.com/v2/9536059/subscribers", {
       method: "POST",
-      mode: 'no-cors',
-      body: data,
+      mode: "no-cors",
+      Host: "api.getdrip.com",
       headers: {
-        "Content-Type": "application/json"
+        "Authorization": "Basic Mjc5ZWYwMmY2NDg1NDZkNTBlMDkxMjFmODZjOTQzYzk6",
+        "Content-Type": "application/json",
+        "User-Agent": "Fitness Culture (www.fitnessculture.com)",
       },
+      body: JSON.stringify(data),
     }).then(function(response) {
       console.log(response)
       if (response.ok){
-        contactForm.reset()
+        campaignForm.reset()
       }
     }, function(error) {
+      console.log(error)
     })
   } 
+
 
   const handleInputChange = (event) => {
     event.persist();
@@ -31,30 +36,30 @@ const CampaignForm = () => {
 
   return (
     <>
-      <div className="my-20 px-5 bg-white rounded" id="campaignForm">
+      <div className="my-20 px-5 bg-white rounded" id="topForm">
         <div className="flex flex-row justify-center">
           <div className="w-full">
-            <form className="w-full max-w-lg my-10" onSubmit={handleSubmit}>
+            <form id="campaignForm" className="w-full max-w-lg my-10" onSubmit={handleSubmit}>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full px-3">
                   <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-name">
                     Name
+                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-name" type="text" placeholder="First Name" name="first_name" value={inputs.first_name || ""} onChange={handleInputChange} />
                   </label>
-                  <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-name" type="text" placeholder="Name" name="name" value={inputs.name} onChange={handleInputChange} />
                 </div>
               </div>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full px-3">
                   <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-email">
                     Email
+                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-email" type="email" placeholder="youremail@email.com" name="email" value={inputs.email || ""} onChange={handleInputChange} />
                   </label>
-                  <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-email" type="email" placeholder="youremail@email.com" name="email" value={inputs.email} onChange={handleInputChange} />
                 </div>
               </div>
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full px-3">
                   <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-checkbox" >
-                    <input class="mr-2 leading-tight" type="checkbox" id="grid-checkbox" name="checkbox" value={inputs.checkbox} onChange={handleInputChange} />
+                    <input className="mr-2 leading-tight" type="checkbox" id="grid-checkbox" name="checkbox" value={inputs.checkbox || ""} onSubmit={handleInputChange} />
                     <span className="text-xs">I Agree</span>
                   </label>
                 </div>
