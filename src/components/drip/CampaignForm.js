@@ -7,9 +7,11 @@ const CampaignForm = () => {
     e.preventDefault();
     var campaignForm = document.getElementById('campaignForm')
     var data = {"subscribers": [inputs]}
-    console.log(JSON.stringify(data))
+    console.log(JSON.stringify(data)) 
+    // LOG OUTPUT {"subscribers":[{"first_name":"Chris","email":"cmcollin41@gmail.com"}]}
     fetch("https://api.getdrip.com/v2/9536059/subscribers", {
       method: "POST",
+      mode: "no-cors",
       Host: "api.getdrip.com",
       headers: {
         "Authorization": "Basic Mjc5ZWYwMmY2NDg1NDZkNTBlMDkxMjFmODZjOTQzYzk6",
