@@ -40,9 +40,10 @@ const CampaignForm = () => {
       <div className="my-20 px-5 bg-white rounded" id="topForm">
         <div className="flex flex-row justify-center">
           <div className="w-full">
-            <form id="campaignForm" className="w-full max-w-lg my-10" data-drip-embedded-form="693387235" action="https://www.getdrip.com/forms/693387235/submissions">
+            <form id="campaignForm" className="w-full max-w-lg my-10" data-drip-embedded-form="693387235" action="https://www.getdrip.com/forms/693387235/submissions" method="post">
               <h3 data-drip-attribute="headline" className="hidden"></h3>
               <div data-drip-attribute="description" className="hidden"></div>
+              <input type="hidden" name="tags[]" value="your_tag" />
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full px-3">
                   <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-name">
