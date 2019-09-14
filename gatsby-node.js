@@ -30,7 +30,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
 
-  const lpages = await graphql(`
+  const basicGraphQl = await graphql(`
   {
     allSanityBasic(filter: {active: {eq: true}}) {
       nodes {
@@ -43,12 +43,38 @@ exports.createPages = async ({ graphql, actions }) => {
   }
   `)
 
-  const lptemplate = path.resolve("src/templates/lpages/basic.jsx")
+  const basiclp = path.resolve("src/templates/lpages/basic.jsx")
 
-  lpages.data.allSanityBasic.nodes.forEach((node) => {
+  basicGraphQl.data.allSanityBasic.nodes.forEach((node) => {
     createPage({
       path: `downloads/${node.slug.current}`,
-      component: lptemplate,
+      component: basiclp,
+      context: {
+        uid: node.id,
+      },
+    })
+  })
+
+
+  const subscribeGraphQl = await graphql(`
+  {
+    allSanitySubscribe(filter: {active: {eq: true}}) {
+      nodes {
+        id
+        slug {
+          current
+        }
+      }
+    }
+  }
+  `)
+
+  const subscribelp = path.resolve("src/templates/lpages/subscribe.jsx")
+
+  subscribeGraphQl.data.allSanitySubscribe.nodes.forEach((node) => {
+    createPage({
+      path: `downloads/${node.slug.current}`,
+      component: subscribelp,
       context: {
         uid: node.id,
       },

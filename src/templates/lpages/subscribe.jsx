@@ -10,8 +10,8 @@ import BackgroundImage from 'gatsby-background-image'
 
 
 
-const Basic = ({ data }) => {
-  const home = data.allSanityBasic.edges[0].node
+const Subscribe = ({ data }) => {
+  const home = data.allSanitySubscribe.edges[0].node
   return (
     <Layout>
       <SEO image={home.heroImage.asset.url} />
@@ -29,12 +29,6 @@ const Basic = ({ data }) => {
               <p className="text-white mt-5 text-l" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5"}}>
                 {home.subtitle}
               </p>
-              <div className="mt-5">
-                <h2 className="text-white uppercase">In this PDF you'll discover:</h2>
-                {home.offerBenefits.map((benefit, i) => (
-                 <p key={i} className="text-white">{benefit}</p>
-                ))}
-              </div>
             </div>
             <div className="w-full lg:w-1/3">
               <CampaignForm formID={home.formID} cta={home.cta}/>
@@ -59,50 +53,15 @@ const Basic = ({ data }) => {
           ))}
         </div>
       </div>
-      <div className="py-20 px-5 bg-gray-100">
-        <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row justify-center items-center">
-            <div className="w-full lg:w-1/3">
-              <Img fluid={home.offerImg.asset.fluid} alt="Offer Image" width="100%"/>
-            </div>
-            <div className="w-full lg:w-1/2 px-5 lg:px-20">
-              <h3 className="uppercase text-3xl pb-5">
-                {home.offerTitle}
-              </h3>
-              <p>{home.offerSummary}</p>
-              <a href="#topForm" className="uppercase font-bold">Get My Free Download</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="py-20 relative">
-        <div className="container px-5 lg:mx-auto">
-          <div className="flex flex-col lg:flex-row justify-center items-center">
-            <div className="w-full lg:w-1/3 text-right bg-white">
-              <video muted playsInline autoPlay loop>
-                <source src={home.appVideo.asset.url} />
-                Your browser doesn't support video
-              </video>
-            </div>
-            <div className="w-full lg:w-1/2 px-5 lg:px-20 personas z-10">
-              <h3 className="uppercase text-3xl pb-5">
-              {home.appTitle}
-              </h3>
-              <p>{home.appDescription}</p>
-              <Link to="/programs" className="uppercase font-bold">See the Programs</Link>
-            </div>
-          </div>
-        </div>
-      </div>
     </Layout>
   )
 }
 
-export default Basic;
+export default Subscribe;
 
 export const pageQuery = graphql`
-  query BasicById($uid: String!) {
-    allSanityBasic(filter: {id: {eq: $uid}}) {
+  query SubscribeById($uid: String!) {
+    allSanitySubscribe(filter: {id: {eq: $uid}}) {
       edges {
         node {
           id
@@ -118,7 +77,6 @@ export const pageQuery = graphql`
               url
             }
           }
-          offerBenefits
           testimonials {
             quote
             member
@@ -130,23 +88,6 @@ export const pageQuery = graphql`
               }
             }
             location
-          }
-          offerImg {
-            asset {
-              url
-              fluid(maxWidth: 1000) {
-                ...GatsbySanityImageFluid_withWebp
-              }
-            }
-          }
-          offerTitle
-          offerSummary
-          appTitle
-          appDescription
-          appVideo{
-            asset {
-              url
-            }
           }
         }
       }
