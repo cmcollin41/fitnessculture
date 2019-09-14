@@ -6,8 +6,8 @@ const SubscribeForm = () => {
 
 	return (
 		<form action="https://www.getdrip.com/forms/195103512/submissions" method="post" data-drip-embedded-form="195103512" className="flex flex-col lg:flex-row justify-between items-center border rounded p-2 shadow bg-white text-center">
-	  	<h3 data-drip-attribute="headline" className="hidden"></h3>
-  		<div data-drip-attribute="description" className="hidden"></div>
+	  	<span data-drip-attribute="headline" className="hidden"></span>
+  		<span data-drip-attribute="description" className="hidden"></span>
 			<input
 				className="w-full appearance-none border-none rounded w-auto py-1 px-2 text-gray-700 leading-tight text-base focus:outline-none"
 				type="email"
