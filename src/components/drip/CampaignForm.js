@@ -1,39 +1,6 @@
-import React, {useState} from "react"
+import React from "react"
 
 const CampaignForm = () => {
-  const [inputs, setInputs] = useState("");
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   var campaignForm = document.getElementById('campaignForm')
-  //   var data = JSON.stringify({"subscribers": [inputs]})
-  //   console.log(data) 
-  //   // LOG OUTPUT {"subscribers":[{"first_name":"Chris","email":"cmcollin41@gmail.com"}]}
-  //   fetch("https://api.getdrip.com/v2/9536059/subscribers", {
-  //     credentials: 'same-origin',
-  //     method: "POST",
-  //     mode: "no-cors",
-  //     headers: {
-  //       "Authorization": "Basic Mjc5ZWYwMmY2NDg1NDZkNTBlMDkxMjFmODZjOTQzYzk6",
-  //       "Content-Type": "application/json;charset=utf-8",
-  //       "User-Agent": "Fitness Culture (www.fitnessculture.com)",
-  //     },
-  //     body: data,
-  //   }).then(function(response) {
-  //     console.log(response)
-  //     if (response.ok){
-  //       campaignForm.reset()
-  //     }
-  //   }, function(error) {
-  //     console.log(error)
-  //   })
-  // } 
-
-
-  const handleInputChange = (event) => {
-    event.persist();
-    setInputs(inputs => ({...inputs, [event.target.name]: event.target.value}));
-  }
 
   return (
     <>

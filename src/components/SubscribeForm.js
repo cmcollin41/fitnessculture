@@ -2,50 +2,23 @@ import React from "react"
 
 
 
-class SubscribeForm extends React.Component {
-  state = {
-		email: "",
-	}
-	
-  handleInputChange = event => {
-    const target = event.target
-    const value = target.value
-    const name = target.name
-    this.setState({
-      [name]: value,
-    })
-	}
-	
-  // handleSubmit = event => {
-  //   event.preventDefault()
-	// 	alert(`Welcome ${this.state.fullName}!`)
-	// 	event.target.reset();
-	// }
-	
-  render() {
-    return (
-			<form name="subscribe" action="/" method="POST" netlify-honeypot="bot-field" data-netlify="true" className="flex flex-col lg:flex-row justify-between items-center border rounded p-2 shadow bg-white text-center">
-				<input type="hidden" name="form-name" value="subscribe" />
-				<div className="hidden">
-          <label>
-            "Don't fill this out"
-            <input name="bot-field" />
-          </label>
-				</div>
-				<input
-					className="w-full appearance-none border-none rounded w-auto py-1 px-2 text-gray-700 leading-tight text-base focus:outline-none"
-					type="email"
-					name="email"
-					placeholder="youremail@email.com"
-					value={this.state.email}
-					onChange={this.handleInputChange}
-				/>
-				<button type="submit" className="btn shadow-md mt-10 lg:mt-auto w-full lg:w-auto text-white rounded-sm bg-blue-500">
-					Subscribe
-				</button>
-			</form>
-    )
-  }
+const SubscribeForm = () => {
+
+	return (
+		<form action="https://www.getdrip.com/forms/195103512/submissions" method="post" data-drip-embedded-form="195103512" className="flex flex-col lg:flex-row justify-between items-center border rounded p-2 shadow bg-white text-center">
+	  	<h3 data-drip-attribute="headline" className="hidden"></h3>
+  		<div data-drip-attribute="description" className="hidden"></div>
+			<input
+				className="w-full appearance-none border-none rounded w-auto py-1 px-2 text-gray-700 leading-tight text-base focus:outline-none"
+				type="email"
+				name="name=fields[email]"
+				placeholder="youremail@email.com"
+			/>
+			<button type="submit" className="btn shadow-md mt-10 lg:mt-auto w-full lg:w-auto text-white rounded-sm bg-blue-500">
+				Subscribe
+			</button>
+		</form>
+	)
 }
 
 export default SubscribeForm;
