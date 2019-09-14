@@ -30,8 +30,8 @@ const ThankYou = () => {
               </a>
             </div>
           </div>
-          <p className="w-full">As an extra bonus before you set out and hit the gym, check out our best YouTube videos! Also, don't forget to subscribe to our channel </p>
-          <div className="flex flex-col lg:flex-row justify-center">
+          <p className="w-full lg:w-1/2 text-center mt-10">As an extra bonus before you set out and hit the gym, check out our best YouTube videos!</p>
+          <div className="flex flex-col lg:flex-row justify-center -mx-5">
             <YouTube youtubeId="aowC0poaqyY" />
             <YouTube youtubeId="aowC0poaqyY" />
           </div>
