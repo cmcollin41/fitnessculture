@@ -22,7 +22,7 @@ const Subscribe = ({ data }) => {
       >
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row justify-center items-center">
-            <div className="w-full lg:w-1/2 lg:pr-20">
+            <div className="w-full lg:w-1/2 lg:mr-10 p-6 rounded" style={{background: "rgba(0,0,0,0.5)"}}>
               <h1 className="uppercase text-white text-3xl lg:text-4xl mt-4 font-bold" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
                 {home.title}
               </h1>
@@ -54,7 +54,7 @@ const Subscribe = ({ data }) => {
         </div>
       </div>
     </Layout>
-  )
+  ) 
 }
 
 export default Subscribe;
