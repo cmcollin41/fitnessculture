@@ -6,15 +6,28 @@ import SocialProof from "../../components/SocialProof"
 import CampaignForm from "../../components/drip/CampaignForm"
 import Img from 'gatsby-image'
 import BackgroundImage from 'gatsby-background-image'
+import YouTube from '../../components/YouTube'
+import BlockContent from '@sanity/block-content-to-react'
 
 
 
 
-const Subscribe = ({ data }) => {
-  const home = data.allSanitySubscribe.edges[0].node
+const H3p = ({ data }) => {
+
+  const serializers = {
+    types: {
+      code: props => (
+        <pre data-language={props.node.language}>
+          <code>{props.node.code}</code>
+        </pre>
+      )
+    }
+  }
+
+  const home = data.allSanityH3P.edges[0].node
   return (
     <Layout>
-      <SEO title="Subscribe" image={home.heroImage.asset.url} />
+      <SEO image={home.heroImage.asset.url} />
       <BackgroundImage
       className={'flex flex-col justify-center items-center bg-top p-5'}
       style={{minHeight: "60vh"}}
@@ -22,15 +35,18 @@ const Subscribe = ({ data }) => {
       >
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row justify-center items-center">
-            <div className="w-full lg:w-1/2 lg:mr-10 p-6 rounded" style={{background: "rgba(0,0,0,0.5)"}}>
+            <div className="w-full lg:w-1/2 lg:pr-20">
               <h1 className="uppercase text-white text-3xl lg:text-4xl mt-4 font-bold" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
                 {home.title}
               </h1>
               <p className="text-white mt-5 text-l" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5"}}>
                 {home.subtitle}
               </p>
+              <div className="w-full" style={{height: "300px"}}>
+                <YouTube youtubeId="BQRlncLXqTs" />
+              </div>
             </div>
-            <div className="w-full lg:w-1/3"> 
+            <div className="w-full lg:w-1/3">
               <CampaignForm formID={home.formID} cta={home.cta}/>
             </div>
           </div>
@@ -53,15 +69,47 @@ const Subscribe = ({ data }) => {
           ))}
         </div>
       </div>
+      <div className="py-20 px-5 bg-gray-100">
+        <div className="container mx-auto">
+          <div className="flex flex-col lg:flex-row justify-center items-center">
+            <div className="w-full lg:w-1/3">
+              <Img fluid={home.offerImg.asset.fluid} alt="Offer Image" width="100%"/>
+            </div>
+            <div className="w-full lg:w-1/2 px-5 lg:px-20">
+              <h3 className="uppercase text-3xl pb-5">
+                {home.offerTitle}
+              </h3>
+              <BlockContent blocks={home._rawOfferBenefits} serializers={serializers} />
+              <a href="#topForm" className="uppercase font-bold">Get My Free Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="py-20 relative">
+        <div className="container px-5 lg:mx-auto">
+          <div className="flex flex-col lg:flex-row justify-center items-center">
+            <div className="w-full lg:w-1/2 px-5 lg:px-20 mt-10 lg:mt-auto z-10">
+              <p>{home.coachQuote}</p>
+              <h3 className="uppercase text-3xl">
+                Steve Cook
+              </h3>
+              <span className="text-xs uppercase font-bold text-gray-500">Your Coach</span>
+            </div>
+            <div className="w-full lg:w-1/3 text-right bg-white">
+              <Img fluid={home.coachImage.asset.fluid} alt="Steve Cook"/>
+            </div>
+          </div>
+        </div>
+      </div>
     </Layout>
-  ) 
+  )
 }
 
-export default Subscribe;
+export default H3p;
 
 export const pageQuery = graphql`
-  query SubscribeById($uid: String!) {
-    allSanitySubscribe(filter: {id: {eq: $uid}}) {
+  query H3pById($uid: String!) {
+    allSanityH3P(filter: {id: {eq: $uid}}) {
       edges {
         node {
           id
@@ -88,6 +136,25 @@ export const pageQuery = graphql`
               }
             }
             location
+          }
+          offerImg {
+            asset {
+              url
+              fluid(maxWidth: 1000) {
+                ...GatsbySanityImageFluid_withWebp
+              }
+            }
+          }
+          offerTitle
+          _rawOfferBenefits
+          coachQuote
+          coachImage{
+            asset {
+              url
+              fluid(maxWidth: 1000) {
+                ...GatsbySanityImageFluid_withWebp
+              }
+            }
           }
         }
       }

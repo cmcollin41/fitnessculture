@@ -80,5 +80,30 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  const h3pGraphQl = await graphql(`
+  {
+    allSanityH3P(filter: {active: {eq: true}}) {
+      nodes {
+        id
+        slug {
+          current
+        }
+      }
+    }
+  }
+  `)
+
+  const h3plp = path.resolve("src/templates/lpages/h3p.jsx")
+
+  h3pGraphQl.data.allSanityH3P.nodes.forEach((node) => {
+    createPage({
+      path: `downloads/${node.slug.current}`,
+      component: h3plp,
+      context: {
+        uid: node.id,
+      },
+    })
+  })
 }
 
