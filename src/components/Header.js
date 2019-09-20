@@ -1,10 +1,30 @@
-import React, { useState } from "react"
+import React, { useContext, useState, useEffect } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Toggle from './Toggle'
 import logo from '../assets/fc-logo-horizontal-black.png'
 
+import StoreContext from '../context/StoreContext'
+
+const countQuantity = (lineItems) => {
+	let quantity = 0
+
+	lineItems.forEach(item => {
+		quantity = quantity + item.quantity
+	});
+
+	return quantity
+}
 
 const Header = () => {
+
+  const context = useContext(StoreContext)
+  const { checkout } = context
+  console.log(checkout)
+	const [quantity, setQuantity] = useState(countQuantity(checkout ? checkout.lineItems : []))
+
+	useEffect(() => {
+		setQuantity(countQuantity(checkout ? checkout.lineItems : []));
+	}, [checkout]);
 
   const data = useStaticQuery(
     graphql`
@@ -133,7 +153,12 @@ const Header = () => {
           <div>
             <a href="https://app.fitnessculture.com/login" className="inline-block text-sm px-4 py-2 leading-none text-black  hover:text-blue-500 mt-4 lg:mt-0 uppercase">Login</a>
             <Link to="/programs" aria-label={"Get Started"} className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded-full">Get Started</Link>
-            {/* <Cart/> */}
+            <Link to='/cart'>
+						{quantity !== 0 &&
+							quantity
+						}
+						Cart
+					</Link>
           </div>
         </div>
       </nav>

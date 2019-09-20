@@ -31,6 +31,7 @@
     "gatsby-plugin-stripe": "^1.2.1",
     "gatsby-plugin-typography": "^2.2.13",
     "gatsby-source-sanity": "^5.0.1",
+    "gatsby-source-shopify": "^3.0.13",
     "gatsby-transformer-sharp": "^2.1.21",
     "intersection-observer": "^0.7.0",
     "prop-types": "^15.7.2",
@@ -42,6 +43,7 @@
     "react-tabs": "^3.0.0",
     "react-tooltip": "^3.10.0",
     "react-typography": "^0.16.19",
+    "shopify-buy": "^2.7.1",
     "smoothscroll-polyfill": "^0.4.4",
     "tailwindcss": "^1.0.1",
     "typography": "^0.16.19"
