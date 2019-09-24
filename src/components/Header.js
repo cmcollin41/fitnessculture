@@ -19,7 +19,6 @@ const Header = () => {
 
   const context = useContext(StoreContext)
   const { checkout } = context
-  console.log(checkout)
 	const [quantity, setQuantity] = useState(countQuantity(checkout ? checkout.lineItems : []))
 
 	useEffect(() => {

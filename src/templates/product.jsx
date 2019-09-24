@@ -11,17 +11,25 @@ const Product = ({ data }) => {
   return (
     <React.Fragment>
       <Layout>
-        <div className="container mx-auto">
-          {product.images.map(x => (
-            <Img
-              fluid={x.localFile.childImageSharp.fluid}
-              key={x.id}
-              alt={product.title}
-            />
-          ))}
-          <h1>{product.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
-          <ProductForm product={product} />
+        <div className="container mx-auto my-10">
+          <div className="flex flex-wrap -mx-5">
+            <div className="flex flex-wrap w-full lg:w-2/3 px-5">
+              {product.images.map(x => (
+                <Img
+                  fluid={x.localFile.childImageSharp.fluid}
+                  key={x.id}
+                  alt={product.title}
+                  className="w-full lg:w-1/2"
+                />
+              ))}
+              </div>
+              <div className="w-full lg:w-1/3 px-5">
+              <h1 className="text-3xl uppercase">{product.title}</h1>
+              <div className="mt-2" dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
+              <ProductForm product={product} />
+            </div>
+          </div>
+
         </div>
       </Layout>
     </React.Fragment>

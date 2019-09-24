@@ -1,15 +1,31 @@
 import React, { useContext } from 'react'
+// import { useStaticQuery, graphql } from "gatsby"
+// import Img from "gatsby-image"
 
-import StoreContext from '../../../context/StoreContext'
+import StoreContext from '../../context/StoreContext'
 
 const LineItem = props => {
+  
   const context = useContext(StoreContext)
   const { line_item } = props
+  // const image = useStaticQuery(graphql`
+  //   query{
+  //     file(relativePath: { eq: "line_item.variant.image"}) {
+  //       childImageSharp {
+  //         # Specify the image processing specifications right in the query.
+  //         # Makes it trivial to update as your page's design changes.
+  //         fluid(maxWidth: 1000) {
+  //           ...GatsbyImageSharpFluid
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
   const variantImage = line_item.variant.image ? (
     <img
       src={line_item.variant.image.src}
-      alt={`${line_item.title} product shot`}
+      alt={`${line_item.title}`}
       height="60px"
     />
   ) : null
