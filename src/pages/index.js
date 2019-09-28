@@ -176,7 +176,6 @@ export default Index
 export const pageQuery = graphql`
   query IndexPage{
     sanityHome {
-
         id
         title
         subtitle
@@ -273,6 +272,5 @@ export const pageQuery = graphql`
           }
         }
       }
-
   }
 `
