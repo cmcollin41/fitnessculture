@@ -12,7 +12,7 @@ import circles from '../assets/circles.svg'
 
 
 const Index = ({ data }) => {
-  const home = data.allSanityHome.nodes[0]
+  const home = data.sanityHome
 
   const programRow = React.createRef();
   const programDiv = React.createRef();
@@ -175,8 +175,8 @@ export default Index
 
 export const pageQuery = graphql`
   query IndexPage{
-    allSanityHome {
-      nodes {
+    sanityHome {
+
         id
         title
         subtitle
@@ -273,7 +273,6 @@ export const pageQuery = graphql`
           }
         }
       }
-    }
 
   }
 `

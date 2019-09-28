@@ -15,7 +15,8 @@ import square from '../assets/square-circles.svg'
 
 const Program = ({ data }) => {
 
-  const program = data.allSanityProgram.nodes[0]
+  const program = data.sanityProgram
+  console.log(program)
   return (
     <Layout>
        <SEO title={program.title} description={program.subtitle} image={program.heroImage.asset.url} />
@@ -230,8 +231,7 @@ export default Program
 
 export const pageQuery = graphql`
   query ProgramById($uid: String!) {
-    allSanityProgram(filter: {id: {eq: $uid}}) {
-      nodes {
+    sanityProgram(id: {eq: $uid}) {
         id
         title
         subtitle
@@ -344,7 +344,7 @@ export const pageQuery = graphql`
         premiumBenefits {
           description
         }
-      }
+     
     }
   }
 `

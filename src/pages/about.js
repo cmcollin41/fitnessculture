@@ -8,7 +8,7 @@ import SEO from '../components/seo'
 import '../css/global.css'
 
 const About = ({ data }) => {
-  const about = data.allSanityAbout.nodes[0]
+  const about = data.sanityAbout
   return (
     <Layout>
       <SEO title={about.title} description={about.subtitle} image={about.heroImage.asset.url} />
@@ -93,8 +93,8 @@ export default About
 
 export const aboutQuery = graphql`
   {
-    allSanityAbout {
-      nodes {
+    sanityAbout {
+
         id
         title
         subtitle
@@ -137,6 +137,6 @@ export const aboutQuery = graphql`
           }
         }
       }
-    }
+
   }
 `

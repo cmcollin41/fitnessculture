@@ -113,6 +113,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             handle
+            shopifyId
           }
         }
       }
@@ -127,6 +128,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: product,
       context: {
         handle: node.handle,
+        shopid: node.shopifyId
       },
     })
   })
