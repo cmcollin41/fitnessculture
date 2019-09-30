@@ -27,7 +27,8 @@ const ProductForm = ({ product, node }) => {
     checkAvailability(product.shopifyId)
   }, [productVariant])
 
-  const checkAvailability = productId => {
+  
+  const checkAvailability = hasVariants ? (productId) => {
     context.client.product.fetch(productId).then((product) => {
       // this checks the currently selected variant for availability
       const result = product.variants.filter(
@@ -35,7 +36,7 @@ const ProductForm = ({ product, node }) => {
       )
       setAvailable(result[0].available)
     })
-  }
+  } : setAvailable(productVariant.availableForSale)
  
   const handleQuantityChange = event => {
     setQuantity(event.target.value)
@@ -71,7 +72,9 @@ const ProductForm = ({ product, node }) => {
     function chosenVariant(value) {
       return n => n.optionName === value
     }
-    const filteredVariants = node.filter(chosenVariant(variant.Color));
+    
+    const filteredVariants = node.variants ? node.variants.filter(chosenVariant(variant.Color)) : product
+    
 
   return (
     <>

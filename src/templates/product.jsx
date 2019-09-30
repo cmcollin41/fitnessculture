@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React from 'react'
 import {graphql} from "gatsby"
 import Layout from "../components/layout"
 import ProductForm from '../components/ProductForm/index'
@@ -7,7 +7,8 @@ import '../css/global.css'
 const Product = ({ data }) => {
 
   const product = data.shopifyProduct
-  const node = data.sanityProduct.variants
+  const node = data.sanityProduct
+
 
     
   return (
