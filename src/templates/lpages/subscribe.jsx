@@ -8,10 +8,8 @@ import Img from 'gatsby-image'
 import BackgroundImage from 'gatsby-background-image'
 
 
-
-
 const Subscribe = ({ data }) => {
-  const home = data.allSanitySubscribe.edges[0].node
+  const home = data.sanitySubscribe
   return (
     <Layout>
       <SEO title="Subscribe" image={home.heroImage.asset.url} />
@@ -61,35 +59,31 @@ export default Subscribe;
 
 export const pageQuery = graphql`
   query SubscribeById($uid: String!) {
-    allSanitySubscribe(filter: {id: {eq: $uid}}) {
-      edges {
-        node {
-          id
-          title
-          subtitle
-          formID
-          cta
-          heroImage {
-            asset {
-              fluid(maxWidth: 1425) {
-                ...GatsbySanityImageFluid_withWebp
-              }
-              url
-            }
+    sanitySubscribe(id: {eq: $uid}) {
+      id
+      title
+      subtitle
+      formID
+      cta
+      heroImage {
+        asset {
+          fluid(maxWidth: 1425) {
+            ...GatsbySanityImageFluid_withWebp
           }
-          testimonials {
-            quote
-            member
-            memberImage {
-              asset {
-                fixed(width: 50) {
-                  ...GatsbySanityImageFixed_withWebp
-                }
-              }
+          url
+        }
+      }
+      testimonials {
+        quote
+        member
+        memberImage {
+          asset {
+            fixed(width: 50) {
+              ...GatsbySanityImageFixed_withWebp
             }
-            location
           }
         }
+        location
       }
     }
   }

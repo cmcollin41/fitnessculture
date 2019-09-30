@@ -11,7 +11,7 @@ import BackgroundImage from 'gatsby-background-image'
 
 
 const Basic = ({ data }) => {
-  const home = data.allSanityBasic.edges[0].node
+  const home = data.sanityBasic
   return (
     <Layout>
       <SEO image={home.heroImage.asset.url} />
@@ -102,52 +102,48 @@ export default Basic;
 
 export const pageQuery = graphql`
   query BasicById($uid: String!) {
-    allSanityBasic(filter: {id: {eq: $uid}}) {
-      edges {
-        node {
-          id
-          title
-          subtitle
-          formID
-          cta
-          heroImage {
-            asset {
-              fluid(maxWidth: 1425) {
-                ...GatsbySanityImageFluid_withWebp
-              }
-              url
+    sanityBasic(id: {eq: $uid}) {
+      id
+      title
+      subtitle
+      formID
+      cta
+      heroImage {
+        asset {
+          fluid(maxWidth: 1425) {
+            ...GatsbySanityImageFluid_withWebp
+          }
+          url
+        }
+      }
+      offerBenefits
+      testimonials {
+        quote
+        member
+        memberImage {
+          asset {
+            fixed(width: 50) {
+              ...GatsbySanityImageFixed_withWebp
             }
           }
-          offerBenefits
-          testimonials {
-            quote
-            member
-            memberImage {
-              asset {
-                fixed(width: 50) {
-                  ...GatsbySanityImageFixed_withWebp
-                }
-              }
-            }
-            location
+        }
+        location
+      }
+      offerImg {
+        asset {
+          url
+          fluid(maxWidth: 1000) {
+            ...GatsbySanityImageFluid_withWebp
           }
-          offerImg {
-            asset {
-              url
-              fluid(maxWidth: 1000) {
-                ...GatsbySanityImageFluid_withWebp
-              }
-            }
-          }
-          offerTitle
-          offerSummary
-          appTitle
-          appDescription
-          appVideo{
-            asset {
-              url
-            }
-          }
+        }
+      }
+      offerTitle
+      offerSummary
+      appTitle
+      appDescription
+      appVideo{
+        asset {
+          url
         }
       }
     }

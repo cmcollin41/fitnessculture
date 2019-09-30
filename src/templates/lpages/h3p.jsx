@@ -24,7 +24,7 @@ const H3p = ({ data }) => {
     }
   }
 
-  const home = data.allSanityH3P.edges[0].node
+  const home = data.sanityH3P
   return (
     <Layout>
       <SEO image={home.heroImage.asset.url} />
@@ -109,55 +109,52 @@ export default H3p;
 
 export const pageQuery = graphql`
   query H3pById($uid: String!) {
-    allSanityH3P(filter: {id: {eq: $uid}}) {
-      edges {
-        node {
-          id
-          title
-          subtitle
-          formID
-          cta
-          heroImage {
-            asset {
-              fluid(maxWidth: 1425) {
-                ...GatsbySanityImageFluid_withWebp
-              }
-              url
+    sanityH3P(id: {eq: $uid}) {
+      id
+      title
+      subtitle
+      formID
+      cta
+      heroImage {
+        asset {
+          fluid(maxWidth: 1425) {
+            ...GatsbySanityImageFluid_withWebp
+          }
+          url
+        }
+      }
+      testimonials {
+        quote
+        member
+        memberImage {
+          asset {
+            fixed(width: 50) {
+              ...GatsbySanityImageFixed_withWebp
             }
           }
-          testimonials {
-            quote
-            member
-            memberImage {
-              asset {
-                fixed(width: 50) {
-                  ...GatsbySanityImageFixed_withWebp
-                }
-              }
-            }
-            location
+        }
+        location
+      }
+      offerImg {
+        asset {
+          url
+          fluid(maxWidth: 1000) {
+            ...GatsbySanityImageFluid_withWebp
           }
-          offerImg {
-            asset {
-              url
-              fluid(maxWidth: 1000) {
-                ...GatsbySanityImageFluid_withWebp
-              }
-            }
-          }
-          offerTitle
-          _rawOfferBenefits
-          coachQuote
-          coachImage{
-            asset {
-              url
-              fluid(maxWidth: 1000) {
-                ...GatsbySanityImageFluid_withWebp
-              }
-            }
+        }
+      }
+      offerTitle
+      _rawOfferBenefits
+      coachQuote
+      coachImage{
+        asset {
+          url
+          fluid(maxWidth: 1000) {
+            ...GatsbySanityImageFluid_withWebp
           }
         }
       }
     }
+  
   }
 `
