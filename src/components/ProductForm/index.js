@@ -1,7 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react'
 import StoreContext from '../../context/StoreContext'
 import VariantSelector from './VariantSelector'
+import Toggle from "../../components/Toggle"
 import Img from "gatsby-image"
+import Down from "../../assets/chevron-down.svg"
 
 
 const ProductForm = ({ product, node }) => {
@@ -107,6 +109,42 @@ const ProductForm = ({ product, node }) => {
           Add to Cart
         </button>
         {!available && <p>This Product is out of Stock!</p>}
+        <div className="mt-10">
+          <Toggle 
+            render={({on, toggle}) => (
+              <div>
+                <div onClick={toggle} className="block mt-4 lg:mt-0 text-black py-4 border-b border-gray-300 cursor-pointer">
+                  <div className="flex justify-between">
+                    <span className="text-sm uppercase">Description</span>
+                    <img src={Down} width="14px" />
+                  </div>
+                  {on && 
+                    <>
+                      <p className="text-sm">This is the description of the product.</p>
+                    </>
+                  }
+                </div>
+              </div>
+            )}
+          />
+          <Toggle 
+            render={({on, toggle}) => (
+              <div>
+                <div onClick={toggle} className="block mt-4 lg:mt-0 text-black py-4 border-b border-gray-300 cursor-pointer">
+                  <div className="flex justify-between">
+                    <span className="text-sm uppercase">Reviews</span>
+                    <img src={Down} width="14px"/>
+                  </div>
+                  {on && 
+                    <>
+                      <p className="text-sm">Here are your reviews</p>
+                    </>
+                  }
+                </div>
+              </div>
+            )}
+          />
+        </div>
       </div>
     </>
   )

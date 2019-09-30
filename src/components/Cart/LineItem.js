@@ -32,7 +32,9 @@ const LineItem = props => {
 
   const selectedOptions = line_item.variant.selectedOptions ? (
     <>{line_item.variant.selectedOptions.map(option => {
-      return `${option.name}: ${option.value} `
+      return (
+        <p>{`${option.name}: ${option.value}`}</p>
+      )
     })}</>
   ) : null
 
@@ -41,25 +43,23 @@ const LineItem = props => {
   }
 
   return (
-    <div className="flex flex-wrap justify-between items-center">
-      <div style={{maxWidth: "300px"}}>
+    <div className="flex flex-wrap justify-between items-start">
+      <div style={{maxWidth: "125px"}}>
         {variantImage}
       </div>
       <div>
-        <p>
+        <span className="font-bold text-xl">
           {line_item.title}
           {`  `}
           {line_item.variant.title === ! 'Default Title' ? line_item.variant.title : ''}
-        </p>
-      </div>
-      <div>
+        </span>
         {selectedOptions}
       </div>
       <div>
         {line_item.quantity}
       </div>
       <div>
-        <button onClick={handleRemove}>Remove</button>
+        <button onClick={handleRemove} className="text-xs">Remove</button>
       </div>
     </div>
   )
