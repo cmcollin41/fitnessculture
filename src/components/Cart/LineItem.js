@@ -27,6 +27,7 @@ const LineItem = props => {
       src={line_item.variant.image.src}
       alt={`${line_item.title}`}
       height="60px"
+      className="mx-auto"
     />
   ) : null
 

@@ -7,6 +7,9 @@ import visa from '../../assets/visa.svg'
 import amex from '../../assets/american-express.svg'
 import mastercard from '../../assets/mastercard.svg'
 import discover from '../../assets/discover.svg'
+import paypal from '../../assets/paypal.svg'
+import applepay from '../../assets/applepay.svg'
+
 
 const Cart = () => {
   const context = useContext(StoreContext)
@@ -19,12 +22,12 @@ const Cart = () => {
   })
 
   return (
-    <div className="container mx-auto my-20">
-      <div className="flex flex-row -mx-5">
-        <div className="w-full lg:w-2/3 px-5">
+    <div className="container mx-auto px-5 my-20">
+      <div className="flex flex-row flex-wrap -mx-5">
+        <div className="w-full lg:w-2/3 order-1 lg:order-0 px-5 mt-10 lg:mt-0">
           {line_items}
         </div>
-        <div className="w-full lg:w-1/3 px-5">
+        <div className="w-full lg:w-1/3 order-0 lg:order-1 px-5">
           <div className="bg-gray-100 shadow p-5">
             <h1 className="text-1xl font-bold uppercase">Order Summary</h1>
             <hr/>
@@ -49,6 +52,8 @@ const Cart = () => {
               <img src={amex} />
               <img src={mastercard} />
               <img src={discover} />
+              <img src={paypal} width="35px" />
+              <img src={applepay}/>
             </div>
           </div>
         </div>

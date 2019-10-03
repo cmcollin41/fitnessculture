@@ -166,9 +166,6 @@ const Header = () => {
         
       {/* Mobile Nav */}
       <nav className="flex items-center justify-between flex-wrap bg-white px-4 border-nav-b relative z-50">
-        <div className="flex lg:hidden items-center flex-grow text-black py-4">
-          <Link to="/"><img src={ logo } alt="Logo" width={"150px"} /></Link>
-        </div>
         <div className="block lg:hidden" onClick={toggleNav}>
           <button className={"hamburger hamburger--slider-r" + (navOpen ? " is-active" : "")} aria-label="Open Menu" type="button">
             <span className="hamburger-box">
@@ -176,6 +173,16 @@ const Header = () => {
             </span>
           </button>
         </div>
+        <div className="flex lg:hidden items-center text-black py-4">
+          <Link to="/"><img src={ logo } alt="Logo" width={"150px"} /></Link>
+        </div>
+        <Link to='/cart' className="relative lg:hidden inline-block text-sm pl-4 py-2">
+          {quantity !== 0 && 
+          <span className={"bg-red-600 text-white rounded-full h-4 w-4 flex items-center justify-center absolute"} style={{left: "8px", top: "2px"}}>
+            {quantity}
+          </span>}
+          <img src={cart} width="24px" className="inline-block" />
+        </Link>
       </nav>          
       <div className={"w-full p-4 bg-white absolute block lg:hidden z-10 " + (navOpen ? "slide-down" : "slide-up")} style={{top: "63px"}}>
           <Toggle 

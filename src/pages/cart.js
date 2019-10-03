@@ -6,7 +6,7 @@ import Cart from '../components/Cart'
 
 const CartPage = () => (
   <Layout>
-    <SEO title="Contact Us" description="Contact Fitness Culture via email, phone call, or Facebook Messenger."  />
+    <SEO title="Shopping Cart" description="Secure Checkout"  />
     <Cart />
   </Layout>
 )

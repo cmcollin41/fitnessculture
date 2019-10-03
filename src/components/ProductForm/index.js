@@ -78,19 +78,20 @@ const ProductForm = ({ product, node }) => {
 
   return (
     <>
-      <div className="flex flex-wrap w-full lg:w-2/3 px-5">
+      <div className="w-full lg:w-2/3 flex flex-row flex-nowrap lg:flex-wrap overflow-x-scroll lg:overflow-x-hidden scroll-x-mandatory">
         {filteredVariants.map((n, i) => (
             <Img
               fluid={n.image.asset.fluid}
               key={i}
               alt={n.optionName}
-              className="w-full lg:w-1/2"
+              className="w-full md:w-1/2 snap-align-center"
+              style={{minWidth: "300px"}}
             />
         ))}
       </div>
 
       <div className="w-full lg:w-1/3 px-5">
-        <h1 className="text-3xl uppercase">{product.title}</h1>
+        <h1 className="text-2xl uppercase">{product.title}</h1>
         <div className="mt-2" dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
         <h3 className="mt-2">${productVariant.price}</h3>
         {variantSelectors}
