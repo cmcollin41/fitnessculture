@@ -78,15 +78,17 @@ const ProductForm = ({ product, node }) => {
 
   return (
     <>
-      <div className="w-full lg:w-2/3 flex flex-row flex-nowrap lg:flex-wrap overflow-x-scroll lg:overflow-x-hidden scroll-x-mandatory">
+      <div className="w-full lg:w-2/3 flex flex-row flex-nowrap lg:flex-wrap overflow-x-scroll lg:overflow-x-hidden scroll-x-mandatory -mx-1">
         {filteredVariants.map((n, i) => (
+          <div className="w-full md:w-1/2 snap-align-center p-1">
             <Img
               fluid={n.image.asset.fluid}
               key={i}
               alt={n.optionName}
-              className="w-full md:w-1/2 snap-align-center"
+              className="w-full"
               style={{minWidth: "300px"}}
             />
+          </div>
         ))}
       </div>
 
