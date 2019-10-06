@@ -78,7 +78,7 @@ export default () => (
    
     render = {data => (
       <footer className="w-full footer mt-auto bg-gray-900">
-        <div className="container mx-auto px-10 lg:px-auto py-20">
+        <div className="container mx-auto px-5 lg:px-auto py-20">
           <div className="flex flex-col lg:flex-row">
             <div className="order-1 w-full lg:w-1/4 pr-10">
                 <Link to="/"><img src={ logo } alt="Logo" width={"150px"} /></Link>
