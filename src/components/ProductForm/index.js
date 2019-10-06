@@ -4,9 +4,20 @@ import VariantSelector from './VariantSelector'
 import Toggle from "../../components/Toggle"
 import Img from "gatsby-image"
 import Down from "../../assets/chevron-down.svg"
+import BlockContent from '@sanity/block-content-to-react'
 
 
 const ProductForm = ({ product, node }) => {
+  const serializers = {
+    types: {
+      code: props => (
+        <pre data-language={props.node.language}>
+          <code>{props.node.code}</code>
+        </pre>
+      )
+    }
+  }
+
   const [quantity, setQuantity] = useState(1)
   const [variant, setVariant] = useState(product.variants[0])
   const context = useContext(StoreContext)
@@ -93,7 +104,7 @@ const ProductForm = ({ product, node }) => {
       </div>
 
       <div className="w-full lg:w-1/3 px-5">
-        <h1 className="text-2xl uppercase">{product.title}</h1>
+        <h1 className="text-2xl uppercase mt-6">{product.title}</h1>
         <div className="mt-2" dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
         <h3 className="mt-2">${productVariant.price}</h3>
         {variantSelectors}
@@ -126,7 +137,7 @@ const ProductForm = ({ product, node }) => {
                   </div>
                   {on && 
                     <>
-                      <p className="text-sm">This is the description of the product.</p>
+                      <BlockContent blocks={node._rawDescription} serializers={serializers} />
                     </>
                   }
                 </div>
@@ -138,12 +149,12 @@ const ProductForm = ({ product, node }) => {
               <div>
                 <div onClick={toggle} className="block mt-4 lg:mt-0 text-black py-4 border-b border-gray-300 cursor-pointer">
                   <div className="flex justify-between">
-                    <span className="text-sm uppercase">Reviews</span>
+                    <span className="text-sm uppercase">Sizing Guide</span>
                     <img src={Down} width="14px"/>
                   </div>
                   {on && 
                     <>
-                      <p className="text-sm">Here are your reviews</p>
+                      <BlockContent blocks={node._rawSizing} serializers={serializers} />
                     </>
                   }
                 </div>

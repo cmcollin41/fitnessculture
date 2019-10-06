@@ -14,7 +14,7 @@ const Product = ({ data }) => {
   return (
     <React.Fragment>
       <Layout>
-        <div className="container mx-auto px-5 my-10">
+        <div className="container mx-auto px-5 my-0 lg:my-10">
           <div className="flex flex-wrap -mx-5">
             <ProductForm product={product} node={node} />
           </div>
@@ -67,6 +67,8 @@ export const pageQuery = graphql`
 
     sanityProduct(shopifyId: {eq: $shopid}) {
       shopifyId
+      _rawDescription
+      _rawSizing
       variants {
         optionName
         image {
