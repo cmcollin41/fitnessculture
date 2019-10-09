@@ -32,14 +32,14 @@ const ProductForm = ({ product, node }) => {
       defaultOptionValues[selector.name] = selector.values[0]
     })
     setVariant(defaultOptionValues)
-  }, [])
+  }, [product.options])
 
   useEffect(() => {
     checkAvailability(product.shopifyId)
   }, [productVariant])
 
   
-  const checkAvailability = hasVariants ? (productId) => {
+  const checkAvailability = (productId) => {
     context.client.product.fetch(productId).then((product) => {
       // this checks the currently selected variant for availability
       const result = product.variants.filter(
@@ -47,7 +47,7 @@ const ProductForm = ({ product, node }) => {
       )
       setAvailable(result[0].available)
     })
-  } : setAvailable(productVariant.availableForSale)
+  }
  
   const handleQuantityChange = event => {
     setQuantity(event.target.value)
@@ -63,7 +63,6 @@ const ProductForm = ({ product, node }) => {
 
   const handleAddToCart = () => {
     context.addVariantToCart(productVariant.shopifyId, quantity)
-    alert(quantity)
   }
 
   const variantSelectors = hasVariants
@@ -84,7 +83,7 @@ const ProductForm = ({ product, node }) => {
       return n => n.optionName === value
     }
     
-    const filteredVariants = node.variants ? node.variants.filter(chosenVariant(variant.Color)) : product
+    const filteredVariants = node.variants ? node.variants.filter(chosenVariant(variant.Color ? variant.Color : variant.Time)) : product
     
 
   return (

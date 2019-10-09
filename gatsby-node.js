@@ -1,4 +1,5 @@
 const path = require("path")
+const atob = require("atob")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -106,6 +107,33 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+  
+  const collectionGraphQl = await graphql(`
+  {
+    allShopifyCollection {
+      edges {
+        node {
+          shopifyId
+          handle
+        }
+      }
+    }
+  }
+  `)
+
+  const collection = path.resolve("src/templates/collection.jsx")
+
+  collectionGraphQl.data.allShopifyCollection.edges.forEach(({node}) => {
+    createPage({
+      path: `collections/${node.handle}`,
+      component: collection,
+      context: {
+        shopifyId: node.shopifyId,
+      },
+    })
+  })
+
+
 
   const shopifyGraphQL = await graphql(`
     {
@@ -123,12 +151,15 @@ exports.createPages = async ({ graphql, actions }) => {
   const product = path.resolve("src/templates/product.jsx")
 
   shopifyGraphQL.data.allShopifyProduct.edges.forEach(({node}) => {
+    let decodedId = atob(node.shopifyId)
+    // gid://shopify/Product/4174887977030
+    let strippedId = decodedId.match(/([0-9]\w+)/g).join('')
     createPage({
       path: `products/${node.handle}`,
       component: product,
       context: {
-        handle: node.handle,
-        shopid: node.shopifyId
+        shopifyId: node.shopifyId,
+        strippedId: strippedId
       },
     })
   })

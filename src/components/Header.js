@@ -138,8 +138,27 @@ const Header = () => {
                   </div>
                 </div>
               </div>
-              <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
-                <Link to="/products" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold">Shop</Link>
+              <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent showprograms">
+                <Link to="/collections/apparel" aria-label="Programs" className="uppercase text-black hover:text-blue-500 font-bold">Shop</Link>
+                <div className="flex justify-center py-10 bg-white programnav absolute left-0 right-0" style={{top: "79px", zIndex: "-10"}}>
+                  <div className="flex flex-row justify-center">
+                    <div className="w-64 flex flex-col items-center">
+                      <div className="text-left">
+                        <h6>Men</h6>
+                      </div>
+                    </div>
+                    <div className="w-64 flex flex-col items-center">
+                      <div className="text-left">
+                        <h6>Women</h6>
+                      </div>
+                    </div>
+                    <div className="w-64 flex flex-col items-center">
+                      <div className="text-left">
+                        <h6>eBooks</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent">
                 <Link to="/about" aria-label={"About"} className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold">About</Link>
@@ -151,8 +170,8 @@ const Header = () => {
         </div>
         <div className="block hidden lg:flex justify-end content-center align-center" style={{minWidth: "300px"}}>
           <div>
-            <a href="https://app.fitnessculture.com/login" className="inline-block text-sm px-4 py-2 leading-none text-black  hover:text-blue-500 mt-4 lg:mt-0 uppercase">Login</a>
-            <Link to="/programs" aria-label={"Get Started"} className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded-full">Get Started</Link>
+            <a href="https://app.fitnessculture.com/login" className="inline-block text-sm px-4 py-2 leading-none text-black hover:text-blue-500 mt-4 lg:mt-0 uppercase">Login</a>
+            <Link to="/programs" aria-label={"Get Started"} className="inline-block text-sm px-4 py-2 leading-none border text-white border-black bg-gray-900 hover:bg-black mt-4 lg:mt-0 uppercase rounded">Get Started</Link>
             <Link to='/cart' className="relative inline-block text-sm px-4 py-2">
               {quantity !== 0 && 
               <span className={"bg-red-600 text-white rounded-full h-4 w-4 flex items-center justify-center absolute"} style={{left: "8px", top: "2px"}}>

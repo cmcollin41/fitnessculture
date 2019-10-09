@@ -41,7 +41,7 @@ const Index = ({ data }) => {
           {home.subtitle}
         </p>
         <div className="py-10">
-          <Link to={home.heroLink} className="btn-lg text-white rounded-full shadow-lg" style={{backgroundColor: home.heroColor.hex}}>
+          <Link to={home.heroLink} className="btn-lg text-white rounded shadow-lg" style={{backgroundColor: home.heroColor.hex}}>
             {home.heroCta}
           </Link>
         </div>
