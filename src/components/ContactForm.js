@@ -73,7 +73,7 @@ class ContactForm extends React.Component {
             onChange={this.handleInputChange}
           />
         </div>
-        <button className="btn-lg bg-blue-500 rounded-full text-white shadow" type="submit">Submit</button>
+        <button className="btn-lg bg-blue-500 rounded text-white shadow" type="submit">Submit</button>
       </form>
     )
   }

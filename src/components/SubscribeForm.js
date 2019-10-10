@@ -14,7 +14,7 @@ const SubscribeForm = () => {
 				name="name=fields[email]"
 				placeholder="youremail@email.com"
 			/>
-			<button type="submit" className="btn shadow-md mt-10 lg:mt-auto w-full lg:w-auto text-white rounded-sm bg-blue-500">
+			<button type="submit" className="btn shadow-md mt-10 lg:mt-auto w-full lg:w-auto text-white rounded bg-blue-500">
 				Subscribe
 			</button>
 		</form>

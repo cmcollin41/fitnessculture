@@ -34,14 +34,14 @@ const Index = ({ data }) => {
       fluid={home.heroImage.asset.fluid}
       >
         <span className="hidden lg:flex rounded-full bg-black uppercase px-2 py-1 text-xs text-white">Your #1 Fitness App</span>
-        <h1 className="uppercase text-center text-white text-4xl lg:text-5xl mt-4 font-bold" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
+        <h1 className="statement text-center text-white text-4xl lg:text-5xl mt-4 font-bold" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
           {home.title}
         </h1>
         <p className="text-center text-white mt-5 lg:w-1/2 xl:w-1/3 text-xl hidden lg:block" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5"}}>
           {home.subtitle}
         </p>
         <div className="py-10">
-          <Link to={home.heroLink} className="btn-lg text-white rounded-full shadow-lg" style={{backgroundColor: home.heroColor.hex}}>
+          <Link to={home.heroLink} className="btn-lg text-white rounded shadow-lg" style={{backgroundColor: home.heroColor.hex}}>
             {home.heroCta}
           </Link>
         </div>
@@ -60,7 +60,7 @@ const Index = ({ data }) => {
 
       <div className="py-20 bg-gray-100">
         <div className="container lg:mx-auto px-5">
-          <h3 className="uppercase text-3xl pb-5 lg:pb-10">
+          <h3 className="statement text-3xl pb-5 lg:pb-10">
             Our Programs
           </h3>
         </div>
@@ -78,11 +78,11 @@ const Index = ({ data }) => {
                     />
                     <div className="flex flex-col justify-between items-stretch flex-grow">
                       <div className="p-5">
-                        <h4 className="uppercase text-2xl" style={{ color: program.colorTwo.hex }}>{program.title}</h4>
+                        <h4 className="statement text-2xl" style={{ color: program.colorTwo.hex }}>{program.title}</h4>
                         <p className="text-white text-sm">{program.subtitle}</p>
                       </div>
                       <div className="p-5">
-                        <Link to={"/programs/" + program.gender + "/" + program.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">See {program.title}</Link>
+                        <Link to={"/programs/" + program.gender + "/" + program.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded py-2 px-4">See {program.title}</Link>
                       </div>
                     </div>
                   </div>
@@ -101,7 +101,7 @@ const Index = ({ data }) => {
         <div className="flex flex-col lg:flex-row justify-start items-center mt-10 h-full">
           <div className="w-full lg:w-1/2 order-2 lg:order-1 pt-5 lg:p-10 mx-auto">
             <h6 className="uppercase mt-6 text-left mb-2 text-gray-400">See the Savings</h6>
-            <h2 className="text-lg lg:text-3xl uppercase">
+            <h2 className="text-lg lg:text-3xl statement">
               {home.personalTrainerTitle}
             </h2>
             <p className="mt-5">{home.personalTrainerDescription}</p>
@@ -121,7 +121,7 @@ const Index = ({ data }) => {
 
     <div className="py-20 bg-gray-900">
       <div className="container px-5 lg:mx-auto">
-        <h3 className="uppercase text-white text-3xl pb-5 lg:pb-10">
+        <h3 className="statement text-white text-3xl pb-5 lg:pb-10">
           Join the <span className="px-2 bg-blue-500">#FitCult</span> Family
         </h3>
       </div>
@@ -152,8 +152,8 @@ const Index = ({ data }) => {
             className="w-full lg:w-1/2 shadow-lg" 
             fluid={home.aboutImage.asset.fluid}/>
           <div className="w-full lg:w-1/2 pt-5 lg:p-10 mx-auto">
-            <h6 className="uppercase mt-6 text-left mb-2 text-gray-400">About Us</h6>
-            <h2 className="text-lg lg:text-3xl uppercase">
+            <h6 className="statement mt-6 text-left mb-2 text-gray-400">About Us</h6>
+            <h2 className="text-lg lg:text-3xl statement">
               {home.aboutTitle}
             </h2>
             <p className="mt-5">{home.aboutDescription}</p>

@@ -15,8 +15,13 @@ body, html {
   @apply border border-red-500;
 } */
 
+.statement {
+  @apply uppercase font-bold;
+  font-family: "futuracondensed_extra_bold", sans-serif !important;
+}
+
 h1,h2,h3,h4,h5,h6 {
-  font-weight: bolder;
+  font-weight: 600;
 }
 
 p {

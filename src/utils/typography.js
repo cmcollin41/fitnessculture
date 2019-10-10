@@ -4,7 +4,7 @@ const typography = new Typography({
   baseFontSize: "18px",
   baseLineHeight: 0,
   headerFontFamily: [
-    "futuracondensed_extra_bold",
+    "Montserrat",
     "Open Sans Condensed",
     "Helvetica Neue",
     "Segoe UI",

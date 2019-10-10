@@ -17,14 +17,14 @@ const About = ({ data }) => {
       style={{minHeight: "60vh"}}
       fluid={about.heroImage.asset.fluid}
       >
-        <h1 className="uppercase text-center text-white text-4xl lg:text-6xl mt-4" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
+        <h1 className="statement text-center text-white text-4xl lg:text-5xl mt-4" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
           {about.title}
         </h1>
         <p className="text-center text-white mt-5 lg:w-1/2 text-xl w:1-2 hidden lg:block" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5"}}>
           {about.subtitle}
         </p>
         <div className="py-10">
-          <Link to="/programs" className="btn-lg text-white rounded-full shadow-lg bg-blue-500">
+          <Link to="/programs" className="btn-lg text-white rounded shadow-lg bg-blue-500">
             Get Started
           </Link>
         </div>
@@ -43,10 +43,10 @@ const About = ({ data }) => {
               />
               <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-5 flex flex-col justify-between leading-normal">
                 <div className="mb-8">
-                  <h3 className="uppercase font-bold text-xl mb-2">{about.trainingTitle}</h3>
+                  <h3 className="statement font-bold text-xl mb-2">{about.trainingTitle}</h3>
                   <p className="text-gray-700 text-base">{about.trainingDescription}</p>
                 </div>
-                <Link to="/programs" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded-sm">
+                <Link to="/programs" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded">
                   Get Started
                 </Link>
               </div> 
@@ -58,10 +58,10 @@ const About = ({ data }) => {
               />
               <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-5 flex flex-col justify-between leading-normal">
                 <div className="mb-8">
-                  <h3 className="uppercase font-bold text-xl mb-2">{about.mobilityTitle}</h3>
+                  <h3 className="statement font-bold text-xl mb-2">{about.mobilityTitle}</h3>
                   <p className="text-gray-700 text-base">{about.mobilityDescription}</p>
                 </div>
-                <Link to="/programs" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded-sm">
+                <Link to="/programs" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded">
                   Get Started
                 </Link>
               </div> 
@@ -73,10 +73,10 @@ const About = ({ data }) => {
               />
               <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-5 flex flex-col justify-between leading-normal">
                 <div className="mb-8">
-                  <h3 className="uppercase font-bold text-xl mb-2">{about.nutritionTitle}</h3>
+                  <h3 className="statement font-bold text-xl mb-2">{about.nutritionTitle}</h3>
                   <p className="text-gray-700 text-base">{about.nutritionDescription}</p>
                 </div>
-                <Link to="/programs" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded-sm">
+                <Link to="/programs" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded">
                   Get Started
                 </Link>
               </div> 

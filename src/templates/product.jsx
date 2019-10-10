@@ -28,8 +28,8 @@ export default Product
 
 
 export const pageQuery = graphql`
-  query($handle: String!, $shopid: String!) {
-    shopifyProduct(handle: { eq: $handle }) {
+  query($shopifyId: String!, $strippedId: String!) {
+    shopifyProduct(shopifyId: { eq: $shopifyId }) {
       id
       title
       handle
@@ -65,10 +65,11 @@ export const pageQuery = graphql`
       }
     }
 
-    sanityProduct(shopifyId: {eq: $shopid}) {
+    sanityProduct(shopifyId: {eq: $strippedId}) {
       shopifyId
       _rawDescription
       _rawSizing
+      _rawShipping
       variants {
         optionName
         image {

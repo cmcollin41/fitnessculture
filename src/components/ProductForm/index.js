@@ -32,14 +32,14 @@ const ProductForm = ({ product, node }) => {
       defaultOptionValues[selector.name] = selector.values[0]
     })
     setVariant(defaultOptionValues)
-  }, [])
+  }, [product.options])
 
   useEffect(() => {
     checkAvailability(product.shopifyId)
   }, [productVariant])
 
   
-  const checkAvailability = hasVariants ? (productId) => {
+  const checkAvailability = (productId) => {
     context.client.product.fetch(productId).then((product) => {
       // this checks the currently selected variant for availability
       const result = product.variants.filter(
@@ -47,7 +47,7 @@ const ProductForm = ({ product, node }) => {
       )
       setAvailable(result[0].available)
     })
-  } : setAvailable(productVariant.availableForSale)
+  }
  
   const handleQuantityChange = event => {
     setQuantity(event.target.value)
@@ -63,7 +63,6 @@ const ProductForm = ({ product, node }) => {
 
   const handleAddToCart = () => {
     context.addVariantToCart(productVariant.shopifyId, quantity)
-    alert(quantity)
   }
 
   const variantSelectors = hasVariants
@@ -84,7 +83,7 @@ const ProductForm = ({ product, node }) => {
       return n => n.optionName === value
     }
     
-    const filteredVariants = node.variants ? node.variants.filter(chosenVariant(variant.Color)) : product
+    const filteredVariants = node.variants ? node.variants.filter(chosenVariant(variant.Color ? variant.Color : variant.Time)) : product
     
 
   return (
@@ -96,15 +95,15 @@ const ProductForm = ({ product, node }) => {
               fluid={n.image.asset.fluid}
               key={i}
               alt={n.optionName}
-              className="w-full"
-              style={{minWidth: "300px"}}
+              className="block w-full bg-cover bg-center text-center overflow-hidden"
+              style={{minWidth: "300px", height: "500px"}}
             />
           </div>
         ))}
       </div>
 
       <div className="w-full lg:w-1/3 px-5">
-        <h1 className="text-2xl uppercase mt-6">{product.title}</h1>
+        <h1 className="text-xl uppercase mt-6">{product.title}</h1>
         <div className="mt-2" dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
         <h3 className="mt-2">${productVariant.price}</h3>
         {variantSelectors}
@@ -155,6 +154,23 @@ const ProductForm = ({ product, node }) => {
                   {on && 
                     <>
                       <BlockContent blocks={node._rawSizing} serializers={serializers} />
+                    </>
+                  }
+                </div>
+              </div>
+            )}
+          />
+          <Toggle 
+            render={({on, toggle}) => (
+              <div>
+                <div onClick={toggle} className="block mt-4 lg:mt-0 text-black py-4 border-b border-gray-300 cursor-pointer">
+                  <div className="flex justify-between">
+                    <span className="text-sm uppercase">Shipping & Returns</span>
+                    <img src={Down} width="14px"/>
+                  </div>
+                  {on && 
+                    <>
+                      <BlockContent blocks={node._rawShipping} serializers={serializers} />
                     </>
                   }
                 </div>

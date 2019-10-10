@@ -27,7 +27,7 @@ const Programs = ({ data }) => {
       style={{minHeight: "60vh"}}
       fluid={page.heroImage.asset.fluid}
       >
-        <h1 className="uppercase text-center text-white text-4xl lg:text-6xl mt-4" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
+        <h1 className="statement text-center text-white text-4xl lg:text-5xl mt-4" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
           {page.title}
         </h1>
         <p className="text-center text-white mt-5 lg:w-1/2 text-xl w:1-2 hidden lg:block" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5"}}>

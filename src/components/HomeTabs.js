@@ -14,9 +14,9 @@ class HomeTabs extends React.Component {
 
   <Tabs selectedTabClassName="active-tabz">
     <TabList className="flex flex-row flex-wrap justify-center w-full overflow-hidden border-b border-gray-300">
-      <Tab className="uppercase text-lg lg:text-2xl mx-4 lg:mx-4 cursor-pointer text-center p-2 w-full lg:w-1/5"><h6>Training</h6></Tab>
-      <Tab className="uppercase text-lg lg:text-2xl mx-4 lg:mx-4 cursor-pointer text-center p-2 w-full lg:w-1/5"><h6>Nutrition</h6></Tab>
-      <Tab className="uppercase text-lg lg:text-2xl mx-4 lg:mx-4 cursor-pointer text-center p-2 w-full lg:w-1/5"><h6>Mobility</h6></Tab>
+      <Tab className="mx-4 lg:mx-4 cursor-pointer text-center p-2 w-full lg:w-1/5"><h6 className="statement text-lg lg:text-2xl">Training</h6></Tab>
+      <Tab className="mx-4 lg:mx-4 cursor-pointer text-center p-2 w-full lg:w-1/5"><h6 className="statement text-lg lg:text-2xl">Nutrition</h6></Tab>
+      <Tab className="mx-4 lg:mx-4 cursor-pointer text-center p-2 w-full lg:w-1/5"><h6 className="statement text-lg lg:text-2xl">Mobility</h6></Tab>
     </TabList>
 
     <TabPanel>
@@ -25,7 +25,7 @@ class HomeTabs extends React.Component {
           <h2 className="text-xl uppercase text-center lg:text-left">{program.trainingTitle}</h2>
           <p className="mt-5">{program.trainingDescription}</p>
           <div className="mt-5 hidden md:block">
-            <Link to="/programs" >See Programs</Link>
+            <Link to="/programs">See Programs</Link>
           </div>
           <div className="my-10 w-full border-bottom border">
           </div>
