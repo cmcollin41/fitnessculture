@@ -5,6 +5,7 @@ import Toggle from './Toggle'
 import logo from '../assets/fc-logo-horizontal-black.png'
 import cart from  '../assets/shopping-cart.svg'
 import Down from "../assets/chevron-down.svg"
+import LineItem from './Cart/LineItem.js'
 
 import StoreContext from '../context/StoreContext'
 
@@ -21,12 +22,23 @@ const countQuantity = (lineItems) => {
 const Header = () => {
 
   const context = useContext(StoreContext)
-  const { checkout } = context
-	const [quantity, setQuantity] = useState(countQuantity(checkout ? checkout.lineItems : []))
+  const { checkout, showCart } = context
+  const [quantity, setQuantity] = useState(countQuantity(checkout ? checkout.lineItems : []))
+
 
 	useEffect(() => {
-		setQuantity(countQuantity(checkout ? checkout.lineItems : []));
-	}, [checkout]);
+    setQuantity(countQuantity(checkout ? checkout.lineItems : []));
+  }, [checkout]);
+
+  const hideCart = (e) => {
+    e.preventDefault();
+    context.showCart = false;
+    alert(context.showCart);
+  }
+  
+  const line_items = checkout.lineItems.map(line_item => {
+    return <LineItem key={line_item.id.toString()} line_item={line_item} />
+  })
 
   const data = useStaticQuery(
     graphql`
@@ -127,7 +139,7 @@ const Header = () => {
   return (
     <>
     <header className="z-50 w-full bg-white sticky top-0">
-      <nav className="flex items-center justify-between flex-wrap bg-white px-1 lg:px-4 border-nav-b">
+      <nav className="flex items-center justify-between flex-wrap bg-white px-1 lg:px-4 border-nav-b relative">
         <div className="hidden lg:flex items-center flex-grow text-black py-4" style={{minWidth: "300px"}}>
           <Link to="/" aria-label="Fitness Culture Logo"><img src={ logo } alt="Logo" width={"200px"} /></Link>
         </div>
@@ -191,7 +203,7 @@ const Header = () => {
           <div>
             <a href="https://app.fitnessculture.com/login" className="inline-block text-sm px-4 py-2 leading-none text-black hover:text-blue-500 mt-4 lg:mt-0 uppercase">Login</a>
             <Link to="/programs" aria-label={"Get Started"} className="inline-block text-sm px-4 py-2 leading-none border text-white border-black bg-gray-900 hover:bg-black mt-4 lg:mt-0 uppercase rounded">Get Started</Link>
-            <Link to='/cart' className="relative inline-block text-sm px-4 py-2">
+            <Link to='/cart' className="relative inline-block text-xs px-4 py-2">
               {quantity !== 0 && 
               <span className={"bg-red-600 text-white rounded-full h-4 w-4 flex items-center justify-center absolute"} style={{left: "8px", top: "2px"}}>
                 {quantity}
@@ -201,7 +213,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-        
+
       {/* Mobile Nav */}
       <nav className="flex items-center justify-between flex-wrap bg-white px-4 border-nav-b relative z-50">
         <div className="block lg:hidden" onClick={toggleNav}>
@@ -295,6 +307,12 @@ const Header = () => {
         </div>
       </div>
     </header>
+
+    <div className={"shadow bg-white z-10 p-6 absolute right-0 top-0 " + (context.showCart ? "block" : "hidden")} style={{top: "79px"}}>
+      {line_items}
+      <button onClick={hideCart}>Close</button>
+    </div>
+        
    
 
     </>

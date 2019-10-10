@@ -26,8 +26,7 @@ const LineItem = props => {
     <img
       src={line_item.variant.image.src}
       alt={`${line_item.title}`}
-      height="60px"
-      className="mx-auto"
+      className="block w-32 h-32 bg-cover bg-center text-center overflow-hidden"
     />
   ) : null
 
@@ -44,23 +43,23 @@ const LineItem = props => {
   }
 
   return (
-    <div className="flex flex-wrap justify-between items-start">
-      <div style={{maxWidth: "125px"}}>
+    <div className="flex flex-wrap items-start w-full mb-10">
+      <div className="w-1/4">
         {variantImage}
       </div>
-      <div>
-        <span className="font-bold text-xl">
-          {line_item.title}
-          {`  `}
-          {line_item.variant.title === ! 'Default Title' ? line_item.variant.title : ''}
-        </span>
-        {selectedOptions}
-      </div>
-      <div>
-        {line_item.quantity}
-      </div>
-      <div>
-        <button onClick={handleRemove} className="text-xs">Remove</button>
+      <div className="w-3/4 flex flex-row justify-between">
+        <div>
+          <span className="font-bold text-l">
+            {line_item.title}
+            {`  `}
+            {line_item.variant.title === ! 'Default Title' ? line_item.variant.title : ''}
+          </span>
+          {selectedOptions}
+          <button onClick={handleRemove} className="text-xs">Remove</button>
+        </div>
+        <div>
+          {line_item.quantity}
+        </div>
       </div>
     </div>
   )

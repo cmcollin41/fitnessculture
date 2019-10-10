@@ -7,6 +7,7 @@ import Down from "../../assets/chevron-down.svg"
 import BlockContent from '@sanity/block-content-to-react'
 
 
+
 const ProductForm = ({ product, node }) => {
   const serializers = {
     types: {
@@ -21,10 +22,13 @@ const ProductForm = ({ product, node }) => {
   const [quantity, setQuantity] = useState(1)
   const [variant, setVariant] = useState(product.variants[0])
   const context = useContext(StoreContext)
+  const {showCart} = context
+
 
   const hasVariants = product.variants.length > 1
   const productVariant = context.client.product.helpers.variantForOptions(product, variant) || variant
   const [available, setAvailable] = useState(productVariant.availableForSale)
+
 
   useEffect(() => {
     let defaultOptionValues = {}
@@ -63,8 +67,9 @@ const ProductForm = ({ product, node }) => {
 
   const handleAddToCart = () => {
     context.addVariantToCart(productVariant.shopifyId, quantity)
-    
+    context.showCart = true;
   }
+
 
   const variantSelectors = hasVariants
     ? product.options.map((option,i) => {
@@ -85,7 +90,7 @@ const ProductForm = ({ product, node }) => {
     }
     
     const filteredVariants = node.variants ? node.variants.filter(chosenVariant(variant.Color ? variant.Color : variant.Time)) : product
-    
+  
 
   return (
     <>
