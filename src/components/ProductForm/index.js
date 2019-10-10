@@ -63,6 +63,7 @@ const ProductForm = ({ product, node }) => {
 
   const handleAddToCart = () => {
     context.addVariantToCart(productVariant.shopifyId, quantity)
+    
   }
 
   const variantSelectors = hasVariants
@@ -121,10 +122,10 @@ const ProductForm = ({ product, node }) => {
           value={quantity}
         />
         <br/>
-        <button type="submit" disabled={!available || context.adding} onClick={handleAddToCart} className="px-2 py-4 bg-black text-white uppercase w-full rounded">
-          Add to Cart
+        <button type="submit" disabled={!available || context.adding} onClick={handleAddToCart} className={"px-2 py-4 bg-black text-white uppercase w-full rounded " + (!available ? "bg-gray-500 cursor-auto" : "" || context.adding ? "bg-green-500 cursor-not-allowed" : "")}>
+          {!available ? "Out of Stock!" : context.adding ? "Adding to cart..." : "Add to Cart"}
         </button>
-        {!available && <p>This Product is out of Stock!</p>}
+       
         <div className="mt-10">
           <Toggle 
             render={({on, toggle}) => (

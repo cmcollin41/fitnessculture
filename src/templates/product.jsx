@@ -15,7 +15,7 @@ const Product = ({ data }) => {
     <React.Fragment>
       <Layout>
         <div className="container mx-auto px-5 my-0 lg:my-10">
-          <div className="flex flex-wrap -mx-5">
+          <div className="flex flex-wrap -mx-5 relative">
             <ProductForm product={product} node={node} />
           </div>
         </div>

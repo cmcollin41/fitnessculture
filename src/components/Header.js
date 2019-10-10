@@ -161,7 +161,7 @@ const Header = () => {
                 <div className="flex justify-center py-10 bg-white programnav absolute left-0 right-0" style={{top: "79px", zIndex: "-10"}}>
                   <div className="flex flex-row justify-center">
                     {collections.nodes.map((collection, count) => (
-                      <div className="w-64 flex flex-col items-center">
+                      <Link to={"/collections/" + collection.handle} key={count} className="block mt-4 text-black hover:text-blue-500 w-64 flex flex-col items-center lg:mx-2">
                         <div>
                           <Img
                             fluid={collection.image.localFile.childImageSharp.fluid}
@@ -171,10 +171,10 @@ const Header = () => {
                             style={{minWidth: "300px"}}
                           />
                         </div>
-                        <div className="text-center">
-                          <Link to={"/collections/" + collection.handle} key={count} className="block mt-4 text-black hover:text-blue-500">{collection.title}</Link>
+                        <div className="text-center mt-4">
+                          {collection.title}
                         </div>
-                      </div>
+                      </Link>
                     ))}
                   </div>
                 </div>

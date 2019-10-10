@@ -21,7 +21,7 @@ body, html {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-weight: 600;
+  font-weight: 900;
 }
 
 p {
@@ -30,6 +30,11 @@ p {
 
 a {
   @apply text-blue-500;
+}
+
+.appearance-none {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 button:focus {
