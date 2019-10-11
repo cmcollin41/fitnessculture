@@ -13,6 +13,14 @@ class Layout extends React.Component {
   state = {
     store: {
       ...defaultStoreContext,
+      setCartPreview: (cartState) => {
+        this.setState(state => ({
+          store: {
+            ...state.store,
+            cartPreview: cartState,
+          }
+        }))
+      },
       addVariantToCart: (variantId, quantity) => {
         if (variantId === '' || !quantity) {
           console.error('Both a size and quantity are required.')
@@ -22,7 +30,7 @@ class Layout extends React.Component {
         this.setState(state => ({
           store: {
             ...state.store,
-            adding: true,
+            adding: true
           },
         }))
 
@@ -40,6 +48,7 @@ class Layout extends React.Component {
                 ...state.store,
                 checkout,
                 adding: false,
+                cartPreview: true
               },
             }))
           })
@@ -51,7 +60,7 @@ class Layout extends React.Component {
             this.setState(state => ({
               store: {
                 ...state.store,
-                checkout: res,
+                checkout: res
               },
             }))
           })
@@ -67,7 +76,7 @@ class Layout extends React.Component {
             this.setState(state => ({
               store: {
                 ...state.store,
-                checkout: res,
+                checkout: res
               },
             }))
           })
@@ -90,7 +99,7 @@ class Layout extends React.Component {
       this.setState(state => ({
         store: {
           ...state.store,
-          checkout,
+          checkout
         },
       }))
     }

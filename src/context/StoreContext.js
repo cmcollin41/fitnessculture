@@ -9,10 +9,12 @@ const client = Client.buildClient({
 export const defaultStoreContext = {
   client,
   adding: false,
-  showCart: false,
+  cartPreview: false,
   checkout: { lineItems: [] },
   products: [],
   shop: {},
+  setCartQuantity: () => {},
+  setCartPreview: () => {},
   addVariantToCart: () => {},
   removeLineItem: () => {},
   updateLineItem: () => {},

@@ -9,20 +9,21 @@ import LineItem from './Cart/LineItem.js'
 
 import StoreContext from '../context/StoreContext'
 
-const countQuantity = (lineItems) => {
-	let quantity = 0
-
-	lineItems.forEach(item => {
-		quantity = quantity + item.quantity
-	});
-
-	return quantity
-}
 
 const Header = () => {
+  
+  const countQuantity = (lineItems) => {
+    let quantity = 0
+  
+    lineItems.forEach(item => {
+      quantity = quantity + item.quantity
+    });
+  
+    return quantity
+  }
 
   const context = useContext(StoreContext)
-  const { checkout, showCart } = context
+  const { checkout } = context
   const [quantity, setQuantity] = useState(countQuantity(checkout ? checkout.lineItems : []))
 
 
@@ -30,10 +31,8 @@ const Header = () => {
     setQuantity(countQuantity(checkout ? checkout.lineItems : []));
   }, [checkout]);
 
-  const hideCart = (e) => {
-    e.preventDefault();
-    context.showCart = false;
-    alert(showCart);
+  const hideCart = () => {
+    context.setCartPreview(false)
   }
   
   const line_items = checkout.lineItems.map(line_item => {
@@ -306,15 +305,15 @@ const Header = () => {
           <Link to="/programs" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded">Get Started</Link>
         </div>
       </div>
+      <div className={"shadow bg-white z-10 p-6 fixed right-0 " + (context.cartPreview ? "block" : "hidden")} style={{top: "79"}}>
+        {line_items}
+        <div className="flex flex-row justify-center -mx-3">
+          <button onClick={hideCart} className={"text-center w-1/2 mx-3"}>Back to Shopping</button>
+          <Link to={"/cart"} className={"btn rounded bg-black text-white text-center w-1/2 mx-3"}>Go to Checkout</Link>
+        </div>
+      </div>
     </header>
 
-    <div className={"shadow bg-white z-10 p-6 fixed right-0 top-0 " + (showCart ? "block" : "hidden")} style={{top: "79px"}}>
-      {line_items}
-      <div className="flex flex-row justify-center -mx-3">
-        <button onClick={hideCart} className={"btn rounded bg-black text-white text-center w-1/2 mx-3"}>Back to Shopping</button>
-        <Link to={"/cart"} className={"btn rounded bg-black text-white text-center w-1/2 mx-3"}>Go to Checkout</Link>
-      </div>
-    </div>
         
    
 

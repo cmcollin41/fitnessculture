@@ -65,11 +65,11 @@ const ProductForm = ({ product, node }) => {
 
   const handleAddToCart = () => {
     context.addVariantToCart(productVariant.shopifyId, quantity)
-    context.showCart = true;
-    setTimeout(function(){
-      context.showCart = false;
-    }, 3000)
+    setTimeout(() => {
+      context.setCartPreview(false)
+    }, 5000);
   }
+  
 
 
   const variantSelectors = hasVariants
