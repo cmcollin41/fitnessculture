@@ -9,27 +9,28 @@ import LineItem from './Cart/LineItem.js'
 
 import StoreContext from '../context/StoreContext'
 
+const countQuantity = (lineItems) => {
+
+  let quantity = 0;
+
+  lineItems.forEach(item => {
+    quantity = quantity + item.quantity
+  });
+
+  return quantity
+}
 
 const Header = () => {
   
-  // const countQuantity = (lineItems) => {
-  //   let quantity = 0
-  
-  //   lineItems.forEach(item => {
-  //     quantity = quantity + item.quantity
-  //   });
-  
-  //   return quantity
-  // }
 
   const context = useContext(StoreContext)
   const { checkout } = context
-  // const [quantity, setQuantity] = useState(countQuantity(checkout ? checkout.lineItems : []))
+  const [quantity, setQuantity] = useState(context.cartQuantity)
 
 
-	// useEffect(() => {
-  //   setQuantity(countQuantity(checkout ? checkout.lineItems : []));
-  // }, [checkout]);
+	useEffect(() => {
+    setQuantity(countQuantity(checkout ? checkout.lineItems : []));
+  }, [checkout]);
 
   const hideCart = () => {
     context.setCartPreview(false)
@@ -204,7 +205,7 @@ const Header = () => {
             <Link to="/programs" aria-label={"Get Started"} className="inline-block text-sm px-4 py-2 leading-none border text-white border-black bg-gray-900 hover:bg-black mt-4 lg:mt-0 uppercase rounded">Get Started</Link>
             <Link to='/cart' className="relative inline-block text-xs px-4 py-2">
               <span className={"bg-red-600 text-white rounded-full h-4 w-4 flex items-center justify-center absolute"} style={{left: "8px", top: "2px"}}>
-                {context.cartQuantity}
+                {quantity}
               </span>
 						  <img src={cart} width="24px" className="inline-block" />
 					  </Link>
@@ -226,7 +227,7 @@ const Header = () => {
         </div>
         <Link to='/cart' className="relative lg:hidden inline-block text-sm pl-4 py-2">
           <span className={"bg-red-600 text-white rounded-full h-4 w-4 flex items-center justify-center absolute"} style={{left: "8px", top: "2px"}}>
-            {context.cartQuantity}
+            {quantity}
           </span>
           <img src={cart} width="24px" className="inline-block" />
         </Link>
