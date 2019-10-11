@@ -33,7 +33,7 @@ const Header = () => {
   const hideCart = (e) => {
     e.preventDefault();
     context.showCart = false;
-    alert(context.showCart);
+    alert(showCart);
   }
   
   const line_items = checkout.lineItems.map(line_item => {
@@ -308,9 +308,12 @@ const Header = () => {
       </div>
     </header>
 
-    <div className={"shadow bg-white z-10 p-6 absolute right-0 top-0 " + (context.showCart ? "block" : "hidden")} style={{top: "79px"}}>
+    <div className={"shadow bg-white z-10 p-6 fixed right-0 top-0 " + (showCart ? "block" : "hidden")} style={{top: "79px"}}>
       {line_items}
-      <button onClick={hideCart}>Close</button>
+      <div className="flex flex-row justify-center -mx-3">
+        <button onClick={hideCart} className={"btn rounded bg-black text-white text-center w-1/2 mx-3"}>Back to Shopping</button>
+        <Link to={"/cart"} className={"btn rounded bg-black text-white text-center w-1/2 mx-3"}>Go to Checkout</Link>
+      </div>
     </div>
         
    

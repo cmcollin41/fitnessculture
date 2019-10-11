@@ -22,8 +22,6 @@ const ProductForm = ({ product, node }) => {
   const [quantity, setQuantity] = useState(1)
   const [variant, setVariant] = useState(product.variants[0])
   const context = useContext(StoreContext)
-  const {showCart} = context
-
 
   const hasVariants = product.variants.length > 1
   const productVariant = context.client.product.helpers.variantForOptions(product, variant) || variant
@@ -68,6 +66,9 @@ const ProductForm = ({ product, node }) => {
   const handleAddToCart = () => {
     context.addVariantToCart(productVariant.shopifyId, quantity)
     context.showCart = true;
+    setTimeout(function(){
+      context.showCart = false;
+    }, 3000)
   }
 
 
