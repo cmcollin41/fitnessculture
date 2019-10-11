@@ -12,24 +12,24 @@ import StoreContext from '../context/StoreContext'
 
 const Header = () => {
   
-  const countQuantity = (lineItems) => {
-    let quantity = 0
+  // const countQuantity = (lineItems) => {
+  //   let quantity = 0
   
-    lineItems.forEach(item => {
-      quantity = quantity + item.quantity
-    });
+  //   lineItems.forEach(item => {
+  //     quantity = quantity + item.quantity
+  //   });
   
-    return quantity
-  }
+  //   return quantity
+  // }
 
   const context = useContext(StoreContext)
   const { checkout } = context
-  const [quantity, setQuantity] = useState(countQuantity(checkout ? checkout.lineItems : []))
+  // const [quantity, setQuantity] = useState(countQuantity(checkout ? checkout.lineItems : []))
 
 
-	useEffect(() => {
-    setQuantity(countQuantity(checkout ? checkout.lineItems : []));
-  }, [checkout]);
+	// useEffect(() => {
+  //   setQuantity(countQuantity(checkout ? checkout.lineItems : []));
+  // }, [checkout]);
 
   const hideCart = () => {
     context.setCartPreview(false)
@@ -203,10 +203,9 @@ const Header = () => {
             <a href="https://app.fitnessculture.com/login" className="inline-block text-sm px-4 py-2 leading-none text-black hover:text-blue-500 mt-4 lg:mt-0 uppercase">Login</a>
             <Link to="/programs" aria-label={"Get Started"} className="inline-block text-sm px-4 py-2 leading-none border text-white border-black bg-gray-900 hover:bg-black mt-4 lg:mt-0 uppercase rounded">Get Started</Link>
             <Link to='/cart' className="relative inline-block text-xs px-4 py-2">
-              {quantity !== 0 && 
               <span className={"bg-red-600 text-white rounded-full h-4 w-4 flex items-center justify-center absolute"} style={{left: "8px", top: "2px"}}>
-                {quantity}
-              </span>}
+                {context.cartQuantity}
+              </span>
 						  <img src={cart} width="24px" className="inline-block" />
 					  </Link>
           </div>
@@ -226,10 +225,9 @@ const Header = () => {
           <Link to="/"><img src={ logo } alt="Logo" width={"150px"} /></Link>
         </div>
         <Link to='/cart' className="relative lg:hidden inline-block text-sm pl-4 py-2">
-          {quantity !== 0 && 
           <span className={"bg-red-600 text-white rounded-full h-4 w-4 flex items-center justify-center absolute"} style={{left: "8px", top: "2px"}}>
-            {quantity}
-          </span>}
+            {context.cartQuantity}
+          </span>
           <img src={cart} width="24px" className="inline-block" />
         </Link>
       </nav>          
@@ -305,11 +303,11 @@ const Header = () => {
           <Link to="/programs" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded">Get Started</Link>
         </div>
       </div>
-      <div className={"shadow bg-white z-10 p-6 fixed right-0 " + (context.cartPreview ? "block" : "hidden")} style={{top: "79"}}>
+      <div className={"shadow bg-white z-10 p-6 fixed right-0 bottom-0 lg:bottom-auto lg:top-0  " + (context.cartPreview ? "block" : "hidden")}>
         {line_items}
         <div className="flex flex-row justify-center -mx-3">
-          <button onClick={hideCart} className={"text-center w-1/2 mx-3"}>Back to Shopping</button>
-          <Link to={"/cart"} className={"btn rounded bg-black text-white text-center w-1/2 mx-3"}>Go to Checkout</Link>
+          <button onClick={hideCart} className={"text-center w-1/2 mx-3 text-xs lg:text-l"}>Back to Shopping</button>
+          <Link to={"/cart"} className={"btn rounded bg-black text-white text-center w-1/2 mx-3 text-xs lg:text-l"}>Go to Checkout</Link>
         </div>
       </div>
     </header>

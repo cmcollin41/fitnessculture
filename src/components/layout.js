@@ -48,7 +48,8 @@ class Layout extends React.Component {
                 ...state.store,
                 checkout,
                 adding: false,
-                cartPreview: true
+                cartPreview: true,
+                cartQuantity: parseInt(checkout.lineItemCount)
               },
             }))
           })

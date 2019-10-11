@@ -9,8 +9,9 @@ const client = Client.buildClient({
 export const defaultStoreContext = {
   client,
   adding: false,
-  cartPreview: false,
   checkout: { lineItems: [] },
+  setCartQuantity: 0,
+  cartPreview: false,
   products: [],
   shop: {},
   setCartQuantity: () => {},
