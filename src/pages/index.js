@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-import BackgroundImage from 'gatsby-background-image'
+// import BackgroundImage from 'gatsby-background-image'
 import Img from 'gatsby-image'
 import SocialProof from "../components/SocialProof"
 import HomeTabs from "../components/HomeTabs"
-import SEO from '../components/seo'
+import SEO from "../components/seo"
 
 import circles from '../assets/circles.svg'
 
@@ -28,7 +28,7 @@ const Index = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" image={home.heroImage.asset.url} />
-      <BackgroundImage
+      {/* <BackgroundImage
       className={'flex flex-col justify-center items-center bg-cover bg-top p-5'}
       style={{minHeight: "60vh"}}
       fluid={home.heroImage.asset.fluid}
@@ -45,9 +45,26 @@ const Index = ({ data }) => {
             {home.heroCta}
           </Link>
         </div>
-      </BackgroundImage>
-      <SocialProof />
+      </BackgroundImage> */}
+      <div className="flex flex-col justify-center items-center p-5 relative h-full overflow-hidden" style={{minHeight: "70vh"}}>
+        <span className="hidden lg:flex rounded-full bg-black uppercase px-2 py-1 text-xs text-white">Your #1 Fitness App</span>
+        <video muted playsInline autoPlay loop className="hero-video bg-black">
+          <source src={home.heroVideo.asset.url} />
+        </video>
+        <h1 className="statement text-center text-white text-4xl lg:text-5xl mt-4 font-bold" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
+          {home.title}
+        </h1>
+        <p className="text-center text-white mt-5 lg:w-1/2 xl:w-1/3 text-xl hidden lg:block" style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.5"}}>
+          {home.subtitle}
+        </p>
+        <div className="py-10">
+          <Link to={home.heroLink} className="btn-lg text-white rounded shadow-lg" style={{backgroundColor: home.heroColor.hex}}>
+            {home.heroCta}
+          </Link>
+        </div>
+      </div>
 
+      <SocialProof />
 
 
       <div className="w-full py-10 lg:py-20 relative">
@@ -132,7 +149,7 @@ const Index = ({ data }) => {
             <div className="flex flex-row items-center mt-6">
               <Img fixed={ i.memberImage.asset.fixed} alt="member photo" width="50px" height="50px" className="rounded-full" />
               <div className="pl-2">
-                <h6 className="uppercase">{i.member}</h6>
+                <h6 className="statement text-sm">{i.member}</h6>
                 <span className="text-black text-xs">{i.location}</span>
               </div>
             </div>
@@ -190,6 +207,11 @@ export const pageQuery = graphql`
               ...GatsbySanityImageFluid_withWebp
             }
             url
+          }
+        }
+        heroVideo {
+          asset {
+            url 
           }
         }
         trainingTitle

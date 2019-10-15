@@ -304,17 +304,17 @@ const Header = () => {
           <Link to="/programs" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded">Get Started</Link>
         </div>
       </div>
-      <div className={"shadow bg-white z-10 p-6 fixed right-0 bottom-0 lg:bottom-auto lg:top-0  " + (context.cartPreview ? "block" : "hidden")}>
+    </header>
+
+    <div className={"relative w-full h-full " + (context.cartPreview ? "block" : "hidden")} style={{backgroundColor: "rgba(0,0,0,0.1)"}}>
+      <div className={"shadow bg-white z-10 p-6 fixed right-0 bottom-0 lg:bottom-auto lg:top-0  "}>
         {line_items}
         <div className="flex flex-row justify-center -mx-3">
           <button onClick={hideCart} className={"text-center w-1/2 mx-3 text-xs lg:text-l"}>Back to Shopping</button>
           <Link to={"/cart"} className={"btn rounded bg-black text-white text-center w-1/2 mx-3 text-xs lg:text-l"}>Go to Checkout</Link>
         </div>
       </div>
-    </header>
-
-        
-   
+    </div>
 
     </>
   )

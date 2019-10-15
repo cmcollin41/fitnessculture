@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-// import { useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 // import Img from "gatsby-image"
 
 import StoreContext from '../../context/StoreContext'
@@ -26,14 +26,14 @@ const LineItem = props => {
     <img
       src={line_item.variant.image.src}
       alt={`${line_item.title}`}
-      className="block w-32 h-32 bg-cover bg-center text-center overflow-hidden"
+      className="block w-full bg-cover bg-center text-center overflow-hidden px-5"
     />
   ) : null
 
   const selectedOptions = line_item.variant.selectedOptions ? (
     <>{line_item.variant.selectedOptions.map(option => {
       return (
-        <p>{`${option.name}: ${option.value}`}</p>
+        <p className="text-xs">{`${option.name}: ${option.value}`}</p>
       )
     })}</>
   ) : null
@@ -43,14 +43,14 @@ const LineItem = props => {
   }
 
   return (
-    <div className="flex flex-wrap items-start w-full mb-10">
-      <div className="w-1/4">
+    <div className="flex flex-wrap w-full mb-10">
+      <div className="w-full lg:w-1/4 mt-4">
         {variantImage}
       </div>
-      <div className="w-3/4 flex flex-row justify-between">
+      <div className="w-full lg:w-3/4 flex flex-row justify-between mt-4">
         <div>
-          <span className="font-bold text-l">
-            {line_item.title}
+          <span className="font-bold text-sm">
+            <Link to={`/products/` + (line_item.title.replace(/\s+/g, '-').toLowerCase())}>{line_item.title}</Link>
             {`  `}
             {line_item.variant.title === ! 'Default Title' ? line_item.variant.title : ''}
           </span>
