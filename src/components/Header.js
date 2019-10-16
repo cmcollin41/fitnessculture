@@ -138,7 +138,7 @@ const Header = () => {
   
   return (
     <>
-    <header className="z-50 w-full bg-white sticky top-0">
+    <header className="z-50 w-full bg-white sticky top-0 relative">
       <nav className="flex items-center justify-between flex-wrap bg-white px-1 lg:px-4 border-nav-b relative">
         <div className="hidden lg:flex items-center flex-grow text-black py-4" style={{minWidth: "300px"}}>
           <Link to="/" aria-label="Fitness Culture Logo"><img src={ logo } alt="Logo" width={"200px"} /></Link>
@@ -304,17 +304,17 @@ const Header = () => {
           <Link to="/programs" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded">Get Started</Link>
         </div>
       </div>
-    </header>
-
-    <div className={"relative w-full h-full " + (context.cartPreview ? "block" : "hidden")} style={{backgroundColor: "rgba(0,0,0,0.1)"}}>
-      <div className={"shadow bg-white z-10 p-6 fixed right-0 bottom-0 lg:bottom-auto lg:top-0  "}>
-        {line_items}
+      <div className={"shadow z-10 px-4 py-2 text-black fixed right-0 mt-4 mr-4 bg-green-500  " + (context.cartPreview ? "block" : "hidden")}>
+        {/* {line_items}
         <div className="flex flex-row justify-center -mx-3">
           <button onClick={hideCart} className={"text-center w-1/2 mx-3 text-xs lg:text-l"}>Back to Shopping</button>
           <Link to={"/cart"} className={"btn rounded bg-black text-white text-center w-1/2 mx-3 text-xs lg:text-l"}>Go to Checkout</Link>
-        </div>
+        </div> */}
+        Items Added to Cart!
       </div>
-    </div>
+    </header>
+
+
 
     </>
   )
