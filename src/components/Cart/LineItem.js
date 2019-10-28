@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from "gatsby"
 // import Img from "gatsby-image"
 
@@ -8,19 +8,8 @@ const LineItem = props => {
   
   const context = useContext(StoreContext)
   const { line_item } = props
-  // const image = useStaticQuery(graphql`
-  //   query{
-  //     file(relativePath: { eq: "line_item.variant.image"}) {
-  //       childImageSharp {
-  //         # Specify the image processing specifications right in the query.
-  //         # Makes it trivial to update as your page's design changes.
-  //         fluid(maxWidth: 1000) {
-  //           ...GatsbyImageSharpFluid
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+  console.log(line_item)
+  const [quantity, setQuantity] = useState(line_item.quantity)
 
   const variantImage = line_item.variant.image ? (
     <img
@@ -37,6 +26,12 @@ const LineItem = props => {
       )
     })}</>
   ) : null
+
+ 
+  const handleQuantityChange = event => {
+    setQuantity(event.target.value)
+    context.updateLineItem(context.client, context.checkout.id, line_item.id, event.target.value)
+  }
 
   const handleRemove = () => {
     context.removeLineItem(context.client, context.checkout.id, line_item.id)
@@ -58,7 +53,16 @@ const LineItem = props => {
           <button onClick={handleRemove} className="text-xs">Remove</button>
         </div>
         <div>
-          {line_item.quantity}
+          <input
+          className="appearance-none w-24 text-center block bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          step="1"
+          onChange={handleQuantityChange}
+          value={quantity}
+        />
         </div>
       </div>
     </div>
