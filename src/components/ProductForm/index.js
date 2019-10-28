@@ -142,9 +142,9 @@ const ProductForm = ({ product, node }) => {
                       <img src={Down} width="14px" />
                     </div>
                     {on && 
-                      <>
+                      <div style={{fontSize: "0.75rem"}}>
                         <BlockContent blocks={node._rawDescription} serializers={serializers} />
-                      </>
+                      </div>
                     }
                   </div>
                 </div>
@@ -161,9 +161,9 @@ const ProductForm = ({ product, node }) => {
                       <img src={Down} width="14px"/>
                     </div>
                     {on && 
-                      <>
+                      <div style={{fontSize: "0.75rem"}}>
                         <BlockContent blocks={node._rawSizing} serializers={serializers} />
-                      </>
+                      </div>
                     }
                   </div>
                 </div>
@@ -180,9 +180,9 @@ const ProductForm = ({ product, node }) => {
                       <img src={Down} width="14px"/>
                     </div>
                     {on && 
-                      <>
+                      <div style={{fontSize: "0.75rem"}}>
                         <BlockContent blocks={node._rawShipping} serializers={serializers} />
-                      </>
+                      </div>
                     }
                   </div>
                 </div>
