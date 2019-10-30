@@ -22,7 +22,7 @@ const Collection = ({ data }) => {
           <div className="flex flex-row flex-wrap lg:px-auto mx-0 lg:-mx-3 h-full items-stretch lg:justify-center">
             {collection.products.map((product,i) => {
               return (
-                <Link to={"/products/" + product.handle} key={i} className="w-1/2 lg:w-1/4 px-3 lg:mx-3 rounded mt-10 flex flex-col items-stretch">
+                <Link to={"/" + collection.title.toLowerCase() + "/" + product.productType.toLowerCase() + "/" + product.handle} key={i} className="w-1/2 lg:w-1/4 px-3 lg:mx-3 rounded mt-10 flex flex-col items-stretch">
                   <Img 
                     fluid={product.images[0].localFile.childImageSharp.fluid}
                     className="block h-64 w-full bg-cover bg-center text-center overflow-hidden"
@@ -58,6 +58,7 @@ query AllCollections($shopifyId: String!) {
       title
       description
       handle
+      productType
       priceRange {
         maxVariantPrice {
           amount
