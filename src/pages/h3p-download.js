@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import Layout from "../components/layout"
 import SEO from '../components/seo'
-import axios from 'axios'
+
 import '../css/global.css'
 
 
@@ -9,6 +9,7 @@ import '../css/global.css'
 const H3pDownload = () => {
   
   const [values, setValues] = useState({name: '', email: '', height: '', weight: '', age: '', bodyfat: '', squat: '', bench: '', deadlift: '', ohpress: '', incline: '', frontsquat: ''})
+  const [submitting, setSubmitting] = useState(false);
 
   const handleInputChange = event => {
     const {name, value} = event.target
@@ -39,14 +40,32 @@ const H3pDownload = () => {
 
   // The below numbers are:
   // Name / Email / Height / Weight / Age / Body Fat / Squat / Bench / Deadlift / OHPress / Incline / Front Squat
+
+
+  async function handleFormSubmit(e) {
+    e.preventDefault();
+    setSubmitting(true);
+    try {
+      const URL = `https://ftserv.herokuapp.com/force/${values.name}/${values.email}/${values.height}/${values.weight}/${values.age}/${values.bodyfat}/${values.squat}/${values.bench}/${values.deadlift}/${values.ohpress}/${values.incline}/${values.frontsquat}`;
+      const fetchResult = fetch(URL,{method: "POST"})
+      const response = await fetchResult;
+      const data = await response;
+      if (data) {setSubmitting(false)};
+      console.log(data);
+      alert(data);
+    } catch(err) {
+      alert("Hmmm. Something went wrong. Try again.")
+    }
+  }
+  
   
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault()
-    // fetch(`https://ftserv.herokuapp.com/force/${values.name}/${values.email}/${values.height}/${values.weight}/${values.age}/${values.bodyfat}/${values.squat}/${values.bench}/${values.deadlift}/${values.ohpress}/${values.incline}/${values.frontsquat}`, {
-    //   method: 'POST',
-    //   headers: { 'Content-type': 'application/x-www-form-urlencoded' }
-    // })
+  // const handleFormSubmit = (e) => {
+  //   e.preventDefault()
+  //   fetch(`https://ftserv.herokuapp.com/force/${values.name}/${values.email}/${values.height}/${values.weight}/${values.age}/${values.bodyfat}/${values.squat}/${values.bench}/${values.deadlift}/${values.ohpress}/${values.incline}/${values.frontsquat}`, {
+  //     method: 'POST',
+  //     headers: { 'Content-type': 'application/x-www-form-urlencoded' }
+  //   })
 
     // fetch(`https://ftserv.herokuapp.com/force/`, {
     //   headers: { 'Content-type': 'application/x-www-form-urlencoded' },
@@ -54,16 +73,17 @@ const H3pDownload = () => {
     //   method: 'POST'
     // })
 
-    axios.post("https://ftserv.herokuapp.com/force/Chris%20Collinsworth/cmcollin41@gmail.com/73/250/30/11/650/350/650/225/315/405",{
-    }).then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    // axios.post("https://ftserv.herokuapp.com/force/Chris%20Collinsworth/cmcollin41@gmail.com/73/250/30/11/650/350/650/225/315/405",{
+
+    // }).then(function (response) {
+    //   console.log(response);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
 
  
-  }
+  // }
   
 
   
@@ -255,7 +275,7 @@ const H3pDownload = () => {
                   </div>
                 </div>
               </div>
-              <button className="btn bg-blue-500 rounded text-white shadow" onChange={handleFormSubmit} type="submit">Send me my PDF</button>
+              <button className={"btn rounded shadow " + ( submitting ? "bg-gray-500 cursor-not-allowed text-black" : "bg-blue-500 text-white")} onClick={handleFormSubmit}>{submitting ? "Sending Your PDF..." : "Send My PDF"}</button>
             </form>
           </div>
         </div>
