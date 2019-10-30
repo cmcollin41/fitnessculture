@@ -304,7 +304,7 @@ const Header = () => {
           <Link to="/programs" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded">Get Started</Link>
         </div>
       </div>
-      <div className={"shadow z-10 px-4 py-2 text-black fixed right-0 mt-4 mr-4 bg-green-500  " + (context.cartPreview ? "block" : "hidden")}>
+      <div className={"shadow rounded z-10 px-4 py-2 text-black fixed right-0 mt-4 mr-4 bg-green-400  " + (context.cartPreview ? "block" : "hidden")}>
         {/* {line_items}
         <div className="flex flex-row justify-center -mx-3">
           <button onClick={hideCart} className={"text-center w-1/2 mx-3 text-xs lg:text-l"}>Back to Shopping</button>

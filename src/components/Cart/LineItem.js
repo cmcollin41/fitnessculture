@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react'
 import { Link } from "gatsby"
-// import Img from "gatsby-image"
 
 import StoreContext from '../../context/StoreContext'
 
