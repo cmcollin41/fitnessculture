@@ -111,8 +111,7 @@ const ProductForm = ({ product, node }) => {
 
       <div className="w-full lg:w-1/3 px-5">
         <h1 className="text-xl uppercase mt-6">{product.title}</h1>
-        <div className="mt-2" dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
-        <h3 className="mt-2">${productVariant.price}</h3>
+        <h3 className="my-4">${productVariant.price}</h3>
         {variantSelectors}
         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="quantity">
           Quantity
@@ -122,7 +121,7 @@ const ProductForm = ({ product, node }) => {
           type="number"
           id="quantity"
           name="quantity"
-          min="1"
+          min="0"
           step="1"
           onChange={handleQuantityChange}
           value={quantity}
@@ -133,57 +132,63 @@ const ProductForm = ({ product, node }) => {
         </button>
        
         <div className="mt-10">
-          <Toggle 
-            render={({on, toggle}) => (
-              <div>
-                <div onClick={toggle} className="block mt-4 lg:mt-0 text-black py-4 border-b border-gray-300 cursor-pointer">
-                  <div className="flex justify-between">
-                    <span className="text-sm uppercase">Description</span>
-                    <img src={Down} width="14px" />
+          {node._rawDescription && 
+            <Toggle 
+              render={({on, toggle}) => (
+                <div>
+                  <div onClick={toggle} className="block mt-4 lg:mt-0 text-black py-4 border-b border-gray-300 cursor-pointer">
+                    <div className="flex justify-between">
+                      <span className="text-sm uppercase">Description</span>
+                      <img src={Down} width="14px" />
+                    </div>
+                    {on && 
+                      <div style={{fontSize: "0.75rem"}}>
+                        <BlockContent blocks={node._rawDescription} serializers={serializers} />
+                      </div>
+                    }
                   </div>
-                  {on && 
-                    <>
-                      <BlockContent blocks={node._rawDescription} serializers={serializers} />
-                    </>
-                  }
                 </div>
-              </div>
-            )}
-          />
-          <Toggle 
-            render={({on, toggle}) => (
-              <div>
-                <div onClick={toggle} className="block mt-4 lg:mt-0 text-black py-4 border-b border-gray-300 cursor-pointer">
-                  <div className="flex justify-between">
-                    <span className="text-sm uppercase">Sizing Guide</span>
-                    <img src={Down} width="14px"/>
+              )}
+            />
+          }
+          {node._rawSizing && 
+            <Toggle 
+              render={({on, toggle}) => (
+                <div>
+                  <div onClick={toggle} className="block mt-4 lg:mt-0 text-black py-4 border-b border-gray-300 cursor-pointer">
+                    <div className="flex justify-between">
+                      <span className="text-sm uppercase">Sizing Guide</span>
+                      <img src={Down} width="14px"/>
+                    </div>
+                    {on && 
+                      <div style={{fontSize: "0.75rem"}}>
+                        <BlockContent blocks={node._rawSizing} serializers={serializers} />
+                      </div>
+                    }
                   </div>
-                  {on && 
-                    <>
-                      <BlockContent blocks={node._rawSizing} serializers={serializers} />
-                    </>
-                  }
                 </div>
-              </div>
-            )}
-          />
-          <Toggle 
-            render={({on, toggle}) => (
-              <div>
-                <div onClick={toggle} className="block mt-4 lg:mt-0 text-black py-4 border-b border-gray-300 cursor-pointer">
-                  <div className="flex justify-between">
-                    <span className="text-sm uppercase">Shipping & Returns</span>
-                    <img src={Down} width="14px"/>
+              )}
+            />
+          }
+          {node._rawShipping &&
+            <Toggle 
+              render={({on, toggle}) => (
+                <div>
+                  <div onClick={toggle} className="block mt-4 lg:mt-0 text-black py-4 border-b border-gray-300 cursor-pointer">
+                    <div className="flex justify-between">
+                      <span className="text-sm uppercase">Shipping & Returns</span>
+                      <img src={Down} width="14px"/>
+                    </div>
+                    {on && 
+                      <div style={{fontSize: "0.75rem"}}>
+                        <BlockContent blocks={node._rawShipping} serializers={serializers} />
+                      </div>
+                    }
                   </div>
-                  {on && 
-                    <>
-                      <BlockContent blocks={node._rawShipping} serializers={serializers} />
-                    </>
-                  }
                 </div>
-              </div>
-            )}
-          />
+              )}
+            />
+          }
         </div>
       </div>
     </>

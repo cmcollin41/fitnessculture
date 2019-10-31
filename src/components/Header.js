@@ -5,7 +5,7 @@ import Toggle from './Toggle'
 import logo from '../assets/fc-logo-horizontal-black.png'
 import cart from  '../assets/shopping-cart.svg'
 import Down from "../assets/chevron-down.svg"
-import LineItem from './Cart/LineItem.js'
+// import LineItem from './Cart/LineItem.js'
 
 import StoreContext from '../context/StoreContext'
 
@@ -17,29 +17,24 @@ const Header = () => {
   const { checkout } = context
   const [quantity, setQuantity] = useState(context.cartQuantity)
   
+
   const countQuantity = (lineItems) => {
-  
-    let q = quantity
-  
-    lineItems.forEach(item => {
-      q = q + item.quantity
-    });
-  
-  
-    setQuantity(context.cartQuantity = q)
+    let items = lineItems.map(item => item.quantity);
+    const sum = items.reduce((a, b) => a + b, 0)
+    setQuantity(sum)
   }
 
 	useEffect(() => {
     countQuantity(checkout ? checkout.lineItems : []);
   }, [checkout]);
 
-  const hideCart = () => {
-    context.setCartPreview(false)
-  }
+  // const hideCart = () => {
+  //   context.setCartPreview(false)
+  // }
   
-  const line_items = checkout.lineItems.map(line_item => {
-    return <LineItem key={line_item.id.toString()} line_item={line_item} />
-  })
+  // const line_items = checkout.lineItems.map(line_item => {
+  //   return <LineItem key={line_item.id.toString()} line_item={line_item} />
+  // })
 
   const data = useStaticQuery(
     graphql`
@@ -139,7 +134,7 @@ const Header = () => {
   
   return (
     <>
-    <header className="z-50 w-full bg-white sticky top-0">
+    <header className="z-50 w-full bg-white sticky top-0 relative">
       <nav className="flex items-center justify-between flex-wrap bg-white px-1 lg:px-4 border-nav-b relative">
         <div className="hidden lg:flex items-center flex-grow text-black py-4" style={{minWidth: "300px"}}>
           <Link to="/" aria-label="Fitness Culture Logo"><img src={ logo } alt="Logo" width={"200px"} /></Link>
@@ -305,17 +300,17 @@ const Header = () => {
           <Link to="/programs" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded">Get Started</Link>
         </div>
       </div>
-      <div className={"shadow bg-white z-10 p-6 fixed right-0 bottom-0 lg:bottom-auto lg:top-0  " + (context.cartPreview ? "block" : "hidden")}>
-        {line_items}
+      <div className={"shadow rounded z-10 px-4 py-2 text-black fixed right-0 mt-4 mr-4 bg-green-400  " + (context.cartPreview ? "block" : "hidden")}>
+        {/* {line_items}
         <div className="flex flex-row justify-center -mx-3">
           <button onClick={hideCart} className={"text-center w-1/2 mx-3 text-xs lg:text-l"}>Back to Shopping</button>
           <Link to={"/cart"} className={"btn rounded bg-black text-white text-center w-1/2 mx-3 text-xs lg:text-l"}>Go to Checkout</Link>
-        </div>
+        </div> */}
+        Items Added to Cart!
       </div>
     </header>
 
-        
-   
+
 
     </>
   )

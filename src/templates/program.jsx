@@ -16,7 +16,7 @@ import square from '../assets/square-circles.svg'
 const Program = ({ data }) => {
 
   const program = data.sanityProgram
-  console.log(program)
+
   return (
     <Layout>
        <SEO title={program.title} description={program.subtitle} image={program.heroImage.asset.url} />

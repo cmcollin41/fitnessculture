@@ -115,6 +115,12 @@ exports.createPages = async ({ graphql, actions }) => {
         node {
           shopifyId
           handle
+          title
+          products {
+            handle
+            shopifyId
+            productType
+          }
         }
       }
     }
@@ -131,38 +137,68 @@ exports.createPages = async ({ graphql, actions }) => {
         shopifyId: node.shopifyId,
       },
     })
-  })
 
+    node.products.forEach((p) => {
+      let decodedId = atob(p.shopifyId)
+      // gid://shopify/Product/4174887977030
+      let strippedId = decodedId.match(/([0-9]\w+)/g).join('')
+  
+      createPage({
+        path: `${node.title.toLowerCase()}/${p.productType.toLowerCase()}/${p.handle}`,
+        component: path.resolve(`src/templates/${p.productType}.jsx`),
+        context: {
+          shopifyId: p.shopifyId,
+          strippedId: strippedId
+        },
+      })
 
-
-  const shopifyGraphQL = await graphql(`
-    {
-      allShopifyProduct {
-        edges {
-          node {
-            handle
-            shopifyId
-          }
-        }
-      }
-    }
-  `)
-
-  const product = path.resolve("src/templates/product.jsx")
-
-  shopifyGraphQL.data.allShopifyProduct.edges.forEach(({node}) => {
-    let decodedId = atob(node.shopifyId)
-    // gid://shopify/Product/4174887977030
-    let strippedId = decodedId.match(/([0-9]\w+)/g).join('')
-    createPage({
-      path: `products/${node.handle}`,
-      component: product,
-      context: {
-        shopifyId: node.shopifyId,
-        strippedId: strippedId
-      },
     })
   })
+
+
+
+  // const shopifyGraphQL = await graphql(`
+  //   {
+  //     allShopifyProduct {
+  //       edges {
+  //         node {
+  //           handle
+  //           shopifyId
+  //           tags
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
+
+  // const product = path.resolve("src/templates/product.jsx")
+  // const ebook = path.resolve("src/templates/ebook.jsx")
+
+  // shopifyGraphQL.data.allShopifyProduct.edges.forEach(({node}) => {
+  //   let decodedId = atob(node.shopifyId)
+  //   // gid://shopify/Product/4174887977030
+  //   let strippedId = decodedId.match(/([0-9]\w+)/g).join('')
+
+  //   if (node.tags.includes("ebooks")){
+  //     createPage({
+  //       path: `ebooks/${node.handle}`,
+  //       component: ebook,
+  //       context: {
+  //         shopifyId: node.shopifyId,
+  //         strippedId: strippedId
+  //       },
+  //     })
+  //   } else {
+  //     createPage({
+  //       path: `products/${node.handle}`,
+  //       component: product,
+  //       context: {
+  //         shopifyId: node.shopifyId,
+  //         strippedId: strippedId
+  //       },
+  //     })
+  //   }
+  // })
 
 }
 

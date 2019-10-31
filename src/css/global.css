@@ -81,6 +81,22 @@ button:focus {
   @apply uppercase block mt-4 text-black font-bold mr-4
 }
 
+
+.hero-video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1000;
+}
+
+
+.product-info {
+  font-size: 0.5rem !important;
+}
+
 .pricing > li {
   @apply border-b border-gray-200 p-4
 }

@@ -22,17 +22,15 @@ const Collection = ({ data }) => {
           <div className="flex flex-row flex-wrap lg:px-auto mx-0 lg:-mx-3 h-full items-stretch lg:justify-center">
             {collection.products.map((product,i) => {
               return (
-                <Link to={"/products/" + product.handle} key={i} className="w-1/2 lg:w-1/4 px-3 lg:mx-3 rounded mt-10 flex flex-col items-stretch">
+                <Link to={"/" + collection.title.toLowerCase() + "/" + product.productType.toLowerCase() + "/" + product.handle} key={i} className="w-1/2 lg:w-1/4 px-3 lg:mx-3 rounded mt-10 flex flex-col items-stretch">
                   <Img 
                     fluid={product.images[0].localFile.childImageSharp.fluid}
                     className="block h-64 w-full bg-cover bg-center text-center overflow-hidden"
                   />
                   <div className="flex flex-col justify-between flex-grow">
-                    <div className="px-1 py-2">
-                      <h4 className="text-xs lg:text-sm lg:text-base text-black">{product.title}</h4>
-                    </div>
-                    <div className="px-1 py-4">
-                      <Link to={"/products/" + product.handle} className="uppercase font-bold text-xs bg-gray-900 text-white rounded py-2 px-4">See Item</Link>
+                    <div className="px-1 py-2 text-center">
+                      <h4 className="text-xs lg:text-sm text-black">{product.title}</h4>
+                      <p className="text-xs lg:text-sm text-black">${(product.priceRange.minVariantPrice.amount * 1).toFixed(2)}</p>
                     </div>
                   </div>
                 </Link>
@@ -60,6 +58,15 @@ query AllCollections($shopifyId: String!) {
       title
       description
       handle
+      productType
+      priceRange {
+        maxVariantPrice {
+          amount
+        }
+        minVariantPrice {
+          amount
+        }
+      }
       images {
         localFile {
           childImageSharp {

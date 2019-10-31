@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 
 import StoreContext from '../../context/StoreContext'
 import LineItem from './LineItem.js'
+import ReactTooltip from 'react-tooltip'
 
 import visa from '../../assets/visa.svg'
 import amex from '../../assets/american-express.svg'
@@ -32,12 +33,18 @@ const Cart = () => {
             <h1 className="text-1xl font-bold uppercase">Order Summary</h1>
             <hr/>
             <div className="flex justify-between items-center">
-              <p className="uppercase text-xs font-bold">Subtotal</p>
+              <p className="uppercase text-xs font-bold flex flex-row">Subtotal <span data-tip data-for="subtotal"><img width="16px" className="ml-2" src={"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABPElEQVRIid2UP0oDURDGfyhJIUbQ2lK8g94gFrphjSk8hafQBI9gp9hbewStdf2zjR5AiFopxuLNyvKY2XmJXQY+Ft58880/dmDerQ0MgEugAD4EhbwdCGcmy4ESmDh4BnrTCC8CpwnCMUbAQkoCTfxFOuoIMsKYYt7QE88N8TWFuyq+mJ9Z4m30mefi3wFeBV156yv8J4zFDxTyhDASRLjeFcCKEdOvROtL2TM6G0vQuuJbNmJUrQejmhhfNYEjg1M0VerhUPhbwKfBGc+a4Ey4G8BbA09NkDKiTeFeO7y/EdWXfKtljayU77bDu9ESXCUk+CZUuOTwVK0W4SeZ9gbFKGm4sD0nuDLL/wPsOt0x+keCY08cwl6GTida5ScknuvKMtJ28oh9ZlxrEQ7XBXAPvAvugHNgXzhzbL8LTecFDGMDDgAAAABJRU5ErkJggg=="}/></span></p>
+              <ReactTooltip id="subtotal" className='w-32' aria-haspopup='true' role='tooltip' effect='solid'>
+                <span>The subtotal reflects the total price of your order before any applicable discounts. It does not include shipping costs and taxes.</span>
+              </ReactTooltip>
               <p>$ {checkout.subtotalPrice}</p>
             </div>
             <div className="flex justify-between items-center">
-              <p className="uppercase text-xs font-bold">Taxes</p>
-              <p>$ {checkout.totalTax}</p>
+              <p className="uppercase text-xs font-bold flex flex-row">Estimated Taxes <span data-tip data-for="estimated taxes"><img width="16px" className="ml-2" src={"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABPElEQVRIid2UP0oDURDGfyhJIUbQ2lK8g94gFrphjSk8hafQBI9gp9hbewStdf2zjR5AiFopxuLNyvKY2XmJXQY+Ft58880/dmDerQ0MgEugAD4EhbwdCGcmy4ESmDh4BnrTCC8CpwnCMUbAQkoCTfxFOuoIMsKYYt7QE88N8TWFuyq+mJ9Z4m30mefi3wFeBV156yv8J4zFDxTyhDASRLjeFcCKEdOvROtL2TM6G0vQuuJbNmJUrQejmhhfNYEjg1M0VerhUPhbwKfBGc+a4Ey4G8BbA09NkDKiTeFeO7y/EdWXfKtljayU77bDu9ESXCUk+CZUuOTwVK0W4SeZ9gbFKGm4sD0nuDLL/wPsOt0x+keCY08cwl6GTida5ScknuvKMtJ28oh9ZlxrEQ7XBXAPvAvugHNgXzhzbL8LTecFDGMDDgAAAABJRU5ErkJggg=="}/></span></p>
+              <ReactTooltip id="estimated taxes" className='w-32' aria-haspopup='true' role='tooltip' effect='solid'>
+                <span>The actual tax will be calculated based on your shipping address using the applicable state and local sales taxes.</span>
+              </ReactTooltip>
+              <p>--</p>
             </div>
             <div className="flex justify-between items-center">
               <h2 className="uppercase text-base">Total</h2>
