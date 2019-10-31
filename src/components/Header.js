@@ -9,27 +9,28 @@ import LineItem from './Cart/LineItem.js'
 
 import StoreContext from '../context/StoreContext'
 
-const countQuantity = (lineItems) => {
-
-  let quantity = 0;
-
-  lineItems.forEach(item => {
-    quantity = quantity + item.quantity
-  });
-
-  return quantity
-}
 
 const Header = () => {
   
-
+  
   const context = useContext(StoreContext)
   const { checkout } = context
   const [quantity, setQuantity] = useState(context.cartQuantity)
-
+  
+  const countQuantity = (lineItems) => {
+  
+    let q = quantity
+  
+    lineItems.forEach(item => {
+      q = q + item.quantity
+    });
+  
+  
+    setQuantity(context.cartQuantity = q)
+  }
 
 	useEffect(() => {
-    setQuantity(countQuantity(checkout ? checkout.lineItems : []));
+    countQuantity(checkout ? checkout.lineItems : []);
   }, [checkout]);
 
   const hideCart = () => {

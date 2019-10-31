@@ -26,7 +26,7 @@ const LineItem = props => {
     <img
       src={line_item.variant.image.src}
       alt={`${line_item.title}`}
-      className="block w-32 h-32 bg-cover bg-center text-center overflow-hidden"
+      className="block w-full lg:w-32 lg:h-32 bg-cover bg-center text-center overflow-hidden"
     />
   ) : null
 
