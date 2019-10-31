@@ -1,27 +1,39 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import StoreContext from '../context/StoreContext'
 import {graphql} from "gatsby"
 import Layout from "../components/layout"
-import ProductForm from '../components/ProductForm/index'
+
 import SEO from "../components/seo"
 import SocialProof from "../components/SocialProof"
 import Img from 'gatsby-image'
 
 // CSS
 import '../css/global.css'
+
 // Images
 import circles from '../assets/circles.svg'
-import square from '../assets/square-circles.svg'
+
 
 const Ebook = ({ data }) => {
 
   const product = data.shopifyProduct
-  const node = data.sanityProduct
+  // const node = data.sanityProduct
 
+  const context = useContext(StoreContext)
+ 
+  const handleAddToCart = () => {
+    alert(context.adding)
+    context.addVariantToCart(product.variants[0].shopifyId, 1)
+    setTimeout(() => {
+      context.setCartPreview(false)
+    }, 5000);
+  }
+  
 
     
   return (
-    <React.Fragment>
-      <Layout>
+
+    <Layout>
       <SEO title={product.title}/>
       {/* Add Hex colors to Sanity */}
       <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, #1565c0,#2196f3)'}}></div>
@@ -75,14 +87,16 @@ const Ebook = ({ data }) => {
       {/* </div> */}
 
     <SocialProof />
-        <div className="container mx-auto px-5 my-0 lg:my-10">
 
-          <div className="flex flex-wrap -mx-5 relative">
-            <ProductForm product={product} node={node} />
-          </div>
-        </div>
-      </Layout>
-    </React.Fragment>
+    <div className="container mx-auto px-5 my-0 lg:my-10">
+      <div className="w-full lg:w-1/3 px-5">
+        <button type="submit" disabled={context.adding} onClick={handleAddToCart} className={"px-2 py-4 bg-black text-white uppercase w-full rounded " + (context.adding ? "bg-green-500 cursor-not-allowed" : "")}>
+          {context.adding ? "Adding to cart..." : "Add to Cart"}
+        </button>
+      </div>
+    </div>
+</Layout>
+
   )
 }
 
