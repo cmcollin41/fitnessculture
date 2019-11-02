@@ -2,7 +2,7 @@ import React from 'react'
 import {graphql} from "gatsby"
 import Layout from "../components/layout"
 import DownloadForm from '../components/ProductForm/downloads'
-
+import BlockContent from '@sanity/block-content-to-react'
 import SEO from "../components/seo"
 import SocialProof from "../components/SocialProof"
 import Img from 'gatsby-image'
@@ -16,26 +16,58 @@ import circles from '../assets/circles.svg'
 
 const Ebook = ({ data }) => {
 
+  const serializers = {
+    types: {
+      code: props => (
+        <pre data-language={props.node.language}>
+          <code>{props.node.code}</code>
+        </pre>
+      )
+    }
+  }
+
   const product = data.shopifyProduct
   const node = data.sanityProduct
 
+  const programRow = React.createRef();
+  const programDiv = React.createRef();
+
+  // const clickLeft = () => {
+  //   // translate -= programDiv.current.offsetWidth;
+  // 	programRow.current.style.transform = "translateX(" + programDiv.current.offsetWidth + "px" + ")";
+  // }
+
+  // const clickRight = () => {
+  //   // programRow.current.scrollLeft += programDiv.current.offsetWidth;
+  //   // translate += programDiv.current.offsetWidth;
+  // 	programRow.current.style.transform = "translateX(" + -programDiv.current.offsetWidth + "px" + ")";
+  // }
+
+  const clickLeft = () => {
+    programRow.current.scrollLeft -= programDiv.current.offsetWidth;
+  }
+
+  const clickRight = () => {
+    programRow.current.scrollLeft += programDiv.current.offsetWidth;
+  }
+  
     
   return (
 
     <Layout>
       <SEO title={product.title}/>
       {/* Add Hex colors to Sanity */}
-      <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, #1565c0,#2196f3)'}}></div>
+      <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + node.colorOne.hex + ',' + node.colorTwo.hex + ')'}}></div>
       <div className="py-10 lg:py-20 relative">
         <div className="absolute h-full bottom-0 left-0 overflow-x-hidden" style={{zIndex: "-10"}}>
           <img src={circles} alt="circles" width="200px" height="100%" style={{transform: "scale(-1)"}}/>
         </div>
         <div className="hidden lg:block absolute h-full" style={{transform: "translate(-35%, 50%)"}}>
-          <h2 className="uppercase text-gray-300 text-3xl" style={{transform: "rotate(90deg)"}}>Fitness Program</h2>
+          <h2 className="uppercase text-gray-300 text-3xl font-bold" style={{transform: "rotate(90deg)"}}>Fitness Program</h2>
         </div>
         <div className="container mx-auto px-5 pb-5 pt-3">
           <div className="flex flex-col lg:flex-row justify-center items-center">
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 mt-10 lg:mt-0 order-1 lg:order-0">
               <h1 className="statement text-4xl lg:text-5xl leading-none">
                 {product.title}
               </h1>
@@ -44,8 +76,8 @@ const Ebook = ({ data }) => {
               </p>
               <div className="mt-10 mb-12 flex flex-row flex-wrap lg:justify-start justify-center">
                 <div className="w-32 text-center flex flex-col p-2 angle-border">
-                  {/* <Img className="mx-auto" alt={product.attributes[0].title} fixed={product.attributes[0].icon.asset.fixed} /> */}
-                  <p className="uppercase text-xs">Benefit</p>
+                  <Img className="mx-auto" alt={node.attributes[0].title} fixed={node.attributes[0].icon.asset.fixed} />
+                  <p className="uppercase text-xs">{node.attributes[0].title}</p>
                 </div>
                 {/* <div className="w-32 text-center flex flex-col p-2 angle-border-2 border-b sm:border-b-0 border-black">
                   <h6 className="uppercase text-2xl">30-90</h6>
@@ -56,19 +88,21 @@ const Ebook = ({ data }) => {
                   <p className="uppercase text-xs">Full Gym</p>
                 </div>
                 <div className="w-32 text-center flex flex-col p-2">
-                
-                  <p className="uppercase text-xs">Benefit</p>
+                  <Img className="mx-auto" alt={node.benefits[0].title} fixed={node.benefits[0].icon.asset.fixed} />
+                  <p className="uppercase text-xs">{node.benefits[0].title}</p>
                 </div>
               </div>
-              <div className="mt-10 flex flex-row flex-wrap items-center">
-                <a href="#pricing" className="btn-lg text-white rounded shadow-md" style={{backgroundImage: 'linear-gradient(to right, #1565c0,#2196f3)'}}>
-                  Start Program
-                </a>
-                <span className="ml-4 text-xs font-light">$2 per Workout</span>
+              <div className="flex flex-row flex-wrap items-center">
+                <div className="w-full lg:w-1/3">
+                  <DownloadForm product={product} node={node} />
+                </div>
               </div>
             </div>
-            <div className="w-full lg:w-1/2 relative mt-10 lg:mt-auto">
-              <Img fluid={product.images[0].localFile.childImageSharp.fluid} />
+            <div className="w-full lg:w-1/2 relative order-0 lg:order-1 bg-black">
+              <video muted playsInline autoPlay loop controls>
+                <source src={node.video.asset.url} />
+                Your browser doesn't support video
+              </video>
             </div>
           </div>
         </div>
@@ -77,11 +111,155 @@ const Ebook = ({ data }) => {
 
     <SocialProof />
 
-    <div className="container mx-auto px-5 my-0 lg:my-10">
-      <div className="flex flex-wrap -mx-5 relative">
-        <DownloadForm product={product} node={node} />
+    <div className="py-20 relative">
+      <div className="container px-5 lg:mx-auto">
+        <div className="flex flex-col lg:flex-row justify-center items-center -mx-3">
+          <div className="w-full lg:w-1/3 text-right bg-white px-3">
+            <Img fluid={product.images[0].localFile.childImageSharp.fluid} />
+          </div>
+          <div className="w-full lg:w-1/2 lg:px-20 personas z-10 px-3 flex flex-col">
+            <h3 className="statement text-3xl pb-5">
+             {product.title}
+            </h3>
+            <BlockContent blocks={node._rawDescription} serializers={serializers} />
+            <div className="mt-10 w-full lg:w-1/2">
+              <DownloadForm product={product} node={node} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src={ circles } alt="circle textures" width="250px" height="100%" className="block absolute right-0 bottom-0" style={{ zIndex: "-10"}} />
+    </div>
+
+
+    <div className="py-20 bg-gray-900">
+      <div className="container px-5 lg:mx-auto">
+        <h3 className="statement text-white text-left lg:text-center text-3xl pb-5 lg:pb-10">
+          Get Started in 3 Steps
+        </h3>
+      </div>
+      <div className="container px-5 lg:px-auto lg:mx-auto">
+        <div className="flex flex-row flex-wrap items-stretch justify-center">
+          {node.steps.map((step, count) => (
+            <div key={count} className="w-full lg:w-1/3 p-5">
+              <div className="text-center">
+                {/* <Img width="50px"  alt={step.title} fixed={step.icon.asset.fixed} /> */}
+                <div className="rounded-full border border-white p-4 h-20 w-20 text-center mx-auto">
+                  <h5 className="uppercase mt-4 text-white">{step.title}</h5>
+                </div>
+                <p className="text-white">{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
+
+    <div className="py-20 bg-gray-100">
+      <div className="container lg:mx-auto px-5">
+        <h3 className="statement text-3xl pb-5 lg:pb-10">
+          Real Results
+        </h3>
+      </div>
+      <div className="scroll-btns relative h-full">
+        <div ref={programRow} className="flex flex-row flex-nowrap items-stretch h-full overflow-x-scroll lg:overflow-x-hidden scroll-x-mandatory smooth">
+
+          {
+            node.testimonials.map((program,i) => {
+              return (
+                <div ref={programDiv} key={i} className="w-full md:w-1/2 lg:w-1/5 mx-3 rounded-sm bg-gray-900 mt-10 flex flex-col items-stretch snap-align-center" style={{minWidth: "300px"}}>
+                  <Img
+                      className="block h-64 w-full bg-cover bg-center rounded-t-sm text-center overflow-hidden"
+                      fluid={program.memberImage.asset.fluid}
+                    
+                  />
+                  <div className="flex flex-col justify-between items-stretch flex-grow">
+                    <div className="p-5">
+                      <h4 className="statement text-white text-xl">{program.member}</h4>
+                      <p className="text-white text-sm">{program.location}</p>
+                    </div>
+                  </div>
+                </div>
+              )
+            })
+          }
+        </div>
+      <button className="hidden lg:block absolute scroll-btn scroll-left shadow-lg" onClick={clickLeft}><svg className="mx-auto" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="26" height="26" viewBox="0 0 172 172" style={{fill: "#000000"}}><g fill="none" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none" style={{mixBlendMode:"normal"}}><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#666666"><g id="surface1"><path d="M110.55031,10.535c-0.90031,0 -1.74688,0.36281 -2.39188,0.99438l-72.52219,71.94437c-1.35719,1.34375 -1.37062,3.52063 -0.02687,4.86438l71.94437,72.53562c1.34375,1.34375 3.52063,1.35719 4.86438,0.01344l20.72062,-20.54594c1.35719,-1.34375 1.37063,-3.52062 0.02688,-4.87781l-48.96625,-49.35594l49.36937,-48.96625c1.34375,-1.34375 1.35719,-3.52062 0.01344,-4.86437l-20.54594,-20.72063c-0.65844,-0.67187 -1.55875,-1.03469 -2.48594,-1.02125z"></path></g></g></g></svg></button>
+      <button className="hidden lg:block absolute scroll-btn scroll-right shadow-lg" onClick={clickRight}><svg className="mx-auto" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="26" height="26" viewBox="0 0 172 172" style={{fill: "#000000"}}><g fill="none" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none" style={{mixBlendMode:"normal"}}><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#666666"><g id="surface2"><path d="M62.39031,10.32c-0.90031,0.01344 -1.74688,0.36281 -2.39188,0.99438l-20.72062,20.55937c-1.34375,1.34375 -1.35719,3.52063 -0.02688,4.86438l48.96625,49.36937l-49.35594,48.96625c-1.35719,1.34375 -1.37062,3.52063 -0.02687,4.86438l20.55937,20.72062c1.34375,1.35719 3.52063,1.37063 4.86438,0.02688l72.53562,-71.94438c1.34375,-1.34375 1.35719,-3.52062 0.01344,-4.87781l-71.93094,-72.52219c-0.65844,-0.67187 -1.55875,-1.03469 -2.48594,-1.02125z"></path></g></g></g></svg></button>
+      </div>
+    </div>
+
+    <div className="container mx-auto py-20">
+      <div className="flex flex-col lg:flex-row justify-center items-center px-5">
+        <div className="w-full md:w-1/2 lg:w-1/3">
+          <div className="rounded-sm overflow-hidden shadow-lg bg-white text-black flex flex-col justify-between">
+            <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + node.colorOne.hex + ',' + node.colorTwo.hex + ')'}}>
+            </div>
+            <div className="p-4 text-center mx-auto">
+              <span className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Basic</span>
+              <h6 className="text-black text-base text-6xl mt-5 relative font-bold"><span className="absolute text-sm left-0 top-0">$</span>{product.variants[0].price}</h6>
+            </div>
+            <div>
+              <ul className="pricing">
+                {node.productBenefits.map((benefit, i) => (
+                  <li>{benefit.description}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="px-6 py-10">
+              <DownloadForm product={product} node={node}/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div className="py-20 bg-gray-900">
+      <div className="container px-5 lg:mx-auto">
+        <h3 className="statement text-white text-left lg:text-center text-3xl pb-5 lg:pb-10">
+          Buying is <span className="px-2" style={{backgroundImage: 'linear-gradient(to right, ' + node.colorOne.hex + ',' + node.colorTwo.hex + ')'}}>Stress</span> Free
+        </h3>
+      </div>
+      <div className="container px-5 lg:px-auto lg:mx-auto">
+        <div className="flex flex-row flex-wrap items-stretch justify-center">
+          {node.guarantees.map((i, count) => (
+            <div key={count} className="w-full lg:w-1/3 p-5">
+              <div className="bg-gray-600 p-5 mt-10 rounded-sm h-full w-full text-center">
+                <Img width="50px"  alt={i.title} fixed={i.icon.asset.fixed} />
+                <h5 className="uppercase mb-5">{i.title}</h5>
+                <p className="text-white">{i.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+
+    <div className="py-20 px-5">
+        <div className="container mx-auto">
+          <h3 className="statement text-center text-3xl mb-10">
+            Questions and <span className="rustico">Answers</span>
+          </h3>
+          {node.questions.map((q, count) => (
+          <div className="flex flex-col lg:flex-row justify-center"  key={count}>
+            <div className="w-full lg:w-3/4 border-b border-gray-400  bg-white p-4 flex flex-col justify-between leading-normal">
+              <div className="py-6">
+                <div className="text-gray-900 font-bold text-xl mb-2">
+                  {q.question}
+                </div>
+                <p className="text-gray-700 text-base">
+                  {q.answer}
+                </p>
+              </div>
+            </div>
+          </div>
+          ))}
+        </div>
+      </div>
+
+
 
 </Layout>
 
@@ -131,9 +309,92 @@ export const pageQuery = graphql`
 
     sanityProduct(shopifyId: {eq: $strippedId}) {
       shopifyId
+      video {
+        asset {
+          url
+        }
+      }
+      attributes {
+        title
+        icon {
+          asset {
+            fixed(width: 50) {
+              ...GatsbySanityImageFixed_withWebp
+            }
+          }
+        }
+      }
+      benefits {
+        title
+        description
+        icon {
+          asset {
+            fixed(width: 50) {
+              ...GatsbySanityImageFixed_withWebp
+            }
+          }
+        }
+      }
+      guarantees {
+        title
+        description
+        icon {
+          asset {
+            fixed(width: 50) {
+              ...GatsbySanityImageFixed_withWebp
+            }
+          }
+        }
+      }
+      stats {
+        number
+        icon {
+          asset {
+            fixed(width: 50) {
+              ...GatsbySanityImageFixed_withWebp
+            }
+          }
+        }
+      }
+      steps {
+        title
+        description
+        icon {
+          asset {
+            fixed(width: 50) {
+              ...GatsbySanityImageFixed_withWebp
+            }
+          }
+        }
+      }
       _rawDescription
       _rawSizing
       _rawShipping
+      colorOne {
+        hex
+      }
+      colorTwo {
+        hex
+      }
+      testimonials {
+        quote
+        member
+        memberImage {
+          asset {
+            fluid(maxWidth: 500) {
+              ...GatsbySanityImageFluid_withWebp
+            }
+          }
+        }
+        location
+      }
+      productBenefits {
+        description
+      }
+      questions {
+        question
+        answer
+      }
       variants {
         optionName
         image {

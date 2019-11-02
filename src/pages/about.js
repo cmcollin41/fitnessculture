@@ -24,7 +24,7 @@ const About = ({ data }) => {
           {about.subtitle}
         </p>
         <div className="py-10">
-          <Link to="/programs" className="btn-lg text-white rounded shadow-lg bg-blue-500">
+          <Link to="/programs" className="btn-lg text-white rounded-sm shadow-lg bg-blue-500">
             Get Started
           </Link>
         </div>
@@ -38,45 +38,45 @@ const About = ({ data }) => {
           <div className="flex flex-col justify-center items-center">
             <div className="w-full lg:w-2/3 mt-20 lg:flex shadow-md">
               <Img
-                className={'h-64 lg:h-auto w-full lg:w-1/2 flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center'} 
+                className={'h-64 lg:h-auto w-full lg:w-1/2 flex-none rounded-t-sm lg:rounded-t-none lg:rounded-l-sm text-center'} 
                 fluid={about.trainingImage.asset.fluid}
               />
-              <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-5 flex flex-col justify-between leading-normal">
+              <div className="bg-white rounded-b-sm lg:rounded-b-none lg:rounded-r-sm p-5 flex flex-col justify-between leading-normal">
                 <div className="mb-8">
                   <h3 className="statement font-bold text-xl mb-2">{about.trainingTitle}</h3>
                   <p className="text-gray-700 text-base">{about.trainingDescription}</p>
                 </div>
-                <Link to="/programs" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded">
+                <Link to="/programs" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded-sm">
                   Get Started
                 </Link>
               </div> 
             </div> 
             <div className="w-full lg:w-2/3 mt-10 lg:flex shadow-md">
               <Img 
-                className={'h-64 lg:h-auto lg:w-1/2 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden'} 
+                className={'h-64 lg:h-auto lg:w-1/2 flex-none bg-cover rounded-t-sm lg:rounded-t-none lg:rounded-l-sm text-center overflow-hidden'} 
                 fluid={about.mobilityImage.asset.fluid}
               />
-              <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-5 flex flex-col justify-between leading-normal">
+              <div className="bg-white rounded-b-sm lg:rounded-b-none lg:rounded-r-sm p-5 flex flex-col justify-between leading-normal">
                 <div className="mb-8">
                   <h3 className="statement font-bold text-xl mb-2">{about.mobilityTitle}</h3>
                   <p className="text-gray-700 text-base">{about.mobilityDescription}</p>
                 </div>
-                <Link to="/programs" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded">
+                <Link to="/programs" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded-sm">
                   Get Started
                 </Link>
               </div> 
             </div> 
             <div className="w-full lg:w-2/3 mt-10 lg:flex shadow-md">
               <Img 
-                className={"h-64 lg:h-auto lg:w-1/2 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"} f
+                className={"h-64 lg:h-auto lg:w-1/2 flex-none bg-cover rounded-t-sm lg:rounded-t-none lg:rounded-l-sm text-center overflow-hidden"} f
                 fluid={about.nutritionImage.asset.fluid}
               />
-              <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-5 flex flex-col justify-between leading-normal">
+              <div className="bg-white rounded-b-sm lg:rounded-b-none lg:rounded-r-sm p-5 flex flex-col justify-between leading-normal">
                 <div className="mb-8">
                   <h3 className="statement font-bold text-xl mb-2">{about.nutritionTitle}</h3>
                   <p className="text-gray-700 text-base">{about.nutritionDescription}</p>
                 </div>
-                <Link to="/programs" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded">
+                <Link to="/programs" className="btn-lg bg-blue-500 shadow-md text-center text-white rounded-sm">
                   Get Started
                 </Link>
               </div> 

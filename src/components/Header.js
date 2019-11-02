@@ -165,7 +165,7 @@ const Header = () => {
                 </div>
               </div>
               <div className="block mt-4 lg:inline-block lg:mt-0 px-4 py-6 hover:border-black border-b-2 border-transparent showprograms">
-                <Link to="/collections/apparel" aria-label="Programs" className="uppercase text-black hover:text-blue-500 font-bold">Shop</Link>
+                <Link to="/collections/mens" aria-label="Programs" className="uppercase text-black hover:text-blue-500 font-bold">Shop</Link>
                 <div className="flex justify-center py-10 bg-white programnav absolute left-0 right-0" style={{top: "79px", zIndex: "-10"}}>
                   <div className="flex flex-row justify-center">
                     {collections.nodes.map((collection, count) => (
@@ -198,7 +198,7 @@ const Header = () => {
         <div className="block hidden lg:flex justify-end content-center align-center" style={{minWidth: "300px"}}>
           <div>
             <a href="https://app.fitnessculture.com/login" className="inline-block text-sm px-4 py-2 leading-none text-black hover:text-blue-500 mt-4 lg:mt-0 uppercase">Login</a>
-            <Link to="/programs" aria-label={"Get Started"} className="inline-block text-sm px-4 py-2 leading-none border text-white border-black bg-gray-900 hover:bg-black mt-4 lg:mt-0 uppercase rounded">Get Started</Link>
+            <Link to="/programs" aria-label={"Get Started"} className="inline-block text-sm px-4 py-2 rounded-sm leading-none border text-white border-black bg-gray-900 hover:bg-black mt-4 lg:mt-0 uppercase">Get Started</Link>
             <Link to='/cart' className="relative inline-block text-xs px-4 py-2">
               <span className={"bg-red-600 text-white rounded-full h-4 w-4 flex items-center justify-center absolute"} style={{left: "8px", top: "2px"}}>
                 {quantity}
@@ -300,7 +300,7 @@ const Header = () => {
           <Link to="/programs" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded">Get Started</Link>
         </div>
       </div>
-      <div className={"shadow rounded z-10 px-4 py-2 text-black fixed right-0 mt-4 mr-4 bg-green-400  " + (context.cartPreview ? "block" : "hidden")}>
+      <div className={"shadow rounded-sm z-10 px-4 py-2 text-black fixed right-0 mt-4 mr-4 bg-green-400  " + (context.cartPreview ? "block" : "hidden")}>
         {/* {line_items}
         <div className="flex flex-row justify-center -mx-3">
           <button onClick={hideCart} className={"text-center w-1/2 mx-3 text-xs lg:text-l"}>Back to Shopping</button>

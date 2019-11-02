@@ -58,7 +58,7 @@ const Index = ({ data }) => {
           {home.subtitle}
         </p>
         <div className="py-10">
-          <Link to={home.heroLink} className="btn-lg text-white rounded shadow-lg" style={{backgroundColor: home.heroColor.hex}}>
+          <Link to={home.heroLink} className="btn-lg text-white rounded-sm shadow-lg" style={{backgroundColor: home.heroColor.hex}}>
             {home.heroCta}
           </Link>
         </div>
@@ -87,9 +87,9 @@ const Index = ({ data }) => {
             {
               home.programs.map((program,i) => {
                 return (
-                  <div ref={programDiv} key={i} className="w-full md:w-1/2 lg:w-1/4 mx-3 rounded bg-gray-900 mt-10 flex flex-col items-stretch snap-align-center" style={{minWidth: "300px"}}>
+                  <div ref={programDiv} key={i} className="w-full md:w-1/2 lg:w-1/4 mx-3 rounded-sm bg-gray-900 mt-10 flex flex-col items-stretch snap-align-center" style={{minWidth: "300px"}}>
                     <Img
-                        className="block h-64 w-full bg-cover bg-center rounded-t text-center overflow-hidden"
+                        className="block h-64 w-full bg-cover bg-center rounded-t-sm text-center overflow-hidden"
                         fluid={program.heroImage.asset.fluid}
                       
                     />
@@ -99,7 +99,7 @@ const Index = ({ data }) => {
                         <p className="text-white text-sm">{program.subtitle}</p>
                       </div>
                       <div className="p-5">
-                        <Link to={"/programs/" + program.gender + "/" + program.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded py-2 px-4">See {program.title}</Link>
+                        <Link to={"/programs/" + program.gender + "/" + program.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-sm py-2 px-4">See {program.title}</Link>
                       </div>
                     </div>
                   </div>
@@ -123,7 +123,7 @@ const Index = ({ data }) => {
             </h2>
             <p className="mt-5">{home.personalTrainerDescription}</p>
             <div className="mt-10">
-              <Link to="/programs" className="btn text-blue-500 border border-blue-500 rounded-full">
+              <Link to="/programs" className="btn text-blue-500 border border-blue-500 rounded-sm">
                 See Programs
               </Link>
             </div>
@@ -144,7 +144,7 @@ const Index = ({ data }) => {
       </div>
       <div className="flex flex-row overflow-scroll lg:overflow-hidden scroll-x-mandatory">
         {home.testimonials.map((i, count) => (
-          <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3 bg-gray-600 snap-align-center" style={{ minWidth: "275px"}}>
+          <div key={count} className="flex flex-col justify-between rounded-sm p-5 w-64 mx-3 bg-gray-600 snap-align-center" style={{ minWidth: "275px"}}>
             <p className="text-white text-xs italic">"{i.quote}"</p>
             <div className="flex flex-row items-center mt-6">
               <Img fixed={ i.memberImage.asset.fixed} alt="member photo" width="50px" height="50px" className="rounded-full" />
@@ -157,7 +157,7 @@ const Index = ({ data }) => {
         ))}
       </div>
       <div className="container mx-auto mt-10 text-center">
-        <Link to="/programs" className="uppercase font-bold text-xs text-white border border-white rounded-full py-2 px-4">Join the Family</Link>
+        <Link to="/programs" className="uppercase font-bold text-xs text-white border border-white rounded-sm py-2 px-4">Join the Family</Link>
       </div>
     </div>
 
@@ -175,7 +175,7 @@ const Index = ({ data }) => {
             </h2>
             <p className="mt-5">{home.aboutDescription}</p>
             <div className="mt-10">
-              <Link to="/about" className="btn text-blue-500 border border-blue-500 rounded-full">
+              <Link to="/about" className="btn text-blue-500 border border-blue-500 rounded-sm">
                 Our Story
               </Link>
             </div>

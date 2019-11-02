@@ -34,7 +34,7 @@ module.exports = {
           '900': '#01579b',
         }
       }
-    }
+    },
   },
   variants: {},
   plugins: []

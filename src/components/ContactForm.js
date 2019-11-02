@@ -42,7 +42,7 @@ class ContactForm extends React.Component {
 							type="text"
 							name="name"
 							placeholder="Full Name"
-							className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+							className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 							value={this.state.name}
 							onChange={this.handleInputChange}
 						/>
@@ -55,7 +55,7 @@ class ContactForm extends React.Component {
             type="email"
 						name="email"
 						placeholder="youremail@gmail.com"
-						className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={this.state.email}
             onChange={this.handleInputChange}
           />
@@ -68,12 +68,12 @@ class ContactForm extends React.Component {
             rows="5"
 						name="message"
 						placeholder="Your message"
-						className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+						className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={this.state.message}
             onChange={this.handleInputChange}
           />
         </div>
-        <button className="btn-lg bg-blue-500 rounded text-white shadow" type="submit">Submit</button>
+        <button className="btn-lg bg-blue-500 rounded-sm text-white shadow" type="submit">Submit</button>
       </form>
     )
   }

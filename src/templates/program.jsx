@@ -57,7 +57,7 @@ const Program = ({ data }) => {
                 </div>
               </div>
               <div className="mt-10 flex flex-row flex-wrap items-center">
-                <a href="#pricing" className="btn-lg text-white rounded shadow-md" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
+                <a href="#pricing" className="btn-lg text-white rounded-sm shadow-md" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
                   Start Program
                 </a>
                 <span className="ml-4 text-xs font-light">$2 per Workout</span>
@@ -98,7 +98,7 @@ const Program = ({ data }) => {
             </h3>
             <p>{program.appDescription}</p>
             <div className="mt-10">
-              <a href="#pricing" className="uppercase font-bold border rounded py-2 px-4" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Get {program.title}</a>
+              <a href="#pricing" className="uppercase font-bold border rounded-sm py-2 px-4" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Get {program.title}</a>
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@ const Program = ({ data }) => {
       </div>
       <div className="flex flex-row overflow-scroll lg:overflow-hidden scroll-x-mandatory">
         {program.testimonials.map((i, count) => (
-          <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3 bg-gray-600 snap-align-center" style={{minWidth: "275px"}}>
+          <div key={count} className="flex flex-col justify-between rounded-sm p-5 w-64 mx-3 bg-gray-600 snap-align-center" style={{minWidth: "275px"}}>
             <p className="text-white text-xs italic">"{i.quote}"</p>
             <div className="flex flex-row items-center mt-6">
               <Img fixed={i.memberImage.asset.fixed} alt={i.member} width="50px" height="50px" className="rounded-full" />
@@ -128,7 +128,7 @@ const Program = ({ data }) => {
         ))}
       </div>
       <div className="container mx-auto mt-10 text-center">
-        <a href={program.premiumCta} className="statement font-bold text-white border border-white rounded py-2 px-4">Join the Family</a>
+        <a href={program.premiumCta} className="statement font-bold text-white border border-white rounded-sm py-2 px-4">Join the Family</a>
       </div>
     </div>
 
@@ -136,7 +136,7 @@ const Program = ({ data }) => {
       <img src={square} alt="square texture" width="100px" height="100%" className="absolute" style={{top: "-25px", zIndex: "-1"}} />
       <div className="flex flex-col lg:flex-row justify-center items-center px-5">
         <div className="order-2 lg:order-1 w-full md:w-1/2 lg:w-1/4 mt-20 lg:mt:auto">
-          <div className="rounded overflow-hidden shadow-lg bg-white text-black flex flex-col justify-between">
+          <div className="rounded-sm overflow-hidden shadow-lg bg-white text-black flex flex-col justify-between">
             <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
             </div>
             <div className="p-4 text-center mx-auto">
@@ -152,12 +152,12 @@ const Program = ({ data }) => {
               </ul>
             </div>
             <div className="px-6 py-10">
-              <a href={program.basicCta} className="uppercase font-bold text-white rounded px-4 py-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>Start Program</a>
+              <a href={program.basicCta} className="uppercase font-bold text-white rounded-sm px-4 py-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>Start Program</a>
             </div>
           </div>
         </div>
         <div className="order-1 lg:order-2 w-full md:w-1/2 lg:w-1/4 lg:mt-auto">
-          <div className="text-black rounded overflow-hidden shadow-lg bg-white flex flex-col justify-between">
+          <div className="text-black rounded-sm overflow-hidden shadow-lg bg-white flex flex-col justify-between">
             <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
             </div>
             <div className="p-4 text-center mx-auto">
@@ -173,7 +173,7 @@ const Program = ({ data }) => {
               </ul>
             </div>
             <div className="px-6 py-10">
-              <a href={program.premiumCta} className="uppercase font-bold text-white rounded px-4 py-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>Start Program</a>
+              <a href={program.premiumCta} className="uppercase font-bold text-white rounded-sm px-4 py-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>Start Program</a>
             </div>
           </div>
         </div>
@@ -191,8 +191,8 @@ const Program = ({ data }) => {
         <div className="flex flex-row flex-wrap items-stretch">
           {program.guarantees.map((i, count) => (
             <div key={count} className="w-full lg:w-1/3 p-5">
-              <div className="bg-gray-600 p-5 mt-10 rounded h-full">
-                <Img width="50px" className="mx-auto w-full" alt={i.title} fixed={i.icon.asset.fixed} />
+              <div className="bg-gray-600 p-5 mt-10 rounded-sm h-full w-full text-center">
+                <Img width="50px" alt={i.title} fixed={i.icon.asset.fixed} />
                 <h5 className="uppercase mb-5">{i.title}</h5>
                 <p className="text-white">{i.description}</p>
               </div>

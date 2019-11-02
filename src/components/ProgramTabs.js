@@ -52,7 +52,7 @@ class ProgramTabs extends React.Component {
               </div>
       
               <div className="mt-10 block">
-                <a href={program.premiumCta}  className="uppercase font-bold border bg-white rounded px-4 py-2" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Start {program.title}</a>
+                <a href={program.premiumCta}  className="uppercase font-bold border bg-white rounded-sm px-4 py-2" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Start {program.title}</a>
               </div>
             </div>
           </div>
@@ -91,7 +91,7 @@ class ProgramTabs extends React.Component {
               </div>
       
               <div className="mt-10 block">
-                <a href={program.premiumCta} className="uppercase font-bold border bg-white rounded px-4 py-2" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Start {program.title}</a>
+                <a href={program.premiumCta} className="uppercase font-bold border bg-white rounded-sm px-4 py-2" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Start {program.title}</a>
               </div>
             </div>
           </div>
@@ -131,7 +131,7 @@ class ProgramTabs extends React.Component {
               </div>
       
               <div className="mt-10 block">
-                <a href={program.premiumCta} className="uppercase font-bold border bg-white rounded px-4 py-2" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Start {program.title}</a>
+                <a href={program.premiumCta} className="uppercase font-bold border bg-white rounded-sm px-4 py-2" style={{borderColor: program.colorOne.hex, color: program.colorOne.hex }}>Start {program.title}</a>
               </div>
             </div>
           </div>

@@ -142,7 +142,9 @@ button:focus {
   
  }
 
-
+.smooth {
+  transition: transform .4s ease-in-out;
+}
 .programnav {
   transform: translateY(-200%);
   transition: 0.75s ease;

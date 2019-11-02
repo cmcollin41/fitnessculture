@@ -117,7 +117,7 @@ const ProductForm = ({ product, node }) => {
           Quantity
         </label>
         <input
-          className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded-sm py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           type="number"
           id="quantity"
           name="quantity"
@@ -127,7 +127,7 @@ const ProductForm = ({ product, node }) => {
           value={quantity}
         />
         <br/>
-        <button type="submit" disabled={!available || context.adding} onClick={handleAddToCart} className={"px-2 py-4 bg-black text-white uppercase w-full rounded " + (!available ? "bg-gray-500 cursor-auto" : "" || context.adding ? "bg-green-500 cursor-not-allowed" : "")}>
+        <button type="submit" disabled={!available || context.adding} onClick={handleAddToCart} className={"px-2 py-4 bg-black text-white uppercase w-full rounded-sm " + (!available ? "bg-gray-500 cursor-auto" : "" || context.adding ? "bg-green-500 cursor-not-allowed" : "")}>
           {!available ? "Out of Stock!" : context.adding ? "Adding to cart..." : "Add to Cart"}
         </button>
        
