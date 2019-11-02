@@ -16,27 +16,27 @@ const H3pDownload = () => {
     setValues({...values, [name]: value})
   }
 
-  const url = window.location.href
+  // const url = window.location.href
 
-  function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  }
+  // function getCookie(cname) {
+  //   var name = cname + "=";
+  //   var decodedCookie = decodeURIComponent(document.cookie);
+  //   var ca = decodedCookie.split(';');
+  //   for(var i = 0; i <ca.length; i++) {
+  //     var c = ca[i];
+  //     while (c.charAt(0) == ' ') {
+  //       c = c.substring(1);
+  //     }
+  //     if (c.indexOf(name) == 0) {
+  //       return c.substring(name.length, c.length);
+  //     }
+  //   }
+  //   return "";
+  // }
 
-  if(url.indexOf('?code=X345&934') == -1 || getCookie("code") === "X345&934"){
-    // insert modal
-  }
+  // if(url.indexOf('?code=X345&934') == -1 || getCookie("code") === "X345&934"){
+  //   // insert modal
+  // }
 
   // The below numbers are:
   // Name / Email / Height / Weight / Age / Body Fat / Squat / Bench / Deadlift / OHPress / Incline / Front Squat
