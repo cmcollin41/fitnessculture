@@ -108,7 +108,7 @@ const H3pDownload = () => {
                         type="text"
                         name="name"
                         placeholder="Full Name"
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={values.name}
                         onChange={handleInputChange}
                       />
@@ -123,7 +123,7 @@ const H3pDownload = () => {
                         type="text"
                         name="age"
                         placeholder="29"
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={values.age}
                         onChange={handleInputChange}
                       />
@@ -138,7 +138,7 @@ const H3pDownload = () => {
                   type="email"
                   name="email"
                   placeholder="youremail@gmail.com"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   value={values.email}
                   onChange={handleInputChange}
                 />
@@ -152,7 +152,7 @@ const H3pDownload = () => {
                     <input
                       name="height"
                       placeholder="72"
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       value={values.height}
                       onChange={handleInputChange}
                     />
@@ -166,7 +166,7 @@ const H3pDownload = () => {
                     <input
                       name="weight"
                       placeholder="228"
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       value={values.weight}
                       onChange={handleInputChange}
                     />
@@ -180,7 +180,7 @@ const H3pDownload = () => {
                     <input
                       name="bodyfat"
                       placeholder="18%"
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       value={values.bodyfat}
                       onChange={handleInputChange}
                     />
@@ -196,7 +196,7 @@ const H3pDownload = () => {
                     <input
                       name="squat"
                       placeholder="500"
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       value={values.squat}
                       onChange={handleInputChange}
                     />
@@ -210,7 +210,7 @@ const H3pDownload = () => {
                     <input
                       name="bench"
                       placeholder="305"
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       value={values.bench}
                       onChange={handleInputChange}
                     />
@@ -224,7 +224,7 @@ const H3pDownload = () => {
                     <input
                       name="deadlift"
                       placeholder="415"
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       value={values.deadlift}
                       onChange={handleInputChange}
                     />
@@ -240,7 +240,7 @@ const H3pDownload = () => {
                     <input
                       name="ohpress"
                       placeholder="250"
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       value={values.ohpress}
                       onChange={handleInputChange}
                     />
@@ -254,7 +254,7 @@ const H3pDownload = () => {
                     <input
                       name="incline"
                       placeholder="205"
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       value={values.incline}
                       onChange={handleInputChange}
                     />
@@ -268,14 +268,14 @@ const H3pDownload = () => {
                     <input
                       name="frontsquat"
                       placeholder="150"
-                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       value={values.frontsquat}
                       onChange={handleInputChange}
                     />
                   </div>
                 </div>
               </div>
-              <button className={"btn rounded shadow " + ( submitting ? "bg-gray-500 cursor-not-allowed text-black" : "bg-blue-500 text-white")} onClick={handleFormSubmit}>{submitting ? "Sending Your PDF..." : "Send My PDF"}</button>
+              <button className={"btn rounded-sm shadow " + ( submitting ? "bg-gray-500 cursor-not-allowed text-black" : "bg-blue-500 text-white")} onClick={handleFormSubmit}>{submitting ? "Sending Your PDF..." : "Send My PDF"}</button>
             </form>
           </div>
         </div>
