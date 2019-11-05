@@ -13,7 +13,7 @@ const SocialProof = () => (
         <img src={ logo1 } alt="Mens Fitness" width="100px" className="px-2" />
         <img src={ logo2 } alt="Train" width="100px" className="px-2" />
         <img src={ logo4 } alt="BodyBuilding.com" width="100px" className="px-2" />
-        <img src={ logo3 } alt="Muscle & Fitness" width="100px" className="px-2" />
+        <img src={ logo3 } alt="Muscle and Fitness" width="100px" className="px-2" />
         <img src={ logo5 } alt="Mens Health" width="100px" className="px-2" />
       </div>
     </div>
