@@ -232,7 +232,7 @@ export const pageQuery = graphql`
         }
         heroImage {
           asset {
-            fluid(maxWidth: 1425) {
+            fluid(maxWidth: 1625) {
               ...GatsbySanityImageFluid_withWebp
             }
             url
@@ -247,7 +247,7 @@ export const pageQuery = graphql`
         trainingDescription
         trainingImage {
           asset {
-            fluid(maxWidth: 1425) {
+            fluid(maxWidth: 595) {
               ...GatsbySanityImageFluid_withWebp
             }
           }
@@ -256,7 +256,7 @@ export const pageQuery = graphql`
         nutritionDescription
         nutritionImage {
           asset {
-            fluid(maxWidth: 1425) {
+            fluid(maxWidth: 595) {
               ...GatsbySanityImageFluid_withWebp
             }
           }
@@ -265,7 +265,7 @@ export const pageQuery = graphql`
         mobilityDescription
         mobilityImage {
           asset {
-            fluid(maxWidth: 1425) {
+            fluid(maxWidth: 595) {
               ...GatsbySanityImageFluid_withWebp
             }
           }
@@ -274,7 +274,7 @@ export const pageQuery = graphql`
         aboutDescription
         aboutImage {
           asset {
-            fluid(maxWidth: 1425) {
+            fluid(maxWidth: 768) {
               ...GatsbySanityImageFluid_withWebp
             }
           }
@@ -283,7 +283,7 @@ export const pageQuery = graphql`
         personalTrainerDescription
         personalTrainerImage {
           asset {
-            fluid(maxWidth: 1425) {
+            fluid(maxWidth: 768) {
               ...GatsbySanityImageFluid_withWebp
             }
           }
@@ -310,7 +310,7 @@ export const pageQuery = graphql`
           }
           heroImage {
             asset {
-              fluid(maxWidth: 500) {
+              fluid(maxWidth: 300) {
                 ...GatsbySanityImageFluid_withWebp
               }
             }
