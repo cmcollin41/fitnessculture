@@ -236,6 +236,26 @@ const Ebook = ({ data }) => {
       </div>
     </div>
 
+    <div className="py-20">
+      <div className="container px-5 lg:mx-auto">
+        <h3 className="statement text-white text-left lg:text-center text-3xl pb-5 lg:pb-10">
+          Buying is <span className="px-2" style={{backgroundImage: 'linear-gradient(to right, ' + node.colorOne.hex + ',' + node.colorTwo.hex + ')'}}>Stress</span> Free
+        </h3>
+      </div>
+      <div className="container px-5 lg:px-auto lg:mx-auto">
+        <div className="flex flex-row flex-wrap items-stretch justify-center">
+          {node.stats.map((i, count) => (
+            <div key={count} className="w-full lg:w-1/3 p-5">
+              <div className="p-5 mt-10 rounded-sm h-full w-full text-center">
+                <h5 className="uppercase mb-5">{i.number}</h5>
+                <p>{i.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
 
     <div className="py-20 px-5">
         <div className="container mx-auto">
@@ -348,13 +368,7 @@ export const pageQuery = graphql`
       }
       stats {
         number
-        icon {
-          asset {
-            fixed(width: 50) {
-              ...GatsbySanityImageFixed_withWebp
-            }
-          }
-        }
+        description
       }
       steps {
         title
