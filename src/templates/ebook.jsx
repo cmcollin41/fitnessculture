@@ -2,7 +2,7 @@ import React from 'react'
 import {graphql} from "gatsby"
 import Layout from "../components/layout"
 import DownloadForm from '../components/ProductForm/downloads'
-import BlockContent from '@sanity/block-content-to-react'
+import BlockContent, { defaultSerializers } from '@sanity/block-content-to-react'
 import SEO from "../components/seo"
 import SocialProof from "../components/SocialProof"
 import Img from 'gatsby-image'
@@ -16,15 +16,15 @@ import circles from '../assets/circles.svg'
 
 const Ebook = ({ data }) => {
 
-  const serializers = {
-    types: {
-      code: props => (
-        <pre data-language={props.node.language}>
-          <code>{props.node.code}</code>
-        </pre>
-      )
-    }
-  }
+  // const serializers = {
+  //   types: {
+  //     code: props => (
+  //       <pre data-language={props.node.language}>
+  //         <code>{props.node.code}</code>
+  //       </pre>
+  //     )
+  //   }
+  // }
 
   const product = data.shopifyProduct
   const node = data.sanityProduct
@@ -121,7 +121,7 @@ const Ebook = ({ data }) => {
             <h3 className="statement text-3xl pb-5">
              {product.title}
             </h3>
-            <BlockContent blocks={node._rawDescription} serializers={serializers} />
+            <BlockContent blocks={node._rawDescription} serializers={defaultSerializers} />
             <div className="mt-10 w-full lg:w-1/2">
               <DownloadForm product={product} node={node} />
             </div>
