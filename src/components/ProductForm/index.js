@@ -35,12 +35,13 @@ const ProductForm = ({ product, node }) => {
     })
     setVariant(defaultOptionValues)
   }, [product.options])
+  
 
   useEffect(() => {
     checkAvailability(product.shopifyId)
   }, [productVariant])
 
-  
+
   const checkAvailability = (productId) => {
     context.client.product.fetch(productId).then((product) => {
       // this checks the currently selected variant for availability
@@ -51,6 +52,7 @@ const ProductForm = ({ product, node }) => {
     })
   }
  
+  
   const handleQuantityChange = event => {
     setQuantity(event.target.value)
   }
@@ -139,7 +141,7 @@ const ProductForm = ({ product, node }) => {
                   <div onClick={toggle} className="block mt-4 lg:mt-0 text-black py-4 border-b border-gray-300 cursor-pointer">
                     <div className="flex justify-between">
                       <span className="text-sm uppercase">Description</span>
-                      <img src={Down} width="14px" />
+                      <img alt="Description Down Arrow" src={Down} width="14px" />
                     </div>
                     {on && 
                       <div style={{fontSize: "0.75rem"}}>
@@ -158,7 +160,7 @@ const ProductForm = ({ product, node }) => {
                   <div onClick={toggle} className="block mt-4 lg:mt-0 text-black py-4 border-b border-gray-300 cursor-pointer">
                     <div className="flex justify-between">
                       <span className="text-sm uppercase">Sizing Guide</span>
-                      <img src={Down} width="14px"/>
+                      <img alt="Sizing Guide Down Arrow" src={Down} width="14px"/>
                     </div>
                     {on && 
                       <div style={{fontSize: "0.75rem"}}>
@@ -177,7 +179,7 @@ const ProductForm = ({ product, node }) => {
                   <div onClick={toggle} className="block mt-4 lg:mt-0 text-black py-4 border-b border-gray-300 cursor-pointer">
                     <div className="flex justify-between">
                       <span className="text-sm uppercase">Shipping & Returns</span>
-                      <img src={Down} width="14px"/>
+                      <img alt="Shipping and Returns Down Arrow" src={Down} width="14px"/>
                     </div>
                     {on && 
                       <div style={{fontSize: "0.75rem"}}>

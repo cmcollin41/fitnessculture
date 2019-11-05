@@ -137,7 +137,7 @@ const Header = () => {
     <header className="z-50 w-full bg-white sticky top-0 relative">
       <nav className="flex items-center justify-between flex-wrap bg-white px-1 lg:px-4 border-nav-b relative">
         <div className="hidden lg:flex items-center flex-grow text-black py-4" style={{minWidth: "300px"}}>
-          <Link to="/" aria-label="Fitness Culture Logo"><img src={ logo } alt="Logo" width={"200px"} /></Link>
+          <Link to="/" aria-label="Desktop  Fitness Culture Logo"><img alt="Desktop Fitness Culture Logo" src={ logo } width={"200px"} /></Link>
         </div>
         <div className="w-full block hidden flex-grow lg:flex lg:justify-center lg:items-center lg:ml-auto lg:w-auto">
           <div className="text-sm lg:flex-grow">
@@ -203,7 +203,7 @@ const Header = () => {
               <span className={"bg-red-600 text-white rounded-full h-4 w-4 flex items-center justify-center absolute"} style={{left: "8px", top: "2px"}}>
                 {quantity}
               </span>
-						  <img src={cart} width="24px" className="inline-block" />
+						  <img alt="Desktop Cart" src={cart} width="24px" className="inline-block" />
 					  </Link>
           </div>
         </div>
@@ -219,13 +219,13 @@ const Header = () => {
           </button>
         </div>
         <div className="flex lg:hidden items-center text-black py-4">
-          <Link to="/"><img src={ logo } alt="Logo" width={"150px"} /></Link>
+          <Link to="/"><img alt="Mobile Fitness Culture Logo" src={ logo } width={"150px"} /></Link>
         </div>
         <Link to='/cart' className="relative lg:hidden inline-block text-sm pl-4 py-2">
           <span className={"bg-red-600 text-white rounded-full h-4 w-4 flex items-center justify-center absolute"} style={{left: "8px", top: "2px"}}>
             {quantity}
           </span>
-          <img src={cart} width="24px" className="inline-block" />
+          <img alt="Mobile Cart" src={cart} width="24px" className="inline-block" />
         </Link>
       </nav>          
       <div className={"w-full p-4 bg-white absolute block lg:hidden z-10 " + (navOpen ? "slide-down" : "slide-up")} style={{top: "63px"}}>
@@ -233,8 +233,8 @@ const Header = () => {
             render={({on, toggle}) => (
               <div>
                 <div onClick={toggle} className="block mt-4 lg:mt-0 mr-4 flex justify-start items-center text-black hover:text-blue-500 font-bold">
-                  <span className="uppercase mr-2">Products</span>
-                  <img src={Down} width="14px" />
+                  <span className="uppercase mr-2">Programs</span>
+                  <img alt="See More Programs Down Arrow" src={Down} width="14px" />
                 </div>
                 {on && 
                   <>
@@ -269,7 +269,7 @@ const Header = () => {
               <div>
                 <div onClick={toggle} className="block mt-4 lg:mt-0 mr-4 flex justify-start items-center text-black hover:text-blue-500 font-bold">
                   <span className="uppercase mr-2">Shop</span>
-                  <img src={Down} width="14px" />
+                  <img alt="See More Products Down Arrow" src={Down} width="14px" />
                 </div>
                 {on && 
                   <div className="flex flex-col items-center py-10 w-full">
