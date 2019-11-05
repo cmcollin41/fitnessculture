@@ -48,7 +48,7 @@ const Index = ({ data }) => {
       </BackgroundImage> */}
       <div className="flex flex-col justify-center items-center p-5 relative h-full overflow-hidden" style={{minHeight: "70vh"}}>
         <span className="hidden lg:flex rounded-full bg-black uppercase px-2 py-1 text-xs text-white">Your #1 Fitness App</span>
-        <video muted playsInline autoPlay loop className="hero-video bg-black">
+        <video muted playsInline autoPlay loop poster={home.heroImage.asset.url} className="hero-video bg-black">
           <source src={home.heroVideo.asset.url} />
         </video>
         <h1 className="statement text-center text-white text-4xl lg:text-5xl mt-4 font-bold" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.5)"}}>
