@@ -51,8 +51,6 @@ const H3pDownload = () => {
       const response = await fetchResult;
       const data = await response;
       if (data) {setSubmitting(false)};
-      console.log(data);
-      alert(data);
     } catch(err) {
       alert("Hmmm. Something went wrong. Try again.")
     }

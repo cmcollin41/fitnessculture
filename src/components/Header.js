@@ -274,9 +274,9 @@ const Header = () => {
                 {on && 
                   <div className="flex flex-col items-center py-10 w-full">
                     {collections.nodes.map((collection, count) => (
-                      <Link to={"/collections/" + collection.handle} key={count} className="flex flex-row w-full items-center mt-2">
+                      <Link to={"/collections/" + collection.handle} key={count} className="flex flex-col w-full items-center my-2">
 
-                        <div className="w-1/3">
+                        <div className="w-full">
                           <Img
                             fluid={collection.image.localFile.childImageSharp.fluid}
                             key={count}
@@ -284,8 +284,8 @@ const Header = () => {
                             className="block h-24 w-full bg-cover bg-center text-center overflow-hidden"
                           />
                         </div>
-                        <div className="w-2/3 text-center">
-                          <span className="block mt-4 text-black hover:text-blue-500">{collection.title}</span>
+                        <div className="w-full text-center">
+                          <span className="block mb-4 mt-2 text-black hover:text-blue-500">{collection.title}</span>
                         </div>
                       </Link>
                     ))}

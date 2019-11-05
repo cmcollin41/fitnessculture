@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-// import BackgroundImage from 'gatsby-background-image'
+import BackgroundImage from 'gatsby-background-image'
 import Img from 'gatsby-image'
 import SocialProof from "../components/SocialProof"
 import HomeTabs from "../components/HomeTabs"
@@ -25,39 +25,39 @@ const Index = ({ data }) => {
     programRow.current.scrollLeft += programDiv.current.offsetWidth;
   }
 
-  if (typeof window !== 'undefined') {
-    document.addEventListener("DOMContentLoaded", function() {
-      var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
+  // if (typeof window !== 'undefined') {
+  //   document.addEventListener("DOMContentLoaded", function() {
+  //     var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
     
-      if ("IntersectionObserver" in window) {
-        var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
-          entries.forEach(function(video) {
-            if (video.isIntersecting) {
-              for (var source in video.target.children) {
-                var videoSource = video.target.children[source];
-                if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
-                  videoSource.src = videoSource.dataset.src;
-                }
-              }
+  //     if ("IntersectionObserver" in window) {
+  //       var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+  //         entries.forEach(function(video) {
+  //           if (video.isIntersecting) {
+  //             for (var source in video.target.children) {
+  //               var videoSource = video.target.children[source];
+  //               if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+  //                 videoSource.src = videoSource.dataset.src;
+  //               }
+  //             }
     
-              video.target.load();
-              video.target.classList.remove("lazy");
-              lazyVideoObserver.unobserve(video.target);
-            }
-          });
-        });
+  //             video.target.load();
+  //             video.target.classList.remove("lazy");
+  //             lazyVideoObserver.unobserve(video.target);
+  //           }
+  //         });
+  //       });
     
-        lazyVideos.forEach(function(lazyVideo) {
-          lazyVideoObserver.observe(lazyVideo);
-        });
-      }
-    });
-  } 
+  //       lazyVideos.forEach(function(lazyVideo) {
+  //         lazyVideoObserver.observe(lazyVideo);
+  //       });
+  //     }
+  //   });
+  // } 
   
   return (
     <Layout>
       <SEO title="Home" image={home.heroImage.asset.url} />
-      {/* <BackgroundImage
+      <BackgroundImage
       className={'flex flex-col justify-center items-center bg-cover bg-top p-5'}
       style={{minHeight: "60vh"}}
       fluid={home.heroImage.asset.fluid}
@@ -74,8 +74,8 @@ const Index = ({ data }) => {
             {home.heroCta}
           </Link>
         </div>
-      </BackgroundImage> */}
-      <div className="flex flex-col justify-center items-center p-5 relative h-full overflow-hidden" style={{minHeight: "70vh"}}>
+      </BackgroundImage>
+      {/* <div className="flex flex-col justify-center items-center p-5 relative h-full overflow-hidden" style={{minHeight: "70vh"}}>
         <span className="hidden lg:flex rounded-full bg-black uppercase px-2 py-1 text-xs text-white">Your #1 Fitness App</span>
         <video muted playsInline autoPlay loop poster={home.heroImage.asset.url} className="hero-video bg-black lazy">
           <source src={home.heroVideo.asset.url} />
@@ -91,7 +91,7 @@ const Index = ({ data }) => {
             {home.heroCta}
           </Link>
         </div>
-      </div>
+      </div> */}
 
       <SocialProof />
 
