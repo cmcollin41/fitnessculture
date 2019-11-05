@@ -19,9 +19,9 @@ const Downloads = ({ product}) => {
 
   return (
     <>
-      <div className="w-full">   
+      <div className="w-full flex">
         <button type="submit" disabled={context.adding} onClick={handleAddToCart} className={"px-2 py-4 bg-black text-white uppercase w-full rounded-sm " + (context.adding ? "bg-green-500 cursor-not-allowed" : "")}>
-          {context.adding ? "Adding to cart..." : "Add to Cart"}
+            ${Math.floor(product.variants[0].price) + " " + "-" + " " + (context.adding ? "Adding to cart..." : "Add to Cart")}
         </button>
       </div>
     </>

@@ -30,7 +30,7 @@ const Collection = ({ data }) => {
                   <div className="flex flex-col justify-between flex-grow">
                     <div className="px-1 py-2 text-center">
                       <h4 className="text-xs lg:text-sm text-black">{product.title}</h4>
-                      <p className="text-xs lg:text-sm text-black">${(product.priceRange.minVariantPrice.amount * 1).toFixed(2)}</p>
+                      <p className="text-xs lg:text-sm text-black">${Math.floor(product.priceRange.minVariantPrice.amount)}</p>
                     </div>
                   </div>
                 </Link>

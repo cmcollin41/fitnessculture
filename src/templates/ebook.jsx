@@ -67,8 +67,8 @@ const Ebook = ({ data }) => {
         </div>
         <div className="container mx-auto px-5 pb-5 pt-3">
           <div className="flex flex-col lg:flex-row justify-center items-center">
-            <div className="w-full lg:w-1/2 mt-10 lg:mt-0 order-1 lg:order-0">
-              <h1 className="statement text-4xl lg:text-5xl leading-none">
+            <div className="w-full lg:w-1/2">
+              <h1 className="statement text-3xl lg:text-5xl leading-none">
                 {product.title}
               </h1>
               <p className="text-xl mt-5" style={{ maxWidth: "500px" }}>
@@ -98,7 +98,7 @@ const Ebook = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-1/2 relative order-0 lg:order-1 bg-black">
+            <div className="w-full lg:w-1/2 relative bg-black mt-10">
               <video muted playsInline autoPlay loop controls>
                 <source src={node.video.asset.url} />
                 Your browser doesn't support video
@@ -197,7 +197,7 @@ const Ebook = ({ data }) => {
             </div>
             <div className="p-4 text-center mx-auto">
               <span className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Basic</span>
-              <h6 className="text-black text-base text-6xl mt-5 relative font-bold"><span className="absolute text-sm left-0 top-0">$</span>{product.variants[0].price}</h6>
+              <h6 className="text-black text-base text-6xl mt-5 relative"><span className="absolute text-xl" style={{left: "-10px", top: "10px"}}>$</span>{Math.floor(product.variants[0].price)}</h6>
             </div>
             <div>
               <ul className="pricing">
@@ -236,18 +236,41 @@ const Ebook = ({ data }) => {
       </div>
     </div>
 
-    <div className="py-20">
+
+    <div className="py-20 px-5">
+      <div className="container mx-auto">
+        <h3 className="statement text-center text-3xl mb-10">
+          Questions and <span className="rustico">Answers</span>
+        </h3>
+        {node.questions.map((q, count) => (
+        <div className="flex flex-col lg:flex-row justify-center"  key={count}>
+          <div className="w-full lg:w-3/4 border-b border-gray-400  bg-white p-4 flex flex-col justify-between leading-normal">
+            <div className="py-6">
+              <div className="text-gray-900 font-bold text-xl mb-2">
+                {q.question}
+              </div>
+              <p className="text-gray-700 text-base">
+                {q.answer}
+              </p>
+            </div>
+          </div>
+        </div>
+        ))}
+      </div>
+    </div>
+
+    <div className="py-20 bg-gray-100">
       <div className="container px-5 lg:mx-auto">
-        <h3 className="statement text-white text-left lg:text-center text-3xl pb-5 lg:pb-10">
-          Buying is <span className="px-2" style={{backgroundImage: 'linear-gradient(to right, ' + node.colorOne.hex + ',' + node.colorTwo.hex + ')'}}>Stress</span> Free
+        <h3 className="statement text-left lg:text-center text-3xl pb-5 lg:pb-10">
+          By the Numbers
         </h3>
       </div>
       <div className="container px-5 lg:px-auto lg:mx-auto">
         <div className="flex flex-row flex-wrap items-stretch justify-center">
           {node.stats.map((i, count) => (
-            <div key={count} className="w-full lg:w-1/3 p-5">
+            <div key={count} className="w-full lg:w-1/3 px-5">
               <div className="p-5 mt-10 rounded-sm h-full w-full text-center">
-                <h5 className="uppercase mb-5">{i.number}</h5>
+                <h5 className="uppercase mb-5 text-6xl statement">{i.number}</h5>
                 <p>{i.description}</p>
               </div>
             </div>
@@ -255,29 +278,6 @@ const Ebook = ({ data }) => {
         </div>
       </div>
     </div>
-
-
-    <div className="py-20 px-5">
-        <div className="container mx-auto">
-          <h3 className="statement text-center text-3xl mb-10">
-            Questions and <span className="rustico">Answers</span>
-          </h3>
-          {node.questions.map((q, count) => (
-          <div className="flex flex-col lg:flex-row justify-center"  key={count}>
-            <div className="w-full lg:w-3/4 border-b border-gray-400  bg-white p-4 flex flex-col justify-between leading-normal">
-              <div className="py-6">
-                <div className="text-gray-900 font-bold text-xl mb-2">
-                  {q.question}
-                </div>
-                <p className="text-gray-700 text-base">
-                  {q.answer}
-                </p>
-              </div>
-            </div>
-          </div>
-          ))}
-        </div>
-      </div>
 
 
 

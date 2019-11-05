@@ -112,8 +112,8 @@ const ProductForm = ({ product, node }) => {
       </div>
 
       <div className="w-full lg:w-1/3 px-5">
-        <h1 className="text-xl uppercase mt-6">{product.title}</h1>
-        <h3 className="my-4">${productVariant.price}</h3>
+        <h1 className="text-xl uppercase mt-6 statement">{product.title}</h1>
+        <h3 className="my-4">${Math.floor(productVariant.price)}</h3>
         {variantSelectors}
         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="quantity">
           Quantity
