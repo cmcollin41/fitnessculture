@@ -3,11 +3,14 @@ import Layout from "../components/layout"
 import SEO from '../components/seo'
 
 import '../css/global.css'
-import { StringDecoder } from "string_decoder"
 
 
 
 const H3pDownload = () => {
+  
+  if (typeof window == "undefined") {
+    window = null
+  }
   
   const [values, setValues] = useState({name: '', email: '', height: '', weight: '', age: '', bodyfat: '', squat: '', bench: '', deadlift: '', ohpress: '', incline: '', frontsquat: ''})
   const [submitting, setSubmitting] = useState(false);
@@ -15,13 +18,25 @@ const H3pDownload = () => {
   const [code, setCode] = useState({password: ''})
   const [denied, setDenied] = useState(false);
 
-  if (typeof window == "undefined") {
-    window = {}
-  }
-
-
- 
+   
   useEffect(() => {
+
+    function getUrlVars() {
+      var vars = {};
+      window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+          vars[key] = value;
+      });
+      return vars;
+    }
+    
+    function getUrlParam(parameter, defaultvalue){
+      var urlparameter = defaultvalue;
+      if(window.location.href.indexOf(parameter) > -1){
+          urlparameter = getUrlVars()[parameter];
+          }
+      return urlparameter;
+    }
+
     if(getUrlParam('code', '') === "X345934" || getCookie("code") === "X345934"){
       // insert modal
       setDenied(false)
@@ -41,20 +56,6 @@ const H3pDownload = () => {
   }
 
 
-    function getUrlVars() {
-      var vars = {};
-      window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-          vars[key] = value;
-      });
-      return vars;
-    }
-    function getUrlParam(parameter, defaultvalue){
-      var urlparameter = defaultvalue;
-      if(window.location.href.indexOf(parameter) > -1){
-          urlparameter = getUrlVars()[parameter];
-          }
-      return urlparameter;
-    }
   
 
   function setCookie(cname, cvalue, exdays) {
