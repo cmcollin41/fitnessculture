@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from '../components/seo'
 
@@ -6,14 +7,21 @@ import '../css/global.css'
 
 
 
-const H3pDownload = () => {
-  
+const Download = ({data}) => {
+
+  const program = data.sanityProduct
+
   const [values, setValues] = useState({name: '', email: '', height: '', weight: '', age: '', bodyfat: '', squat: '', bench: '', deadlift: '', ohpress: '', incline: '', frontsquat: ''})
   const [submitting, setSubmitting] = useState(false);
   const [access, setAccess] = useState(false)
   const [code, setCode] = useState({password: ''})
   const [denied, setDenied] = useState(false);
 
+  let form = React.createRef();
+
+  function validate() {
+    return form.current.reportValidity();
+  }
    
   useEffect(() => {
 
@@ -33,7 +41,7 @@ const H3pDownload = () => {
       return urlparameter;
     }
 
-    if(getUrlParam('code', '') === "X345934" || getCookie("code") === "X345934"){
+    if(getUrlParam('code', '') === `${program.password}` || getCookie("code") === `${program.password}`){
       // insert modal
       setDenied(false)
       setAccess(true)
@@ -52,8 +60,6 @@ const H3pDownload = () => {
   }
 
 
-  
-
   function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -67,10 +73,10 @@ const H3pDownload = () => {
     var ca = decodedCookie.split(';');
     for(var i = 0; i <ca.length; i++) {
       var c = ca[i];
-      while (c.charAt(0) == ' ') {
+      while (c.charAt(0) === ' ') {
         c = c.substring(1);
       }
-      if (c.indexOf(name) == 0) {
+      if (c.indexOf(name) === 0) {
         return c.substring(name.length, c.length);
       }
     }
@@ -86,21 +92,24 @@ const H3pDownload = () => {
 
   async function handleFormSubmit(e) {
     e.preventDefault();
-    setSubmitting(true);
-    try {
-      const URL = `https://ftserv.herokuapp.com/force/${values.name}/${values.email}/${values.height}/${values.weight}/${values.age}/${values.bodyfat}/${values.squat}/${values.bench}/${values.deadlift}/${values.ohpress}/${values.incline}/${values.frontsquat}`;
-      const fetchResult = fetch(URL,{method: "POST"})
-      const response = await fetchResult;
-      const data = await response;
-      if (data) {setSubmitting(false)};
-    } catch(err) {
-      alert("Hmmm. Something went wrong. Try again.")
+    if (validate()){
+      setSubmitting(true);
+      try {
+        const URL = `https://ftserv.herokuapp.com/force/${values.name}/${values.email}/${values.height}/${values.weight}/${values.age}/${values.bodyfat}/${values.squat}/${values.bench}/${values.deadlift}/${values.ohpress}/${values.incline}/${values.frontsquat}`;
+        const fetchResult = fetch(URL,{method: "POST"})
+        const response = await fetchResult;
+        const data = await response;
+        if (data) {setSubmitting(false)};
+        
+      } catch(err) {
+        alert("Hmmm. Something went wrong. Try again.")
+      }
     }
   }
 
   function handleCodeSubmit(e) {
     e.preventDefault();
-    if (code.password === "X345934") {
+    if (code.password === `${program.password}`) {
       setCookie("code",code.password, 30)
       setCode(code.password)
     } else {
@@ -119,9 +128,9 @@ const H3pDownload = () => {
           <div className="flex flex-row justify-center">
             <div className="w-full lg:w-1/2">
 
-              <form name="PDF Form" className="w-full">
+              <form name="PDF Form" ref={form}className="w-full">
 
-                <div className="flex flex-row justify-center -mx-3">
+                <div className="flex flex-row flex-wrap justify-center -mx-3">
                   <div className="w-full lg:w-3/4 px-3">
                     <div className="mb-4">
                       <label>
@@ -134,6 +143,7 @@ const H3pDownload = () => {
                           className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                           value={values.name}
                           onChange={handleInputChange}
+                          required
                         />
                     </div>
                   </div>
@@ -149,6 +159,7 @@ const H3pDownload = () => {
                           className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                           value={values.age}
                           onChange={handleInputChange}
+                          required
                         />
                     </div>
                   </div>
@@ -164,10 +175,11 @@ const H3pDownload = () => {
                     className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     value={values.email}
                     onChange={handleInputChange}
+                    required
                   />
                 </div>
-                <div className="flex flex-row justify-center -mx-3">
-                  <div className="w-full lg:w-1/3 px-3">
+                <div className="flex flex-row flex-wrap justify-center -mx-3">
+                  <div className="w-1/2 lg:w-1/3 px-3">
                     <div className="mb-4">
                       <label>
                         Height
@@ -178,10 +190,11 @@ const H3pDownload = () => {
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={values.height}
                         onChange={handleInputChange}
+                        required
                       />
                     </div>
                   </div>
-                  <div className="w-full lg:w-1/3 px-3">
+                  <div className="w-1/2 lg:w-1/3 px-3">
                     <div className="mb-4">
                       <label>
                         Weight
@@ -192,10 +205,11 @@ const H3pDownload = () => {
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={values.weight}
                         onChange={handleInputChange}
+                        required
                       />
                     </div>
                   </div>
-                  <div className="w-full lg:w-1/3 px-3">
+                  <div className="w-1/2 lg:w-1/3 px-3">
                     <div className="mb-4">
                       <label>
                         Body Fat %
@@ -206,12 +220,11 @@ const H3pDownload = () => {
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={values.bodyfat}
                         onChange={handleInputChange}
+                        required
                       />
                     </div>
                   </div>
-                </div>
-                <div className="flex flex-row justify-center -mx-3">
-                  <div className="w-full lg:w-1/3 px-3">
+                  <div className="w-1/2 lg:w-1/3 px-3">
                     <div className="mb-4">
                       <label>
                         Squat
@@ -222,10 +235,11 @@ const H3pDownload = () => {
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={values.squat}
                         onChange={handleInputChange}
+                        required
                       />
                     </div>
                   </div>
-                  <div className="w-full lg:w-1/3 px-3">
+                  <div className="w-1/2 lg:w-1/3 px-3">
                     <div className="mb-4">
                       <label>
                         Bench Press
@@ -236,10 +250,11 @@ const H3pDownload = () => {
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={values.bench}
                         onChange={handleInputChange}
+                        required
                       />
                     </div>
                   </div>
-                  <div className="w-full lg:w-1/3 px-3">
+                  <div className="w-1/2 lg:w-1/3 px-3">
                     <div className="mb-4">
                       <label>
                         Deadlift
@@ -250,12 +265,11 @@ const H3pDownload = () => {
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={values.deadlift}
                         onChange={handleInputChange}
+                        required
                       />
                     </div>
                   </div>
-                </div>
-                <div className="flex flex-row justify-center -mx-3">
-                  <div className="w-full lg:w-1/3 px-3">
+                  <div className="w-1/2 lg:w-1/3 px-3">
                     <div className="mb-4">
                       <label>
                         Overhead Press
@@ -269,7 +283,7 @@ const H3pDownload = () => {
                       />
                     </div>
                   </div>
-                  <div className="w-full lg:w-1/3 px-3">
+                  <div className="w-1/2 lg:w-1/3 px-3">
                     <div className="mb-4">
                       <label>
                         Incline Press
@@ -280,10 +294,11 @@ const H3pDownload = () => {
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={values.incline}
                         onChange={handleInputChange}
+                        required
                       />
                     </div>
                   </div>
-                  <div className="w-full lg:w-1/3 px-3">
+                  <div className="w-1/2 lg:w-1/3 px-3">
                     <div className="mb-4">
                       <label>
                         Front Squat
@@ -294,6 +309,7 @@ const H3pDownload = () => {
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={values.frontsquat}
                         onChange={handleInputChange}
+                        required
                       />
                     </div>
                   </div>
@@ -343,4 +359,13 @@ const H3pDownload = () => {
   }
 }
 
-export default H3pDownload
+export default Download
+
+
+export const pageQuery = graphql`
+  query{
+    sanityProduct(shopifyId: {eq: "4337398775889"}) {
+      password
+    }
+  }
+`
