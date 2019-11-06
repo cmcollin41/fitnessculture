@@ -8,10 +8,6 @@ import '../css/global.css'
 
 const H3pDownload = () => {
   
-  if (typeof window == "undefined") {
-    window = null
-  }
-  
   const [values, setValues] = useState({name: '', email: '', height: '', weight: '', age: '', bodyfat: '', squat: '', bench: '', deadlift: '', ohpress: '', incline: '', frontsquat: ''})
   const [submitting, setSubmitting] = useState(false);
   const [access, setAccess] = useState(false)
@@ -28,7 +24,7 @@ const H3pDownload = () => {
       });
       return vars;
     }
-    
+
     function getUrlParam(parameter, defaultvalue){
       var urlparameter = defaultvalue;
       if(window.location.href.indexOf(parameter) > -1){
