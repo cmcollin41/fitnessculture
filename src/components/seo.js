@@ -70,16 +70,20 @@ function SEO({ description, lang, meta, keywords, title, image }) {
                 name: `twitter:description`,
                 content: metaDescription,
               },
-            ]
-              .concat(
-                keywords.length > 0
-                  ? {
-                      name: `keywords`,
-                      content: keywords.join(`, `),
-                    }
-                  : []
-              )
-              .concat(meta)}
+              {
+                name: `keywords`,
+                content: keywords
+              }
+            ]}
+              // .concat(
+              //   keywords.length > 0
+              //     ? {
+              //         name: `keywords`,
+              //         content: keywords.join(`, `),
+              //       }
+              //     : []
+              // )
+              // .concat(meta)}
           />
         )
       }}

@@ -11,8 +11,8 @@ body, html {
   scroll-behavior: smooth;
 }
 
-ul {
-  list-style-type: circle;
+ol, ul {
+  list-style: initial;
   font-weight: normal;
   @apply pl-4
 }

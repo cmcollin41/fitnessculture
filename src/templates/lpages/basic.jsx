@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
-import SocialProof from "../../components/SocialProof"
+import SocialProof from "../../components/Sections/SocialProof"
 import CampaignForm from "../../components/drip/CampaignForm"
 import Img from 'gatsby-image'
 import BackgroundImage from 'gatsby-background-image'

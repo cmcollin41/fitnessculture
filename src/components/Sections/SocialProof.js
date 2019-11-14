@@ -1,9 +1,9 @@
 import React from "react"
-import logo1 from '../assets/logo-1.svg'
-import logo2 from '../assets/logo-2.svg'
-import logo3 from '../assets/logo-3.svg'
-import logo4 from '../assets/logo-4.svg'
-import logo5 from '../assets/menshealth.svg'
+import logo1 from '../../assets/logo-1.svg'
+import logo2 from '../../assets/logo-2.svg'
+import logo3 from '../../assets/logo-3.svg'
+import logo4 from '../../assets/logo-4.svg'
+import logo5 from '../../assets/menshealth.svg'
 
 const SocialProof = () => (
   <div className="w-full bg-gray-100 pt-4 pb-2">
