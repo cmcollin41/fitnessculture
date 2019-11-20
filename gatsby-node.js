@@ -31,6 +31,33 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
 
+  
+  const landingPageGraphQl = await graphql(`
+  {
+    allSanityLandingPage(filter: {active: {eq: true}}) {
+      nodes {
+        id
+        slug {
+          current
+        }
+      }
+    }
+  }
+  `)
+
+  const landingPage = path.resolve("src/templates/landingPage.jsx")
+
+  landingPageGraphQl.data.allSanityLandingPage.nodes.forEach((node) => {
+    createPage({
+      path: `downloads/${node.slug.current}`,
+      component: landingPage,
+      context: {
+        id: node.id,
+      },
+    })
+  })
+
+
   const basicGraphQl = await graphql(`
   {
     allSanityBasic(filter: {active: {eq: true}}) {

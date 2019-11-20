@@ -20,7 +20,7 @@ const BlockText = ({block, section}) => {
       <h3 className="text-lg lg:text-3xl statement">{block.title}</h3>
       <BlockContent className="mt-5" blocks={block._rawBody} serializers={serializers} />
       <div className="mt-10">
-        <Link to={section.link} className="btn text-blue-500 border border-blue-500 rounded-sm">{section.link}</Link>
+        <Link to={section.link} className="btn text-blue-500 border border-blue-500 rounded-sm">{section.cta}</Link>
       </div>
     </div>
   )

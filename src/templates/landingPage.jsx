@@ -14,8 +14,8 @@ import Guarantees from "../components/Sections/Guarantees"
 import Pricing from "../components/Sections/Pricing"
 import Blocks from "../components/Sections/Blocks"
 
-const Webpage = ({data}) => {
-  const webpage = data.sanityWebpage
+const landingPage = ({data}) => {
+  const landingPage = data.sanityLandingPage
 
   function getBlockComponent(block) {
     switch (block._type) {
@@ -55,17 +55,17 @@ const Webpage = ({data}) => {
 
   return (
     <Layout>
-      <SEO title={webpage.metaTitle} description={webpage.metaDescription} keywords={webpage.metaKeywords}/>
-      {webpage.sections.map(block => getBlockComponent(block))}
+      <SEO title={landingPage.metaTitle} description={landingPage.metaDescription} keywords={landingPage.metaKeywords}/>
+      {landingPage.sections.map(block => getBlockComponent(block))}
     </Layout>
   )
 }
 
-export default Webpage
+export default landingPage
 
 export const query = graphql`
-  query WebpageById($id: String!){
-    sanityWebpage(id: {eq: $id}) {
+  query LandingPageById($id: String!){
+    sanityLandingPage(id: {eq: $id}) {
       id
       title
       metaTitle

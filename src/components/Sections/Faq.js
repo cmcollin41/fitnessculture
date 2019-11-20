@@ -3,7 +3,6 @@ import React from "react";
 
 
 const Faq = ({section}) => {
-  console.log(section)
   return (
     <div className="py-20 px-5">
       <div className="container mx-auto">

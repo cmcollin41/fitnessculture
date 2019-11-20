@@ -1,27 +1,22 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from 'gatsby-image'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
-// Blocks
 import SocialProof from "../components/Sections/SocialProof"
-import Testimonials from "../components/Sections/Testimonials"
-import Faq from "../components/Sections/Faq"
-import Guarantees from "../components/Sections/Guarantees"
-import Pricing from "../components/Sections/Pricing"
-
 import ProgramTabs from "../components/ProgramTabs"
+import Img from 'gatsby-image'
+
+
 
 // Images
 import circles from '../assets/circles.svg'
 import square from '../assets/square-circles.svg'
+import Guarantees from "../components/Sections/Guarantees"
 
 
 const Program = ({ data }) => {
 
-  const program = data.sanityProgram
-
+  const program = data.allSanityProgram.nodes[0]
   return (
     <Layout>
        <SEO title={program.title} description={program.subtitle} image={program.heroImage.asset.url} />
@@ -31,13 +26,13 @@ const Program = ({ data }) => {
         <div className="absolute h-full bottom-0 left-0 overflow-x-hidden" style={{zIndex: "-10"}}>
           <img src={circles} alt="circles" width="200px" height="100%" style={{transform: "scale(-1)"}}/>
         </div>
-        <div className="hidden lg:block absolute h-full" style={{transform: "translate(-35%, 50%)"}}>
-          <h2 className="uppercase text-gray-300 text-3xl" style={{transform: "rotate(90deg)"}}>Fitness Program</h2>
+        <div className="hidden lg:block absolute h-full" style={{transform: "translate(-35%, 50%)", zIndex: "-10"}}>
+          <h2 className="statement uppercase text-gray-300 lg:text-xl xl:text-3xl" style={{transform: "rotate(90deg)"}}>Fitness Program</h2>
         </div>
         <div className="container mx-auto px-5 pb-5 pt-3">
           <div className="flex flex-col lg:flex-row justify-center items-center">
             <div className="w-full lg:w-1/2">
-              <h1 className="statement text-4xl lg:text-5xl leading-none">
+              <h1 className="statement uppercase text-4xl lg:text-5xl leading-none">
                 {program.title}
               </h1>
               <p className="text-xl mt-5" style={{ maxWidth: "500px" }}>
@@ -98,7 +93,7 @@ const Program = ({ data }) => {
             </video>
           </div>
           <div className="w-full lg:w-1/2 px-5 lg:px-20 personas z-10">
-            <h3 className="statement text-3xl pb-5">
+            <h3 className="uppercase text-3xl pb-5">
              {program.appTitle}
             </h3>
             <p>{program.appDescription}</p>
@@ -112,14 +107,104 @@ const Program = ({ data }) => {
     </div>
 
 
+    <div className="py-20 bg-gray-900">
+      <div className="container px-5 lg:mx-auto">
+        <h3 className="uppercase text-white text-3xl pb-5 lg:pb-10">
+          Join the <span className="px-2 statement" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>#FitCult</span> Family
+        </h3>
+      </div>
+      <div className="flex flex-row overflow-scroll lg:overflow-hidden scroll-x-mandatory">
+        {program.testimonials.map((i, count) => (
+          <div key={count} className="flex flex-col justify-between rounded p-5 w-64 mx-3 bg-gray-600 snap-align-center" style={{minWidth: "275px"}}>
+            <p className="text-white text-xs italic">"{i.quote}"</p>
+            <div className="flex flex-row items-center mt-6">
+              <Img fixed={i.memberImage.asset.fixed} alt={i.member} width="50px" height="50px" className="rounded-full" />
+              <div className="pl-2">
+                <h6 className="uppercase">{i.member}</h6>
+                <span className="text-black text-xs">{i.location}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="container mx-auto mt-10 text-center">
+        <a href={program.premiumCta} className="uppercase font-bold text-white border border-white rounded-sm py-2 px-4">Join the Family</a>
+      </div>
+    </div>
+
+    <div className="py-20 relative" id="pricing">
+      <img src={square} alt="square texture" width="100px" height="100%" className="absolute" style={{top: "-25px", zIndex: "-1"}} />
+      <div className="flex flex-col lg:flex-row justify-center items-center px-5">
+        <div className="order-2 lg:order-1 w-full md:w-1/2 lg:w-1/4 mt-20 lg:mt:auto">
+          <div className="rounded overflow-hidden shadow-lg bg-white text-black flex flex-col justify-between">
+            <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
+            </div>
+            <div className="p-4 text-center mx-auto">
+              <span className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Basic</span>
+              <h6 className="text-black text-base text-6xl mt-5">${program.basicPrice}</h6>
+              <span className="text-black text-sm mt-5 uppercase">per month</span>
+            </div>
+            <div>
+              <ul className="pricing">
+                {program.basicBenefits.map((benefit, i) => (
+                  <li>{benefit.description}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="px-6 py-10">
+              <a href={program.basicCta} className="uppercase font-bold text-white rounded-sm px-4 py-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>Start Program</a>
+            </div>
+          </div>
+        </div>
+        <div className="order-1 lg:order-2 w-full md:w-1/2 lg:w-1/4 lg:mt-auto">
+          <div className="text-black rounded overflow-hidden shadow-lg bg-white flex flex-col justify-between">
+            <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
+            </div>
+            <div className="p-4 text-center mx-auto">
+              <span className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Premium</span>
+              <h6 className="text-black text-base text-6xl mt-5">${program.premiumPrice}</h6>
+              <span className="text-black text-sm mt-5 uppercase">per month</span>
+            </div>
+            <div>
+              <ul className="pricing">
+                {program.premiumBenefits.map((benefit, i) => (
+                  <li>{benefit.description}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="px-6 py-10">
+              <a href={program.premiumCta} className="uppercase font-bold text-white rounded-sm px-4 py-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>Start Program</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src={ circles } alt="circles texture" width="250px" height="100%" className="block absolute right-0" style={{ bottom: "-150px", zIndex: "-10"}} />
+    </div>
+
+    <Guarantees program={program} />
 
 
-      <Testimonials program={program} />
-      <Pricing program={program} />
-      <Guarantees program={program} />
-      <Faq program={program} />
-
-
+      <div className="py-20 px-5">
+        <div className="container mx-auto">
+          <h3 className="text-center uppercase text-3xl mb-10">
+            Questions and Answers
+          </h3>
+          {program.questions.map((q, count) => (
+          <div className="flex flex-col lg:flex-row justify-center"  key={count}>
+            <div className="w-full lg:w-3/4 border-b border-gray-400  bg-white p-4 flex flex-col justify-between leading-normal">
+              <div className="py-6">
+                <div className="text-gray-900 font-bold text-xl mb-2">
+                  {q.question}
+                </div>
+                <p className="text-gray-700 text-base">
+                  {q.answer}
+                </p>
+              </div>
+            </div>
+          </div>
+          ))}
+        </div>
+      </div>
     </Layout>
   )
 }
@@ -128,7 +213,8 @@ export default Program
 
 export const pageQuery = graphql`
   query ProgramById($uid: String!) {
-    sanityProgram(id: {eq: $uid}) {
+    allSanityProgram(filter: {id: {eq: $uid}}) {
+      nodes {
         id
         title
         subtitle
@@ -241,7 +327,7 @@ export const pageQuery = graphql`
         premiumBenefits {
           description
         }
-     
+      }
     }
   }
 `
