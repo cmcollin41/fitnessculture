@@ -27,7 +27,7 @@ const BlockText = ({block, section}) => {
     <div className={`w-full lg:w-1/2 lg:px-10 mx-auto ` + block.alignment}>
       <BlockContent className="mt-5" blocks={block._rawText} serializers={serializers} />
       <div className="mt-10">
-        <Link to={section.link} className="btn text-white bg-blue-500 rounded-sm">{section.cta}</Link>
+        <Link to={section.link} className="btn text-white bg-blue-500 rounded-sm shadow-lg">{section.cta}</Link>
       </div>
     </div>
   )

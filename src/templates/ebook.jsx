@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 
 // Blocks
 import SocialProof from "../components/Sections/SocialProof"
-import Testimonials from "../components/Sections/Testimonials"
+// import Testimonials from "../components/Sections/Testimonials"
 import Guarantees from "../components/Sections/Guarantees"
 import Faq from "../components/Sections/Faq"
 import Steps from "../components/Sections/Steps"
