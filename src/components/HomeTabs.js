@@ -14,9 +14,9 @@ class HomeTabs extends React.Component {
 
   <Tabs selectedTabClassName="active-tabz">
     <TabList className="flex flex-row flex-wrap justify-center w-full overflow-hidden border-b border-gray-300">
-      <Tab className="mx-4 lg:mx-4 cursor-pointer text-center p-2 w-full lg:w-1/5 no-style-ul"><h6 className="statement text-lg lg:text-2xl">Training</h6></Tab>
-      <Tab className="mx-4 lg:mx-4 cursor-pointer text-center p-2 w-full lg:w-1/5 no-style-ul"><h6 className="statement text-lg lg:text-2xl">Nutrition</h6></Tab>
-      <Tab className="mx-4 lg:mx-4 cursor-pointer text-center p-2 w-full lg:w-1/5 no-style-ul"><h6 className="statement text-lg lg:text-2xl">Mobility</h6></Tab>
+      <Tab className="mx-4 lg:mx-4 cursor-pointer text-center p-2 w-full lg:w-1/5 no-style-ul"><h3 className="statement text-lg lg:text-2xl">Training</h3></Tab>
+      <Tab className="mx-4 lg:mx-4 cursor-pointer text-center p-2 w-full lg:w-1/5 no-style-ul"><h3 className="statement text-lg lg:text-2xl">Nutrition</h3></Tab>
+      <Tab className="mx-4 lg:mx-4 cursor-pointer text-center p-2 w-full lg:w-1/5 no-style-ul"><h3 className="statement text-lg lg:text-2xl">Mobility</h3></Tab>
     </TabList>
 
     

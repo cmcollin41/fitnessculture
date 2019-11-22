@@ -6,7 +6,7 @@ const Testimonials = ({section}) => {
   return (
     <div className="py-20 bg-gray-900">
       <div className="container px-5 lg:mx-auto">
-        <h3 className="statement text-white text-3xl pb-5 lg:pb-10">{section.title}</h3>
+        <h3 className="text-white pb-5 lg:pb-10">{section.title}</h3>
       </div>
       <div className="flex flex-row overflow-scroll lg:overflow-hidden scroll-x-mandatory">
         {section.testimonials.map((testimonial, i) => (

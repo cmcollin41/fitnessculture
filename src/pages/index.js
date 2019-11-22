@@ -82,14 +82,40 @@ query IndexPage{
       ... on SanityHeroSection {
         _key
         _type
-        title
-        _rawDescription
         link
         cta
-        image {
+        backgroundImage {
           asset {
             fluid(maxWidth: 1400) {
               ...GatsbySanityImageFluid_withWebp
+            }
+          }
+        }
+        blocks {
+          ... on SanityBlockImage {
+            _key
+            _type
+            image {
+              asset {
+                fluid(maxWidth: 1000) {
+                  ...GatsbySanityImageFluid_withWebp
+                }
+              }
+            }
+          }
+          ... on SanityBlockText {
+            _key
+            _type
+            _rawText
+            alignment
+          }
+          ... on SanityBlockVideo {
+            _key
+            _type
+            video {
+              asset {
+                url
+              }
             }
           }
         }
@@ -217,9 +243,6 @@ query IndexPage{
       ... on SanityBlockSection {
         _key
         _type
-        title
-        title
-        description
         link
         cta
         blocks {
@@ -237,8 +260,8 @@ query IndexPage{
           ... on SanityBlockText {
             _key
             _type
-            title
-            _rawBody
+            _rawText
+            alignment
           }
         }
       }
