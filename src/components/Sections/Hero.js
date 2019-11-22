@@ -3,6 +3,7 @@ import BackgroundImage from 'gatsby-background-image'
 import BlockText from "../Blocks/BlockText"
 import BlockImage from "../Blocks/BlockImage"
 import BlockVideo from "../Blocks/BlockVideo"
+import DripForm from "../Blocks/DripForm"
 
 const Hero = ({section}) => {
 
@@ -17,6 +18,9 @@ const Hero = ({section}) => {
 
       case 'blockVideo':
         return <BlockVideo key={block._key} block={block} />
+
+      case 'dripForm':
+        return <DripForm key={block._key} block={block} />
 
       default:
         return <div className="no_block_type" />

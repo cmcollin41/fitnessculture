@@ -2,7 +2,7 @@ import React from "react"
 import BlockText from "../Blocks/BlockText"
 import BlockImage from "../Blocks/BlockImage"
 import BlockVideo from "../Blocks/BlockVideo"
-import CampaignForm from "../drip/CampaignForm"
+import DripForm from "../Blocks/DripForm"
 
 const Blocks = ({section}) =>{
   
@@ -15,11 +15,11 @@ const Blocks = ({section}) =>{
       case 'blockImage':
         return <BlockImage key={block._key} block={block} />
 
-      case 'blockImage':
+      case 'blockVideo':
         return <BlockVideo key={block._key} block={block} />
 
-      case 'blockImage':
-        return <CampaignForm key={block._key} block={block} />
+      case 'dripForm':
+        return <DripForm key={block._key} block={block} />
 
       default:
         return <div className="no_block_type" />

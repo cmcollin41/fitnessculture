@@ -118,6 +118,12 @@ query IndexPage{
               }
             }
           }
+          ... on SanityDripForm {
+            _key
+            _type
+            formId
+            cta
+          }
         }
       }
       ... on SanitySocialProofSection {
@@ -263,114 +269,24 @@ query IndexPage{
             _rawText
             alignment
           }
+          ... on SanityBlockVideo {
+            _key
+            _type
+            video {
+              asset {
+                url
+              }
+            }
+          }
+          ... on SanityDripForm {
+            _key
+            _type
+            formId
+            cta
+          }
         }
       }
     }
   }
 }
 `
-
-// query IndexPage{
-//   sanityHome {
-//       id
-//       title
-//       subtitle
-//       heroCta
-//       heroLink
-//       heroColor {
-//         hex
-//       }
-//       heroImage {
-//         asset {
-//           fluid(maxWidth: 1625) {
-//             ...GatsbySanityImageFluid_withWebp
-//           }
-//           url
-//         }
-//       }
-//       heroVideo {
-//         asset {
-//           url 
-//         }
-//       }
-//       trainingTitle
-//       trainingDescription
-//       trainingImage {
-//         asset {
-//           fluid(maxWidth: 595) {
-//             ...GatsbySanityImageFluid_withWebp
-//           }
-//         }
-//       }
-//       nutritionTitle
-//       nutritionDescription
-//       nutritionImage {
-//         asset {
-//           fluid(maxWidth: 595) {
-//             ...GatsbySanityImageFluid_withWebp
-//           }
-//         }
-//       }
-//       mobilityTitle
-//       mobilityDescription
-//       mobilityImage {
-//         asset {
-//           fluid(maxWidth: 595) {
-//             ...GatsbySanityImageFluid_withWebp
-//           }
-//         }
-//       }
-//       aboutTitle
-//       aboutDescription
-//       aboutImage {
-//         asset {
-//           fluid(maxWidth: 768) {
-//             ...GatsbySanityImageFluid_withWebp
-//           }
-//         }
-//       }
-//       personalTrainerTitle
-//       personalTrainerDescription
-//       personalTrainerImage {
-//         asset {
-//           fluid(maxWidth: 768) {
-//             ...GatsbySanityImageFluid_withWebp
-//           }
-//         }
-//       }
-//       testimonials {
-//         quote
-//         member
-//         memberImage {
-//           asset {
-//             fixed(width: 50) {
-//               ...GatsbySanityImageFixed_withWebp
-//             }
-//           }
-//         }
-//         location
-//       }
-//       programs {
-//         active
-//         title
-//         subtitle
-//         gender
-//         slug {
-//           current
-//         }
-//         heroImage {
-//           asset {
-//             fluid(maxWidth: 300) {
-//               ...GatsbySanityImageFluid_withWebp
-//             }
-//           }
-//         }
-//         colorOne {
-//           hex
-//         }
-//         colorTwo {
-//           hex
-//         }
-//       }
-//     }
-// }
