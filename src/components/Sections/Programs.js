@@ -18,13 +18,12 @@ const Programs =({section}) => {
   return (
     <div className="py-20 bg-gray-100">
       <div className="container lg:mx-auto px-5">
-        <h3 className="statement text-3xl pb-5 lg:pb-10">
+        <h3 className="pb-5 lg:pb-10">
           Our Programs
         </h3>
       </div>
       <div className="scroll-btns relative h-full">
         <div ref={programRow} className="flex flex-row flex-nowrap items-stretch h-full overflow-x-scroll lg:overflow-x-hidden scroll-x-mandatory">
-
           {
             section.programs.map((program,i) => {
               return (

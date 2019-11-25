@@ -1,0 +1,44 @@
+export default {
+  name: 'stat',
+  title: 'Stat',
+  type: 'document',
+  fields: [
+    {
+      name: 'number',
+      title: 'Number',
+      type: 'string'
+    },
+    {
+      name: 'description',
+      title: 'Description',
+      type: 'text'
+    },
+    {
+      name: 'icon',
+      title: 'Icon',
+      type: 'image',
+      options: {
+        hotspot: true
+      }
+    },
+    {
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{type: 'string'}]
+    }
+  ],
+  preview: {
+    select: {
+      title: 'number',
+      tags: 'tags',
+      media: 'icon'
+    },
+    prepare(selection) {
+      const {tags} = selection
+      return Object.assign({}, selection, {
+        subtitle: tags && `${tags}`
+      })
+    }
+  }
+}

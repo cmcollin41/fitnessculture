@@ -1,9 +1,10 @@
 import React from  "react"
-import { Link } from "gatsby"
 import BlockContent from '@sanity/block-content-to-react'
+import DownloadCTA from '../CTAs/DownloadCTA'
+import BasicCTA from '../CTAs/BasicCTA'
 
 
-const BlockText = ({block, section}) => {
+const BlockText = ({block,product}) => {
 
   const serializers = {
     types: {
@@ -22,12 +23,26 @@ const BlockText = ({block, section}) => {
     }
   }
 
+  function getBlockComponent(cta, product) {
+    switch (cta._type) {
+
+      case 'downloadCTA':
+        return <DownloadCTA key={cta._key} cta={cta} product={product} />
+
+      case 'basicCTA':
+        return <BasicCTA key={cta._key} cta={cta} />
+
+      default:
+        return <div className="no_block_type" />
+    }
+  }
+
 
   return (
     <div className={`w-full lg:w-1/2 lg:px-10 mx-auto ` + block.alignment}>
       <BlockContent className="mt-5" blocks={block._rawText} serializers={serializers} />
       <div className="mt-10">
-        <Link to={section.link} className="btn text-white bg-blue-500 rounded-sm shadow-lg">{section.cta}</Link>
+        {block.ctas.map(cta => getBlockComponent(cta,product))}
       </div>
     </div>
   )

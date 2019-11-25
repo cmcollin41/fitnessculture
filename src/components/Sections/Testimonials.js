@@ -2,7 +2,6 @@ import React from "react"
 import Img from "gatsby-image"
 
 const Testimonials = ({section}) => {
-  console.log(section)
   return (
     <div className="py-20 bg-gray-900">
       <div className="container px-5 lg:mx-auto">

@@ -22,12 +22,12 @@ const Pricing = ({section}) => {
               <div>
                 <ul className="pricing">
                   {price.benefits.map((benefit, i) => (
-                    <li>{benefit.description}</li>
+                    <li key={i}>{benefit.description}</li>
                   ))}
                 </ul>
               </div>
               <div className="px-6 py-10">
-                <a href={section.link || ""} className="uppercase font-bold text-white rounded-sm px-4 py-2">Start Program</a>
+                <a href={section.link || ""} className="uppercase font-bold text-white rounded-sm px-4 py-2 bg-blue-500">Start Program</a>
               </div>
             </div>
           </div>

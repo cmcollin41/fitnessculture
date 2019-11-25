@@ -23,7 +23,7 @@ class HomeTabs extends React.Component {
     {
       program.tabs.map((program,i) => {
         return (
-          <TabPanel>
+          <TabPanel key={i}>
           <div className="flex flex-col lg:flex-row items-center mt-20">
             <div className="w-full md:w-1/2 lg:w-1/2 px-5 lg:px-20 mx-auto">
               <h2 className="text-xl uppercase text-center lg:text-left">{program.title}</h2>

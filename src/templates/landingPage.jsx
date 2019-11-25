@@ -64,7 +64,7 @@ const landingPage = ({data}) => {
 export default landingPage
 
 export const query = graphql`
-  query LandingPageById($id: String!){
+  query LandingpPageById($id: String!){
     sanityLandingPage(id: {eq: $id}) {
       id
       title
@@ -75,8 +75,6 @@ export const query = graphql`
         ... on SanityHeroSection {
           _key
           _type
-          link
-          cta
           backgroundImage {
             asset {
               fluid(maxWidth: 1400) {
@@ -101,6 +99,34 @@ export const query = graphql`
               _type
               _rawText
               alignment
+              ctas {
+                ... on SanityBasicCTA {
+                  _key
+                  _type
+                  link
+                  action
+                }
+                ... on SanityDownloadCTA {
+                  _key
+                  _type
+                  action
+                }
+              }
+            }
+            ... on SanityBlockVideo {
+              _key
+              _type
+              video {
+                asset {
+                  url
+                }
+              }
+            }
+            ... on SanityDripForm {
+              _key
+              _type
+              formId
+              cta
             }
           }
         }
@@ -125,6 +151,19 @@ export const query = graphql`
             question
             answer
           }
+          ctas {
+            ... on SanityBasicCTA {
+              _key
+              _type
+              link
+              action
+            }
+            ... on SanityDownloadCTA {
+              _key
+              _type
+              action
+            }
+          }
         }
         ... on SanityProgramSection {
           _key
@@ -139,7 +178,7 @@ export const query = graphql`
             }
             heroImage {
               asset {
-                fluid(maxWidth: 300) {
+                fluid(maxWidth: 500) {
                   ...GatsbySanityImageFluid_withWebp
                 }
               }
@@ -151,6 +190,19 @@ export const query = graphql`
               hex
             }
           }
+          ctas {
+            ... on SanityBasicCTA {
+              _key
+              _type
+              link
+              action
+            }
+            ... on SanityDownloadCTA {
+              _key
+              _type
+              action
+            }
+          }
         }
         ... on SanityStatSection {
           _key
@@ -160,6 +212,19 @@ export const query = graphql`
           stats {
             number
             description
+          }
+          ctas {
+            ... on SanityBasicCTA {
+              _key
+              _type
+              link
+              action
+            }
+            ... on SanityDownloadCTA {
+              _key
+              _type
+              action
+            }
           }
         }
         ... on SanityTestimonialSection {
@@ -180,6 +245,19 @@ export const query = graphql`
               }
             }
           }
+          ctas {
+            ... on SanityBasicCTA {
+              _key
+              _type
+              link
+              action
+            }
+            ... on SanityDownloadCTA {
+              _key
+              _type
+              action
+            }
+          }
         }
         ... on SanityPricingSection {
           _key
@@ -197,8 +275,6 @@ export const query = graphql`
         ... on SanityBlockSection {
           _key
           _type
-          link
-          cta
           blocks {
             ... on SanityBlockImage {
               _key
@@ -216,6 +292,34 @@ export const query = graphql`
               _type
               _rawText
               alignment
+              ctas {
+                ... on SanityBasicCTA {
+                  _key
+                  _type
+                  link
+                  action
+                }
+                ... on SanityDownloadCTA {
+                  _key
+                  _type
+                  action
+                } 
+              }
+            }
+            ... on SanityBlockVideo {
+              _key
+              _type
+              video {
+                asset {
+                  url
+                }
+              }
+            }
+            ... on SanityDripForm {
+              _key
+              _type
+              formId
+              cta
             }
           }
         }
@@ -223,5 +327,8 @@ export const query = graphql`
     }
   }
 `
+
+
+
 
 

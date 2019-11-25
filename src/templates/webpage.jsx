@@ -67,159 +67,263 @@ export const query = graphql`
   query WebpageById($id: String!){
     sanityWebpage(id: {eq: $id}) {
       id
-      title
-      metaTitle
-      metaDescription
-      metaKeywords
-      sections {
-        ... on SanityHeroSection {
-          _key
-          _type
-          link
-          cta
-          backgroundImage {
+    title
+    metaTitle
+    metaDescription
+    metaKeywords
+    sections {
+      ... on SanityHeroSection {
+        _key
+        _type
+        backgroundImage {
+          asset {
+            fluid(maxWidth: 1400) {
+              ...GatsbySanityImageFluid_withWebp
+            }
+          }
+        }
+        blocks {
+          ... on SanityBlockImage {
+            _key
+            _type
+            image {
+              asset {
+                fluid(maxWidth: 1000) {
+                  ...GatsbySanityImageFluid_withWebp
+                }
+              }
+            }
+          }
+          ... on SanityBlockText {
+            _key
+            _type
+            _rawText
+            alignment
+            ctas {
+              ... on SanityBasicCTA {
+                _key
+                _type
+                link
+                action
+              }
+              ... on SanityDownloadCTA {
+                _key
+                _type
+                action
+              }
+            }
+          }
+          ... on SanityBlockVideo {
+            _key
+            _type
+            video {
+              asset {
+                url
+              }
+            }
+          }
+          ... on SanityDripForm {
+            _key
+            _type
+            formId
+            cta
+          }
+        }
+      }
+      ... on SanitySocialProofSection {
+        _key
+        _type
+        images {
+          image {
             asset {
-              fluid(maxWidth: 1400) {
+              fluid(maxWidth: 300) {
                 ...GatsbySanityImageFluid_withWebp
               }
             }
           }
-          blocks {
-            ... on SanityBlockImage {
-              _key
-              _type
-              image {
-                asset {
-                  fluid(maxWidth: 1000) {
-                    ...GatsbySanityImageFluid_withWebp
-                  }
-                }
-              }
-            }
-            ... on SanityBlockText {
-              _key
-              _type
-              _rawText
-              alignment
-            }
-          }
         }
-        ... on SanitySocialProofSection {
-          _key
-          _type
-          images {
-            image {
-              asset {
-                fluid(maxWidth: 300) {
-                  ...GatsbySanityImageFluid_withWebp
-                }
-              }
-            }
-          }
+      }
+      ... on SanityFaqSection {
+        _key
+        _type
+        faqs {
+          id
+          question
+          answer
         }
-        ... on SanityFaqSection {
-          _key
-          _type
-          faqs {
-            id
-            question
-            answer
+        ctas {
+          ... on SanityBasicCTA {
+            _key
+            _type
+            link
+            action
           }
-        }
-        ... on SanityProgramSection {
-          _key
-          _type
-          programs {
-            active
-            title
-            subtitle
-            gender
-            slug {
-              current
-            }
-            heroImage {
-              asset {
-                fluid(maxWidth: 300) {
-                  ...GatsbySanityImageFluid_withWebp
-                }
-              }
-            }
-            colorOne {
-              hex
-            }
-            colorTwo {
-              hex
-            }
-          }
-        }
-        ... on SanityStatSection {
-          _key
-          _type
-          title
-          description
-          stats {
-            number
-            description
-          }
-        }
-        ... on SanityTestimonialSection {
-          _key
-          _type
-          title
-          description
-          testimonials {
-            member
-            gender
-            quote
-            location
-            memberImage {
-              asset {
-                fixed(width: 50) {
-                  ...GatsbySanityImageFixed_withWebp
-                }
-              }
-            }
-          }
-        }
-        ... on SanityPricingSection {
-          _key
-          _type
-          title
-          description
-          pricing {
-            number
-            title
-            benefits {
-              description
-            }
-          }
-        }
-        ... on SanityBlockSection {
-          _key
-          _type
-          link
-          cta
-          blocks {
-            ... on SanityBlockImage {
-              _key
-              _type
-              image {
-                asset {
-                  fluid(maxWidth: 1000) {
-                    ...GatsbySanityImageFluid_withWebp
-                  }
-                }
-              }
-            }
-            ... on SanityBlockText {
-              _key
-              _type
-              _rawText
-              alignment
-            }
+          ... on SanityDownloadCTA {
+            _key
+            _type
+            action
           }
         }
       }
+      ... on SanityProgramSection {
+        _key
+        _type
+        programs {
+          active
+          title
+          subtitle
+          gender
+          slug {
+            current
+          }
+          heroImage {
+            asset {
+              fluid(maxWidth: 500) {
+                ...GatsbySanityImageFluid_withWebp
+              }
+            }
+          }
+          colorOne {
+            hex
+          }
+          colorTwo {
+            hex
+          }
+        }
+        ctas {
+          ... on SanityBasicCTA {
+            _key
+            _type
+            link
+            action
+          }
+          ... on SanityDownloadCTA {
+            _key
+            _type
+            action
+          }
+        }
+      }
+      ... on SanityStatSection {
+        _key
+        _type
+        title
+        description
+        stats {
+          number
+          description
+        }
+        ctas {
+          ... on SanityBasicCTA {
+            _key
+            _type
+            link
+            action
+          }
+          ... on SanityDownloadCTA {
+            _key
+            _type
+            action
+          }
+        }
+      }
+      ... on SanityTestimonialSection {
+        _key
+        _type
+        title
+        description
+        testimonials {
+          member
+          gender
+          quote
+          location
+          memberImage {
+            asset {
+              fixed(width: 50) {
+                ...GatsbySanityImageFixed_withWebp
+              }
+            }
+          }
+        }
+        ctas {
+          ... on SanityBasicCTA {
+            _key
+            _type
+            link
+            action
+          }
+          ... on SanityDownloadCTA {
+            _key
+            _type
+            action
+          }
+        }
+      }
+      ... on SanityPricingSection {
+        _key
+        _type
+        title
+        description
+        pricing {
+          number
+          title
+          benefits {
+            description
+          }
+        }
+      }
+      ... on SanityBlockSection {
+        _key
+        _type
+        blocks {
+          ... on SanityBlockImage {
+            _key
+            _type
+            image {
+              asset {
+                fluid(maxWidth: 1000) {
+                  ...GatsbySanityImageFluid_withWebp
+                }
+              }
+            }
+          }
+          ... on SanityBlockText {
+            _key
+            _type
+            _rawText
+            alignment
+            ctas {
+              ... on SanityBasicCTA {
+                _key
+                _type
+                link
+                action
+              }
+              ... on SanityDownloadCTA {
+                _key
+                _type
+                action
+              } 
+            }
+          }
+          ... on SanityBlockVideo {
+            _key
+            _type
+            video {
+              asset {
+                url
+              }
+            }
+          }
+          ... on SanityDripForm {
+            _key
+            _type
+            formId
+            cta
+          }
+        }
+      }
+    }
     }
   }
 `

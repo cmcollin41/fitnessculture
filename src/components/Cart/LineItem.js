@@ -36,6 +36,7 @@ const LineItem = props => {
     context.removeLineItem(context.client, context.checkout.id, line_item.id)
   }
 
+
   return (
     <div className="flex flex-wrap w-full mb-10">
       <div className="w-full lg:w-1/4 mt-4">
@@ -44,7 +45,9 @@ const LineItem = props => {
       <div className="w-full lg:w-3/4 flex flex-row justify-between mt-4">
         <div>
           <span className="font-bold text-sm">
-            <Link to={`/products/` + (line_item.title.replace(/\s+/g, '-').toLowerCase())}>{line_item.title}</Link>
+
+            {/* <Link to={`/products/` + (line_item.title.replace(/\s+/g, '-').toLowerCase())}>{line_item.title}</Link> */}
+            {line_item.title}
             {`  `}
             {line_item.variant.title === ! 'Default Title' ? line_item.variant.title : ''}
           </span>
