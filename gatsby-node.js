@@ -184,38 +184,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
 
 
-  const webpageGraphQl = await graphql(`
-    {
-      allSanityWebpage {
-        edges {
-          node {
-            id
-            title
-            slug {
-              current
-            }
-          }
-        }
-      }
-    }
-  `)
-
-
-  const webpage = path.resolve("src/templates/webpage.jsx")
-
-  webpageGraphQl.data.allSanityWebpage.edges.forEach(({node}) => {
-    createPage({
-      path: `webpage/${node.slug.current}`,
-      component: webpage,
-      context: {
-        id: node.id
-      },
-    })
-
-
-  })
-
-
   // const shopifyGraphQL = await graphql(`
   //   {
   //     allShopifyProduct {
