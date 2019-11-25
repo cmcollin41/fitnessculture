@@ -13,6 +13,7 @@ import Programs from "../components/Sections/Programs"
 import Guarantees from "../components/Sections/Guarantees"
 import Pricing from "../components/Sections/Pricing"
 import Blocks from "../components/Sections/Blocks"
+import Steps from "../components/Sections/Steps"
 
 const landingPage = ({data}) => {
   const landingPage = data.sanityLandingPage
@@ -20,31 +21,34 @@ const landingPage = ({data}) => {
   function getBlockComponent(block) {
     switch (block._type) {
       case 'heroSection':
-        return <Hero key={block.id} section={block} />
+        return <Hero key={block._key} section={block} />
 
       case 'socialProofSection':
-        return <SocialProof key={block.id} section={block} />
+        return <SocialProof key={block._key} section={block} />
 
       case 'faqSection':
-        return <Faq key={block.id} section={block} />
+        return <Faq key={block._key} section={block} />
 
       case 'testimonialSection':
-        return <Testimonials key={block.id} section={block} />
+        return <Testimonials key={block._key} section={block} />
 
       case 'programSection':
-        return <Programs key={block.id} section={block} />
+        return <Programs key={block._key} section={block} />
 
       case 'statSection':
-        return <Stats key={block.id} section={block} />
+        return <Stats key={block._key} section={block} />
 
       case 'guaranteeSection':
-        return <Guarantees key={block.id} section={block} />
+        return <Guarantees key={block._key} section={block} />
 
       case 'pricingSection':
-        return <Pricing key={block.id} section={block} />
+        return <Pricing key={block._key} section={block} />
+
+      case 'stepsSection':
+        return <Steps key={block._key} section={block} />
       
       case 'blockSection':
-        return <Blocks key={block.id} section={block} />
+        return <Blocks key={block._key} section={block} />
 
       default:
         return <div className="no_block_type" />
@@ -72,6 +76,70 @@ export const query = graphql`
       metaDescription
       metaKeywords
       sections {
+        ... on SanityStepSection {
+          _key
+          _type
+          title
+          description
+          ctas {
+            ... on SanityDownloadCTA {
+              id
+              _key
+              _type
+              action
+            }
+            ... on SanityBasicCTA {
+              id
+              _key
+              _type
+              action
+              link
+            }
+          }
+          steps {
+            title
+            description
+            _type
+            _key
+          }
+        }
+
+
+        ... on SanityGuaranteeSection {
+          _key
+          _type
+          title
+          description
+          ctas {
+            ... on SanityDownloadCTA {
+              id
+              _key
+              _type
+              action
+            }
+            ... on SanityBasicCTA {
+              id
+              _key
+              _type
+              action
+              link
+            }
+          }
+          guarantees {
+            title
+            description
+            _type
+            _key
+            icon {
+              asset {
+                fixed(width: 50) {
+                  ...GatsbySanityImageFixed_withWebp
+                }
+              }
+            }
+          }
+        }
+
         ... on SanityHeroSection {
           _key
           _type
