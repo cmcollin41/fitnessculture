@@ -32,7 +32,6 @@ import product from './product';
 import variant from './variant';
 import stat from './stat';
 import step from './step';
-import webpage from './webpage';
 import landingPage from './landingPage';
 
 
@@ -99,7 +98,6 @@ export default createSchema({
     stat,
     step,
     price,
-    webpage,
     blockImage,
     blockText,
     blockVideo,

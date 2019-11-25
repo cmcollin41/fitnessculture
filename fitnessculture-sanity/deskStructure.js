@@ -42,7 +42,7 @@ export default () =>
         .child(
           S.documentList()
             .title("All Landing Pages")
-            .filter('_type in ["landingPage","basic","h3p","subscribe","webpage"]')
+            .filter('_type in ["landingPage","basic","h3p","subscribe"]')
       ),
       S.listItem()
       .title("Testimonials")
