@@ -334,6 +334,19 @@ query IndexPage{
           benefits {
             description
           }
+          ctas {
+            ... on SanityBasicCTA {
+              _key
+              _type
+              link
+              action
+            }
+            ... on SanityDownloadCTA {
+              _key
+              _type
+              action
+            } 
+          }
         }
       }
       ... on SanityBlockSection {

@@ -7,7 +7,7 @@ import '../css/global.css'
 const Product = ({ data }) => {
 
   const product = data.shopifyProduct
-  const node = data.sanityProduct
+  const page = data.sanityProduct
 
 
     
@@ -16,7 +16,7 @@ const Product = ({ data }) => {
       <Layout>
         <div className="container mx-auto px-5 my-0 lg:my-10">
           <div className="flex flex-wrap -mx-5 relative">
-            <ProductForm product={product} node={node} />
+            <ProductForm product={product} node={page} />
           </div>
         </div>
       </Layout>
@@ -36,6 +36,7 @@ export const pageQuery = graphql`
       productType
       descriptionHtml
       shopifyId
+
       options {
         id
         name
@@ -70,6 +71,9 @@ export const pageQuery = graphql`
       _rawDescription
       _rawSizing
       _rawShipping
+      metaTitle
+      metaDescription
+      metaKeywords
       variants {
         optionName
         image {

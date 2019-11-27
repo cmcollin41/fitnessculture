@@ -1,10 +1,27 @@
 import React from "react"
+import DownloadCTA from '../CTAs/DownloadCTA'
+import BasicCTA from '../CTAs/BasicCTA'
 
 // Images
 import circles from '../../assets/circles.svg'
 import square from '../../assets/square-circles.svg'
 
-const Pricing = ({section}) => {
+const Pricing = ({section,product}) => {
+
+  function getBlockComponent(cta, product) {
+    switch (cta._type) {
+
+      case 'downloadCTA':
+        return <DownloadCTA key={cta._key} cta={cta} product={product} />
+
+      case 'basicCTA':
+        return <BasicCTA key={cta._key} cta={cta} />
+
+      default:
+        return <div className="no_block_type" />
+    }
+  }
+
   return (
     <div className="py-20 relative" id="pricing">
       <img src={square} alt="square texture" width="100px" height="100%" className="absolute" style={{top: "-25px", zIndex: "-1"}} />
@@ -27,7 +44,7 @@ const Pricing = ({section}) => {
                 </ul>
               </div>
               <div className="px-6 py-10">
-                <a href={section.link || ""} className="uppercase font-bold text-white rounded-sm px-4 py-2 bg-blue-500">Start Program</a>
+                {price.ctas.map(cta => getBlockComponent(cta,product))}
               </div>
             </div>
           </div>

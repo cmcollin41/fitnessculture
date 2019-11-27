@@ -2,21 +2,23 @@ import React from 'react'
 import {graphql} from "gatsby"
 import Layout from "../components/layout"
 import ProductForm from '../components/ProductForm/index'
+import SEO from "../components/seo"
 import '../css/global.css'
 
 const Product = ({ data }) => {
 
   const product = data.shopifyProduct
-  const node = data.sanityProduct
+  const page = data.sanityProduct
 
 
     
   return (
     <React.Fragment>
       <Layout>
+      <SEO title={page.metaTitle} description={page.metaDescription} keywords={page.metaKeywords}/>
         <div className="container mx-auto px-5 my-0 lg:my-10">
           <div className="flex flex-wrap -mx-5 relative">
-            <ProductForm product={product} node={node} />
+            <ProductForm product={product} node={page} />
           </div>
         </div>
       </Layout>
@@ -70,6 +72,9 @@ export const pageQuery = graphql`
       _rawDescription
       _rawSizing
       _rawShipping
+      metaTitle
+      metaDescription
+      metaKeywords
       variants {
         optionName
         image {

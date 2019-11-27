@@ -23,16 +23,7 @@ export default {
           to: {type: 'price'}
         }
       ]
-    },
-    {
-      name: 'ctas',
-      title: 'CTAs',
-      type: 'array',
-      of: [
-        {type: 'basicCTA'},
-        {type: 'downloadCTA'},
-      ],
-    },
+    }
   ],
   preview: {
     prepare() {

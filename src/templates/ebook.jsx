@@ -56,7 +56,7 @@ const Ebook = ({ data }) => {
         return <Guarantees key={block._key} section={block} />
 
       case 'pricingSection':
-        return <Pricing key={block._key} section={block} />
+        return <Pricing key={block._key} section={block} product={product} />
       
       case 'blockSection':
         return <Blocks key={block._key} section={block} product={product} />
@@ -77,7 +77,7 @@ const Ebook = ({ data }) => {
   return (
 
     <Layout>
-      <SEO title={product.title}/>
+      <SEO title={page.metaTitle} description={page.metaDescription} keywords={page.metaKeywords}/>
       {page.sections.map(block => getBlockComponent(block,product))}  
     </Layout>
 
@@ -128,6 +128,9 @@ export const pageQuery = graphql`
     sanityProduct(shopifyId: {eq: $strippedId}) {
       name
       shopifyId
+      metaTitle
+      metaDescription
+      metaKeywords
       ctas {
         ... on SanityBasicCTA {
           _type
@@ -489,19 +492,19 @@ export const pageQuery = graphql`
             benefits {
               description
             }
-          }
-          ctas {
-            ... on SanityBasicCTA {
-              _key
-              _type
-              link
-              action
+            ctas {
+              ... on SanityBasicCTA {
+                _key
+                _type
+                link
+                action
+              }
+              ... on SanityDownloadCTA {
+                _key
+                _type
+                action
+              } 
             }
-            ... on SanityDownloadCTA {
-              _key
-              _type
-              action
-            } 
           }
         }
         ... on SanityBlockSection {

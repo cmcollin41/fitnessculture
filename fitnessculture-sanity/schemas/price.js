@@ -18,6 +18,15 @@ export default {
       title: 'Benefits',
       type: 'array',
       of: [{type: 'reference', to: {type: 'priceBenefit'}}]
-    }
+    },
+    {
+      name: 'ctas',
+      title: 'CTAs',
+      type: 'array',
+      of: [
+        {type: 'basicCTA'},
+        {type: 'downloadCTA'},
+      ],
+    },
   ]
 }
