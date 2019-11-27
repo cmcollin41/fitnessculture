@@ -33,14 +33,14 @@ const ProgramHero = ({section, page, product}) => {
   return (
     <>
       <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + page.colorOne.hex + ',' + page.colorTwo.hex + ')'}}></div>
-      <div className="py-10 lg:py-20 relative">
+      <div className="py-10 relative">
         <div className="absolute h-full bottom-0 left-0 overflow-x-hidden" style={{zIndex: "-10"}}>
           <img src={circles} alt="circles" width="200px" height="100%" style={{transform: "scale(-1)"}}/>
         </div>
         <div className="hidden lg:block absolute h-full" style={{transform: "translate(-35%, 50%)"}}>
           <h2 className="uppercase text-gray-300 text-3xl font-bold" style={{transform: "rotate(90deg)"}}>Fitness Program</h2>
         </div>
-        <div className="container mx-auto px-5 pb-5 pt-3">
+        <div className="container mx-auto px-5 pt-3">
           <div className="flex flex-col lg:flex-row justify-center items-center">
             {section.blocks.map(block => getBlockComponent(block, product))}
           </div>
