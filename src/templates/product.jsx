@@ -2,6 +2,7 @@ import React from 'react'
 import {graphql} from "gatsby"
 import Layout from "../components/layout"
 import ProductForm from '../components/ProductForm/index'
+import SEO from "../components/seo"
 import '../css/global.css'
 
 const Product = ({ data }) => {
@@ -14,6 +15,7 @@ const Product = ({ data }) => {
   return (
     <React.Fragment>
       <Layout>
+      <SEO title={page.metaTitle} description={page.metaDescription} keywords={page.metaKeywords} image={page.openGraphImage.asset.url}/>
         <div className="container mx-auto px-5 my-0 lg:my-10">
           <div className="flex flex-wrap -mx-5 relative">
             <ProductForm product={product} node={page} />
@@ -74,6 +76,11 @@ export const pageQuery = graphql`
       metaTitle
       metaDescription
       metaKeywords
+      openGraphImage {
+        asset {
+          url
+        }
+      }
       variants {
         optionName
         image {

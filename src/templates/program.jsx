@@ -19,7 +19,7 @@ const Program = ({ data }) => {
   const program = data.allSanityProgram.nodes[0]
   return (
     <Layout>
-       <SEO title={program.metaTitle} description={program.metaDescription} keywords={program.metaKeywords} />
+       <SEO title={program.metaTitle} description={program.metaDescription} keywords={program.metaKeywords} image={program.openGraphImage.asset.url} />
       <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
       </div>
       <div className="py-10 lg:py-20 relative">
@@ -241,6 +241,11 @@ export const pageQuery = graphql`
         metaTitle
         metaDescription
         metaKeywords
+        openGraphImage {
+          asset {
+            url
+          }
+        }
         slug {
           current
         }

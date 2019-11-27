@@ -59,7 +59,7 @@ const landingPage = ({data}) => {
 
   return (
     <Layout>
-      <SEO title={landingPage.metaTitle} description={landingPage.metaDescription} keywords={landingPage.metaKeywords}/>
+      <SEO title={landingPage.metaTitle} description={landingPage.metaDescription} keywords={landingPage.metaKeywords} image={landingPage.openGraphImage.asset.url}/>
       {landingPage.sections.map(block => getBlockComponent(block))}
     </Layout>
   )
@@ -75,6 +75,11 @@ export const query = graphql`
       metaTitle
       metaDescription
       metaKeywords
+      openGraphImage {
+        asset {
+          url
+        }
+      }
       sections {
         ... on SanityStepSection {
           _key

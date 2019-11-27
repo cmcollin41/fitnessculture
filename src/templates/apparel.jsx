@@ -75,6 +75,11 @@ export const pageQuery = graphql`
       metaTitle
       metaDescription
       metaKeywords
+      openGraphImage {
+        asset {
+          url
+        }
+      }
       variants {
         optionName
         image {

@@ -60,7 +60,7 @@ const Index = ({ data }) => {
   
   return (
     <Layout>
-      <SEO title={page.metaTitle} description={page.metaDescription} keywords={page.metaKeywords}/>
+      <SEO title={page.metaTitle} description={page.metaDescription} keywords={page.metaKeywords} image={page.openGraphImage.asset.url} />
       {page.sections.map(block => getBlockComponent(block))}
     </Layout>
 
@@ -78,6 +78,11 @@ query IndexPage{
     metaTitle
     metaDescription
     metaKeywords
+    openGraphImage {
+      asset {
+        url
+      }
+    }
     sections {
       ... on SanityStepSection {
         _key

@@ -77,7 +77,7 @@ const Ebook = ({ data }) => {
   return (
 
     <Layout>
-      <SEO title={page.metaTitle} description={page.metaDescription} keywords={page.metaKeywords}/>
+      <SEO title={page.metaTitle} description={page.metaDescription} keywords={page.metaKeywords} image={page.openGraphImage.asset.url}/>
       {page.sections.map(block => getBlockComponent(block,product))}  
     </Layout>
 
@@ -131,6 +131,11 @@ export const pageQuery = graphql`
       metaTitle
       metaDescription
       metaKeywords
+      openGraphImage {
+        asset {
+          url
+        }
+      }
       ctas {
         ... on SanityBasicCTA {
           _type
