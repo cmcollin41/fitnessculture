@@ -17,7 +17,7 @@ const BeforeAfter = ({section}) => {
   return (
     <div className="py-20 bg-gray-900">
       <div className="container lg:mx-auto px-5">
-        <h3 className="text-white pb-5 lg:pb-10">
+        <h3 className="text-white text-center pb-5 lg:pb-10">
           Join the #FitCult Family
         </h3>
       </div>
