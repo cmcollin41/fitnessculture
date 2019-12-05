@@ -493,6 +493,7 @@ export const pageQuery = graphql`
           description
           pricing {
             number
+            interval
             title
             benefits {
               description

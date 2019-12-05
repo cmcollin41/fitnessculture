@@ -34,7 +34,7 @@ const Pricing = ({section,product}) => {
               <div className="p-4 text-center mx-auto">
                 <span className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">{price.title}</span>
                 <h6 className="text-black text-6xl mt-5 relative"><span className="absolute text-xl" style={{left: "-10px", top: "10px"}}>$</span>{price.number}</h6>
-                <span className="text-black text-sm mt-5 uppercase">per month</span>
+                <span className="text-black text-sm mt-5 uppercase">{price.interval}</span>
               </div>
               <div>
                 <ul className="pricing">

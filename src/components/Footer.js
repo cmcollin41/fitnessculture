@@ -143,6 +143,8 @@ export default () => (
             <span className="text-xs text-gray-500">&copy; 2019 Fitness Culture. All Rights Reserved</span>
             <span className="hidden lg:inline-block mx-5 text-gray-500">|</span>
             <span className="text-xs text-gray-500"><a href="https://app.fitnessculture.com/privacy-policy" target="_blank" rel="noopener noreferrer">Terms & Privacy</a></span>
+            <span className="hidden lg:inline-block mx-5 text-gray-500">|</span>
+            <span className="text-xs text-gray-500"><a href="https://app.fitnessculture.com/returns" target="_blank" rel="noopener noreferrer">Return Policy</a></span>
           </div>
         </div>
       </footer>

@@ -9,6 +9,18 @@ export default {
       type: 'string'
     },
     {
+      name: 'interval',
+      title: 'Interval',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Per Month', value: 'Per Month'},
+          {title: 'One-Time', value: 'One-Time'},
+        ], // <-- predefined values
+        layout: 'dropdown' // <-- defaults to 'dropdown'
+      }
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'string'

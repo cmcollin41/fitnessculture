@@ -335,6 +335,7 @@ query IndexPage{
         description
         pricing {
           number
+          interval
           title
           benefits {
             description
