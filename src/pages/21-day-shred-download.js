@@ -102,7 +102,7 @@ const Download = ({data}) => {
         if (data)
         {
           setSubmitting(false);
-          alert("TPlease check your email for your download. Your PDF may take up to 24 hours to process.");
+          alert("Please check your email for your download. Your PDF may take up to 24 hours to process.");
         };
         
       } catch(err) {
