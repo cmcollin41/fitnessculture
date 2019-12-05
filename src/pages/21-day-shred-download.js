@@ -122,7 +122,7 @@ const Download = ({data}) => {
   if (access) {
     return (
       <Layout>
-        <SEO title="H3P Download" description="Download page for H3P arms ebook."  />
+        <SEO title="21 Day Shred" description="Download the 21 Day Shred eBook."  />
         <div className="container mx-auto py-20 px-5">
           <h1 className="statement mb-10 text-3xl text-center">Last Step... <br /> before you get shredded</h1>
           <div className="flex flex-row justify-center">
