@@ -99,7 +99,11 @@ const Download = ({data}) => {
         const fetchResult = fetch(URL,{method: "POST"})
         const response = await fetchResult;
         const data = await response;
-        if (data) {setSubmitting(false)};
+        if (data)
+        {
+          setSubmitting(false);
+          alert("TPlease check your email for your download. Your PDF may take up to 24 hours to process.");
+        };
         
       } catch(err) {
         alert("Hmmm. Something went wrong. Try again.")
