@@ -398,6 +398,13 @@ query IndexPage{
               }
             }
           }
+
+          ... on SanityBlockYouTube {
+            _key
+            _type
+            youtubeid
+          }
+          
           ... on SanityDripForm {
             _key
             _type

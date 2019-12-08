@@ -34,15 +34,15 @@ import stat from './stat';
 import step from './step';
 import landingPage from './landingPage';
 
-
-import blockVideo from './blocks/blockVideo';
-import dripForm from './blocks/dripForm';
 import tab from './tab';
 import price from './price';
 import proof from './proof';
 
+import dripForm from './blocks/dripForm';
+import blockVideo from './blocks/blockVideo';
 import blockImage from './blocks/blockImage';
 import blockText from './blocks/blockText';
+import blockYouTube from './blocks/blockYouTube';
 
 import statSection from './sections/statSection';
 import testimonialSection from './sections/testimonialSection';
@@ -101,6 +101,7 @@ export default createSchema({
     blockImage,
     blockText,
     blockVideo,
+    blockYouTube,
     proof,
     tab,
     dripForm,

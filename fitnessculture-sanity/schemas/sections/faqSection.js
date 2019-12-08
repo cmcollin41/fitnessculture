@@ -37,7 +37,7 @@ export default {
   preview: {
     prepare() {
       return {
-        title: `Hero Section`
+        title: `FAQ Section`
       }
     }
   }

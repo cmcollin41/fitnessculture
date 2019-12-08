@@ -2,6 +2,7 @@ import React from "react"
 import BlockText from "../Blocks/BlockText"
 import BlockImage from "../Blocks/BlockImage"
 import BlockVideo from "../Blocks/BlockVideo"
+import BlockYouTube from "../Blocks/BlockYouTube"
 import DripForm from "../Blocks/DripForm"
 
 const Blocks = ({section,product}) =>{
@@ -17,6 +18,9 @@ const Blocks = ({section,product}) =>{
 
       case 'blockVideo':
         return <BlockVideo key={block._key} block={block} />
+      
+      case 'blockYouTube':
+        return <BlockYouTube key={block._key} block={block} />
 
       case 'dripForm':
         return <DripForm key={block._key} block={block} />

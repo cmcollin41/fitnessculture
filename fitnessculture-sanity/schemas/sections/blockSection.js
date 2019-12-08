@@ -11,6 +11,7 @@ export default {
         {type: 'blockText'},
         {type: 'blockImage'},
         {type: 'blockVideo'},
+        {type: 'blockYouTube'},
         {type: 'dripForm'}
       ],
     }

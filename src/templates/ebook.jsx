@@ -277,6 +277,7 @@ export const pageQuery = graphql`
                 }
               }
             }
+    
             ... on SanityDripForm {
               _key
               _type
@@ -546,6 +547,12 @@ export const pageQuery = graphql`
                   action
                 }
               }
+            }
+
+            ... on SanityBlockYouTube {
+              _key
+              _type
+              youtubeid
             }
             ... on SanityBlockVideo {
               _key
