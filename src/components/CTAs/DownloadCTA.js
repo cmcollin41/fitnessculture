@@ -7,9 +7,9 @@ const DownloadCTA = ({cta, product}) => {
  
   const handleAddToCart = () => {
     context.addVariantToCart(product.variants[0].shopifyId, 1)
-    setTimeout(() => {
-      context.setCartPreview(false)
-    }, 5000);
+    // setTimeout(() => {
+    //   context.setCartPreview(false)
+    // }, 10000);
   }
   
   return (

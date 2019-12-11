@@ -5,7 +5,7 @@ import Toggle from './Toggle'
 import logo from '../assets/fc-logo-horizontal-black.png'
 import cart from  '../assets/shopping-cart.svg'
 import Down from "../assets/chevron-down.svg"
-// import LineItem from './Cart/LineItem.js'
+import LineItem from './Cart/LineItemPreview.js'
 
 import StoreContext from '../context/StoreContext'
 
@@ -28,13 +28,13 @@ const Header = () => {
     countQuantity(checkout ? checkout.lineItems : []);
   }, [checkout]);
 
-  // const hideCart = () => {
-  //   context.setCartPreview(false)
-  // }
+  const hideCart = () => {
+    context.setCartPreview(false)
+  }
   
-  // const line_items = checkout.lineItems.map(line_item => {
-  //   return <LineItem key={line_item.id.toString()} line_item={line_item} />
-  // })
+  const line_items = checkout.lineItems.map(line_item => {
+    return <LineItem key={line_item.id.toString()} line_item={line_item} />
+  })
 
   const data = useStaticQuery(
     graphql`
@@ -300,13 +300,33 @@ const Header = () => {
           <Link to="/programs" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded">Get Started</Link>
         </div>
       </div>
-      <div className={"shadow rounded-sm z-10 px-4 py-2 text-black fixed right-0 mt-4 mr-4 bg-green-400  " + (context.cartPreview ? "block" : "hidden")}>
-        {/* {line_items}
-        <div className="flex flex-row justify-center -mx-3">
-          <button onClick={hideCart} className={"text-center w-1/2 mx-3 text-xs lg:text-l"}>Back to Shopping</button>
-          <Link to={"/cart"} className={"btn rounded bg-black text-white text-center w-1/2 mx-3 text-xs lg:text-l"}>Go to Checkout</Link>
-        </div> */}
-        Items Added to Cart!
+      <div  className={"w-full min-h-screen "  + (context.cartPreview ? "cartDisplay" : "cartHidden")}>
+        <div onClick={hideCart} className="absolute w-full h-full inset-0">
+        </div>
+        <div className={"cart min-h-screen w-4/5 lg:w-2/3 xl:w-1/3"}>
+          <div className="border-b bg-white p-3">
+            <div className="flex flex-row justify-between items-center">
+              <span>
+                <span onClick={hideCart} className="mr-6 cursor-pointer text-l font-bold">X</span>
+                Your Cart
+              </span> 
+              <span className="text-xs">{quantity} items in cart.</span>
+            </div>
+          </div>
+          <div className="p-3">
+            <div className="py-3">
+              <label for="shipping" className="text-sm font-light mb-2">{ (checkout.subtotalPrice > 49.99 ? "Congrats, you've got free shipping! 💪" : `$${(50 - checkout.subtotalPrice)} away from free shipping!`) }</label>
+              <progress id="shipping" max="100" value={( (checkout.subtotalPrice/50) * 100)} className="w-full"></progress>
+            </div>
+            <div className="flex flex-row flex-nowrap lg:flex-wrap overflow-x-scroll lg:overflow-x-hidden scroll-x-mandatory w-full">
+            {line_items}
+            </div>
+            <div className="flex flex-row justify-center -mx-3">
+              <button onClick={hideCart} className={"text-center w-1/2 mx-3 text-xs lg:text-l"}>Back to Shopping</button>
+              <Link to={"/cart"} className={"btn rounded-sm bg-black text-white text-center w-1/2 mx-3 text-xs lg:text-l"}>Go to Checkout</Link>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
