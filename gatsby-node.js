@@ -170,8 +170,10 @@ exports.createPages = async ({ graphql, actions }) => {
       // gid://shopify/Product/4174887977030
       let strippedId = decodedId.match(/([0-9]\w+)/g).join('')
   
+
+      // path: `${node.title.toLowerCase()}/${p.productType.toLowerCase()}/${p.handle}`,
       createPage({
-        path: `${node.title.toLowerCase()}/${p.productType.toLowerCase()}/${p.handle}`,
+        path: `collections/${node.handle}/products/${p.handle}`,
         component: path.resolve(`src/templates/${p.productType}.jsx`),
         context: {
           shopifyId: p.shopifyId,

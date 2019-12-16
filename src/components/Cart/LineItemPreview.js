@@ -27,8 +27,8 @@ const LineItemPreview = props => {
 
 
   return (
-    <div className="flex flex-wrap w-full mb-10 border border-gray-200 rounded-sm bg-white snap-align-center mx-2" style={{minWidth: "300px"}}>
-      <div className="w-full lg:w-1/4 h-64 lg:h-48 block bg-cover bg-center rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{backgroundImage: `url(${line_item.variant.image.src})`}} title={line_item.title}>
+    <div className="flex flex-wrap w-full mb-10 border border-gray-200 rounded-sm bg-white snap-align-center mx-2" style={{minWidth: "275px"}}>
+      <div className="w-full lg:w-1/4 h-48 block bg-cover bg-center rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{backgroundImage: `url(${line_item.variant.image.src})`}} title={line_item.title}>
       </div>
       <div className="w-full lg:w-3/4 flex flex-col lg:flex-row justify-between items-start py-4 px-3 ">
         <div className="w-full flex-grow">

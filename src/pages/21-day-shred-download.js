@@ -127,12 +127,13 @@ const Download = ({data}) => {
     return (
       <Layout>
         <SEO title="21 Day Shred" description="Download the 21 Day Shred eBook."  />
+        <div className="bg-gray-100">
         <div className="container mx-auto py-20 px-5">
           <h1 className="statement mb-10 text-3xl text-center">Last Step... <br /> before you get shredded</h1>
           <div className="flex flex-row justify-center">
-            <div className="w-full lg:w-1/2">
+            <div className="w-full md:w-1/2">
 
-              <form name="PDF Form" ref={form}className="w-full">
+              <form name="PDF Form" ref={form} className="bg-white shadow-md rounded p-5">
 
                 <div className="flex flex-row flex-wrap justify-center -mx-3">
                   <div className="w-full lg:w-3/4 px-3">
@@ -157,7 +158,7 @@ const Download = ({data}) => {
                         Age
                       </label>
                         <input
-                          type="text"
+                          type="number"
                           name="age"
                           placeholder="29"
                           className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -186,9 +187,10 @@ const Download = ({data}) => {
                   <div className="w-1/2 lg:w-1/3 px-3">
                     <div className="mb-4">
                       <label>
-                        Height
+                        Height (in)
                       </label>
                       <input
+                        type="number"
                         name="height"
                         placeholder="72"
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -204,6 +206,7 @@ const Download = ({data}) => {
                         Weight
                       </label>
                       <input
+                        type="number"
                         name="weight"
                         placeholder="228"
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -219,8 +222,9 @@ const Download = ({data}) => {
                         Body Fat %
                       </label>
                       <input
+                        type="number"
                         name="bodyfat"
-                        placeholder="18%"
+                        placeholder="18"
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value={values.bodyfat}
                         onChange={handleInputChange}
@@ -234,6 +238,7 @@ const Download = ({data}) => {
                         Squat
                       </label>
                       <input
+                        type="number"
                         name="squat"
                         placeholder="500"
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -249,6 +254,7 @@ const Download = ({data}) => {
                         Bench Press
                       </label>
                       <input
+                        type="number"
                         name="bench"
                         placeholder="305"
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -264,6 +270,7 @@ const Download = ({data}) => {
                         Deadlift
                       </label>
                       <input
+                        type="number"
                         name="deadlift"
                         placeholder="415"
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -279,6 +286,7 @@ const Download = ({data}) => {
                         Overhead Press
                       </label>
                       <input
+                        type="number"
                         name="ohpress"
                         placeholder="250"
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -293,6 +301,7 @@ const Download = ({data}) => {
                         Incline Press
                       </label>
                       <input
+                        type="number"
                         name="incline"
                         placeholder="205"
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -308,6 +317,7 @@ const Download = ({data}) => {
                         Front Squat
                       </label>
                       <input
+                        type="number"
                         name="frontsquat"
                         placeholder="150"
                         className="shadow appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -323,6 +333,7 @@ const Download = ({data}) => {
             </div>
           </div>
         </div>
+      </div>
       </Layout>
     )
   } else {
