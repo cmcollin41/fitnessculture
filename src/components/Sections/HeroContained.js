@@ -11,7 +11,7 @@ const HeroContained = ({section}) => {
 
   return (
     <div className="bg-gray-100 curve">
-      <div className="container mx-auto lg:pt-20">
+      <div className="container mx-auto md:pt-10 lg:pt-20">
         <div className="flex flex-row flex-wrap items-end w-full">
           <BackgroundImage Tag="section"
             className={`w-full lg:w-2/3 bg-gray-200 relative shadow bg-cover text-center overflow-hidden h-third lg:h-half`}
