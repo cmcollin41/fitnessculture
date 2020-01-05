@@ -38,6 +38,8 @@ module.exports = {
         quarter: '25vh',
         third: '33vh',
         half: '50vh',
+        twothird: '66vh',
+        threequarter: '75vh',
       },
     },
   },

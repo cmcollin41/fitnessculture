@@ -11,15 +11,15 @@ const HeroContained = ({section}) => {
 
   return (
     <div className="bg-gray-100 curve">
-      <div className="container mx-auto md:pt-10 lg:pt-20">
+      <div className="container mx-auto md:pt-10 xl:pt-20">
         <div className="flex flex-row flex-wrap items-end w-full">
           <BackgroundImage Tag="section"
-            className={`w-full lg:w-2/3 bg-gray-200 relative shadow bg-cover text-center overflow-hidden h-third lg:h-half`}
+            className={`w-full lg:w-1/2 xl:w-2/3 bg-gray-200 relative shadow bg-cover text-center overflow-hidden h-third lg:h-half xl:h-half`}
             fluid={section.backgroundImage.asset.fluid}
             backgroundColor={`#111`}
           >
           </BackgroundImage>
-          <div className="w-full lg:w-1/3 px-5 lg:pl-6 mt-10 lg:mt-auto">
+          <div className="w-full lg:w-1/2 xl:w-1/3 px-5 lg:pl-6 mt-10 lg:mt-auto">
             <h1 className="text-2xl max-w-sm">You've put in the Work. Now get the results.</h1>
             <p className="text-lg font-light">Expert-written strength and conditioning training, nutrition, and mobility programs <mark>designed around your goals&mdash;all in one app.</mark></p>
             <div className="mt-10 flex">
@@ -27,7 +27,7 @@ const HeroContained = ({section}) => {
             </div>
 
             <h2 className="text-base font-bold max-w-sm mt-10">Start in <mark>3 minutes.</mark></h2>
-            <p className="text-sm font-light">Select a program based on your goals. Download the app. Start working and see the results you deserve. </p>
+            <p className="text-sm font-light mb-0">Select a program based on your goals. Download the app. Start working and see the results you deserve. </p>
           </div>
         </div>
         <div className="flex flex-row flex-wrap w-full">
