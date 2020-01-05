@@ -59,6 +59,7 @@ import downloadCTA from './CTAs/downloadCTA';
 import programHeroSection from './sections/programHeroSection';
 import stepSection from './sections/stepSection';
 import guaranteeSection from './sections/guaranteeSection';
+import heroContainedSection from './sections/heroContainedSection';
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -125,7 +126,8 @@ export default createSchema({
     beforeAfterSection,
     programHeroSection,
     stepSection,
-    guaranteeSection
+    guaranteeSection,
+    heroContainedSection
 
   ])
 })

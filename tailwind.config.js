@@ -33,7 +33,12 @@ module.exports = {
           '800': '#0277bd',
           '900': '#01579b',
         }
-      }
+      },
+      height: {
+        quarter: '25vh',
+        third: '33vh',
+        half: '50vh',
+      },
     },
   },
   variants: {},

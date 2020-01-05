@@ -542,6 +542,41 @@ button:focus {
     border-radius: 9px;
   }
 
+  .checkbox:checked + label {
+    @apply border border-green-500 p-4 bg-gray-200 rounded-full text-center;
+    
+  }
+
+  progress::-webkit-progress-bar {
+    @apply rounded;
+    background-color: #eee;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
+  
+  progress::-webkit-progress-value {
+    @apply bg-green-500;
+    border-radius: 2px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+  }
+
+  .curve {
+    @apply pb-10;
+    position: relative;
+  }
+  .curve::after {
+    display: block;
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding-bottom: 2.7vw;
+    background-image: url("../assets/curve.svg");
+    background-position-x: center;
+    background-size: 110vw;
+  }
+
 
   .cartDisplay {
     display: block;

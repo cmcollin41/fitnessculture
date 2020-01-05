@@ -15,6 +15,7 @@ import Guarantees from "../components/Sections/Guarantees"
 import Pricing from "../components/Sections/Pricing"
 import Blocks from "../components/Sections/Blocks"
 import Tabs from "../components/Sections/Tabs"
+import HeroContained from "../components/Sections/HeroContained"
 
 
 const Index = ({ data }) => {
@@ -24,6 +25,9 @@ const Index = ({ data }) => {
     switch (block._type) {
       case 'heroSection':
         return <Hero key={block._key} section={block} />
+
+      case 'heroContainedSection':
+        return <HeroContained key={block._key} section={block} />
 
       case 'socialProofSection':
         return <SocialProof key={block._key} section={block} />
@@ -169,6 +173,69 @@ query IndexPage{
           }
         }
       }
+
+
+      ... on SanityHeroContainedSection {
+        _key
+        _type
+        backgroundImage {
+          asset {
+            fluid(maxWidth: 1400) {
+              ...GatsbySanityImageFluid_withWebp
+            }
+            url
+          }
+        }
+        blocks {
+          ... on SanityBlockImage {
+            _key
+            _type
+            image {
+              asset {
+                fluid(maxWidth: 1000) {
+                  ...GatsbySanityImageFluid_withWebp
+                }
+              }
+            }
+          }
+          ... on SanityBlockText {
+            _key
+            _type
+            _rawText
+            alignment
+            ctas {
+              ... on SanityBasicCTA {
+                _key
+                _type
+                link
+                action
+              }
+              ... on SanityDownloadCTA {
+                _key
+                _type
+                action
+              }
+            }
+          }
+          ... on SanityBlockVideo {
+            _key
+            _type
+            video {
+              asset {
+                url
+              }
+            }
+          }
+          ... on SanityDripForm {
+            _key
+            _type
+            formId
+            cta
+          }
+        }
+      }
+
+
       ... on SanitySocialProofSection {
         _key
         _type
