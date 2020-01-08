@@ -159,8 +159,8 @@ const Program = ({ data }) => {
           <div className="text-black rounded-sm overflow-hidden shadow-lg bg-white flex flex-col justify-between">
             {/* <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}></div> */}
             <div class="ribbon-wrapper mt-6">
-              <div class="ribbon-front uppercase" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
-                70% Off
+              <div class="ribbon-front uppercase flex justify-center items-center" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
+                <span>70% Off</span>
               </div>
             </div>
             
