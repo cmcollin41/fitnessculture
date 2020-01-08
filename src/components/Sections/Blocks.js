@@ -33,7 +33,7 @@ const Blocks = ({section,product}) =>{
   return (
     <div className="py-10 mx-5">
       <div className="container mx-auto">
-        <div className="flex flex-row flex-wrap justify-center items-center h-full w-full">
+        <div className="flex flex-row flex-wrap justify-center items-center h-full">
           {section.blocks.map(block => getBlockComponent(block,product))}
         </div>
       </div>

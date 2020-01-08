@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Header from './Header'
-// import Announcement from './Announcement'
+
 import Footer from './Footer'
 import SiteMetadata from './seo'
 import '../css/fonts.css'
@@ -137,7 +137,7 @@ class Layout extends React.Component {
       <StoreContext.Provider value={this.state.store}>
         <SiteMetadata title="Fitness Culture" />
         <Header />
-          {/* <Announcement /> */}
+          
           { children }
         <Footer />
       </StoreContext.Provider>

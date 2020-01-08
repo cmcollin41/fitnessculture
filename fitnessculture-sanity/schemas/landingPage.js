@@ -39,6 +39,7 @@ export default {
         {type: 'faqSection'},
         {type: 'guaranteeSection'},
         {type: 'heroSection'},
+        {type: 'heroContainedSection'},
         {type: 'pricingSection'},
         {type: 'programSection'},
         {type: 'programHeroSection'},

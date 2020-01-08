@@ -16,6 +16,7 @@ import Pricing from "../components/Sections/Pricing"
 import Blocks from "../components/Sections/Blocks"
 import Tabs from "../components/Sections/Tabs"
 import HeroContained from "../components/Sections/HeroContained"
+import Announcement from '../components/Announcement'
 
 
 const Index = ({ data }) => {
@@ -65,6 +66,7 @@ const Index = ({ data }) => {
   return (
     <Layout>
       <SEO title={page.metaTitle} description={page.metaDescription} keywords={page.metaKeywords} image={page.openGraphImage.asset.url} />
+      <Announcement />
       {page.sections.map(block => getBlockComponent(block))}
     </Layout>
 

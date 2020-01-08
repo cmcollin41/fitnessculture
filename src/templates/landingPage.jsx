@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 
 // Sections
 import Hero from "../components/Sections/Hero"
+import HeroContained from "../components/Sections/HeroContained"
 import SocialProof from "../components/Sections/SocialProof"
 import Stats from "../components/Sections/Stats"
 import Testimonials from "../components/Sections/Testimonials"
@@ -22,6 +23,9 @@ const landingPage = ({data}) => {
     switch (block._type) {
       case 'heroSection':
         return <Hero key={block._key} section={block} />
+
+      case 'heroContainedSection':
+        return <HeroContained key={block._key} section={block} />
 
       case 'socialProofSection':
         return <SocialProof key={block._key} section={block} />
@@ -109,6 +113,66 @@ export const query = graphql`
           }
         }
 
+        ... on SanityHeroContainedSection {
+          _key
+          _type
+
+          backgroundImage {
+            asset {
+              fluid(maxWidth: 1400) {
+                ...GatsbySanityImageFluid_withWebp
+              }
+            }
+          }
+
+          blocks {
+            ... on SanityBlockImage {
+              _key
+              _type
+              image {
+                asset {
+                  fluid(maxWidth: 1000) {
+                    ...GatsbySanityImageFluid_withWebp
+                  }
+                }
+              }
+            }
+            ... on SanityBlockText {
+              _key
+              _type
+              _rawText
+              alignment
+              ctas {
+                ... on SanityBasicCTA {
+                  _key
+                  _type
+                  link
+                  action
+                }
+                ... on SanityDownloadCTA {
+                  _key
+                  _type
+                  action
+                }
+              }
+            }
+            ... on SanityBlockVideo {
+              _key
+              _type
+              video {
+                asset {
+                  url
+                }
+              }
+            }
+            ... on SanityDripForm {
+              _key
+              _type
+              formId
+              cta
+            }
+          }
+        }
 
         ... on SanityGuaranteeSection {
           _key
@@ -203,6 +267,8 @@ export const query = graphql`
             }
           }
         }
+
+
         ... on SanitySocialProofSection {
           _key
           _type

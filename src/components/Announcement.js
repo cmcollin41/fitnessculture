@@ -3,9 +3,9 @@ import { Link } from "gatsby"
 
 export default () => (
   <React.Fragment>
-    <div className="py-4 bg-gray-100 border-nav-b" style={{zIndex: "-50"}}>
-      <div className="flex items-center justify-center mx-5 lg:mx-10">
-        <Link to="/" className="uppercase font-light text-sm">Join the Summer Sizzle Program and a win a trip to Maui</Link>
+    <div className="bg-white border-nav-b overflow-hidden" style={{zIndex: "-50"}}>
+      <div className="py-4 lg:py-6 flex flex-nowrap items-center justify-center lg:mx-10 relative marquee-parent">
+        <span className="uppercase font-light text-xs marquee">New 8-Week Challenge: 20 winners. 30K in prizes. <Link to="/">Take the challenge.</Link></span>
       </div>
     </div>
   </React.Fragment>
