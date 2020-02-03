@@ -134,7 +134,7 @@ const Program = ({ data }) => {
     <div className="py-20 relative" id="pricing">
       <img src={square} alt="square texture" width="100px" height="100%" className="absolute" style={{top: "-25px", zIndex: "-1"}} />
       <div className="flex flex-col lg:flex-row justify-center items-center px-5">
-        <div className="order-2 lg:order-1 w-full md:w-1/2 lg:w-1/4 mt-12 md:mt:auto">
+        <div className="order-2 lg:order-1 w-full md:w-1/2 lg:w-1/4 mt-10 md:mt:auto">
           <div className="rounded overflow-hidden shadow-lg bg-white text-black flex flex-col justify-between">
             <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
             </div>
