@@ -134,14 +134,16 @@ const Program = ({ data }) => {
     <div className="py-20 relative" id="pricing">
       <img src={square} alt="square texture" width="100px" height="100%" className="absolute" style={{top: "-25px", zIndex: "-1"}} />
       <div className="flex flex-col lg:flex-row justify-center items-center px-5">
-        {/* <div className="order-2 lg:order-1 w-full md:w-1/2 lg:w-1/4 mt-20 lg:mt:auto">
+        <div className="order-2 lg:order-1 w-full md:w-1/2 lg:w-1/4 mt-10 md:mt:auto">
           <div className="rounded overflow-hidden shadow-lg bg-white text-black flex flex-col justify-between">
             <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
             </div>
             <div className="p-4 text-center mx-auto">
               <span className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Basic</span>
-              <h6 className="text-black text-base text-6xl mt-5">${program.basicPrice}</h6>
-              <span className="text-black text-sm mt-5 uppercase">per month</span>
+              <div className="flex flex-row justify-center">
+                <h6 className="text-black text-6xl mt-5 relative"><span className="absolute text-xl" style={{left: "-10px", top: "10px"}}>$</span>{program.basicPrice}</h6>
+              </div>
+              <span className="text-black text-xs mt-5 uppercase">per month</span>
             </div>
             <div>
               <ul className="pricing">
@@ -154,23 +156,17 @@ const Program = ({ data }) => {
               <a href={program.basicCta} className="uppercase font-bold text-white rounded-sm px-4 py-2" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>Start Program</a>
             </div>
           </div>
-        </div> */}
+        </div>
         <div className="order-1 lg:order-2 w-full md:w-1/2 lg:w-1/4 lg:mt-auto">
           <div className="text-black rounded-sm overflow-hidden shadow-lg bg-white flex flex-col justify-between">
-            {/* <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}></div> */}
-            <div class="ribbon-wrapper mt-6">
-              <div class="ribbon-front uppercase flex justify-center items-center" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
-                <span>70% Off</span>
-              </div>
-            </div>
-            
+            <div className="h-2 w-full" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}></div>
             <div className="p-4 text-center mx-auto">
-              <span className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">2020 Challenge</span>
+              <span className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 uppercase">Premium</span>
 
               <div className="flex flex-row justify-center">
-                <h6 className="text-black text-6xl mt-5 relative"><span className="absolute text-xl" style={{left: "-10px", top: "10px"}}>$</span>50</h6>
+                <h6 className="text-black text-6xl mt-5 relative"><span className="absolute text-xl" style={{left: "-10px", top: "10px"}}>$</span>{program.premiumPrice}</h6>
               </div>
-              <span className="text-black text-xs mt-5 uppercase">For 10 Weeks Access</span>
+              <span className="text-black text-xs mt-5 uppercase">Per Month</span>
 
             </div>
             <div>
