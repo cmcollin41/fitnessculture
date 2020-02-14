@@ -1,16 +1,18 @@
-@font-face {
-    /* font-family: "Futura Condensed Extra";
+/* @font-face {
+    font-family: "Futura Condensed Extra";
     src: url('../fonts/Futura Condensed Extra Bold.otf');
     font-weight: 700;
-    font-stretch: expanded; */
-
-    /* font-family: 'futuracondensed_extra_bold'; */
+    font-stretch: expanded; 
     font-family: 'Futura Condensed Bold';
     font-display: auto;
     src: url('../fonts/futura_condensed_extra_bold-webfont.woff2') format('woff2'),
             url('../fonts/futura_condensed_extra_bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+} */
 
-    
+@font-face{
+    font-family:"Futura LT W04 Bold Cond1475886";
+    src:url("../fonts/8c7799a2-eb7d-4f83-9287-2d357338c03b.eot");
+    src:url("../fonts/8c7799a2-eb7d-4f83-9287-2d357338c03b.eot") format("eot"),url("../fonts/a8dfde0e-293a-45ef-8b4a-9be9caaf4f58.woff2") format("woff2"),url("../fonts/9b2c719f-3caf-4d43-90a5-22df9f9c6170.woff") format("woff"),url("../fonts/4725d565-e911-4f52-9c4d-56c03702b8c0.ttf") format("truetype");
 }

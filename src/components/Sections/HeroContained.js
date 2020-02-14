@@ -36,10 +36,10 @@ const HeroContained = ({section}) => {
           >
           </BackgroundImage>
           <div className="w-full lg:w-1/2 xl:w-1/3 px-5 lg:pl-6 mt-10 lg:mt-auto">
-            <h1 className="text-2xl max-w-sm">You've put in the Work. Now get the results.</h1>
+            <h1 className="text-3xl max-w-sm">You've put in the Work. Now get the results.</h1>
             <p className="text-lg font-light">Expert-written strength and conditioning training, nutrition, and mobility programs <mark>designed around your goals&mdash;all in one app.</mark></p>
             <div className="mt-10 flex">
-              <Link to="/programs" className="font-bold py-4 px-4 bg-black text-white w-full text-center shadow rounded-sm uppercase">Get My Program</Link>
+              <Link to="/programs" className="button button-lg button-primary w-full">Get My Program</Link>
             </div>
             <h2 className="text-base font-bold max-w-sm mt-10">Start in <mark>3 minutes.</mark></h2>
             <p className="text-sm font-light mb-0">Select a program based on your goals. Download the app. Start working and see the results you deserve. </p>

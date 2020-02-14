@@ -198,7 +198,7 @@ const Header = () => {
         <div className="block hidden lg:flex justify-end content-center align-center" style={{minWidth: "300px"}}>
           <div>
             <a href="https://app.fitnessculture.com/login" className="inline-block text-sm px-4 py-2 leading-none text-black hover:text-blue-500 mt-4 lg:mt-0 uppercase">Login</a>
-            <Link to="/programs" aria-label={"Get Started"} className="inline-block text-sm px-4 py-2 rounded-sm leading-none border text-white border-black bg-gray-900 hover:bg-black mt-4 lg:mt-0 uppercase">Get Started</Link>
+            <Link to="/programs" aria-label={"Get Started"} className="inline-block button button-sm button-primary mt-4 lg:mt-0">Get Started</Link>
             <Link to='/cart' className="relative inline-block text-xs px-4 py-2">
               <span className={"bg-red-600 text-white rounded-full h-4 w-4 flex items-center justify-center absolute"} style={{left: "8px", top: "2px"}}>
                 {quantity}
