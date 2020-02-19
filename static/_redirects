@@ -17,3 +17,4 @@
 http://fitnessculture.com/*  https://www.fitnessculture.com/:splat           301!
 https://fitnessculture.com/*  https://www.fitnessculture.com/:splat          301!
 https://fitnessculture.netlify.com/* https://www.fitnessculture.com/:splat   301!
+https://shop.fitnessculture.com https://www.fitnessculture 301!

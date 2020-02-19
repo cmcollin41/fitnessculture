@@ -185,49 +185,30 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
 
+  const posts = await graphql(`
+  {
+    allSanityPost {
+      nodes {
+        id
+        slug {
+          current
+        }
+      }  
+    }
+  }
+  `)
 
-  // const shopifyGraphQL = await graphql(`
-  //   {
-  //     allShopifyProduct {
-  //       edges {
-  //         node {
-  //           handle
-  //           shopifyId
-  //           tags
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+  const postTemplate = path.resolve("src/templates/post.jsx")
 
-  // const product = path.resolve("src/templates/product.jsx")
-  // const ebook = path.resolve("src/templates/ebook.jsx")
-
-  // shopifyGraphQL.data.allShopifyProduct.edges.forEach(({node}) => {
-  //   let decodedId = atob(node.shopifyId)
-  //   // gid://shopify/Product/4174887977030
-  //   let strippedId = decodedId.match(/([0-9]\w+)/g).join('')
-
-  //   if (node.tags.includes("ebooks")){
-  //     createPage({
-  //       path: `ebooks/${node.handle}`,
-  //       component: ebook,
-  //       context: {
-  //         shopifyId: node.shopifyId,
-  //         strippedId: strippedId
-  //       },
-  //     })
-  //   } else {
-  //     createPage({
-  //       path: `products/${node.handle}`,
-  //       component: product,
-  //       context: {
-  //         shopifyId: node.shopifyId,
-  //         strippedId: strippedId
-  //       },
-  //     })
-  //   }
-  // })
+  posts.data.allSanityPost.nodes.forEach((node) => {
+    createPage({
+      path: `blog/${node.slug.current}`,
+      component: postTemplate,
+      context: {
+        uid: node.id,
+      },
+    })
+  })
 
 }
 
