@@ -568,8 +568,8 @@ button:focus {
   progress {
     background: black;
     border: 0;
-    height: 18px;
-    border-radius: 9px;
+    height: 10px;
+    border-radius: 0px;
   }
   progress::-webkit-progress-bar {
     -webkit-appearance: none;
@@ -577,19 +577,19 @@ button:focus {
     
     background: #eeeeee;
     border: 0;
-    height: 18px;
-    border-radius: 9px;
+    height: 10px;
+    border-radius: 0px;
   }
   progress::-webkit-progress-value {
     border: 0;
-    height: 18px;
-    border-radius: 9px;
+    height: 10px;
+    border-radius: 0px;
     background: black;
   }
   progress::-moz-progress-bar {
     border: 0;
-    height: 18px;
-    border-radius: 9px;
+    height: 10px;
+    border-radius: 0px;
   }
 
   .checkbox:checked + label {
@@ -598,14 +598,14 @@ button:focus {
   }
 
   progress::-webkit-progress-bar {
-    @apply rounded;
     background-color: #eee;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; */
   }
   
   progress::-webkit-progress-value {
     @apply bg-green-500;
-    border-radius: 2px; 
+    transition: width 3s ease;
+    border-radius: 0px; 
     background-size: 35px 20px, 100% 100%, 100% 100%;
   }
 

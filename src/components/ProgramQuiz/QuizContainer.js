@@ -97,14 +97,13 @@ const nextButton = () => {
   return (
     <>
       <SEO title="Get Started" />
+      <div className="w-full flex items-center justify-center">
+        <progress id="file" max="100" className="w-full" value={step/stepCount * 100}> {step/stepCount * 100} </progress>
+      </div>
       <div className="flex flex-row flex-wrap w-full min-h-screen bg-gray-100">
-      <div className="w-full lg:w-2/3">
+      <div className="w-full">
         <div className="flex items-center justify-center h-full">
           <div className="w-full lg:w-1/2 px-5">
-            <div className="w-full flex items-center justify-center py-10">
-              <progress id="file" max="100" className="w-full" value={step/stepCount * 100}> {step/stepCount * 100} </progress>
-            </div>
-            <div className="bg-white p-5 rounded shadow">
               <Name handleChange={handleChange} values={values} step={step} />
               <Info handleChange={handleChange} values={values} step={step} />
               <Goal handleChange={handleChange} values={values} step={step} />
@@ -114,18 +113,8 @@ const nextButton = () => {
                 {previousButton()}
                 {nextButton()}       
               </div>
-            </div>
           </div>
         </div>
-      </div>
-      <div className="hidden lg:block lg:w-1/3 bg-black flex flex-col items-center px-5">
-        <p className="text-white">{values.first_name} {values.last_name}</p>
-        <p className="text-white">{values.height}</p>
-        <p className="text-white">{values.weight}</p>
-        <p className="text-white">{values.age}</p>
-        <p className="text-white">{values.goal}</p>
-        <p className="text-white">{values.days}</p>
-        <p className="text-white">{values.style}</p>
       </div>
     </div>
 

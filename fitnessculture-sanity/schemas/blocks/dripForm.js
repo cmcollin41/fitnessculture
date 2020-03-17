@@ -9,6 +9,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'linkId',
+      title: 'Link ID',
+      type: 'string'
+    },
+    {
       name: 'cta',
       title: 'CTA',
       type: 'string'

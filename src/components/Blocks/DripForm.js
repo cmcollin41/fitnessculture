@@ -1,10 +1,10 @@
 import React from "react"
 
 const DripForm = ({block}) => {
-
+  console.log(block)
   return (
     <>
-      <div className="w-full lg:w-1/3 lg:px-10 mx-auto bg-white rounded-sm shadow-lg" id="topForm">
+      <div className="w-full lg:w-1/3 lg:px-10 mx-auto bg-white rounded-sm shadow-lg px-5" id={`${block.linkId}`}>
         <div className="flex flex-row justify-center">
           <div className="w-full">
             <form id="campaignForm" className="w-full max-w-lg my-10" data-drip-embedded-form={block.formId} action={`https://www.getdrip.com/forms/${block.formId}/submissions`} method="post">
