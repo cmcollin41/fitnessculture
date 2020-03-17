@@ -22,7 +22,7 @@ const Blog = ({ data }) => {
               />
               <div className="flex flex-col justify-between flex-grow">
                 <div className="p-5">
-                  <h4 className="statement text-2xl">{blog.title}</h4>
+                  <h4 className="statement text-2xl text-white">{blog.title}</h4>
                 </div>
                 <div className="p-5">
                   <Link to={"/blog/" + blog.slug.current} className="uppercase font-bold text-xs text-white border border-white rounded-sm py-2 px-4">Read More</Link>

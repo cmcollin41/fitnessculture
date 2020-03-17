@@ -23,20 +23,20 @@ ul > li {
 
 
 h1 {
-  @apply uppercase text-5xl leading-none;
+  @apply uppercase text-5xl leading-none mb-4;
   /* font-family: "Futura LT W04 Bold Cond1475886", sans-serif !important; */
 }
 
 h2 {
-  @apply uppercase text-3xl leading-none;
+  @apply uppercase text-3xl leading-none mb-4;
 }
 
 h3 {
-  @apply uppercase text-2xl leading-none;
+  @apply uppercase text-2xl leading-none mb-4;
 }
 
 h4 {
-  @apply uppercase text-xl leading-none;
+  @apply uppercase text-xl leading-none mb-4;
 }
 
 h5,h6{

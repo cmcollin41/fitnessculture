@@ -90,8 +90,8 @@ export default () => (
               <h6 className="text-gray-300 uppercase">Pages</h6>
               <div className="flex flex-col pb-2 left-0 right-0">
                 <Link to="/" className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">Home</Link>
-                <a href="https://shop.fitnessculture.com" target="_blank" rel="noopener noreferrer" className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">Shop</a>
                 <Link to="/about" className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">About</Link>
+                <Link to="/blog" className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">Blog</Link>
                 <Link to="/contact" className="block mt-5 lg:inline-block text-gray-300 hover:text-blue-500 mr-4 text-xs">Contact</Link>
               </div>
             </div>

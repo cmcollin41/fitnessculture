@@ -12,17 +12,16 @@ const Post = ({data}) => {
     <Layout>
       <div className="container mx-auto px-5">
         <div className="flex flex-row justify-center items-center py-10">
-         
-          <div className="flex-grow order-0 md:order-1">
+          <Img fluid={post.mainImage.asset.fluid} className="h-auto w-full md:w-2/3 order-1 md:order-0 flex-none bg-cover"/>
+        </div>
+        <div style={{maxWidth: "720px", margin: "0 auto"}}>
             <h1 className="text-xl uppercase mt-10 mb-2" style={{fontWeight: "900"}}>{post.title}</h1>
             <div className="flex flex-row items-center mb-6">
               <Img fixed={post.author.image.asset.fixed} className="w-20 h-20 rounded-full"/>
               <h6 className="uppercase text-xs ml-4" style={{fontWeight: "900"}}>{post.author.name}</h6>
             </div>
-          </div>
-          <Img fluid={post.mainImage.asset.fluid} className="h-auto w-full md:w-2/3 order-1 md:order-0 flex-none bg-cover"/>
+          <BlockContent blocks={post._rawBody} serializers={defaultSerializers} projectId="forwg78b" dataset="production"/>
         </div>
-        <BlockContent blocks={post._rawBody} serializers={defaultSerializers} projectId="forwg78b" dataset="production"/>
       </div>
     </Layout>
   )
