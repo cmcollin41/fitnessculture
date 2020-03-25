@@ -59,7 +59,7 @@ const Program = ({ data }) => {
                 <a href="#pricing" className="btn-lg text-white rounded-sm shadow-md" style={{backgroundImage: 'linear-gradient(to right, ' + program.colorOne.hex + ',' + program.colorTwo.hex + ')'}}>
                   Start Program
                 </a>
-                <span className="ml-4 text-xs font-light">$2 per Workout</span>
+                {/* <span className="ml-4 text-xs font-light">$2 per Workout</span> */}
               </div>
             </div>
             <div className="w-full lg:w-1/2 shadow-lg relative mt-10 lg:mt-auto">
