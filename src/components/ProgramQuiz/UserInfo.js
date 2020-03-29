@@ -2,13 +2,14 @@ import React from "react"
 
 
 
-const UserInfo = ({step, handleChange, values}) => {
+export const UserInfo = ({step, order, handleChange, values}) => {
 
-  if (step === 2) {
+  if (step === order) {
     return (
       <div className="flex flex-row flex-wrap justify-center items-center">
-        <div className="w-full flex justify-center">
-          <h2 className="mb-6 text-xl">Help us help you</h2>
+        <div className="w-full flex flex-col items-center justify-center mb-8">
+        <h2 className="text-xl mb-0">Hey, {values.first_name}. Can you tell us a little bit more about you?</h2>
+        <p>This infor helps us understand what type of program is best for you, physically.</p>
         </div>
         <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label htmlFor="height" className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
@@ -60,5 +61,3 @@ const UserInfo = ({step, handleChange, values}) => {
 
 
 }
-
-export default UserInfo;

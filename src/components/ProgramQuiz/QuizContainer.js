@@ -1,11 +1,9 @@
 import React, {useState} from "react"
 import SEO from "../../components/seo"
+import logo from '../../assets/fc-logo-horizontal-black.png'
+import SocialProof from "../../components/Sections/SocialProof"
+import {Gender, Goal, GymType, LiftStyle, Experience, Result, Schedule, UserInfo, UserName} from "./"
 
-import Name from "./UserName"
-import Info from "./UserInfo"
-import Goal from "./Goal"
-import Schedule from "./Schedule"
-import LiftStyle from "./LiftStyle"
 
 const QuizContainer = () => {
 
@@ -17,13 +15,16 @@ const QuizContainer = () => {
     weight: "",
     age: "",
     goal: "",
+    gender: "",
+    gymtype: "",
     days: "",
     style: "",
     experience: "",
 
   })
+  console.log(values)
 
-  const stepCount = 5
+  const stepCount = 9
   const [step, setStep] = useState(1);
 
   const handleChange = (event) => {
@@ -35,7 +36,7 @@ const QuizContainer = () => {
   const next = () => {
     let currentStep = step
     // If the current step is 1 or 2, then add one on "next" button click
-    currentStep = currentStep >= 7 ? 8 : currentStep + 1
+    currentStep = currentStep >= 9 ? 10 : currentStep + 1
     setStep(currentStep)
   }
     
@@ -97,29 +98,42 @@ const nextButton = () => {
   return (
     <>
       <SEO title="Get Started" />
-      <div className="w-full flex items-center justify-center">
-        <progress id="file" max="100" className="w-full" value={step/stepCount * 100}> {step/stepCount * 100} </progress>
+      <div className="fixed w-full bg-white">
+        <div className="w-full shadow-sm flex justify-between items-center py-4 px-5">
+          <img src={logo} width="200px" />
+          <div className="flex items-between justify-between">
+            <div>
+              <h4 className="mb-0">Special Offer</h4>
+              <p className="text-sm my-0 pt-0">20% off your first month!</p>
+            </div>
+          </div>
+        </div>
+        <div className="w-full flex items-center justify-center">
+          <progress id="file" max="100" className="w-full" value={step/stepCount * 100}> {step/stepCount * 100} </progress>
+        </div>
       </div>
-      <div className="flex flex-row flex-wrap w-full min-h-screen bg-gray-100">
+      <div className="flex flex-row flex-wrap w-full bg-gray-50" style={{paddingTop: "100px", minHeight: 'calc(100vh - 165px)'}}>
       <div className="w-full">
         <div className="flex items-center justify-center h-full">
           <div className="w-full lg:w-1/2 px-5">
-              <Name handleChange={handleChange} values={values} step={step} />
-              <Info handleChange={handleChange} values={values} step={step} />
-              <Goal handleChange={handleChange} values={values} step={step} />
-              <Schedule handleChange={handleChange} values={values} step={step} />
-              <LiftStyle handleChange={handleChange} values={values} step={step} />
+              <GymType handleChange={handleChange} values={values} order={1} step={step} />
+              <Experience handleChange={handleChange} values={values} order={2} step={step} />
+              <UserName handleChange={handleChange} values={values} order={3} step={step} />
+              <UserInfo handleChange={handleChange} values={values} order={4} step={step} />
+              <Goal handleChange={handleChange} values={values} order={5} step={step} />
+              <Gender handleChange={handleChange} values={values} order={6} step={step} />
+              <LiftStyle handleChange={handleChange} values={values} order={7} step={step} />
+              <Schedule handleChange={handleChange} values={values} order={8} step={step} />
+              <Result handleChange={handleChange} values={values} order={9} step={step} />
               <div className="flex flex-row justify-between">
                 {previousButton()}
                 {nextButton()}       
               </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-     
-
+      <SocialProof />
     </>
   )
 }

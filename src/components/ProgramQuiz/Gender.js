@@ -2,7 +2,7 @@ import React from "react"
 
 
 
-export const Schedule = ({step, order, handleChange}) => {
+export const Gender = ({step, order, handleChange}) => {
 
 
 
@@ -10,37 +10,31 @@ export const Schedule = ({step, order, handleChange}) => {
     return (
       <div className="flex flex-row flex-wrap justify-center items-center">
           <div className="w-full flex justify-center">
-            <h2 className="mb-6 text-xl">Workout days per week?</h2>
+            <h2 className="mb-6 text-xl">What's your gender?</h2>
           </div>
           <div className="w-full lg:w-1/3 px-3 mb-6 md:mb-0">
             <input
               className="checkbox hidden"
-              id="3_days"
-              name="days"
+              id="male"
+              name="gender"
               type="radio"
-              value="3_days"
+              value="male"
               onChange={handleChange}
             />
-            <label htmlFor="3_days" className="w-full block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 border border-white p-4 bg-gray-200 rounded-full text-center">3-4 Days</label>
+            <label htmlFor="male" className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 border border-white p-4 bg-gray-200 rounded-full text-center">Male</label>
           </div>
  
-
           <div className="w-full lg:w-1/3 px-3 mb-6 md:mb-0">
             <input
               className="checkbox hidden"
-              id="5_days"
-              name="days"
+              id="female"
+              name="gender"
               type="radio"
-              value="5_days"
+              value="female"
               onChange={handleChange}
             />
-            <label htmlFor="5_days" className="w-full block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 border border-white p-4 bg-gray-200 rounded-full text-center">5-6 Days</label>
+            <label htmlFor="female" className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 border border-white p-4 bg-gray-200 rounded-full text-center">Female</label>
           </div>
-
-
-   
-   
-
       </div>
     )
   } else {
