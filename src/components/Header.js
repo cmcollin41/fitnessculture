@@ -228,7 +228,8 @@ const Header = () => {
           <img alt="Mobile Cart" src={cart} width="24px" className="inline-block" />
         </Link>
       </nav>          
-      <div className={"w-full p-4 bg-white absolute block lg:hidden z-10 " + (navOpen ? "slide-down" : "slide-up")} style={{top: "63px"}}>
+      <div className={"w-full p-4 bg-white absolute block lg:hidden z-10 grid grid-rows-2 grid-flow-col h-screen " + (navOpen ? "slide-down" : "slide-up")} style={{top: "63px", gridTemplateRows: 'auto 150px'}}>
+          <div style={{overflowY: 'auto'}}>
           <Toggle 
             render={({on, toggle}) => (
               <div>
@@ -296,8 +297,9 @@ const Header = () => {
           />
           <Link to="/about" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">About</Link>
           <Link to="/contact" className="uppercase block mt-4 lg:inline-block lg:mt-0 text-black hover:text-blue-500 font-bold mr-4">Contact</Link>
-        <div>
-          <Link to="/programs" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white mt-4 lg:mt-0 uppercase rounded">Get Started</Link>
+        </div>
+        <div className="py-5">
+          <Link to="/programs" className="inline-block text-sm px-4 py-2 leading-none border text-black border-black hover:border-blue-500 hover:text-blue-500 hover:bg-white uppercase rounded">Get Started</Link>
         </div>
       </div>
       <div  className={"w-full min-h-screen "  + (context.cartPreview ? "cartDisplay" : "cartHidden")}>

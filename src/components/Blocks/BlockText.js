@@ -39,7 +39,7 @@ const BlockText = ({block,product}) => {
 
 
   return (
-    <div className={`w-full lg:w-1/2 lg:px-10 mx-auto ` + block.alignment}>
+    <div className={`w-full lg:w-1/2 xl:w-1/3 px-5 lg:px-10 mx-auto ` + block.alignment}>
       <BlockContent className="mt-5" blocks={block._rawText} serializers={serializers} />
       <div className="mt-10">
         {block.ctas.map(cta => getBlockComponent(cta,product))}
