@@ -134,7 +134,7 @@ const ProductForm = ({ product, node }) => {
         </button>
         {!available && (
           <div className="w-100 mt-4 text-center">
-            <span>Sorry, this size and color is out of stock.</span>
+            <small>Sorry, this size and color is out of stock.</small>
           </div>
         )}
         <div className="mt-10">
