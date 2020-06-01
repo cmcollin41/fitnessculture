@@ -59,7 +59,7 @@ const Welcome = () => {
           <p>To make it easy, we've broken it up by the features included in every section. We are going to go through everything step by step you make sure you get started on the right foot. If you ever have a question on any of the features, you can just reference this page for the answer!</p>
         </div>
 
-        <div className={"mt-10 " + (currentStep === 2 ? "block" : "hidden")}>					
+        {/* <div className={"mt-10 " + (currentStep === 2 ? "block" : "hidden")}>					
 						<div className="card kill-border">
 							<div className="card-body">
 								<h2 className="text-xl uppercase">Setting Up Your Programming</h2>
@@ -104,15 +104,15 @@ const Welcome = () => {
 							</div>
 						</div>
 								
-        </div>
+        </div> */}
   
 
-        <div className={"mt-10 " + (currentStep === 3 ? "block" : "hidden")}>
+        <div className={"mt-10 " + (currentStep === 2 ? "block" : "hidden")}>
 						<div className="card kill-border">
 							<div className="card-body">
 								<h2 className="text-xl uppercase">Navigating Your Workouts</h2>
 								<p className="text">
-									Once you’ve picked your start date you’ll need to know how to read the workouts. We’ve made it pretty simple. Every exercise is displayed in order for the day. Most days start with a warm up and are followed by a series of letters. The letters indicate the next exercise or grouping of exercise to complete for the day. If the letter has multiple exercises listed, you will complete every set of those exercises before moving on to the next letter for the day.
+									Every exercise is displayed in order for the day. Most days start with a warm up and are followed by a series of letters. The letters indicate the next exercise or grouping of exercise to complete for the day. If the letter has multiple exercises listed, you will complete every set of those exercises before moving on to the next letter for the day.
 								</p>
 							</div>
 						</div>
@@ -164,7 +164,7 @@ const Welcome = () => {
         </div>
 
 
-        <div className={"mt-10 " + (currentStep === 4 ? "block" : "hidden")}>					
+        <div className={"mt-10 " + (currentStep === 3 ? "block" : "hidden")}>					
           <div className="card kill-border">
             <div className="card-body">
               <h2 className="text-xl uppercase">Tracking your weights and workout history</h2>
@@ -179,7 +179,7 @@ const Welcome = () => {
           </div>	
         </div>
 
-      <div className={"mt-10 " + (currentStep === 5 ? "block" : "hidden")}>	
+      <div className={"mt-10 " + (currentStep === 4 ? "block" : "hidden")}>	
         <div className="card kill-border">
           <div className="card-body">
             <h2 className="text-xl uppercase">Adjusting Workouts If Short On Time</h2>
@@ -197,7 +197,7 @@ const Welcome = () => {
 
       </div>
 
-      <div className={"mt-10 " + (currentStep === 6 ? "block" : "hidden")}>	
+      <div className={"mt-10 " + (currentStep === 5 ? "block" : "hidden")}>	
         <div className="card kill-border">
           <div className="card-body">
             <h2 className="text-xl uppercase">Entering Your Maxes</h2>
@@ -214,7 +214,7 @@ const Welcome = () => {
         </div>
       </div>
 
-      <div className={"mt-10 " + (currentStep === 7 ? "block" : "hidden")}>	
+      <div className={"mt-10 " + (currentStep === 6 ? "block" : "hidden")}>	
         <div className="card kill-border">
           <div className="card-body">
             
@@ -289,7 +289,7 @@ const Welcome = () => {
         </div>
       </div>
 
-      <div className={"mt-10 " + (currentStep === 8 ? "block" : "hidden")}>	
+      <div className={"mt-10 " + (currentStep === 7 ? "block" : "hidden")}>	
         <div className="card kill-border">
           <div className="card-body">
             <h2 className="text-xl uppercase">Using MealBuildr</h2>
@@ -322,7 +322,7 @@ const Welcome = () => {
 
       </div>
 
-      <div className={"mt-10 " + (currentStep === 9 ? "block" : "hidden")}>	            
+      <div className={"mt-10 " + (currentStep === 8 ? "block" : "hidden")}>	            
         <h2 className="text-xl uppercase">Mobility</h2>
         <p>
           Staying diligent on your mobility plan is going to keep you injury free, extend your career, improve your form, and all this of this is great. BUT, immobility impacts much more than just your performance in the weight room. It will lead to small aches and pains that are going to build up over the course of the day and the week. This is draining on your energy and can cause a decrease in the motivation to workout. This is why we stress mobility, it’s going to help you stay motivated to workout every day.
