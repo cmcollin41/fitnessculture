@@ -143,7 +143,7 @@ const Program = ({ data }) => {
               <div className="flex flex-row justify-center">
                 <h6 className="text-black text-6xl mt-5 relative"><span className="absolute text-xl" style={{left: "-10px", top: "10px"}}>$</span>{program.basicPrice}</h6>
               </div>
-              <span className="text-black text-xs mt-5 uppercase">for 10 weeks</span>
+              <span className="text-black text-xs mt-5 uppercase">Per Month</span>
             </div>
             <div>
               <ul className="pricing">
@@ -167,7 +167,7 @@ const Program = ({ data }) => {
                   <div className="flex flex-row justify-center">
                     <h6 className="text-black text-6xl mt-5 relative"><span className="absolute text-xl" style={{left: "-10px", top: "10px"}}>$</span>{program.premiumPrice}</h6>
                   </div>
-                  <span className="text-black text-xs mt-5 uppercase">for 10 weeks</span>
+                  <span className="text-black text-xs mt-5 uppercase">Per Month</span>
 
                 </div>
                 <div>
